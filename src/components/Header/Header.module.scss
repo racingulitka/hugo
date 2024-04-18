@@ -1,0 +1,88 @@
+.wrapper {
+  width: min(1782px, 100%);
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px dashed red;
+  position: fixed;
+  top: 0;
+  .leftBlock {
+    width: min(767px, 100%);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    .logo {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 3px;
+      .logoImage {
+        width: 101px;
+        height: auto;
+      }
+      .logoText {
+        color: #8d8d8d;
+        font-family: "Averta Demo PE";
+        font-size: 9px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+    .navigation {
+      width: min(626px, 100%);
+      height: auto;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      .headerLink {
+        color: #8d8d8d;
+        font-family: "Averta Demo PE";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        &:hover {
+          color: #9c3131;
+        }
+      }
+    }
+  }
+  .rightBlock {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    .putOrder {
+      color: #9c3131;
+      font-family: "Averta Demo PE";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      position: relative;
+      &::before{
+        content:'';
+        width:0%;
+        height:1px;
+        background: #9c3131;
+        position: absolute;
+        bottom:0;
+        left:0;
+        transition: 0.3s;
+      }
+      &:hover::before{
+        width:100%;
+        transition:0.3s;
+      }
+    }
+  }
+}

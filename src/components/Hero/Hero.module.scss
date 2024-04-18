@@ -2,6 +2,10 @@
   width: min(100%, 1920px);
   height: 1080px;
   background: #111;
+  display:flex;
+  flex-flow:column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
   .h1 {
     color: #fff;
     font-family: "Tafel Sans Pro";
@@ -46,25 +50,57 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
-      gap:20px;
+      gap: 20px;
       text-transform: uppercase;
-      .rightArrow{
-        width:21px;
-        height:13px;
+      .rightArrow {
+        width: 21px;
+        height: 13px;
       }
-      &:hover{
+      &:hover {
         cursor: pointer;
       }
     }
   }
-  .menuBlock{
+  .menuBlock {
     max-width: 780px;
-    height:auto;
-    margin:89px 0 0 69px;
-    display:flex;
-    flex-flow:row wrap;
+    height: auto;
+    margin: 89px 0 0 69px;
+    display: flex;
+    flex-flow: row wrap;
     justify-content: flex-start;
     align-items: center;
-    gap:15px;
+    gap: 15px;
+  }
+  .bottomLinks {
+    margin: 31px 88px 0 0;
+    align-self: flex-end;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    & span {
+      color: #8d8d8d;
+      font-family: "Averta Demo PE";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      &:hover{
+        cursor: pointer;
+        color: #9c3131;
+      }
+    }
+    .socialMediaLinks{
+      display:flex;
+      flex-flow:row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap:28px;
+      .smLink{
+        width:auto;
+        height:31px;
+      }
+    }
   }
 }
