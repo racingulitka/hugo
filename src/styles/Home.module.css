@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
+  width:100%;
 }
 
 @font-face {
@@ -17,7 +18,7 @@
 }
 
 @font-face {
-  font-family: 'AvertaCY';
+  font-family: 'Averta CY';
   src: url('../pages/fonts/Averta-Cyrillic-Bold.otf');
   src: local('AvertaCY'),
       url('../pages/fonts/Averta-Cyrillic-Bold.otf') format('opentype');
@@ -27,7 +28,7 @@
 }
 
 @font-face {
-  font-family: 'AvertaCY';
+  font-family: 'Averta CY';
   src: url('../pages/fonts/Averta-Cyrillic-SemiBold.otf');
   src: local('AvertaCY'),
       url('../pages/fonts/Averta-Cyrillic-SemiBold.otf') format('opentype');

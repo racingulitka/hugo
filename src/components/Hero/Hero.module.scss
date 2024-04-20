@@ -1,105 +1,112 @@
-.wrapper {
-  width: min(100%, 1920px);
-  height: 1080px;
-  background: #111;
+.mainWrapper {
+  width: 100%;
+  height: auto;
   display:flex;
-  flex-flow:column nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  .h1 {
-    color: #fff;
-    font-family: "Tafel Sans Pro";
-    font-size: 252px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin: 90px 0 0 47px;
-  }
-  .breefBlock {
-    margin: 63px 0 0 69px;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  .wrapper {
+    width: min(100%, 1920px);
+    min-height: 1080px;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: flex-start;
-    align-items: center;
-    gap: 94px;
-    .description {
-      width: 439px;
-      color: #b0b0b0;
-      font-family: "Averta Demo PE";
-      font-size: 20px;
+    align-items: flex-start;
+    .h1 {
+      color: #fff;
+      font-family: "Tafel Sans Pro";
+      font-size: 252px;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 700;
       line-height: normal;
-      & span {
-        color: #9c3131;
-      }
+      margin: 90px 0 0px 48px;
     }
-    .breefButton {
-      width: 318px;
-      height: 58px;
-      background: #9c3131;
-      border: none;
-      backdrop-filter: blur(6px);
+    .breefBlock {
+      margin: 63px 0 0 69px;
       display: flex;
       flex-flow: row nowrap;
-      justify-content: center;
-      align-items: center;
-      color: rgba(255, 255, 255, 0.77);
-      font-family: "Averta Demo PE";
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      gap: 20px;
-      text-transform: uppercase;
-      .rightArrow {
-        width: 21px;
-        height: 13px;
-      }
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
-  .menuBlock {
-    max-width: 780px;
-    height: auto;
-    margin: 89px 0 0 69px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 15px;
-  }
-  .bottomLinks {
-    margin: 31px 88px 0 0;
-    align-self: flex-end;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 40px;
-    & span {
-      color: #8d8d8d;
-      font-family: "Averta Demo PE";
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      &:hover{
-        cursor: pointer;
-        color: #9c3131;
-      }
-    }
-    .socialMediaLinks{
-      display:flex;
-      flex-flow:row nowrap;
       justify-content: flex-start;
       align-items: center;
-      gap:28px;
-      .smLink{
-        width:auto;
-        height:31px;
+      gap: 94px;
+      .description {
+        width: 439px;
+        color: #b0b0b0;
+        font-family: "Averta Demo PE";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        & span {
+          color: #9c3131;
+        }
+      }
+      .breefButton {
+        width: 318px;
+        height: 58px;
+        background: #9c3131;
+        border: none;
+        backdrop-filter: blur(6px);
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.77);
+        font-family: "Averta Demo PE";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        gap: 20px;
+        text-transform: uppercase;
+        .rightArrow {
+          width: 21px;
+          height: 13px;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .menuBlock {
+      max-width: 780px;
+      height: auto;
+      margin: 89px 0 0 69px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 15px;
+    }
+    .bottomLinks {
+      margin: 31px 88px 0 0;
+      align-self: flex-end;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 40px;
+      & span {
+        color: #8d8d8d;
+        font-family: "Averta Demo PE";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        &:hover {
+          cursor: pointer;
+          color: #9c3131;
+        }
+      }
+      .socialMediaLinks {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 28px;
+        .smLink {
+          width: auto;
+          height: 31px;
+        }
       }
     }
   }
