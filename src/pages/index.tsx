@@ -6,6 +6,7 @@ import Hero from "@/components/Hero/Hero";
 import Header from "@/components/Header/Header";
 import Shop from "@/components/Shop/Shop";
 import WhyAreTheyTrustUs from "@/components/WhyAreTheyTrustUs/WhyAreTheyTrustUs";
+import ContactUs from "@/components/ContactUs/ContactUs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function Home() {
         <Hero />
         <Shop />
         <WhyAreTheyTrustUs />
+        <ContactUs />
       </main>
     </>
   );
