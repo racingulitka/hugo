@@ -39,7 +39,9 @@ export default function PhoneNumberInput({
                 onChange={(event) => onInput(event)}
                 value={value}
             >
-                
+                <div className={styles.iconSelect}>
+                    
+                </div>
             </input>
         </div>
     )
