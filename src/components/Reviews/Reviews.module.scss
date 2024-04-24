@@ -1,0 +1,47 @@
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  background: url(./assets/decoration.svg), #111;
+  background-size: cover;
+  .wrapper {
+    width: min(1920px, 100%);
+    min-height: 1080px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    & h2 {
+        align-self: flex-start;
+        margin:77px 0 0 70px;
+      color: #fff;
+      font-family: "Averta CY";
+      font-size: 45px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .reviewBlock{
+        margin: 0 0 23px 0;
+        max-width:1785px;
+        min-height:923px;
+        display:flex;
+        flex-flow:row wrap;
+        justify-content: center;
+        align-items: flex-end;
+        gap:15px;
+        .column{
+            width:fit-content;
+            height:auto;
+            display:flex;
+            flex-flow:column nowrap;
+            justify-content: flex-end;
+            align-items: center;
+            gap:24px;
+        }
+    }
+  }
+}

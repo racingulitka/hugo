@@ -1,0 +1,31 @@
+.wrapper {
+  width: auto;
+  height: auto;
+  position: relative;
+  .textInput {
+    width: 280px;
+    height: 35px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #8d8d8d;
+    background: none;
+    color: #fff;
+    font-family: "Averta Demo PE";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position:relative;
+    &::placeholder {
+      color: #8d8d8d;
+      font-family: "Averta Demo PE";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@mixin textInput() {
+  width: 280px;
+  height: 35px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #8d8d8d;
+  background: none;
+  color: #fff;
+  font-family: "Averta Demo PE";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  &::placeholder {
+    color: #8d8d8d;
+    font-family: "Averta Demo PE";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  &:focus-visible{
+    outline:none;
+  }
+}
+
+.wrapper {
+  width: 645px;
+  height: 565px;
+  box-sizing: border-box;
+  padding: 30px;
+  background: #191919;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 48px;
+  .title {
+    color: #fff;
+    font-family: "Averta CY";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .contactsBlock {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    .aboutPerson {
+      color: #8d8d8d;
+      font-family: "Averta CY";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .nameAndProject {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      .name {
+        @include textInput();
+      }
+    }
+  }
+}
