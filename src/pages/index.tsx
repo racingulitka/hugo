@@ -9,6 +9,7 @@ import WhyAreTheyTrustUs from "@/components/WhyAreTheyTrustUs/WhyAreTheyTrustUs"
 import ContactUs from "@/components/ContactUs/ContactUs";
 import Reviews from "@/components/Reviews/Reviews";
 import Contacts from "@/components/Contacts/Contacts";
+import Footer from "@/components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function Home() {
         <ContactUs />
         <Reviews />
         <Contacts />
+        <Footer />
       </main>
     </>
   );

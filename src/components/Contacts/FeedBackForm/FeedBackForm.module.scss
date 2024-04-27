@@ -1,4 +1,21 @@
+@mixin fontAvertaPE {
+  font-family: "Averta Demo PE";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin fontAvertaCY {
+  font-family: "Averta CY";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
 @mixin textInput() {
+  @include fontAvertaPE();
   width: 280px;
   height: 35px;
   box-sizing: border-box;
@@ -6,21 +23,13 @@
   border-bottom: 1px solid #8d8d8d;
   background: none;
   color: #fff;
-  font-family: "Averta Demo PE";
   font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
   &::placeholder {
-    color: #8d8d8d;
-    font-family: "Averta Demo PE";
     font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    color: #8d8d8d;
   }
-  &:focus-visible{
-    outline:none;
+  &:focus-visible {
+    outline: none;
   }
 }
 
@@ -36,12 +45,9 @@
   align-items: center;
   gap: 48px;
   .title {
+    @include fontAvertaCY();
     color: #fff;
-    font-family: "Averta CY";
     font-size: 28px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
   }
   .contactsBlock {
     width: 100%;
@@ -52,12 +58,8 @@
     align-items: center;
     gap: 25px;
     .aboutPerson {
+      @include fontAvertaCY();
       color: #8d8d8d;
-      font-family: "Averta CY";
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
     }
     .nameAndProject {
       width: 100%;
@@ -68,6 +70,56 @@
       align-items: center;
       .name {
         @include textInput();
+      }
+    }
+  }
+  .howCanWeHelpYou {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    & h4 {
+      @include fontAvertaCY();
+      color: #fff;
+    }
+    .checkBoxesBlock {
+      width: 100%;
+      height: 40px;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+  .footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 18px;
+    & button {
+      @include fontAvertaCY();
+      width: 100%;
+      height: 35px;
+      background: #9c3131;
+      color: #fff;
+      font-size: 12px;
+      border: none;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    & p {
+      @include fontAvertaPE();
+      color: #4e4e4e;
+      .link {
+        color: #9c3131;
       }
     }
   }

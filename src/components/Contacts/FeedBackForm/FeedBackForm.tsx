@@ -1,11 +1,16 @@
 import React, { ChangeEvent, useState } from 'react'
 import styles from './FeedBackForm.module.scss'
 import PhoneNumberInput from './PhoneNumberInput/PhoneNumberInput'
+import { checkBoxesArr } from './FeedBackForm.config'
+import CheckBox from './CheckBox/CheckBox';
+import Link from 'next/link'
+import {sendData} from './utils/sendData'
 
-interface Info {
+export interface Info {
     name: string,
     project: string,
     phoneNumber:string,
+    checkBoxesActive:number[],
 }
 
 export default function FeedBackForm() {
@@ -14,6 +19,7 @@ export default function FeedBackForm() {
         name: '',
         project: '',
         phoneNumber:'',
+        checkBoxesActive:[],
     })
 
     const onNameInput = (event: ChangeEvent<HTMLInputElement>) => {
@@ -32,6 +38,17 @@ export default function FeedBackForm() {
     const onPhoneInput = (value:string) => {
         const prevInfo = {...info}
         setInfo({...prevInfo, phoneNumber:value})
+    }
+
+    const onCheckBoxClick = (id:number) => {
+        const checkToActive = info.checkBoxesActive.find(item => item === id)
+        if(checkToActive){
+            const checkBoxesActive = info.checkBoxesActive.filter(item => item !== id)
+            setInfo({...info, checkBoxesActive})
+        } else {
+            const checkBoxesActive = [...info.checkBoxesActive, id]
+            setInfo({...info, checkBoxesActive})
+        }
     }
 
     return (
@@ -58,6 +75,31 @@ export default function FeedBackForm() {
                     />
                 </div>
                 <PhoneNumberInput value={info.phoneNumber} onChange={onPhoneInput}/>
+            </div>
+            <div className={styles.howCanWeHelpYou}>
+                <h4>Чем мы сможем вам помочь?</h4>
+                <div className={styles.checkBoxesBlock}>
+                    {
+                        checkBoxesArr.map(checkBox => {
+                            return(
+                                <CheckBox
+                                    key={checkBox.id}
+                                    isChecked={info.checkBoxesActive.includes(checkBox.id)}
+                                    setChecked={onCheckBoxClick}
+                                    id={checkBox.id}
+                                >{checkBox.title}</CheckBox>
+                            )
+                        })
+                    }
+                </div>
+            </div>
+            <div className={styles.footer}>
+                <button
+                    onClick={() => sendData(info)}
+                >
+                    Связаться
+                </button>
+                <p>Нажимая на кнопку, вы соглашаетесь с <Link href='/' className={styles.link}>политикой конфиденциальности</Link></p>
             </div>
         </div>
     )

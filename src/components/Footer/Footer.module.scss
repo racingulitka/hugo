@@ -1,0 +1,150 @@
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  background: #111;
+  background-size: cover;
+  .wrapper {
+    width: min(1920px, 100%);
+    min-height: 369px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 71px;
+    box-sizing: border-box;
+    padding: 75px 105px 0 88px;
+    .upperBlock {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      & nav {
+        flex: 1 0 auto;
+        max-width: 947px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        .linksBlock {
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 20px;
+          .blockTitle {
+            color: #fff;
+            font-family: "Averta CY";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+          }
+          .links {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 9px;
+            &Icons {
+              flex-flow: row nowrap;
+              align-items: center;
+              gap: 15px;
+            }
+            .link {
+              color: #8d8d8d;
+              font-family: "Averta Demo PE";
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              &:hover {
+                color: #9c3131;
+              }
+            }
+            .icon {
+              height: 27px;
+              width: auto;
+            }
+          }
+        }
+      }
+      .otherInfo {
+        width: 616px;
+        height: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 20px;
+        & p {
+          color: #8d8d8d;
+          font-family: "Averta Demo PE";
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          &:first-child {
+            width: 389px;
+          }
+        }
+      }
+    }
+    .bottomBlock {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 0 0 22px 0;
+      .paymentSystems {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        .paymentSystem {
+          height: 25px;
+          width: auto;
+        }
+      }
+      .documents {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        align-items: center;
+        gap:55px;
+        .link {
+          color: #9c3131;
+          font-family: "Averta Demo PE";
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          position:relative;
+          &:hover::before{
+            transition: 0.3s;
+            width:100%;
+          }
+          &::before{
+            content:'';
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:0;
+            height:1px;
+            background:#9c3131 ;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './ReviewCard.module.scss'
 import Link from 'next/link'
-import star from './assets/star.svg'
-import Image from 'next/image'
 import Arrow from './assets/Arrow'
 import cn from 'classnames'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -50,12 +48,21 @@ export default function ReviewCard({
                     <div className={styles.grade}>{grade.toFixed(1)}</div>
                     <div className={styles.stars}>
                         {
-                            [1, 2, 3, 4, 5].map(item => {
+                            Array.from({ length: 5 }, (_, index) => {
+                                const fillPercentage = (grade - index)*100;
+
                                 return (
-                                    <Image key={item} src={star} alt='star' className={styles.star} />
+                                    <svg key={index} className={styles.star} width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                        <linearGradient id={`grad-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" style={{ stopColor: '#F7C412', stopOpacity: 1 }} />
+                                            <stop offset={`${fillPercentage}%`} style={{ stopColor: '#F7C412', stopOpacity: 1 }} />
+                                            <stop offset={`${fillPercentage}%`} style={{ stopColor: '#fff', stopOpacity: 1 }} />
+                                            <stop offset="100%" style={{ stopColor: '#fff', stopOpacity: 1 }} />
+                                        </linearGradient>
+                                        <path d="M6 0.491455L7.34708 4.63735H11.7063L8.17963 7.19966L9.52671 11.3456L6 8.78325L2.47329 11.3456L3.82037 7.19966L0.293661 4.63735H4.65292L6 0.491455Z" fill={`url(#grad-${index})`} />
+                                    </svg>
                                 )
                             })
-
                         }
                     </div>
                 </div>

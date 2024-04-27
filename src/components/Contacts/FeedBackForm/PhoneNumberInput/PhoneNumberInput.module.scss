@@ -16,6 +16,7 @@
     font-weight: 400;
     line-height: normal;
     position:relative;
+    padding:0 0 0 48px;
     &::placeholder {
       color: #8d8d8d;
       font-family: "Averta Demo PE";
@@ -26,6 +27,46 @@
     }
     &:focus-visible {
       outline: none;
+    }
+  }
+  .selectorWrapper{
+    position:absolute;
+    top:10px;
+    left:0;
+    .selectedSelectorBlock{
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap:5px;
+        margin:0 0 10px 0;
+        .selectedSelector{
+            width:20px;
+            aspect-ratio: 1/1;
+        }
+        .arrow{
+            width:5px;
+            height:auto;
+            rotate:0deg;
+            transition:0.3s;
+            &Opened{
+                rotate:180deg;
+                transition:0.3s;
+            }
+        }
+    }
+    .selector{
+        width:30px;
+        height:26px;
+        background: #252525;
+        box-sizing: border-box;
+        border-bottom:1px solid rgba(69, 69, 69, 0.3);
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        &:last-child{
+            border:none;
+        }
     }
   }
 }

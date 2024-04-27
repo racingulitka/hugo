@@ -1,0 +1,31 @@
+.wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap:10px;
+  color: #8d8d8d;
+  font-family: "Averta Demo PE";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  user-select: none;
+  .checkBox{
+    width:14px;
+    aspect-ratio: 1/1;
+    box-sizing: border-box;
+    border:1px solid #4E4E4E;
+    overflow: hidden;
+    &:hover{
+        cursor:pointer;
+    }
+    &Checked{
+        border:none;
+    }
+    .check{
+        width:100%;
+        height:auto;
+    }
+  }
+}
