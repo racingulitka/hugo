@@ -7,7 +7,7 @@
   line-height: normal;
 }
 
-@mixin fontPE(){
+@mixin fontPE() {
   color: #8e8e8e;
   font-family: "Averta Demo PE";
   font-size: 12px;
@@ -42,7 +42,7 @@
       & h3 {
         @include fontCY();
         font-size: 15px;
-       }
+      }
       .categoryLink {
         @include fontPE();
         color: #9c3131;
@@ -66,9 +66,12 @@
         justify-content: flex-start;
         align-items: center;
         gap: 5px;
-        .star {
-          width: 12px;
-          aspect-ratio: 1/1;
+        .starWrapper {
+          position: relative;
+          .star {
+            width: 12px;
+            aspect-ratio: 1/1;
+          }
         }
       }
     }

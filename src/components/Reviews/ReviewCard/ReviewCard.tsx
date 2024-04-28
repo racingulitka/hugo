@@ -35,6 +35,15 @@ export default function ReviewCard({
     columnId: number,
 }) {
 
+    const gradientArr = [1, 2, 3, 4, 5]
+    const gradientArrValue = gradientArr.map(item => {
+        return (
+            grade - item > 1 ? 100 : (grade - item + 1)*100
+        )
+    })
+
+    console.log(gradientArrValue)
+
     return (
         <motion.div
             className={cn(styles.wrapper, isOpened && styles.wrapperOpened)}
@@ -48,19 +57,20 @@ export default function ReviewCard({
                     <div className={styles.grade}>{grade.toFixed(1)}</div>
                     <div className={styles.stars}>
                         {
-                            Array.from({ length: 5 }, (_, index) => {
-                                const fillPercentage = (grade - index)*100;
-
+                            [1, 2, 3, 4, 5].map(star => {
                                 return (
-                                    <svg key={index} className={styles.star} width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                                        <linearGradient id={`grad-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                                            <stop offset="0%" style={{ stopColor: '#F7C412', stopOpacity: 1 }} />
-                                            <stop offset={`${fillPercentage}%`} style={{ stopColor: '#F7C412', stopOpacity: 1 }} />
-                                            <stop offset={`${fillPercentage}%`} style={{ stopColor: '#fff', stopOpacity: 1 }} />
-                                            <stop offset="100%" style={{ stopColor: '#fff', stopOpacity: 1 }} />
-                                        </linearGradient>
-                                        <path d="M6 0.491455L7.34708 4.63735H11.7063L8.17963 7.19966L9.52671 11.3456L6 8.78325L2.47329 11.3456L3.82037 7.19966L0.293661 4.63735H4.65292L6 0.491455Z" fill={`url(#grad-${index})`} />
-                                    </svg>
+                                    <div key={star} className={styles.starWrapper}>
+                                        <svg key={star} className={styles.star} width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <linearGradient id={`gradient${star}`}>
+                                                    <stop stopColor="rgba(246, 196, 18, 1)" offset={`${gradientArrValue[star - 1] * 100}%`} />
+                                                    <stop stopColor="transparent" offset="50%" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path id={`Star${star}`} d="M6 0.491455L7.34708 4.63735H11.7063L8.17963 7.19966L9.52671 11.3456L6 8.78325L2.47329 11.3456L3.82037 7.19966L0.293661 4.63735H4.65292L6 0.491455Z" fill={`url(#gradient${star})`} />
+                                        </svg>
+                                        <div style={{background:`linear-gradient(to right, transparent 0% ${gradientArrValue[star-1]}%, #252525 ${gradientArrValue[star-1]}% 100%)`, position:'absolute', top:0, left:0, zIndex:10, width:'100%', height:'100%'}}></div>
+                                    </div>
                                 )
                             })
                         }
