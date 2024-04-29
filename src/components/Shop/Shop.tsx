@@ -12,7 +12,7 @@ export default function Shop() {
                     <div className={styles.header}>
                         <h2>Магазин</h2>
                         <Link
-                            href='/'
+                            href='/shop'
                             className={styles.goToShop}
                         >
                             Перейти в магазин

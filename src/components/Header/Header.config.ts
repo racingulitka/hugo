@@ -7,7 +7,7 @@ export const headerLinks = [
     {
         id:2,
         title:'Магазин',
-        link:'/',
+        link:'/shop',
     },
     {
         id:3,
@@ -30,3 +30,8 @@ export const headerLinks = [
         link:'/',
     },
 ]
+
+export enum Page{
+    home,
+    shop,
+}

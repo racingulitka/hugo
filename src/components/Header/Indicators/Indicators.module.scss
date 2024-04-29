@@ -1,0 +1,49 @@
+@mixin font() {
+  font-family: "Averta Demo PE";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.wrapper {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 0 54px 0 0;
+  .indicator {
+    width: fit-content;
+    height: 52px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    .value {
+      @include font();
+      height: 13px;
+      min-width: 13px;
+      width: fit-content;
+      border-radius: 8px;
+      text-align: center;
+      background: #9c3131;
+      color: #fff;
+      font-size: 9px;
+      box-sizing: border-box;
+      padding: 0 5px 2px;
+    }
+    .icon {
+      align-self: center;
+      height: 22px;
+      width: auto;
+    }
+    .title {
+      @include font();
+      margin: 4px 0 0 0;
+      color: #8d8d8d;
+      font-size: 10px;
+    }
+  }
+}

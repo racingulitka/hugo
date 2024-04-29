@@ -1,19 +1,12 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import Hero from "@/components/Hero/Hero";
 import Header from "@/components/Header/Header";
-import Shop from "@/components/Shop/Shop";
-import WhyAreTheyTrustUs from "@/components/WhyAreTheyTrustUs/WhyAreTheyTrustUs";
-import ContactUs from "@/components/ContactUs/ContactUs";
-import Reviews from "@/components/Reviews/Reviews";
-import Contacts from "@/components/Contacts/Contacts";
-import Footer from "@/components/Footer/Footer";
 import { Page } from "@/components/Header/Header.config";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Shop() {
   return (
     <>
       <Head>
@@ -23,14 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <Header page={Page.home}/>
-        <Hero />
-        <Shop />
-        <WhyAreTheyTrustUs />
-        <ContactUs />
-        <Reviews />
-        <Contacts />
-        <Footer />
+        <Header page={Page.shop}/>
       </main>
     </>
   );

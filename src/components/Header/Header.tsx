@@ -4,9 +4,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 import logo from './assets/logo.svg'
 import { headerLinks } from './Header.config'
+import CurrencySelect from './CurrencySelect/CurrencySelect'
 import LangSelect from './LangSelect/LangSelect'
+import { Page } from './Header.config'
+import Indicators from './Indicators/Indicators'
 
-export default function Header() {
+export default function Header({
+    page,
+}: {
+    page: Page
+}) {
     return (
         <div className={styles.mainWrapper}>
             <div className={styles.wrapper}>
@@ -32,12 +39,20 @@ export default function Header() {
                     </nav>
                 </div>
                 <div className={styles.rightBlock}>
-                    <Link
-                        href='/'
-                        className={styles.putOrder}
-                    >
-                        ОСТАВИТЬ ЗАЯВКУ
-                    </Link>
+                    {
+                        page === Page.home &&
+                        <Link
+                            href='/'
+                            className={styles.putOrder}
+                        >
+                            ОСТАВИТЬ ЗАЯВКУ
+                        </Link>
+                    }
+                    {
+                        page === Page.shop &&
+                        <Indicators />
+                    }
+                    <CurrencySelect />
                     <LangSelect />
                 </div>
             </div>

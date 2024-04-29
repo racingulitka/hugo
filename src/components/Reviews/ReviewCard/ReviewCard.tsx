@@ -42,8 +42,6 @@ export default function ReviewCard({
         )
     })
 
-    console.log(gradientArrValue)
-
     return (
         <motion.div
             className={cn(styles.wrapper, isOpened && styles.wrapperOpened)}
