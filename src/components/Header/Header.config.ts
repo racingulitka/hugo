@@ -1,4 +1,4 @@
-export const headerLinks = [
+export const headerLinksHome = [
     {
         id:1,
         title:'Решения',
@@ -27,6 +27,28 @@ export const headerLinks = [
     {
         id:6,
         title:'Карьера',
+        link:'/',
+    },
+]
+export const headerLinksShop = [
+    {
+        id:1,
+        title:'Решения',
+        link:'/',
+    },
+    {
+        id:2,
+        title:'3D моделинг',
+        link:'/',
+    },
+    {
+        id:3,
+        title:'Готовые системы',
+        link:'/',
+    },
+    {
+        id:4,
+        title:'Дизайн',
         link:'/',
     },
 ]

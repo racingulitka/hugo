@@ -1,0 +1,34 @@
+.wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 70px;
+  .header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    .leftSide {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 25px;
+      .categoryTitle {
+        color: #fff;
+        font-family: "Averta CY";
+        font-size: 45px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      .arrow{
+        width:16px;
+        height:auto;
+      }
+    }
+  }
+}

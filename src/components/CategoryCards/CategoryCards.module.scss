@@ -1,0 +1,59 @@
+.wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background: #111;
+  .card {
+    width: 584px;
+    height: 263px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 30px;
+    background: #252525;
+    .linksBlock {
+      width: auto;
+      height: auto;
+      & h3 {
+        color: #fff;
+        font-family: "Averta CY";
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      .links {
+        margin: 19px 0 0 0;
+        height:125px;
+        width:auto;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        column-gap:31px;
+        row-gap:20px;
+        .link {
+          color: #8e8e8e;
+          font-family: "Averta Demo PE";
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          &:hover{
+            color:#9C3131;
+          }
+        }
+      }
+    }
+    .image{
+        width:180px;
+        height:auto;
+    }
+  }
+}

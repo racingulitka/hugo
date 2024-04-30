@@ -3,7 +3,7 @@ import styles from './Header.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 import logo from './assets/logo.svg'
-import { headerLinks } from './Header.config'
+import { headerLinksHome, headerLinksShop } from './Header.config'
 import CurrencySelect from './CurrencySelect/CurrencySelect'
 import LangSelect from './LangSelect/LangSelect'
 import { Page } from './Header.config'
@@ -24,7 +24,7 @@ export default function Header({
                     </Link>
                     <nav className={styles.navigation}>
                         {
-                            headerLinks.map(link => {
+                            (page === Page.home ? headerLinksHome : headerLinksShop).map(link => {
                                 return (
                                     <Link
                                         key={link.id}
