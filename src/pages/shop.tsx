@@ -7,6 +7,7 @@ import { Page } from "@/components/Header/Header.config";
 import TopShopBlock from "@/components/TopShopBlock/TopShopBlock";
 import CategoryCards from "@/components/CategoryCards/CategoryCards";
 import MainContentShop from "@/components/MainContentShop/MainContentShop";
+import CodeModal from '@/components/CodeModal/CodeModal'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function Shop() {
         <TopShopBlock />
         <CategoryCards />
         <MainContentShop />
+        <CodeModal />
         <CategoryCards />
         <Footer />
       </main>
