@@ -7,6 +7,7 @@
   align-items: flex-start;
   gap: 70px;
   .header {
+    width:100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -15,8 +16,14 @@
       display: flex;
       flex-flow: row nowrap;
       justify-content: flex-start;
-      align-items: center;
+      align-items: flex-end;
       gap: 25px;
+      &:hover .categoryTitle,
+      &:hover .arrowRightContainer .arrowRight {
+        color: #9c3131;
+        cursor: pointer;
+        fill: #9c3131;
+      }
       .categoryTitle {
         color: #fff;
         font-family: "Averta CY";
@@ -25,10 +32,31 @@
         font-weight: 700;
         line-height: normal;
       }
-      .arrow{
-        width:16px;
-        height:auto;
+      .arrowRightContainer {
+        margin: 0 0 6px 0;
+        .arrowRight {
+          width: 16px;
+          height: auto;
+        }
       }
     }
+    .rightSide {
+      color: #9c3131;
+      font-family: "Averta Demo PE";
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-decoration-line: underline;
+    }
+  }
+  .cards {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
   }
 }

@@ -16,7 +16,8 @@
     align-items: flex-start;
 
     .leftColumn {
-      width: 485px;
+      width: 415px;
+      flex-shrink: 0;
       height: auto;
       display: flex;
       flex-flow: column nowrap;
@@ -24,18 +25,21 @@
       align-items: center;
       gap: 16px;
       box-sizing: border-box;
-      border: 1px solid red;
+      padding:130px 0 0 0;
+      .adverticement{
+        width:331px;
+        height:auto;
+      }
     }
     .rightColumn {
-      flex: 1 0 auto;
+      flex-grow:1;
       height: auto;
       display: flex;
       flex-flow: column nowrap;
       justify-content: flex-start;
       align-items: flex-start;
       gap: 86px;
-      box-sizing: border-box;
-      border: 1px solid green;
+
     }
   }
 }

@@ -1,6 +1,128 @@
-.wrapper{
-    width:445px;
-    height:460px;
-    background: #252525;
-    
+@mixin fontAvertaDemoPE() {
+  font-family: "Averta Demo PE";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin fontAvertaCY(){
+    font-family: "Averta CY";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.wrapper {
+  width: 445px;
+  height: 460px;
+  background: #252525;
+  &:hover .info .title {
+    color: #9c3131;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  .imageContainer {
+    width: 100%;
+    height: 296px;
+    overflow-y: hidden;
+    position: relative;
+    .goodImage {
+      width: 100%;
+      height: auto;
+    }
+    .heartIconContainer {
+      position: absolute;
+      top: 21px;
+      right: 23px;
+      .heartIcon {
+        width: 31px;
+        height: auto;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .info {
+    margin: 32px 0 0 0;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 0 30px 16px;
+    .priceContainer {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      .actualPrice {
+        @include fontAvertaCY();
+        color: #fff;
+      }
+      .price {
+        @include fontAvertaDemoPE();
+        margin: 5px 0 0 10px;
+        color: #818181;
+        text-decoration-line: line-through;
+      }
+      .discount {
+        @include fontAvertaDemoPE();
+        margin: 7px 0 0 5px;
+        width: 39px;
+        height: 19px;
+        background: #9c3131;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fbfbfb;
+        font-size: 15px;
+      }
+    }
+    .title {
+        @include fontAvertaCY();
+      margin: 5px 0 0 0;
+      color: #fff;
+      font-size: 20px;
+    }
+    .otherContainer {
+      margin: 15px 0 0 0;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      .rating {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 6px;
+        .star {
+          width: 21px;
+          height: auto;
+        }
+        .ratingValue {
+          @include fontAvertaDemoPE();
+          color: #818181;
+        }
+      }
+      .reviews {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        .reviewIcon {
+          width: 22px;
+          height: auto;
+        }
+        .text {
+          @include fontAvertaDemoPE();
+          color: #818181;
+        }
+      }
+    }
+  }
 }

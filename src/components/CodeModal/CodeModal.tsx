@@ -17,6 +17,7 @@ const CodeModal = React.memo(({
     const endIndexCrop = email.split('').findIndex(item => item === '@')
     const emailMask = email.substring(0, startIndexCrop) + '***' + email.substring(endIndexCrop)
 
+    const [isCursorActive, setCursorActive] = useState<boolean>(false)
     const [timerValue, setTimerValue] = useState<number>(12)
     const [code, setCode] = useState<Code>({
         1: null,
@@ -31,6 +32,14 @@ const CodeModal = React.memo(({
         }, 1000)
         return () => clearInterval(interval)
     })
+
+    useEffect(() => {
+        const cursorInterval = setInterval(() => {
+            setCursorActive(prev => !prev)
+        }, 500)
+        return () => clearInterval(cursorInterval)
+    }, [])
+
 
     const codeFill = () => {
         const filledArr = Object.keys(code).filter(item => {
@@ -74,6 +83,7 @@ const CodeModal = React.memo(({
                                     key={char}
                                     className={cn(styles.char, code[index] !== null && styles.charFilled)}
                                 >
+                                    <div className={cn(styles.cursor, Number(char) === codeFill() + 1 && isCursorActive && styles.cursorActive)}></div>
                                     {code[index]}
                                 </div>
                             )
