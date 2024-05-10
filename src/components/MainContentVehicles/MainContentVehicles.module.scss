@@ -1,0 +1,45 @@
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  background: #111;
+  box-sizing: border-box;
+  padding: 90px 0 90px 0;
+  .wrapper {
+    width: min(1782px, 100%);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .leftColumn {
+      width: 415px;
+      flex-shrink: 0;
+      height: auto;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 16px;
+      box-sizing: border-box;
+      padding:130px 0 0 0;
+      .adverticement{
+        width:331px;
+        height:auto;
+      }
+    }
+    .rightColumn {
+      flex-grow:1;
+      height: auto;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 86px;
+
+    }
+  }
+}

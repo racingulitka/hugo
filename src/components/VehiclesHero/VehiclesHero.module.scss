@@ -1,0 +1,119 @@
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  background: #111;
+  box-sizing: border-box;
+  padding: 102px 0 56px 0;
+  .wrapper {
+    width: min(1782px, 100%);
+    height: 607px;
+    overflow: hidden;
+    position: relative;
+    .image {
+      width: 875px;
+      height: 607px;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      z-index: 1;
+    }
+    .bannerGradient {
+      background: linear-gradient(
+        90deg,
+        #111 46%,
+        rgba(117, 117, 117, 0.3) 65%,
+        transparent 100%
+      );
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+    .content {
+      position: absolute;
+      top: 151px;
+      left: 62px;
+      z-index: 3;
+      .meet {
+        color: rgba(255, 255, 255, 0.5);
+        font-family: "Averta Demo PE";
+        font-size: 45px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      & h2 {
+        margin: -10px 0 0 0;
+        color: #fff;
+        font-family: "Averta CY";
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      .priceContainer {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: flex-end;
+        gap: 32px;
+        .actualPrice {
+          color: #9c3131;
+          font-family: "Averta CY";
+          font-size: 45px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+        .price {
+          color: #808080;
+          font-family: "Averta Demo PE";
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          text-decoration: line-through;
+          margin-bottom: 5px;
+        }
+      }
+      & button {
+        margin: 86px 0 0 0;
+        width: 433px;
+        height: 79px;
+        background: #9c3131;
+        backdrop-filter: blur(6.650000095367432px);
+        opacity: 1;
+        transition: 0.3s;
+        border: none;
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content: center;
+        align-items: center;
+        gap:19px;
+        & p {
+          color: rgba(255, 255, 255, 0.77);
+          font-family: "Averta Demo PE";
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+        .arrow{
+            width:30px;
+            height:auto;
+        }
+        &:hover {
+          cursor: pointer;
+          opacity: 0.9;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+}

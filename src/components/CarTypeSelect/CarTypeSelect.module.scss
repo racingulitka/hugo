@@ -38,7 +38,7 @@
     overflow-x: auto;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 15px;
     scrollbar-width: thin;
@@ -47,6 +47,9 @@
       height: auto;
       &:hover{
         cursor: pointer;
+      }
+      &:hover .name{
+        color:#9C3131;
       }
       .iconContainer {
         width: 100%;
@@ -74,6 +77,9 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        &Selected{
+            color:#9C3131;
+        }
       }
     }
   }

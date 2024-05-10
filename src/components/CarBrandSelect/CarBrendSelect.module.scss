@@ -99,8 +99,23 @@
     @include fontAvertaDemoPE();
     color: #9c3131;
     font-size: 15px;
+    position:relative;
+    &::before{
+      content:'';
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:0;
+      height:1px;
+      background: #9c3131;
+      transition:0.3s;
+    }
     &:hover {
       cursor: pointer;
+      &:before{
+        width:100%;
+      }
+      transition:0.3s;
     }
   }
 }

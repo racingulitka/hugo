@@ -1,12 +1,16 @@
-import React, {useState} from 'react'
+import React/*, {useState}*/ from 'react'
 import styles from './CarTypeSelect.module.scss'
 import { carType, CarType } from './CarTypeSelect.config'
 import Image from 'next/image'
 import cn from 'classnames'
 
-export default function CarTypeSelect(){
-
-    const [selected, setSelected] = useState<CarType | null>(null)
+export default function CarTypeSelect({
+    activeCategory,
+    setActiveCategory
+}:{
+    activeCategory:CarType | null,
+    setActiveCategory:React.Dispatch<React.SetStateAction<CarType | null>>
+}){
 
     return(
         <div className={styles.wrapper}>
@@ -21,12 +25,12 @@ export default function CarTypeSelect(){
                             <div
                                 key={type.id}
                                 className={styles.card}
-                                onClick={() => setSelected(type.id)}
+                                onClick={() => setActiveCategory(type.id)}
                             >
-                                <div className={cn(styles.iconContainer, selected === type.id && styles.iconContainerSelected)}>
-                                    <Image src={selected === type.id ? type.iconBlack : type.iconWhite} alt='icon' className={styles.icon} />
+                                <div className={cn(styles.iconContainer, activeCategory === type.id && styles.iconContainerSelected)}>
+                                    <Image src={activeCategory === type.id ? type.iconBlack : type.iconWhite} alt='icon' className={styles.icon} />
                                 </div>
-                                <p className={styles.name}>{type.name}</p>
+                                <p className={cn(styles.name, activeCategory === type.id && styles.nameSelected)}>{type.name}</p>
                             </div>
                         )
                     })

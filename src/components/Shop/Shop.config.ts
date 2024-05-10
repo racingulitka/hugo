@@ -16,7 +16,7 @@ export const cardsArr = [
             {
                 id:2,
                 title:'Транспорт',
-                link:'/',
+                link:'/vehicles',
             },
             {
                 id:3,
@@ -31,7 +31,7 @@ export const cardsArr = [
             {
                 id:5,
                 title:'Транспорт',
-                link:'/',
+                link:'/vehicles',
             },
             {
                 id:6,
