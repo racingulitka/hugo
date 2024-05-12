@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './Header.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -8,12 +8,17 @@ import CurrencySelect from './CurrencySelect/CurrencySelect'
 import LangSelect from './LangSelect/LangSelect'
 import { Page } from './Header.config'
 import Indicators from './Indicators/Indicators'
+import Solutions from '../Solutions/Solutions'
+import { AnimatePresence } from 'framer-motion'
 
 export default function Header({
     page,
 }: {
     page: Page
 }) {
+
+    const [isSolutionsActive, setSolutionsActive] = useState<boolean>(false)
+
     return (
         <div className={styles.mainWrapper}>
             <div className={styles.wrapper}>
@@ -25,11 +30,13 @@ export default function Header({
                     <nav className={styles.navigation}>
                         {
                             (page === Page.home ? headerLinksHome : headerLinksShop).map(link => {
+                                const isSolution = link.id === 1
                                 return (
                                     <Link
                                         key={link.id}
                                         className={styles.headerLink}
                                         href={link.link}
+                                        onClick={() => {isSolution && setSolutionsActive(prev => !prev)}}
                                     >
                                         {link.title}
                                     </Link>
@@ -55,6 +62,12 @@ export default function Header({
                     <CurrencySelect />
                     <LangSelect />
                 </div>
+                <AnimatePresence>
+                {
+                    isSolutionsActive &&
+                    <Solutions onClose={setSolutionsActive}/>
+                }
+                </AnimatePresence>
             </div>
         </div>
     )

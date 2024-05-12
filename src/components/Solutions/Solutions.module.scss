@@ -1,0 +1,73 @@
+.wrapper {
+  position: absolute;
+  z-index:5;
+  bottom: 0;
+  left: 0;
+  translate: 0 99%;
+  width: 100%;
+  height: auto;
+  background: #111;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  .closeButtonContainer {
+    align-self: flex-end;
+    width: auto;
+    height: auto;
+    &:hover {
+      cursor: pointer;
+    }
+    .image {
+      width: 35px;
+      height: auto;
+    }
+  }
+  .links {
+    width: 100%;
+    height: min(max-content, 80vh);
+    overflow-y:auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    column-gap: 50px;
+    row-gap: 55px;
+    .block {
+      width: 230px;
+      height: auto;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 25px;
+      .title {
+        color: #cacaca;
+        font-family: "Averta CY";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      .links {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 7px;
+        .link {
+          color: #8d8d8d;
+          font-family: "Averta Demo PE";
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          &:hover{
+            cursor: pointer;
+            color:#9c3131;
+          }
+        }
+      }
+    }
+  }
+}
