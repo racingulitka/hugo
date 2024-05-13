@@ -2,7 +2,7 @@ export const headerLinksHome = [
     {
         id:1,
         title:'Решения',
-        link:'/',
+        link:'#',
     },
     {
         id:2,
@@ -34,7 +34,7 @@ export const headerLinksShop = [
     {
         id:1,
         title:'Решения',
-        link:'/',
+        link:'#',
     },
     {
         id:2,

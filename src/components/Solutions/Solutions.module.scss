@@ -23,9 +23,9 @@
       height: auto;
     }
   }
-  .links {
+  .linksContainer {
     width: 100%;
-    height: min(max-content, 80vh);
+    height: min(1080px, 100vh - 115px);
     overflow-y:auto;
     display: flex;
     flex-flow: row wrap;
@@ -33,6 +33,18 @@
     align-items: flex-start;
     column-gap: 50px;
     row-gap: 55px;
+    scrollbar-width:thin;
+    scrollbar-color:rgba(255, 255, 255, 0.2) transparent;
+    &::-webkit-scrollbar{
+        width:4px;
+      }
+    &::-webkit-scrollbar-track{
+        background-color: #111;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 2px;
+    }
     .block {
       width: 230px;
       height: auto;

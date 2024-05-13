@@ -25,7 +25,7 @@ export default function Solutions({
             >
                 <Image src={closeButtonIcon} alt='close button icon' className={styles.image} />
             </div>
-            <div className={styles.links}>
+            <div className={styles.linksContainer}>
                 {
                     solutionsArr.map(block => {
                         return(
