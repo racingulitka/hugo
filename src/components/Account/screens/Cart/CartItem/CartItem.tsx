@@ -38,7 +38,7 @@ export default function CartItem({
                             src={cartInfo.image}
                             alt='image'
                             fill
-                            objectFit='cover'
+                            style={{objectFit:'cover'}}
                         />
                     </div>
                     <div className={styles.itemParams}>
@@ -71,6 +71,9 @@ export default function CartItem({
                 <div className={styles.priceBlock}>
                     <p className={styles.actualPrice}>$ {priceFormat(cartInfo.actualPrice)}</p>
                     <p className={styles.price}>$ {priceFormat(cartInfo.price)}</p>
+                </div>
+                <div className={styles.valueBlock}>
+                    
                 </div>
             </div>
         </div>
