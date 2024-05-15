@@ -1,0 +1,8 @@
+.wrapper {
+  aspect-ratio: 1/1;
+  box-sizing: border-box;
+  position:relative;
+  .checkIcon {
+    object-fit: contain;
+  }
+}

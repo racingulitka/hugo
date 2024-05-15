@@ -1,0 +1,125 @@
+.wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  .mainInfo {
+    width: 1125px;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    .sale {
+      width: 100%;
+      height: 95px;
+      background: #191919;
+      box-sizing: border-box;
+      padding: 25px 31px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      .advertising {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 35px;
+        .saleIcon {
+          width: 39px;
+          height: auto;
+        }
+        .saleInfo {
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          align-items: flex-start;
+          .boldText {
+            color: #fff;
+            font-family: "Averta CY";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+          }
+          .thinText {
+            color: #6f6f6f;
+            font-family: "Averta Demo PE";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+        }
+      }
+      .saleCount {
+        color: #9c3131;
+        font-family: "Averta CY";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+    }
+    .selectAll {
+      width: 100%;
+      height: 64px;
+      background: #191919;
+      box-sizing: border-box;
+      padding: 22px 21px 22px 37px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      .chooseAll {
+        color: #6f6f6f;
+        font-family: "Averta Demo PE";
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      .deleteSelected {
+        color: #9c3131;
+        font-family: "Averta CY";
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .cartItems {
+      width: 100%;
+      height: auto;
+      background: #191919;
+      box-sizing: border-box;
+      padding: 25px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 35px;
+      .title {
+        color: #fff;
+        font-family: "Averta CY";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+    }
+  }
+  .goToOrder {
+    width: 460px;
+    height: 410px;
+    background: #191919;
+  }
+}

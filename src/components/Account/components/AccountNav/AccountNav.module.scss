@@ -1,0 +1,63 @@
+@mixin fontAverta(){
+    font-family: "Averta Demo PE";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.wrapper {
+  width: 150px;
+  height: 219px;
+  background: #191919;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 19px;
+  .profile {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px;
+    .name {
+      color: #fff;
+      font-family: "Averta CY";
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .changeProfile {
+        @include fontAverta();
+      color: #9c3131;
+      font-size: 10px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .menuContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    .menuItem {
+        @include fontAverta();
+      color: #8d8d8d;
+      font-size: 15px;
+      &Active{
+        color:#9c3131;
+      }
+      &:hover{
+        cursor: pointer;
+        color:#9c3131;
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+.wrapper {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  .leftSide {
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    .itemIfo {
+      width: auto;
+      height: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      .image {
+        height: 100%;
+        width: 90px;
+        position: relative;
+      }
+      .itemParams {
+        width: auto;
+        height: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        .textBlock {
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 5px;
+          .itemName {
+            color: #fff;
+            font-family: "Averta Demo PE";
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+          .itemColor {
+            color: #6e6e6e;
+            font-family: "Averta Demo PE";
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+        }
+        .iconsBlock {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 25px;
+          .heartIcon {
+            width: 19px;
+            height: auto;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          .trash {
+            &:hover {
+              cursor: pointer;
+            }
+            .trashIcon {
+              width: auto;
+              height: 17px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .rightSide {
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    .priceBlock {
+      width: auto;
+      height: auto;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: flex-end;
+      gap: 5px;
+      .actualPrice {
+        color: #fff;
+        font-family: "Averta CY";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      .price {
+        color: #6e6e6e;
+        font-family: "Averta Demo PE";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: line-through;
+      }
+    }
+  }
+}

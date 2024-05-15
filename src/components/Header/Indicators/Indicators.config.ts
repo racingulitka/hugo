@@ -14,7 +14,7 @@ export const indicatorsArr:IndicatorsArr[] = [
         id:1,
         icon:profileIcon,
         title:'Профиль',
-        link:'/',
+        link:'/account',
     },
     {
         id:2,
