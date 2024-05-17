@@ -6,18 +6,18 @@ import { CategoryName } from '../MainContentShop/MainContentShop'
 import ArrowRight from './assets/ArrowRight'
 import { CarType } from '../CarTypeSelect/CarTypeSelect.config'
 
-//const dummySetActiveCategory: React.Dispatch<React.SetStateAction<CarType | null>> = () => {}
-
 export default function GoodsBlock({
     goodsArray,
     setFavourite,
     categoryId,
-    setActiveCategory// = dummySetActiveCategory,
+    setActiveCategory,
+    simpleTitle,
 }: {
     goodsArray: CategoryName,
     setFavourite: (categoryId: string, cardId: number) => void,
     categoryId: string,
-    setActiveCategory: React.Dispatch<React.SetStateAction<CarType | null>>
+    setActiveCategory: React.Dispatch<React.SetStateAction<CarType | null>>,
+    simpleTitle?: boolean,
 }) {
 
     return (
@@ -26,11 +26,13 @@ export default function GoodsBlock({
                 <div
                     className={styles.leftSide}
                     onClick={() => setActiveCategory(goodsArray.id)
-                }>
+                    }>
                     <h3 className={styles.categoryTitle}>{goodsArray.title}</h3>
                     <div className={styles.arrowRightContainer}><ArrowRight /></div>
                 </div>
-                <Link href='/' className={styles.rightSide}>Показать еще</Link>
+                {!simpleTitle &&
+                    <Link href='/' className={styles.rightSide}>Показать еще</Link>
+                }
             </div>
             <div className={styles.cards}>
                 {

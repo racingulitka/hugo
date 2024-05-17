@@ -11,7 +11,7 @@ export const HeartIcon = ({
     height?:number,
 }) => {
 
-    const fill = isActive ? '#f00' : '#fff'
+    const fill = isActive ? '#9C3131' : '#fff'
 
     return (
         <svg

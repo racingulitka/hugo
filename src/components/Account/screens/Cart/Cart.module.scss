@@ -1,4 +1,4 @@
-@mixin fontAvertaCY(){
+@mixin fontAvertaCY() {
   color: #fff;
   font-family: "Averta CY";
   font-size: 20px;
@@ -7,7 +7,7 @@
   line-height: normal;
 }
 
-@mixin fontAvertaPE(){
+@mixin fontAvertaPE() {
   color: #6f6f6f;
   font-family: "Averta Demo PE";
   font-size: 15px;
@@ -23,7 +23,7 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: flex-start;
-  position:relative;
+  position: relative;
   .mainInfo {
     width: 1125px;
     height: auto;
@@ -63,7 +63,6 @@
           .thinText {
             @include fontAvertaPE();
             font-size: 20px;
-
           }
         }
       }
@@ -220,4 +219,13 @@
       background: #6e6e6e;
     }
   }
+}
+.emptyCart {
+  color: #8e8e8e;
+  font-family: "Averta Demo PE";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
 }

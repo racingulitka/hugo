@@ -1,14 +1,18 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styles from './Purchases.module.scss'
 import defaultGoodsImage from '../../../../components/MainContentVehicles/assets/defaultGoodsImage.png'
 import { CartInfo } from '../Cart/Cart.typings'
 import PurchaseCard from './PurchaseCard/PurchaseCard'
 import GoodsBlock from '@/components/GoodsBlock/GoodsBlock'
 import { CategoryName } from '@/components/MainContentShop/MainContentShop'
+import { CarType } from '@/components/CarTypeSelect/CarTypeSelect.config'
 
-export default function Purchases(){
+export default function Purchases() {
 
-    const [purchasesList] = useState<CartInfo[] | null>([
+    const [activeCategory, setActiveCategory] = useState<CarType | null>(null)
+    console.log(activeCategory)
+
+    const [purchasesList] = useState<CartInfo[]>([
         {
             id: 2,
             image: defaultGoodsImage,
@@ -37,7 +41,7 @@ export default function Purchases(){
             title: 'Топ по покупкам',
             cards: [
                 {
-                    id:1,
+                    id: 1,
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -48,7 +52,7 @@ export default function Purchases(){
                     reviews: 0,
                 },
                 {
-                    id:2,
+                    id: 2,
                     image: defaultGoodsImage,
                     isFavourite: true,
                     price: 44542,
@@ -59,7 +63,7 @@ export default function Purchases(){
                     reviews: 5,
                 },
                 {
-                    id:3,
+                    id: 3,
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -70,7 +74,7 @@ export default function Purchases(){
                     reviews: 1,
                 },
                 {
-                    id:4,
+                    id: 4,
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -81,7 +85,7 @@ export default function Purchases(){
                     reviews: 31,
                 },
                 {
-                    id:5,
+                    id: 5,
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -92,7 +96,7 @@ export default function Purchases(){
                     reviews: 3,
                 },
                 {
-                    id:6,
+                    id: 6,
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -103,7 +107,7 @@ export default function Purchases(){
                     reviews: 31,
                 },
                 {
-                    id:7,
+                    id: 7,
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -117,29 +121,37 @@ export default function Purchases(){
         },
     )
 
-    if(!purchasesList) {
-        return(
-        <p className={styles.emptyList}>Ваш список покупок пока пуст</p>
-    )}
+    if (purchasesList.length === 0) {
+        return (
+            <p className={styles.emptyList}>Ваш список покупок пока пуст</p>
+        )
+    }
 
-    return(
+    return (
         <div className={styles.wrapper}>
             <div className={styles.purchasesList}>
                 {
                     purchasesList.map(purchase => {
-                        return(
+                        return (
                             <PurchaseCard
                                 key={purchase.id}
+                                image={purchase.image}
+                                name={purchase.title}
+                                color={purchase.color}
                             />
                         )
                     })
                 }
             </div>
-            {/* <GoodsBlock
-                goodsArray={top}
-                setFavourite={()=> console.log('hi')}
-                categoryId={'top'}
-            /> */}
+            <div className={styles.goodsBlock}>
+                <GoodsBlock
+                    goodsArray={top}
+                    setFavourite={() => console.log('hi')}
+                    categoryId={'top'}
+                    setActiveCategory={setActiveCategory}
+                    simpleTitle
+                />
+            </div>
         </div>
     )
 }

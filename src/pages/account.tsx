@@ -4,6 +4,7 @@ import styles from "@/styles/Home.module.css";
 import Header from "@/components/Header/Header";
 import { Page } from "@/components/Header/Header.config";
 import Account from "@/components/Account/Account";
+import Footer from "@/components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function Shop() {
       <main className={`${styles.main} ${inter.className}`}>
         <Header page={Page.shop}/>
         <Account />
+        <Footer />
       </main>
     </>
   );

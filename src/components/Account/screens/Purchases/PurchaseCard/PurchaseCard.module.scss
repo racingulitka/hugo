@@ -1,11 +1,76 @@
-.wrapper{
-    width:100%;
-    height:120px;
-    background: #191919;
-    box-sizing: border-box;
-    padding:15px 30px;
-    display:flex;
-    flex-flow:row nowrap;
-    justify-content: space-between;
+@mixin fontAvertaPE() {
+  color: #fff;
+  font-family: "Averta Demo PE";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin fontAvertaCY() {
+  font-family: "Averta CY";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.wrapper {
+  width: 100%;
+  height: 120px;
+  background: #191919;
+  box-sizing: border-box;
+  padding: 15px 30px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  .leftSide {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
+    gap: 20px;
+    .imageContainer {
+      width: 90px;
+      height: 90px;
+      position: relative;
+      .image {
+        object-fit: cover;
+      }
+    }
+    .textContainer {
+      .name {
+        @include fontAvertaPE();
+      }
+      .color {
+        @include fontAvertaPE();
+        color: #6e6e6e;
+      }
+    }
+  }
+  .rightSide {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    .rateGoods {
+        @include fontAvertaCY();
+        color:#6E6E6E;
+        &:hover{
+            color:#9C3131;
+            cursor: pointer;
+        }
+    }
+    .makeReview{
+        @include fontAvertaCY();
+        color:#6E6E6E;
+        &:hover{
+            color:#9C3131;
+            cursor:pointer;
+        }
+    }
+  }
 }

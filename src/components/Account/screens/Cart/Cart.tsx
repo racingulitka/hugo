@@ -98,6 +98,12 @@ export default function Cart({
         return actualPriceOfSelected
     }
 
+    if(cartInfo.length === 0){
+        return(
+            <p className={styles.emptyCart}>В корзине пока ничего нет</p>
+        )
+    }
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.mainInfo}>
