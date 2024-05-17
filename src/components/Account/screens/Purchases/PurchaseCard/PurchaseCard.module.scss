@@ -1,0 +1,11 @@
+.wrapper{
+    width:100%;
+    height:120px;
+    background: #191919;
+    box-sizing: border-box;
+    padding:15px 30px;
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}

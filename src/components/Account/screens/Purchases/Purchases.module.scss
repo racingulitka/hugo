@@ -1,0 +1,23 @@
+.emptyList {
+  color: #8e8e8e;
+  font-family: "Averta Demo PE";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+
+.wrapper {
+  width: 1395px;
+  height: auto;
+  .purchasesList{
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap:10px;
+  }
+}

@@ -3,6 +3,7 @@ import styles from './Account.module.scss'
 import AccountNav from './components/AccountNav/AccountNav'
 import { Screens, screens } from './Account.config'
 import Cart from './screens/Cart/Cart'
+import Purchases from './screens/Purchases/Purchases'
 
 export default function Account() {
 
@@ -15,15 +16,16 @@ export default function Account() {
     })
 
     const [user] = useState<string>('GermachMallboro')
+    const [isGoToPlacingAnOrder, setGoToPlacingAnOrder] = useState<boolean>(false)
     const [activeScreen, setActiveScreen] = useState<Screens>(Screens.cart)
 
     const accountScreens = {
-        [Screens.ChangeProfile]: <Cart />,
-        [Screens.cart]: <Cart />,
-        [Screens.purchases]: <Cart />,
-        [Screens.favourites]: <Cart />,
-        [Screens.myReviews]: <Cart />,
-        [Screens.questionsAndAnswers]: <Cart />,
+        [Screens.ChangeProfile]: <Cart isGoToPlacingAnOrder={isGoToPlacingAnOrder} setGoToPlacingAnOrder={setGoToPlacingAnOrder}/>,
+        [Screens.cart]: <Cart isGoToPlacingAnOrder={isGoToPlacingAnOrder} setGoToPlacingAnOrder={setGoToPlacingAnOrder}/>,
+        [Screens.purchases]: <Purchases/>,
+        [Screens.favourites]: <Cart isGoToPlacingAnOrder={isGoToPlacingAnOrder} setGoToPlacingAnOrder={setGoToPlacingAnOrder}/>,
+        [Screens.myReviews]: <Cart isGoToPlacingAnOrder={isGoToPlacingAnOrder} setGoToPlacingAnOrder={setGoToPlacingAnOrder}/>,
+        [Screens.questionsAndAnswers]: <Cart isGoToPlacingAnOrder={isGoToPlacingAnOrder} setGoToPlacingAnOrder={setGoToPlacingAnOrder}/>,
     }
 
     return (
@@ -33,7 +35,16 @@ export default function Account() {
                     <div className={styles.nav}>
                         <AccountNav navArr={navArr} user={user} activeItemId={activeScreen} setActiveScreen={setActiveScreen} />
                     </div>
-                    <h1 className={styles.title}>{screens.find(item => item.id === activeScreen)?.title}</h1>
+                    <div className={styles.title}>
+                        <h1>{isGoToPlacingAnOrder ? 'Оформление заказа' : screens.find(item => item.id === activeScreen)?.title}</h1>
+                        {
+                            isGoToPlacingAnOrder &&
+                            <p
+                                className={styles.returnToCart}
+                                onClick={() => setGoToPlacingAnOrder(false)}
+                            >Вернуться к магазину</p>
+                        }
+                        </div>
                     <div className={styles.screens}>
                         {
                             accountScreens[activeScreen]

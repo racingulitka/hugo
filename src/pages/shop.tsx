@@ -7,12 +7,11 @@ import { Page } from "@/components/Header/Header.config";
 import TopShopBlock from "@/components/TopShopBlock/TopShopBlock";
 import CategoryCards from "@/components/CategoryCards/CategoryCards";
 import MainContentShop from "@/components/MainContentShop/MainContentShop";
-import CarBrandSelect from "@/components/CarBrandSelect/CarBrandSelect";
-import CarTypeSelect from "@/components/CarTypeSelect/CarTypeSelect";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Shop() {
+
   return (
     <>
       <Head>
@@ -27,8 +26,6 @@ export default function Shop() {
         <CategoryCards />
         <MainContentShop />
         <CategoryCards />
-        <CarBrandSelect />
-        <CarTypeSelect />
         <Footer />
       </main>
     </>

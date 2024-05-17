@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './MainContentShop.module.scss'
 import GoodsBlock from '../GoodsBlock/GoodsBlock'
 import defaultGoodsImage from './assets/defaultGoodsImage.png'
@@ -23,14 +23,18 @@ export interface CategoryName {
     cards: Card[],
 }
 
-export interface GoodsArray {
-    [key: string]: CategoryName,
-}
 
 export default function MainContentShop() {
 
-    const [goodsArray, setGoodsArray] = useState<GoodsArray>({
-        top: {
+    const [activeCategory, setActiveCategory] = useState<number | null>(null)
+
+    useEffect(() => {
+        const newArr = goodsArray.find(item => item.id === activeCategory)
+        if(newArr) setGoodsArray([newArr])
+    }, [activeCategory])
+
+    const [goodsArray, setGoodsArray] = useState<CategoryName[]>([
+{
             id: 1,
             title: 'Топ по покупкам',
             cards: [
@@ -113,7 +117,7 @@ export default function MainContentShop() {
                 },
             ]
         },
-        d3: {
+        {
             id: 2,
             title: '3D моделлинг',
             cards: [
@@ -196,7 +200,7 @@ export default function MainContentShop() {
                 },
             ]
         },
-        completeSystems: {
+        {
             id: 3,
             title: 'Готовые системы',
             cards: [
@@ -279,7 +283,7 @@ export default function MainContentShop() {
                 },
             ]
         },
-        design: {
+        {
             id: 4,
             title: 'Дизайн',
             cards: [
@@ -362,17 +366,17 @@ export default function MainContentShop() {
                 },
             ]
         },
-    })
+    ])
 
-    const setFavourite = (categoryId:keyof GoodsArray, cardId:number) => {
-        const category = goodsArray[categoryId]
-        const card = category.cards.findIndex(card => card.id === cardId)
-        const array = {...goodsArray}
-        const prevState = array[categoryId].cards[card].isFavourite
-        array[categoryId].cards[card].isFavourite = !prevState
-        setGoodsArray({...array})
-        console.log(array)
+    const setFavourite = (categoryId:string, cardId:number) => {
+        const category = goodsArray.findIndex(item => item.id === Number(categoryId))
+        const card = goodsArray[category].cards.findIndex(item => item.id === cardId)
+        const array = [...goodsArray]
+        const prevState = array[category].cards[card].isFavourite
+        array[category].cards[card].isFavourite = !prevState
+        setGoodsArray([...array])
     }
+
 
     return (
         <div className={styles.mainWrapper}>
@@ -383,13 +387,12 @@ export default function MainContentShop() {
                 </div>
                 <div className={styles.rightColumn}>
                     {
-                        Object.keys(goodsArray).map(category => {
+                        goodsArray.map(category => {
                             return (
-                                <GoodsBlock key={goodsArray[category].id} categoryId={category} goodsArray={goodsArray[category]} setFavourite={setFavourite}/>
+                                <GoodsBlock key={category.id} categoryId={String(category.id)} goodsArray={category} setFavourite={setFavourite} setActiveCategory={setActiveCategory}/>
                             )
                         })
                     }
-
                 </div>
             </div>
         </div>

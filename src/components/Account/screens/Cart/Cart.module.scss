@@ -1,3 +1,21 @@
+@mixin fontAvertaCY(){
+  color: #fff;
+  font-family: "Averta CY";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@mixin fontAvertaPE(){
+  color: #6f6f6f;
+  font-family: "Averta Demo PE";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 .wrapper {
   width: 100%;
   height: auto;
@@ -5,6 +23,7 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: flex-start;
+  position:relative;
   .mainInfo {
     width: 1125px;
     height: auto;
@@ -39,30 +58,18 @@
           justify-content: center;
           align-items: flex-start;
           .boldText {
-            color: #fff;
-            font-family: "Averta CY";
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
+            @include fontAvertaCY();
           }
           .thinText {
-            color: #6f6f6f;
-            font-family: "Averta Demo PE";
+            @include fontAvertaPE();
             font-size: 20px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
+
           }
         }
       }
       .saleCount {
+        @include fontAvertaCY();
         color: #9c3131;
-        font-family: "Averta CY";
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
       }
     }
     .selectAll {
@@ -70,27 +77,19 @@
       height: 64px;
       background: #191919;
       box-sizing: border-box;
-      padding: 22px 21px 22px 37px;
+      padding: 22px 21px 22px 20px;
       display: flex;
       flex-flow: row nowrap;
       justify-content: flex-start;
       align-items: center;
       gap: 20px;
       .chooseAll {
-        color: #6f6f6f;
-        font-family: "Averta Demo PE";
-        font-size: 15px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        @include fontAvertaPE();
       }
       .deleteSelected {
+        @include fontAvertaCY();
         color: #9c3131;
-        font-family: "Averta CY";
         font-size: 15px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
         &:hover {
           cursor: pointer;
         }
@@ -108,18 +107,117 @@
       align-items: flex-start;
       gap: 35px;
       .title {
-        color: #fff;
-        font-family: "Averta CY";
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include fontAvertaCY();
       }
     }
   }
   .goToOrder {
     width: 460px;
-    height: 410px;
+    height: auto;
     background: #191919;
+    box-sizing: border-box;
+    padding: 25px 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    .buttonBlock {
+      width: 400px;
+      height: auto;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      .button {
+        @include fontAvertaCY();
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.77);
+        border: none;
+        background: #9c3131;
+        backdrop-filter: blur(6.650000095367432px);
+        &:hover {
+          cursor: pointer;
+          opacity: 0.9;
+        }
+      }
+      &Info {
+        @include fontAvertaPE();
+      }
+    }
+    .details {
+      width: 400px;
+      height: auto;
+      & h3 {
+        @include fontAvertaCY();
+      }
+      .goods {
+        margin: 20px 0 0 0;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        &Number {
+          @include fontAvertaPE();
+        }
+        &Price {
+          @include fontAvertaCY();
+          font-size: 15px;
+        }
+      }
+      .discount {
+        margin: 15px 0 0 0;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        &Text {
+          width: fit-content;
+          height: auto;
+          &Grey {
+            @include fontAvertaPE();
+          }
+          &Red {
+            @include fontAvertaPE();
+            color: #9c3131;
+          }
+        }
+        &Value {
+          @include fontAvertaCY();
+          color: #9c3131;
+          font-size: 15px;
+        }
+      }
+    }
+    .fullValue {
+      width: 400px;
+      height: auto;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      &Text {
+        @include fontAvertaCY();
+      }
+    }
+    .splitter1 {
+      width: 100%;
+      height: 1px;
+      background: #6e6e6e;
+    }
+    .splitter2 {
+      width: 400px;
+      height: 1px;
+      background: #6e6e6e;
+    }
   }
 }

@@ -6,8 +6,17 @@ import saleIcon from './assets/saleIcon.svg'
 import CheckBox from '@/components/CheckBox/CheckBox'
 import CartItem from './CartItem/CartItem'
 import { CartInfo } from './Cart.typings'
+import { priceFormat } from '@/utils/priceFormat'
 
-export default function Cart() {
+export default function Cart({
+    isGoToPlacingAnOrder,
+    setGoToPlacingAnOrder,
+}:{
+    isGoToPlacingAnOrder:boolean,
+    setGoToPlacingAnOrder:React.Dispatch<React.SetStateAction<boolean>>
+}) {
+
+    console.log(isGoToPlacingAnOrder)
 
     const [cartInfo, setCartInfo] = useState<CartInfo[]>([
         {
@@ -18,7 +27,7 @@ export default function Cart() {
             title: '3D моделинг автомобиля Maerati',
             color: 'Красный',
             isChecked: false,
-            isFavourite:false,
+            isFavourite: false,
         },
         {
             id: 5,
@@ -28,7 +37,7 @@ export default function Cart() {
             title: '3D моделинг автомобиля Maerati',
             color: 'Красный',
             isChecked: false,
-            isFavourite:true,
+            isFavourite: true,
         },
     ])
 
@@ -41,18 +50,22 @@ export default function Cart() {
         setCartInfo(newCartInfo)
     }
 
-    const onSelect = (id:number, value:boolean, key:keyof CartInfo) => {
+    const onSelect = (id: number, value: boolean, key: keyof CartInfo) => {
         const newCartInfo = cartInfo.map(cartItem => {
-            if(cartItem.id === id){
-                return {...cartItem, [key]: value}
+            if (cartItem.id === id) {
+                return { ...cartItem, [key]: value }
             }
             return cartItem
         })
         setCartInfo(newCartInfo)
     }
 
-    const onDelete = (id:number) => {
-        console.log(id)
+    const onDeleteSelected = () =>{
+        const newCartInfo = [...cartInfo].filter(item => !item.isChecked)
+        setCartInfo(newCartInfo)
+    }
+
+    const onDelete = (id: number) => {
         const newCartInfo = [...cartInfo].filter(item => item.id !== id)
         setCartInfo(newCartInfo)
     }
@@ -62,7 +75,28 @@ export default function Cart() {
     useEffect(() => {
         const isAllSelected = cartInfo.reduce((acc, value) => acc + (value.isChecked ? 1 : 0), 0) === cartInfo.length
         setSelectAll(isAllSelected)
+        return () => setGoToPlacingAnOrder(false)
     }, [cartInfo])
+
+    const getGoodsPrice = () => {
+        const selectedGoods = [...cartInfo].filter(item => item.isChecked)
+        const priceOfSelected = selectedGoods.reduce((acc, price) => acc + price.price, 0)
+        return priceOfSelected
+    }
+
+    const getDiscountValue = () => {
+        const selectedGoods = [...cartInfo].filter(item => item.isChecked)
+        const priceOfSelected = selectedGoods.reduce((acc, price) => acc + price.price, 0)
+        const actualPriceOfSelected = selectedGoods.reduce((acc, price) => acc + price.actualPrice, 0)
+        const discount = priceOfSelected - actualPriceOfSelected
+        return discount
+    }
+
+    const getFullValue = () => {
+        const selectedGoods = [...cartInfo].filter(item => item.isChecked)
+        const actualPriceOfSelected = selectedGoods.reduce((acc, price) => acc + price.actualPrice, 0)
+        return actualPriceOfSelected
+    }
 
     return (
         <div className={styles.wrapper}>
@@ -85,7 +119,7 @@ export default function Cart() {
                     <div className={styles.chooseAll}>Выбрать все</div>
                     <div
                         className={styles.deleteSelected}
-                        onClick={() => console.log('deleteSelected')}
+                        onClick={() => onDeleteSelected()}
                     >
                         Удалить выбранное
                     </div>
@@ -106,7 +140,36 @@ export default function Cart() {
                     }
                 </div>
             </div>
-            <div className={styles.goToOrder}></div>
+            <div className={styles.goToOrder}>
+                <div className={styles.buttonBlock}>
+                    <button
+                        className={styles.button}
+                        onClick={() => setGoToPlacingAnOrder(true)}
+                    >
+                        ПЕРЕЙТИ К ОФОРМЛЕНИЮ
+                    </button>
+                    <p className={styles.buttonBlockInfo}>Доступные способы и время доставки можно выбрать при оформлении</p>
+                </div>
+                <div className={styles.splitter1}></div>
+                <div className={styles.details}>
+                    <h3>Ваша корзина</h3>
+                    <div className={styles.goods}>
+                        <p className={styles.goodsNumber}>Товары({cartInfo.length})</p>
+                        <p className={styles.goodsPrice}>${priceFormat(getGoodsPrice())}</p>
+                    </div>
+                    <div className={styles.discount}>
+                        <div className={styles.discountText}>
+                            <p className={styles.discountTextGrey}>Скидка</p>
+                        </div>
+                        <div className={styles.discountValue}>{getDiscountValue() ? '-':''}${priceFormat(Math.abs(getDiscountValue()))}</div>
+                    </div>
+                </div>
+                <div className={styles.splitter2}></div>
+                <div className={styles.fullValue}>
+                    <div className={styles.fullValueText}>Общая стоимость</div>
+                    <div className={styles.fullValueText}>${priceFormat(getFullValue())}</div>
+                </div>
+            </div>
         </div>
     )
 }

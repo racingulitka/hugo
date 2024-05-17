@@ -6,17 +6,20 @@ import { CategoryName } from '../MainContentShop/MainContentShop'
 import ArrowRight from './assets/ArrowRight'
 import { CarType } from '../CarTypeSelect/CarTypeSelect.config'
 
+//const dummySetActiveCategory: React.Dispatch<React.SetStateAction<CarType | null>> = () => {}
+
 export default function GoodsBlock({
     goodsArray,
     setFavourite,
     categoryId,
-    setActiveCategory,
+    setActiveCategory// = dummySetActiveCategory,
 }: {
     goodsArray: CategoryName,
     setFavourite: (categoryId: string, cardId: number) => void,
     categoryId: string,
     setActiveCategory: React.Dispatch<React.SetStateAction<CarType | null>>
 }) {
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.header}>
