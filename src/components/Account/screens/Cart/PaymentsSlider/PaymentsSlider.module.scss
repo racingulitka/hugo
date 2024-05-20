@@ -1,0 +1,89 @@
+.wrapper {
+  width: 1125px;
+  height: 184px;
+  box-sizing: border-box;
+  padding: 17px 20px;
+  background: #191919;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 25px;
+  @media(max-width: 1775px){
+    width:941px;
+  }
+  @media(max-width: 1430px){
+    width:757px;
+  }
+  .header {
+    width:100%;
+    height:auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    .title {
+      color: #fff;
+      font-family: "Averta CY";
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .buttons{
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap:15px;
+        .button{
+            width:35px;
+            aspect-ratio: 1/1;
+            background: #252525;
+            &:hover{
+                cursor: pointer;
+            }
+            .buttonIcon{
+                width:35px;
+            }
+            .buttonIconRight{
+                width:35px;
+                rotate:180deg;
+            }
+        }
+    }
+  }
+  .sliderBody{
+    width:100%;
+    height:90px;
+    overflow: hidden;
+    position:relative;
+    .sliderBodyList{
+        width:auto;
+        height:90px;
+        position:absolute;
+        top:0;
+        left:0;
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap:19px;
+        transition: 0.3s ease;
+        .sliderBodyListItem{
+            width:165px;
+            height:90px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            background: #252525;
+            &:hover{
+                cursor:pointer;
+            }
+            &Active{
+                background: #9C3131;
+            }
+        }
+    }
+  }
+}

@@ -7,16 +7,17 @@ import CheckBox from '@/components/CheckBox/CheckBox'
 import CartItem from './CartItem/CartItem'
 import { CartInfo } from './Cart.typings'
 import { priceFormat } from '@/utils/priceFormat'
+import PaymentsSlider from './PaymentsSlider/PaymentsSlider'
 
 export default function Cart({
     isGoToPlacingAnOrder,
     setGoToPlacingAnOrder,
-}:{
-    isGoToPlacingAnOrder:boolean,
-    setGoToPlacingAnOrder:React.Dispatch<React.SetStateAction<boolean>>
+}: {
+    isGoToPlacingAnOrder: boolean,
+    setGoToPlacingAnOrder: React.Dispatch<React.SetStateAction<boolean>>
 }) {
 
-    console.log(isGoToPlacingAnOrder)
+    const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<number | null>(null)
 
     const [cartInfo, setCartInfo] = useState<CartInfo[]>([
         {
@@ -60,7 +61,7 @@ export default function Cart({
         setCartInfo(newCartInfo)
     }
 
-    const onDeleteSelected = () =>{
+    const onDeleteSelected = () => {
         const newCartInfo = [...cartInfo].filter(item => !item.isChecked)
         setCartInfo(newCartInfo)
     }
@@ -75,7 +76,6 @@ export default function Cart({
     useEffect(() => {
         const isAllSelected = cartInfo.reduce((acc, value) => acc + (value.isChecked ? 1 : 0), 0) === cartInfo.length
         setSelectAll(isAllSelected)
-        return () => setGoToPlacingAnOrder(false)
     }, [cartInfo])
 
     const getGoodsPrice = () => {
@@ -98,8 +98,8 @@ export default function Cart({
         return actualPriceOfSelected
     }
 
-    if(cartInfo.length === 0){
-        return(
+    if (cartInfo.length === 0) {
+        return (
             <p className={styles.emptyCart}>В корзине пока ничего нет</p>
         )
     }
@@ -107,16 +107,26 @@ export default function Cart({
     return (
         <div className={styles.wrapper}>
             <div className={styles.mainInfo}>
-                <div className={styles.sale}>
-                    <div className={styles.advertising}>
-                        <Image src={saleIcon} alt='sale icon' className={styles.saleIcon} />
-                        <div className={styles.saleInfo}>
-                            <p className={styles.boldText}>Не упустите распродажу</p>
-                            <p className={styles.thinText}>1 товар скоро подоражает</p>
+                {
+                    !isGoToPlacingAnOrder &&
+                    <div className={styles.sale}>
+                        <div className={styles.advertising}>
+                            <Image src={saleIcon} alt='sale icon' className={styles.saleIcon} />
+                            <div className={styles.saleInfo}>
+                                <p className={styles.boldText}>Не упустите распродажу</p>
+                                <p className={styles.thinText}>1 товар скоро подоражает</p>
+                            </div>
                         </div>
+                        <p className={styles.saleCount}>Осталось 10 дней</p>
                     </div>
-                    <p className={styles.saleCount}>Осталось 10 дней</p>
-                </div>
+                }
+                {
+                    isGoToPlacingAnOrder &&
+                    <PaymentsSlider
+                        selectedPaymentMethod={selectedPaymentMethod}
+                        setSelectedPaymentMethod={setSelectedPaymentMethod}
+                    />
+                }
                 <div className={styles.selectAll}>
                     <CheckBox
                         isChecked={isSelectAll}
@@ -152,7 +162,7 @@ export default function Cart({
                         className={styles.button}
                         onClick={() => setGoToPlacingAnOrder(true)}
                     >
-                        ПЕРЕЙТИ К ОФОРМЛЕНИЮ
+                        {isGoToPlacingAnOrder ? 'ПЕРЕЙТИ К ОПЛАТЕ' : 'ПЕРЕЙТИ К ОФОРМЛЕНИЮ'}
                     </button>
                     <p className={styles.buttonBlockInfo}>Доступные способы и время доставки можно выбрать при оформлении</p>
                 </div>
@@ -167,7 +177,7 @@ export default function Cart({
                         <div className={styles.discountText}>
                             <p className={styles.discountTextGrey}>Скидка</p>
                         </div>
-                        <div className={styles.discountValue}>{getDiscountValue() ? '-':''}${priceFormat(Math.abs(getDiscountValue()))}</div>
+                        <div className={styles.discountValue}>{getDiscountValue() ? '-' : ''}${priceFormat(Math.abs(getDiscountValue()))}</div>
                     </div>
                 </div>
                 <div className={styles.splitter2}></div>

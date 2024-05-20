@@ -1,0 +1,90 @@
+@mixin fontAvertaCY() {
+  color: #fff;
+  font-family: "Averta CY";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@mixin fontAvertaPE() {
+  color: #818181;
+  font-family: "Averta Demo PE";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.wrapper {
+  width: 100%;
+  height: auto;
+  background: #191919;
+  box-sizing: border-box;
+  padding: 30px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  .mainBlock {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    &Top {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      .name {
+        @include fontAvertaCY();
+      }
+      .reviewInfo{
+        display:flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap:20px;
+        .reviewDate{
+            @include fontAvertaPE();
+            font-size: 20px;
+        }
+        .rate{
+            display:flex;
+            flex-flow:row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            gap:5px;
+            .star{
+                width:18px;
+                height:auto;
+            }
+        }
+      }
+    }
+    .mainReviewText{
+        @include fontAvertaPE();
+    }
+  }
+  .advantagesBlock{
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap:5px;
+    &Title{
+        @include fontAvertaCY();
+    }
+    &Text{
+        @include fontAvertaPE();
+    }
+  }
+}

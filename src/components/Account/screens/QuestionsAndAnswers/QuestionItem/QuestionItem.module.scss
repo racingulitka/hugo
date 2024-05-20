@@ -1,0 +1,110 @@
+$color-grey:#6E6E6E;
+
+@mixin font() {
+  color: #fff;
+  font-family: "Averta Demo PE";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin flexColumnStart(){
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.wrapper {
+  width: 100%;
+  height: auto;
+  background: #191919;
+  box-sizing: border-box;
+  padding: 15px 30px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  .leftSide {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    .iconBlock {
+      width: 90px;
+      height: 90px;
+      position: relative;
+    }
+    .infoBlock{
+        @include flexColumnStart();
+        gap:30px;
+        &Top{
+            @include flexColumnStart();
+            gap:20px;
+            .question{
+                @include flexColumnStart();
+                @include font();
+                & p:last-child{
+                    color:$color-grey;
+                }
+            }
+            .title{
+                @include font();
+            }
+            .likesBlock{
+                @include font();
+                display:flex;
+                flex-flow:row nowrap;
+                justify-content: flex-start;
+                align-items: center;
+                gap:10px;
+            }
+        }
+        &Bottom{
+            @include flexColumnStart();
+            gap:20px;
+            .adminAnswer{
+                @include flexColumnStart();
+                &Name{
+                    @include font();
+                    display:flex;
+                    flex-flow:row nowrap;
+                    justify-content: flex-start;
+                    align-items: flex-end;
+                    gap:5px;
+                }
+                &Text{
+                    @include font();
+                    color:$color-grey;
+                }
+            }
+            .isHelpful{
+                @include flexColumnStart();
+                @include font();
+                gap:10px;
+                &Select{
+                    display:flex;
+                    flex-flow:row nowrap;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap:15px;
+                    .yes{
+                        padding:5px;
+                        background: #9C3131;
+                    }
+                    .no{
+                        padding:5px;
+                        color:$color-grey;
+                    }
+                }
+            }
+        }
+    }
+  }
+  .rightSide{
+    @include font();
+    color:$color-grey;
+  }
+}

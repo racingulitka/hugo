@@ -8,6 +8,7 @@ import Image from 'next/image'
 
 export interface Card {
     id:number,
+    slug:string,
     image: StaticImageData,
     isFavourite: boolean,
     price: number,
@@ -40,6 +41,7 @@ export default function MainContentShop() {
             cards: [
                 {
                     id:1,
+                    slug:'shop/product/renault-duster1',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -51,6 +53,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:2,
+                    slug:'shop/product/renault-duster2',
                     image: defaultGoodsImage,
                     isFavourite: true,
                     price: 44542,
@@ -62,6 +65,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:3,
+                    slug:'shop/product/renault-duster3',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -73,6 +77,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:4,
+                    slug:'shop/product/renault-duster4',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -84,6 +89,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:5,
+                    slug:'shop/product/renault-duster5',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -95,6 +101,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:6,
+                    slug:'shop/product/renault-duster6',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -106,6 +113,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:7,
+                    slug:'shop/product/renault-duster7',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -123,6 +131,7 @@ export default function MainContentShop() {
             cards: [
                 {
                     id:1,
+                    slug:'shop/product/renault-duster8',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -134,6 +143,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:2,
+                    slug:'shop/product/renault-duster9',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -145,6 +155,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:3,
+                    slug:'shop/product/renault-duster10',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -156,6 +167,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:4,
+                    slug:'shop/product/renault-duster11',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -167,6 +179,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:5,
+                    slug:'shop/product/renault-duster12',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -178,6 +191,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:6,
+                    slug:'shop/product/renault-duster13',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -189,6 +203,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:7,
+                    slug:'shop/product/renault-duster14',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -206,6 +221,7 @@ export default function MainContentShop() {
             cards: [
                 {
                     id:1,
+                    slug:'shop/product/renault-duster15',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -217,6 +233,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:2,
+                    slug:'shop/product/renault-duster16',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -228,6 +245,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:3,
+                    slug:'shop/product/renault-duster17',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -239,6 +257,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:4,
+                    slug:'shop/product/renault-duster18',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -250,6 +269,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:5,
+                    slug:'shop/product/renault-duster19',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -261,6 +281,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:6,
+                    slug:'shop/product/renault-duster20',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -272,6 +293,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:7,
+                    slug:'shop/product/renault-duster21',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -289,6 +311,7 @@ export default function MainContentShop() {
             cards: [
                 {
                     id:1,
+                    slug:'shop/product/renault-duster22',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -300,6 +323,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:2,
+                    slug:'shop/product/renault-duster23',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -311,6 +335,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:3,
+                    slug:'shop/product/renault-duster24',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -322,6 +347,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:4,
+                    slug:'shop/product/renault-duster25',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -333,6 +359,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:5,
+                    slug:'shop/product/renault-duster26',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -344,6 +371,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:6,
+                    slug:'shop/product/renault-duster27',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -355,6 +383,7 @@ export default function MainContentShop() {
                 },
                 {
                     id:7,
+                    slug:'shop/product/renault-duster28',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,

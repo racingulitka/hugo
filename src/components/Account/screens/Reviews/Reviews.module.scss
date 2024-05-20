@@ -1,0 +1,20 @@
+.emptyList{
+    color: #8e8e8e;
+    font-family: "Averta Demo PE";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+
+.wrapper{
+    width: 100%;
+    max-width: 1610px;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap:15px;
+}

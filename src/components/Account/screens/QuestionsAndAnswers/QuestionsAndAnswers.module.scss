@@ -1,0 +1,44 @@
+.emptyList {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  .emptyIcon {
+    width: 85px;
+    height: auto;
+  }
+  .emptyTextBlock {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    & p:first-child {
+      color: #fff;
+      font-family: "Averta CY";
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    & p:last-child {
+      color: #818181;
+      font-family: "Averta Demo PE";
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1610px;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+}

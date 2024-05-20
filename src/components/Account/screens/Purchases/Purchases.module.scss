@@ -9,7 +9,7 @@
 }
 
 .wrapper {
-  width: 1395px;
+  width: min(1395px, 100%);
   height: auto;
   .purchasesList{
     width:100%;
@@ -21,7 +21,7 @@
     gap:10px;
   }
   .goodsBlock{
-    width:1365px;
+    width:min(1365px, 100%);
     margin: 90px 0 0 0;
   }
 }

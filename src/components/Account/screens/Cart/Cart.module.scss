@@ -32,6 +32,12 @@
     justify-content: flex-start;
     align-items: center;
     gap: 15px;
+    @media(max-width:1775px){
+      width:941px;
+    }
+    @media(max-width: 1430px){
+      width:757px;
+    }
     .sale {
       width: 100%;
       height: 95px;
@@ -121,6 +127,9 @@
     justify-content: flex-start;
     align-items: center;
     gap: 30px;
+    @media(max-width:1595px){
+      width:300px;
+    }
     .buttonBlock {
       width: 400px;
       height: auto;
@@ -129,6 +138,9 @@
       justify-content: flex-start;
       align-items: center;
       gap: 10px;
+      @media(max-width:1595px){
+        width:240px;
+      }
       .button {
         @include fontAvertaCY();
         width: 100%;
@@ -152,6 +164,9 @@
     .details {
       width: 400px;
       height: auto;
+      @media(max-width:1595px){
+        width:240px;
+      }
       & h3 {
         @include fontAvertaCY();
       }
@@ -204,6 +219,9 @@
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: center;
+      @media(max-width:1595px){
+        width:240px;
+      }
       &Text {
         @include fontAvertaCY();
       }
@@ -217,6 +235,9 @@
       width: 400px;
       height: 1px;
       background: #6e6e6e;
+      @media(max-width:1595px){
+        width:240px;
+      }
     }
   }
 }

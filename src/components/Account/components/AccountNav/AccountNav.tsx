@@ -8,11 +8,13 @@ export default function AccountNav({
     user,
     activeItemId,
     setActiveScreen,
+    setGoToPlacingAnOrder
 }: {
     navArr: { id: Screens, title: string }[],
     user: string,
     activeItemId: Screens,
-    setActiveScreen:React.Dispatch<React.SetStateAction<Screens>>
+    setActiveScreen: React.Dispatch<React.SetStateAction<Screens>>,
+    setGoToPlacingAnOrder: React.Dispatch<React.SetStateAction<boolean>>
 }) {
 
     return (
@@ -29,7 +31,11 @@ export default function AccountNav({
                             <div
                                 key={menuItem.id}
                                 className={cn(styles.menuItem, menuItem.id === activeItemId && styles.menuItemActive)}
-                                onClick={() => setActiveScreen(menuItem.id)}
+                                onClick={() => {
+                                    setActiveScreen(menuItem.id)
+                                    setGoToPlacingAnOrder(false)
+                                }
+                                }
                             >
                                 {menuItem.title}
                             </div>
