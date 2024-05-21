@@ -5,6 +5,7 @@ import Image from 'next/image'
 import HeartIcon from './assets/HeartIcon'
 import starIcon from './assets/starIcon.svg'
 import reviewIcon from './assets/reviewIcon.svg'
+import Link from 'next/link'
 
 export default function GoodsCard(props: Card & { setFavourite: (categoryId: string, cardId: number) => void } & { categoryId: string }) {
 
@@ -21,7 +22,7 @@ export default function GoodsCard(props: Card & { setFavourite: (categoryId: str
     const reviewText = getReviewText(props.reviews)
 
     return (
-        <div className={styles.wrapper}>
+        <Link href={`/shop/product/${props.slug}`} className={styles.wrapper}>
             <div className={styles.imageContainer}>
                 <Image src={props.image} alt='image' className={styles.goodImage} />
                 <div
@@ -55,6 +56,6 @@ export default function GoodsCard(props: Card & { setFavourite: (categoryId: str
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }

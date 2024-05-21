@@ -1,0 +1,37 @@
+.wrapper{
+    width:825px;
+    height:725px;
+    display:grid;
+    grid-template-areas:
+        'a a a a'
+        'b c d e';
+    grid-template-columns: 195px 195px 195px 195px;
+    grid-template-rows: 515px 121px;
+    gap:15px;
+    .a{
+        grid-area:a;
+        border: 1px solid blue;
+        box-sizing: border-box;
+    }
+    .b{
+        grid-area:b;
+        border: 1px solid blue;
+        box-sizing: border-box;
+    }
+    .c{
+        grid-area:c;
+        border: 1px solid blue;
+        box-sizing: border-box;
+    }
+    .d{
+        grid-area:d;
+        border: 1px solid blue;
+        box-sizing: border-box;
+    }
+    .e{
+        grid-area:e;
+        border: 1px solid blue;
+        box-sizing: border-box;
+    }
+
+}

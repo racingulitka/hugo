@@ -1,0 +1,27 @@
+.wrapper {
+  width: min(1920px, 100%);
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  .link {
+    color: #9c3131;
+    font-family: "Averta Demo PE";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin:0 0 4px 0;
+  }
+  .slug {
+    color: #fff;
+    font-family: "Averta Demo PE";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin:0 0 4px 0;
+  }
+}
