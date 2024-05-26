@@ -1,0 +1,44 @@
+.wrapper {
+  width: 180px;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  .title {
+    color: #fff;
+    font-family: "Averta Demo PE";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .iconsBlock{
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap:15px;
+    .platform{
+        width:50px;
+        aspect-ratio: 1/1;
+        background: #252525;
+        box-sizing: border-box;
+        border:2px solid #252525;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        &:hover{
+            cursor: pointer;
+        }
+        &Active{
+            border:2px solid #9C3131;
+        }
+        .icon{
+            width:30px;
+            height:auto;
+        }
+    }
+  }
+}

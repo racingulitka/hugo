@@ -1,0 +1,28 @@
+.wrapper {
+  width: 390px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  &Title {
+    color: #fff;
+    font-family: "Averta Demo PE";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  &Link {
+    color: #9c3131;
+    font-family: "Averta Demo PE";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+  }
+}

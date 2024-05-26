@@ -6,6 +6,12 @@ export interface Image{
     isMain:boolean,
 }
 
+export interface Characteristics{
+    id:number,
+    title:string,
+    value:string,
+}
+
 export interface ProductPage {
   productId: number,
   productName:string,
@@ -15,4 +21,14 @@ export interface ProductPage {
   subcategoryLink:string,
   slug:string,
   images:Image[],
+  videoCover:StaticImageData,
+  video:string,
+  rate:number,
+  reviews:number,
+  questions:number,
+  characteristics:Characteristics[],
+  price:number,
+  actualPrice:number,
+  isFavourite:boolean,
+  numberOfAddingToFavourites:number,
 }

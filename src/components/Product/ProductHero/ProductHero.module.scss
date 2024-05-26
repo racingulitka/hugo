@@ -1,19 +1,288 @@
-.wrapper{
-    width:min(1783px, 100%);
-    height:auto;
-    margin:20px 0 0 0;
-    display:flex;
-    flex-flow:row wrap;
-    justify-content: center;
+.wrapper {
+  width: min(1783px, 100%);
+  height: auto;
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 38px;
+  .leftColumn {
+    width: 825px;
+    height: auto;
+  }
+  .rightColumn {
+    flex: 1 0 auto;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
     align-items: flex-start;
-    gap:38px;
-    .leftColumn{
-        width:825px;
-        height:auto;
+    gap: 14px;
+    .mainCharacteristics {
+      width: 515px;
+      height: auto;
+      box-sizing: border-box;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 15px;
+      .main {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 5px;
+        .titleAndRate {
+          .title {
+            color: #fff;
+            font-family: "Averta CY";
+            font-size: 50px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+          }
+          .infoBar {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 30px;
+            .rateBlock {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              gap: 15px;
+              .stars {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 5px;
+                position: relative;
+                .starWrapper {
+                  position: relative;
+                  .star {
+                    width: 20px;
+                    aspect-ratio: 1/1;
+                  }
+                }
+              }
+              .indicatorsBlock {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 30px;
+                .reviewsNumber {
+                  color: #8d8d8d;
+                  font-family: "Averta Demo PE";
+                  font-size: 15px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: normal;
+                  &:hover {
+                    cursor: pointer;
+                    color: #9c3131;
+                  }
+                }
+                .questions {
+                  color: #8d8d8d;
+                  display: flex;
+                  flex-flow: row nowrap;
+                  justify-content: flex-start;
+                  align-items: center;
+                  gap: 15px;
+                  &:hover {
+                    cursor: pointer;
+                    color: #9c3131;
+                  }
+                  .questionsText {
+                    font-family: "Averta Demo PE";
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                  }
+                }
+                .share {
+                  color: #8d8d8d;
+                  display: flex;
+                  flex-flow: row nowrap;
+                  justify-content: flex-start;
+                  align-items: center;
+                  gap: 15px;
+                  &:hover {
+                    cursor: pointer;
+                    color: #9c3131;
+                  }
+                  .shareText {
+                    font-family: "Averta Demo PE";
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .characteristics {
+        width: 239px;
+        height: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 10px;
+        .characteristicsTitle {
+          color: #fff;
+          font-family: "Averta CY";
+          font-size: 29px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+        .characteristicsItem {
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+          align-items: flex-end;
+          gap: 10px;
+          .characteristicsItemTitle {
+            width: fit-content;
+            height: auto;
+            color: #8d8d8d;
+            font-family: "Averta Demo PE";
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+          .characteristicsItemUnderline {
+            flex: 1 0 auto;
+            height: 100%;
+            box-sizing: border-box;
+            border-bottom: 1px dashed #fff;
+          }
+          .characteristicsItemValue {
+            color: #fff;
+            font-family: "Averta Demo PE";
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+        }
+      }
     }
-    .rightColumn{
-        flex:1 0 auto;
-        height:100px;
-        border:1px solid yellow;
+    .description {
+      width: 390px;
+      height: 100px;
+      box-sizing: border-box;
+      .toCart {
+        width: 390px;
+        height: auto;
+        box-sizing: border-box;
+        padding: 25px;
+        background: #1a1a1a;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        .isFavourite {
+          align-self: flex-end;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .priceBlock {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+          align-items: flex-end;
+          gap: 15px;
+          .actualPrice {
+            color: #fff;
+            font-family: "Averta CY";
+            font-size: 45px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+          }
+          .price {
+            color: #808080;
+            font-family: "Averta Demo PE";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-decoration: line-through;
+            margin: 0 0 9px 0;
+          }
+        }
+        .cartBlock {
+          margin: 45px 0 0 0;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .addToCartButton {
+            width: 278px;
+            height: 53px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.77);
+            font-family: "Averta CY";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            background: #9c3131;
+            backdrop-filter: blur(6.650000095367432px);
+            border: none;
+            &:hover {
+              opacity: 0.9;
+              cursor: pointer;
+            }
+          }
+          .cartIconContainer {
+            width: 53px;
+            height: 53px;
+            background: #252525;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+        .favouritesBlock {
+          width: 100%;
+          margin: 10px;
+          display: flex;
+          gap: 8px;
+          .favouritesBlockText {
+            color: #a1a1a1;
+            font-family: "Averta Demo PE";
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+        }
+      }
+      .engineSound {
+        margin: 18px 0 0 0;
+      }
     }
+  }
 }

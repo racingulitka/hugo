@@ -1,37 +1,263 @@
-.wrapper{
-    width:825px;
-    height:725px;
-    display:grid;
-    grid-template-areas:
-        'a a a a'
-        'b c d e';
-    grid-template-columns: 195px 195px 195px 195px;
-    grid-template-rows: 515px 121px;
-    gap:15px;
-    .a{
-        grid-area:a;
-        border: 1px solid blue;
-        box-sizing: border-box;
-    }
-    .b{
-        grid-area:b;
-        border: 1px solid blue;
-        box-sizing: border-box;
-    }
-    .c{
-        grid-area:c;
-        border: 1px solid blue;
-        box-sizing: border-box;
-    }
-    .d{
-        grid-area:d;
-        border: 1px solid blue;
-        box-sizing: border-box;
-    }
-    .e{
-        grid-area:e;
-        border: 1px solid blue;
-        box-sizing: border-box;
-    }
+.wrapper {
+  width: 825px;
+  height: 725px;
+  display: grid;
+  grid-template-areas:
+    "a a a a"
+    "b c d e";
+  grid-template-columns: 195px 195px 195px 195px;
+  grid-template-rows: 515px 121px;
+  gap: 15px;
+  .a {
+    grid-area: a;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 825px;
+    height: 515px;
+    position: relative;
+    .sliderList {
+      width: fit-content;
+      height: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      transition: 0.5s ease-in-out;
+      position: absolute;
+      top: 0;
+      .imageContainer {
+        position: relative;
+        width: 825px;
+        height: 515px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover .videoControls {
+          display: flex;
+        }
+        .mainImage {
+          object-fit: cover;
+        }
+        .playIcon {
+          position: absolute;
+          z-index: 2;
+          top: 50%;
+          left: 50%;
+          translate: -50% -50%;
+          width: 170px;
+          aspect-ratio: 1/1;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .video {
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .videoControls {
+          display: none;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 64px;
+          background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0) -28.18%,
+            rgba(33, 33, 33, 0.29) 16.68%,
+            rgba(33, 33, 33, 0.89) 60.26%,
+            rgba(33, 33, 33, 0.95) 100%
+          );
+          box-sizing: border-box;
+          padding: 11px 25px;
+          flex-flow: column nowrap;
+          justify-content: space-between;
+          align-items: flex-start;
+          .videoControlsTopBlock {
+            width: 100%;
+            height: auto;
+            & input {
+              -webkit-appearance: none;
+              appearance: none;
+              width: 100%;
+              height: 5px;
+              background: #949494;
+              outline: none;
+              opacity: 0.7;
+              transition: opacity 0.2s;
+              cursor: pointer;
+              border-radius: 3px;
 
+              &:hover {
+                opacity: 1;
+              }
+
+              &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 13px;
+                height: 13px;
+                background: #fff;
+                cursor: pointer;
+                border-radius: 50%;
+                translate: 0px -3px;
+              }
+
+              &::-moz-range-thumb {
+                width: 13px;
+                height: 13px;
+                background: #fff;
+                cursor: pointer;
+                border-radius: 50%;
+              }
+
+              &::-webkit-slider-runnable-track {
+                width: 100%;
+                height: 5px;
+                border-radius: 3px;
+                cursor: pointer;
+                background: #fff;
+              }
+
+              &::-moz-range-track {
+                width: 100%;
+                height: 5px;
+                cursor: pointer;
+                background: #949494;
+                border-radius: 3px;
+              }
+
+              &::-moz-range-progress {
+                background: #fff;
+                height: 5px;
+                border-radius: 3px;
+              }
+            }
+          }
+          .videoControlsBottomBlock {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            .videoControlsBottomBlockLeft {
+              display: flex;
+              flex-flow: row nowrap;
+              justify-content: flex-start;
+              align-items: center;
+              .videoControlsBottomBlockLeftItem {
+                &:hover {
+                  cursor: pointer;
+                }
+              }
+              .videoControlsBottomBlockLeftTime {
+                color: #fff;
+                font-family: "Averta CY";
+                font-size: 8px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                margin-left: 20px;
+                span {
+                  color: #c9c9c9;
+                }
+              }
+            }
+            .videoControlsBottomBlockRight {
+              display: flex;
+              flex-flow: row nowrap;
+              justify-content: flex-start;
+              align-items: center;
+              .videoControlsBottomBlockLeftItem {
+                &:hover {
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .sliderControls {
+      width: 100%;
+      height: 45px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      .button {
+        width: auto;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 0 16px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .b {
+    grid-area: b;
+    box-sizing: border-box;
+    position: relative;
+    border: 2px solid transparent;
+    &Active {
+      border: 2px solid #9c3131;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .c {
+    grid-area: c;
+    box-sizing: border-box;
+    position: relative;
+    border: 2px solid transparent;
+    &Active {
+      border: 2px solid #9c3131;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .d {
+    grid-area: d;
+    box-sizing: border-box;
+    position: relative;
+    border: 2px solid transparent;
+    &Active {
+      border: 2px solid #9c3131;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .e {
+    grid-area: e;
+    box-sizing: border-box;
+    position: relative;
+    border: 2px solid transparent;
+    &Active {
+      border: 2px solid #9c3131;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    .playIcon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      width: 35px;
+      aspect-ratio: 1/1;
+      scale: 1;
+      transition: 0.2s ease;
+    }
+  }
 }

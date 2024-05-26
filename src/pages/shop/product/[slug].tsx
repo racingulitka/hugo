@@ -10,6 +10,7 @@ import defaultImage1 from './assets/defaultImage1.png'
 import { ProductPage } from "./Product.typings";
 import BreadCrumbs from "@/components/Product/BreadCrumbs/BreadCrumbs";
 import ProductHero from "@/components/Product/ProductHero/ProductHero";
+import sampleVideo from '../../../components/Product/ProductHero/assets/sampleVideo.mp4'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,17 +41,103 @@ export default function PageOfGood() {
           image:defaultImage1,
           isMain:false,
         },
+      ],
+      videoCover:defaultImage1,
+      video:sampleVideo,
+      rate:4.5,
+      reviews:35,
+      questions:3,
+      characteristics:[
+        {
+          id:1,
+          title:'YTF',
+          value:'info',
+        },
+        {
+          id:2,
+          title:'YTD',
+          value:'info',
+        },
+        {
+          id:3,
+          title:'Вершины',
+          value:'info',
+        },
         {
           id:4,
-          image:defaultImage1,
-          isMain:false,
+          title:'Полигоны',
+          value:'info',
         },
         {
           id:5,
-          image:defaultImage1,
-          isMain:false,
+          title:'Вместительность',
+          value:'info',
         },
-      ]
+        {
+          id:6,
+          title:'Качество интерьера',
+          value:'info',
+        },
+        {
+          id:7,
+          title:'Тюнинг',
+          value:'info',
+        },
+        {
+          id:8,
+          title:'Тонировка стёкол',
+          value:'info',
+        },
+        {
+          id:9,
+          title:'Варианты покраски',
+          value:'info',
+        },
+        {
+          id:10,
+          title:'Звук двигателя',
+          value:'info',
+        },
+        {
+          id:11,
+          title:'Зеркала',
+          value:'info',
+        },
+        {
+          id:12,
+          title:'Руки на руле',
+          value:'info',
+        },
+        {
+          id:13,
+          title:'Панель приборов',
+          value:'info',
+        },
+        {
+          id:14,
+          title:'Стекла',
+          value:'info',
+        },
+        {
+          id:15,
+          title:'Транспортный номер',
+          value:'info',
+        },
+        {
+          id:16,
+          title:'Пример 1',
+          value:'info',
+        },
+        {
+          id:17,
+          title:'Пример 2',
+          value:'info',
+        },
+      ],
+      price:60000,
+      actualPrice:30000,
+      isFavourite:false,
+      numberOfAddingToFavourites:9,
     },
   ])
 
@@ -84,7 +171,7 @@ export default function PageOfGood() {
               productName={itemSlug.productName}
             />
             <ProductHero
-              
+              productInfo={itemSlug}
             />
           </div>
         }
