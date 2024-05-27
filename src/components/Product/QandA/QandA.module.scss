@@ -1,0 +1,58 @@
+.wrapper {
+  width: min(1783px, 100%);
+  height: auto;
+  margin: 68px 0 0 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 124px;
+  box-sizing: border-box;
+  .selectors {
+    margin: 0 0 0 63px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    .selector {
+      width: 455px;
+      border-bottom: 1px solid #8d8d8d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 0 0 20px 0;
+      &Active{
+        border-bottom:1px solid #9C3131;
+      }
+      &:hover{
+        cursor: pointer;
+      }
+      &InfoBlock {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+        align-items: flex-end;
+        &Value {
+          color: #8d8d8d;
+          font-family: "Averta CY";
+          font-size: 25px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+        &Title {
+          color: #8d8d8d;
+          font-family: "Averta CY";
+          font-size: 35px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          &Active{
+            color:#fff;
+          }
+        }
+      }
+    }
+  }
+}

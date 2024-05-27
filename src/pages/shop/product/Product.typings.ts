@@ -12,6 +12,17 @@ export interface Characteristics{
     value:string,
 }
 
+export interface Advantages{
+  id:number,
+  image:StaticImageData,
+  text:string,
+}
+
+export interface Gallery{
+  id:number,
+  image:StaticImageData,
+}
+
 export interface ProductPage {
   productId: number,
   productName:string,
@@ -31,4 +42,8 @@ export interface ProductPage {
   actualPrice:number,
   isFavourite:boolean,
   numberOfAddingToFavourites:number,
+  engineSound:string,
+  description:string,
+  advantages:Advantages[],
+  gallery:Gallery[],
 }

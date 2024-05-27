@@ -1,0 +1,72 @@
+.wrapper {
+  width: min(1783px, 100%);
+  height: auto;
+  margin: 99px 0 0 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 124px;
+  box-sizing: border-box;
+  .header {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #4d4d4d;
+    &Title {
+      color: #fff;
+      font-family: "Averta CY";
+      font-size: 45px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    &Advice {
+      color: #8d8d8d;
+      font-family: "Averta Demo PE";
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin: 0 0 15px 0;
+    }
+  }
+  .advantages {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 45px;
+    &Item {
+      width: 100%;
+      min-height: 490px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      .imageContainer {
+        width: 865px;
+        height: 490px;
+        position: relative;
+      }
+      .textContainer {
+        width: 865px;
+        height: 490px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .text {
+          max-width: 666px;
+          color: #fff;
+          font-family: "Averta Demo PE";
+          font-size: 45px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

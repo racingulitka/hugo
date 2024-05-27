@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './PurchaseCard.module.scss'
 import { StaticImageData } from 'next/image'
 import Image from 'next/image'
+import DownloadIcon from '../assets/DownloadIcon'
 
 export default function PurchaseCard({
     image,
@@ -12,6 +13,9 @@ export default function PurchaseCard({
     name: string,
     color: string,
 }) {
+
+    const [isDownloadIconHovered, setDownloadIconHovered] = useState<boolean>(false)
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.leftSide}>
@@ -29,6 +33,14 @@ export default function PurchaseCard({
                 </div>
             </div>
             <div className={styles.rightSide}>
+                <div
+                    className={styles.downloadIcon}
+                    onMouseEnter={() => setDownloadIconHovered(true)}
+                    onMouseLeave={() => setDownloadIconHovered(false)}
+                    onClick={() => console.log('download')}
+                >
+                    <DownloadIcon isActive={isDownloadIconHovered} />
+                </div>
                 <p className={styles.rateGoods}>Оценить товар</p>
                 <p className={styles.makeReview}>Оставить отзыв</p>
             </div>

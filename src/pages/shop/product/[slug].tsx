@@ -11,6 +11,23 @@ import { ProductPage } from "./Product.typings";
 import BreadCrumbs from "@/components/Product/BreadCrumbs/BreadCrumbs";
 import ProductHero from "@/components/Product/ProductHero/ProductHero";
 import sampleVideo from '../../../components/Product/ProductHero/assets/sampleVideo.mp4'
+import sampleEngineSound from '../../../components/Product/ProductHero/assets/sampleEngineSound.mp3'
+import Advantages from "@/components/Product/Advantages/Advantages";
+import exampleImage1 from '../../../components/Product/Advantages/assets/exampleImage1.png'
+import exampleImage2 from '../../../components/Product/Advantages/assets/exampleImage2.png'
+import exampleImage3 from '../../../components/Product/Advantages/assets/exampleImage3.png'
+import exampleImage4 from '../../../components/Product/Advantages/assets/exampleImage4.png'
+import exampleImage5 from '../../../components/Product/Advantages/assets/exampleImage5.png'
+import Gallery from "@/components/Product/Gallery/Gallery";
+import galleryImage1 from '../../../components/Product/Gallery/assets/galleryImage1.png'
+import galleryImage2 from '../../../components/Product/Gallery/assets/galleryImage2.png'
+import galleryImage3 from '../../../components/Product/Gallery/assets/galleryImage3.png'
+import galleryImage4 from '../../../components/Product/Gallery/assets/galleryImage4.png'
+import galleryImage5 from '../../../components/Product/Gallery/assets/galleryImage5.png'
+import galleryImage6 from '../../../components/Product/Gallery/assets/galleryImage6.png'
+import galleryImage7 from '../../../components/Product/Gallery/assets/galleryImage7.png'
+import galleryImage8 from '../../../components/Product/Gallery/assets/galleryImage8.png'
+import QandA from "@/components/Product/QandA/QandA";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -138,6 +155,72 @@ export default function PageOfGood() {
       actualPrice:30000,
       isFavourite:false,
       numberOfAddingToFavourites:9,
+      engineSound:sampleEngineSound,
+      description:`Задача организации, в особенности же новая модель организационной деятельности способствует повышению 
+      актуальности направлений прогрессивного развития! Задача организации, в особенности же дальнейшее развитие 
+      различных форм деятельности обеспечивает широкому кругу специалистов участие в формировании новых 
+      предложений? Значимость этих проблем настолько очевидна, что начало повседневной работы.`,
+      advantages:[
+        {
+          id:1,
+          image:exampleImage1,
+          text:'683K POLYGONS - 425K VERTICES ',
+        },
+        {
+          id:2,
+          image:exampleImage2,
+          text:'HIGH QUALITY INERIOR ',
+        },
+        {
+          id:3,
+          image:exampleImage3,
+          text:'4 MAIN DOORS AND TRUNK OPEN ',
+        },
+        {
+          id:4,
+          image:exampleImage4,
+          text:'HIGH QUALITY HEADLIGHT AND TAILIGHT',
+        },
+        {
+          id:5,
+          image:exampleImage5,
+          text:'SUPPORTS ALL HEADLIGHT AND TAILIGHT',
+        },
+      ],
+      gallery:[
+        {
+          id:1,
+          image:galleryImage1,
+        },
+        {
+          id:2,
+          image:galleryImage2,
+        },
+        {
+          id:3,
+          image:galleryImage3,
+        },
+        {
+          id:4,
+          image:galleryImage4,
+        },
+        {
+          id:5,
+          image:galleryImage5,
+        },
+        {
+          id:6,
+          image:galleryImage6,
+        },
+        {
+          id:7,
+          image:galleryImage7,
+        },
+        {
+          id:8,
+          image:galleryImage8,
+        },
+      ]
     },
   ])
 
@@ -173,6 +256,9 @@ export default function PageOfGood() {
             <ProductHero
               productInfo={itemSlug}
             />
+            <Advantages advArr={itemSlug.advantages}/>
+            <Gallery galArr={itemSlug.gallery}/>
+            <QandA />
           </div>
         }
         <Footer />

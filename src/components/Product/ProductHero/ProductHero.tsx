@@ -135,7 +135,11 @@ export default function ProductHero({
                         </div>
                     </div>
                     <div className={styles.engineSound}>
-                        <EngineSound />
+                        <EngineSound sound={productInfo.engineSound}/>
+                    </div>
+                    <div className={styles.descriptionBlock}>
+                        <h4 className={styles.descriptionBlockTitle}>Описание</h4>
+                        <p className={styles.descriptionBlockText}>{productInfo.description}</p>
                     </div>
                 </div>
             </div>

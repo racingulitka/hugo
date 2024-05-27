@@ -16,6 +16,29 @@
     font-weight: 400;
     line-height: normal;
   }
+  &SoundMain {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    &>div:hover{
+      cursor: pointer;
+    }
+    .soundVisualization {
+      width: 222px;
+      height: 50px;
+    }
+    .time {
+      color: #8d8d8d;
+      font-family: Inter;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
   &Link {
     color: #9c3131;
     font-family: "Averta Demo PE";
