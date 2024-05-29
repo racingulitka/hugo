@@ -1,3 +1,21 @@
+@mixin fontAvertaCY() {
+  color: #fff;
+  font-family: "Averta CY";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@mixin fontAvertaPE() {
+  color: #8d8d8d;
+  font-family: "Averta Demo PE";
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 .wrapper {
   width: min(1783px, 100%);
   height: auto;
@@ -6,7 +24,6 @@
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 124px;
   box-sizing: border-box;
   .selectors {
     margin: 0 0 0 63px;
@@ -22,10 +39,10 @@
       align-items: center;
       box-sizing: border-box;
       padding: 0 0 20px 0;
-      &Active{
-        border-bottom:1px solid #9C3131;
+      &Active {
+        border-bottom: 1px solid #9c3131;
       }
-      &:hover{
+      &:hover {
         cursor: pointer;
       }
       &InfoBlock {
@@ -48,9 +65,142 @@
           font-style: normal;
           font-weight: 700;
           line-height: normal;
-          &Active{
-            color:#fff;
+          &Active {
+            color: #fff;
           }
+        }
+      }
+    }
+  }
+  .reviews {
+    box-sizing: border-box;
+    padding: 53px 0 0 63px;
+    width: min(1471px, 100vw);
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
+    .review {
+      width: 100%;
+      height: auto;
+      &Header {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        &Name {
+          @include fontAvertaCY();
+        }
+        .reviewInfo {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 20px;
+          .reviewDate {
+            @include fontAvertaPE();
+            font-size: 30px;
+          }
+          .rate {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 5px;
+            .star {
+              width: 30px;
+              height: auto;
+            }
+          }
+        }
+      }
+      &Text {
+        @include fontAvertaPE();
+        margin: 15px 0 0 0;
+        color: #818181;
+        font-size: 25px;
+      }
+      &Advantages {
+        margin: 35px 0 0 0;
+        & h4 {
+          @include fontAvertaCY();
+        }
+        & p {
+          @include fontAvertaPE();
+          margin: 15px 0 0 0;
+        }
+      }
+      &Flaw {
+        margin: 35px 0 0 0;
+        & h4 {
+          @include fontAvertaCY();
+        }
+        & p {
+          @include fontAvertaPE();
+          margin: 15px 0 0 0;
+        }
+      }
+      &IsHelpful {
+        margin: 94px 0 0 0;
+        & p {
+          @include fontAvertaPE();
+          color: #fff;
+        }
+        &Flex {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 25px;
+          &Yes {
+            @include fontAvertaCY();
+            font-size: 25px;
+            font-weight: 600;
+            padding: 5px;
+            background: #9c3131;
+          }
+          &No {
+            @include fontAvertaPE();
+            color: #818181;
+            padding: 5px;
+            background: #191919;
+          }
+        }
+      }
+    }
+    .emptyList {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      .emptyIcon {
+        width: 85px;
+        height: auto;
+      }
+      .emptyTextBlock {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        & p:first-child {
+          color: #fff;
+          font-family: "Averta CY";
+          font-size: 25px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+        & p:last-child {
+          color: #818181;
+          font-family: "Averta Demo PE";
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
         }
       }
     }

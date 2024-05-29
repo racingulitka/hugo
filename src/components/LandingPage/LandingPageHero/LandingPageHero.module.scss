@@ -1,0 +1,17 @@
+.mainWrapper {
+    width: 100%;
+    height: auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    .wrapper {
+      width: min(100%, 1920px);
+      min-height: 1080px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding:100px;
+    }
+}

@@ -1,0 +1,32 @@
+.bottomLinks {
+    margin: 31px 88px 0 0;
+    align-self: flex-end;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    & span {
+      color: #8d8d8d;
+      font-family: "Averta Demo PE";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      &:hover {
+        cursor: pointer;
+        color: #9c3131;
+      }
+    }
+    .socialMediaLinks {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 28px;
+      .smLink {
+        width: auto;
+        height: 31px;
+      }
+    }
+  }

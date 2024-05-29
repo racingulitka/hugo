@@ -23,6 +23,18 @@ export interface Gallery{
   image:StaticImageData,
 }
 
+export interface ReviewsArr{
+  id:number,
+          date:Date,
+          rate:number,
+          name:string,
+          text:string,
+          advantage:string,
+          flaw:string,
+          yes:number,
+          no:number,
+}
+
 export interface ProductPage {
   productId: number,
   productName:string,
@@ -46,4 +58,5 @@ export interface ProductPage {
   description:string,
   advantages:Advantages[],
   gallery:Gallery[],
+  reviewsArr:ReviewsArr[],
 }

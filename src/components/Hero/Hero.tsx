@@ -2,9 +2,10 @@ import React from 'react'
 import styles from './Hero.module.scss'
 import rightArrow from './assets/rightArrow.svg'
 import Image from 'next/image'
-import { menuBlockArr, socialMediaLinksArr } from './Hero.config'
+import { menuBlockArr/*, socialMediaLinksArr*/ } from './Hero.config'
 import MenuBlock from './MenuBlock/MenuBlock'
 import Link from 'next/link'
+import HeroBottomLinks from '../common/HeroBottomLinks/HeroBottomLinks'
 
 export default function Hero() {
 
@@ -33,7 +34,7 @@ export default function Hero() {
                         })
                     }
                 </nav>
-                <div className={styles.bottomLinks}>
+                {/* <div className={styles.bottomLinks}>
                     <Link href='#'><span>Канал Hugo</span></Link>
                     <Link href='#'><span>Полезные материалы</span></Link>
                     <div className={styles.socialMediaLinks}>
@@ -50,7 +51,8 @@ export default function Hero() {
                             })
                         }
                     </div>
-                </div>
+                </div> */}
+                <HeroBottomLinks />
             </div>
         </div>
     )

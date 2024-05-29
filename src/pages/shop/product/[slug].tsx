@@ -220,6 +220,19 @@ export default function PageOfGood() {
           id:8,
           image:galleryImage8,
         },
+      ],
+      reviewsArr:[
+        {
+          id:1,
+          date: new Date('2024-02-03'),
+          rate:4.3,
+          name:'Александр К.',
+          text:'Всё круто! Впечатлили',
+          advantage:'4K quality. 483K poly',
+          flaw:'Не выявлено',
+          yes:3,
+          no:2,
+        }
       ]
     },
   ])
@@ -258,7 +271,7 @@ export default function PageOfGood() {
             />
             <Advantages advArr={itemSlug.advantages}/>
             <Gallery galArr={itemSlug.gallery}/>
-            <QandA />
+            <QandA reviewsArr={itemSlug.reviewsArr}/>
           </div>
         }
         <Footer />
