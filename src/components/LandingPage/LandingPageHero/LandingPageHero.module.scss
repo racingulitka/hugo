@@ -1,17 +1,87 @@
 .mainWrapper {
-    width: 100%;
-    height: auto;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    background: #111;
-    .wrapper {
-      width: min(100%, 1920px);
-      min-height: 1080px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  .wrapper {
+    width: min(100%, 1920px);
+    min-height: 1080px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 100px;
+    .mainFlex {
+      margin: 166px 0 87px 0;
+      width: 100%;
+      height: auto;
       display: flex;
-      flex-flow: column nowrap;
-      justify-content: flex-start;
+      flex-flow: row wrap;
+      justify-content: space-between;
       align-items: flex-start;
-      padding:100px;
+      @media(max-width:1750px){
+        justify-content: center;
+        align-items: center;
+        gap:50px;
+      }
+      .actionBlock {
+        margin: 96px 0 0 0;
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 155px;
+        .mainInfo {
+          .mainTitle {
+            color: #fff;
+            font-family: "Averta CY";
+            font-size: 100px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            white-space: pre-line;
+          }
+          .slogan {
+            margin: 45px 0 0 0;
+            color: #b0b0b0;
+            font-family: "Averta Demo PE";
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            & span {
+              color: #9c3131;
+            }
+          }
+        }
+        .button {
+          border: none;
+          background: #9c3131;
+          display: flex;
+          width: 435px;
+          height: 90px;
+          justify-content: center;
+          align-items: center;
+          color: rgba(255, 255, 255, 0.77);
+          font-family: "Averta Demo PE";
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          &:hover{
+            cursor:pointer;
+            opacity:0.9;
+          }
+        }
+      }
+      .heroImage {
+        width: 785px;
+        height: auto;
+      }
     }
+  }
 }
