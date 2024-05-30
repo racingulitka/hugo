@@ -1,0 +1,71 @@
+@mixin fontAvertaCY() {
+  font-family: "Averta CY";
+  font-style: normal;
+  line-height: normal;
+}
+
+.wrapper {
+  width: 275px;
+  height: 352px;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  filter:drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.4));
+  .background {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .imageContainer {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #303030;
+    position: relative;
+    z-index: 1;
+    .icon {
+      width: 50px;
+      aspect-ratio: 1/1;
+    }
+  }
+  .title {
+    margin: 26px 0 0 0;
+    @include fontAvertaCY();
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+  }
+  .text {
+    @include fontAvertaCY();
+    margin: 10px 0 0 0;
+    padding: 0 12px;
+    color: #b0b0b0;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+  }
+  .question {
+    margin:42px 0 0 0;
+    position: relative;
+    z-index: 1;
+    width: 200px;
+    height: auto;
+    border: 3px solid #9c3131;
+    padding: 9px 26px;
+    @include fontAvertaCY();
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+  }
+}

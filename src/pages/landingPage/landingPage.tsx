@@ -5,6 +5,7 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { Page } from "@/components/Header/Header.config";
 import LandingPageHero from "@/components/LandingPage/LandingPageHero/LandingPageHero";
+import LandingPageLiesAbout from "@/components/LandingPage/LandingPageLiesAbout/LandingPageLiesAbout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function LandingPage() {
       <main className={`${styles.main} ${inter.className}`}>
         <Header page={Page.home}/>
         <LandingPageHero />
+        <LandingPageLiesAbout />
         <Footer />
       </main>
     </>
