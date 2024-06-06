@@ -1,0 +1,49 @@
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  .wrapper {
+    width: min(100%, 1373px);
+    min-height: 640px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 90px 0px;
+    gap: 20px;
+    .container {
+      width: 1240px;
+      padding: 32px 123px 33px 150px;
+      position: relative;
+      .text {
+        color: #b0b0b0;
+        font-family: "Averta CY";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      .title {
+        color: #fff;
+        font-family: "Averta CY";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:207px;
+        height:85px;
+        background: #111;
+        position: absolute;
+        top:50%;
+        left:0;
+        translate:-50% -50%;
+      }
+    }
+  }
+}

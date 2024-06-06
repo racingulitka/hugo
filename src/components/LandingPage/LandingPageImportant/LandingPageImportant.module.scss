@@ -1,0 +1,88 @@
+@mixin font() {
+  color: #fff;
+  font-family: "Averta CY";
+  font-style: normal;
+  line-height: normal;
+}
+
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  .wrapper {
+    width: min(100%, 1920px);
+    min-height: 1080px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    .leftCard {
+      width: 960px;
+      padding: 0px 222px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap:75px;
+      background: url(./assets/background.jpg) center/cover;
+      height: 1080px;
+      .titleBlock {
+        .title {
+          @include font();
+          width: 100%;
+          font-size: 70px;
+          font-weight: 700;
+        }
+        .subtitle {
+          @include font();
+          color: rgba(255, 255, 255, 0.95);
+          font-size: 35px;
+          font-weight: 400;
+        }
+      }
+    }
+    .rightCard {
+      width: 960px;
+      height: 1080px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .container {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 65px;
+        .card {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 35px;
+          .textBlock {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 25px;
+            .title {
+              @include font();
+              font-size: 30px;
+              font-weight: 400;
+            }
+            .text {
+              @include font();
+              width: 434px;
+              color: #b0b0b0;
+              font-size: 20px;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+}

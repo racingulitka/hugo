@@ -1,0 +1,73 @@
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  .wrapper {
+    width: min(100%, 1920px);
+    min-height: 560px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px 175px;
+    row-gap: 6px;
+    .textFlex {
+      width: 671px;
+      height: auto;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 25px;
+      .titles {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 5px;
+        & h2 {
+          color: #fff;
+          font-family: "Averta CY";
+          font-size: 55px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+        & p {
+          color: #b0b0b0;
+          font-family: "Averta Demo PE";
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+      .text {
+        width: 100%;
+        height: auto;
+        color: #b0b0b0;
+        font-family: "Averta Demo PE";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+    .questions {
+      margin: 96px 0 0 0;
+      width: 745px;
+      height: auto;
+      color: #9c3131;
+      font-family: "Averta CY";
+      font-size: 100px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }
+}

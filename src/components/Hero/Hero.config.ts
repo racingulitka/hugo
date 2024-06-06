@@ -28,21 +28,3 @@ export const menuBlockArr = [
         title:'ДАЛЕЕ',
     },
 ]
-
-// export const socialMediaLinksArr = [
-//     {
-//         id:1,
-//         icon:TelegramIcon,
-//         link:'#',
-//     },
-//     {
-//         id:2,
-//         icon:YouTubeIcon,
-//         link:'#',
-//     },
-//     {
-//         id:3,
-//         icon:DiscordIcon,
-//         link:'#',
-//     },
-// ]

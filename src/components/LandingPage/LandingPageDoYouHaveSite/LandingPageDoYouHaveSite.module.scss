@@ -1,0 +1,74 @@
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(17, 17, 17, 0.935), rgba(17, 17, 17, 0.935)),
+    url(./assets/background.jpg) center/cover no-repeat;
+  .wrapper {
+    width: min(100%, 1920px);
+    min-height: 1080px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 153px;
+    padding: 287px 69px;
+    .titleBlock {
+      color: #fff;
+      font-family: "Averta CY";
+      font-size: 60px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      & span {
+        font-size: 100px;
+        font-weight: 700;
+      }
+      & div {
+        margin: 55px 0 0 0;
+        width: 277px;
+        height: 10px;
+        background: #b0b0b0;
+      }
+    }
+    .footer {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      & p {
+        color: #b0b0b0;
+        font-family: "Averta Demo PE";
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      & button {
+        display: flex;
+        width: 360px;
+        height: 90px;
+        justify-content: center;
+        align-items: center;
+        background: #9c3131;
+        color: rgba(255, 255, 255, 0.77);
+        font-family: "Averta Demo PE";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        transition:0.3s ease-in-out;
+        border:none;
+        &:hover{
+            cursor: pointer;
+            opacity:0.9;
+            transition:0.3s ease-in-out;
+        }
+      }
+    }
+  }
+}

@@ -6,6 +6,21 @@ import Footer from "@/components/Footer/Footer";
 import { Page } from "@/components/Header/Header.config";
 import LandingPageHero from "@/components/LandingPage/LandingPageHero/LandingPageHero";
 import LandingPageLiesAbout from "@/components/LandingPage/LandingPageLiesAbout/LandingPageLiesAbout";
+import LandingPageBestPractices from "@/components/LandingPage/LandingPageBestPractices/LandingPageBestPractices";
+import LandingPageMoreThan from "@/components/LandingPage/LandingPageMoreThan/LandingPageMoreThan";
+import LandingPageEmotions from "@/components/LandingPage/LandingPageEmotions/LandingPageEmotions";
+import LandingPageDoYouHaveSite from "@/components/LandingPage/LandingPageDoYouHaveSite/LandingPageDoYouHaveSite";
+import LandingPageStructure from "@/components/LandingPage/LandingPageStructure/LandingPageStructure";
+import LandingPageBrief from "@/components/LandingPage/LandingPageBrief/LandingPageBrief";
+import LandingPageFeatures from "@/components/LandingPage/LandingPageFeatures/LandingPageFeatures";
+import LandingPageTrustUs from "@/components/LandingPage/LandingPageTrustUs/LandingPageTrustUs";
+import LandingPageLongDev from "@/components/LandingPage/LandingPageLongDev/LandingPageLongDev";
+import LandingPageValuable from "@/components/LandingPage/LandingPageValuable/LandingPageValuable";
+import LandingPageMercedes from "@/components/LandingPage/LandingPageMercedes/LandingPageMercedes";
+import LandingPageMainIdea from "@/components/LandingPage/LandingPageMainIdea/LandingPageMainIdea";
+import LandingPageImportant from "@/components/LandingPage/LandingPageImportant/LandingPageImportant";
+import LandingPageQandA from "@/components/LandingPage/LandingPageQandA/LandingPageQandA";
+import Contacts from "@/components/Contacts/Contacts";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +37,21 @@ export default function LandingPage() {
         <Header page={Page.home}/>
         <LandingPageHero />
         <LandingPageLiesAbout />
+        {/* <LandingPageBestPractices /> */}
+        <LandingPageMoreThan />
+        <LandingPageEmotions />
+        <LandingPageDoYouHaveSite />
+        <LandingPageStructure />
+        <LandingPageBrief />
+        <LandingPageFeatures />
+        <LandingPageTrustUs />
+        <LandingPageLongDev />
+        <LandingPageValuable />
+        <LandingPageMercedes />
+        <LandingPageMainIdea />
+        <LandingPageImportant />
+        <LandingPageQandA />
+        <Contacts />
         <Footer />
       </main>
     </>

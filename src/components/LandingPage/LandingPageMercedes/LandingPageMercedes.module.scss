@@ -1,0 +1,119 @@
+@mixin font() {
+  font-family: "Averta CY";
+  font-style: normal;
+  line-height: normal;
+}
+
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  .wrapper {
+    width: min(100%, 1413px);
+    min-height: 1080px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 107px 0px;
+    gap: 55px;
+    .upperBlock {
+      width: 100%;
+      .title {
+        @include font();
+        color: #fff;
+        font-size: 70px;
+        font-weight: 700;
+      }
+      .subtitle {
+        @include font();
+        color: #fff;
+        font-size: 35px;
+        font-weight: 400;
+      }
+      .textFlex {
+        margin: 55px 0 0 0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        .text {
+          width: 607px;
+          height: auto;
+          @include font();
+          color: #b0b0b0;
+          font-size: 20px;
+          font-weight: 400;
+        }
+      }
+    }
+    .middleBlock {
+      width: 100%;
+      padding: 55px 0;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-top: 1px solid #b0b0b0;
+      border-bottom: 1px solid #b0b0b0;
+      .flexBlock {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 35px;
+        .textContainer {
+          width: 500px;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 25px;
+          .textTitle {
+            @include font();
+            color: #fff;
+            font-size: 30px;
+            font-weight: 400;
+          }
+          .textText {
+            @include font();
+            color: #b0b0b0;
+            font-size: 20px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    .bottomBlock {
+        align-self: center;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      .bottomTextBlock {
+        width: 406px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 25px;
+        .bottomTextBlockTitle {
+          @include font();
+          color: #fff;
+          font-size: 30px;
+          font-weight: 400;
+        }
+        .bottomTextBlockText {
+          @include font();
+          color: #b0b0b0;
+          font-size: 20px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@mixin fontAvertaCY() {
+  color: #fff;
+  font-family: "Averta CY";
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)),
+    url(./assets/background.jpg) 50% / cover no-repeat;
+  .wrapper {
+    width: min(100%, 1400px);
+    min-height: 1080px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 156px 0px;
+    .title {
+      @include fontAvertaCY();
+      font-size: 65px;
+      height: auto;
+    }
+    .adding {
+      margin: 5px 0 0 0;
+      color: #b0b0b0;
+      font-family: "Averta Demo PE";
+      font-size: 45px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    .flexWrapper {
+      margin: 95px 0 65px 0;
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 35px;
+      .card {
+        width: 323px;
+        height: 296px;
+        padding: 40px 26px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 25px;
+        .icon {
+          width: auto;
+          height: 70px;
+        }
+        .info {
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 10px;
+          .title {
+            @include fontAvertaCY();
+            font-size: 25px;
+          }
+          .text {
+            @include fontAvertaCY();
+            font-size: 20px;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@mixin font() {
+  color: #fff;
+  font-family: "Averta CY";
+  font-style: normal;
+  line-height: normal;
+}
+
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  .wrapper {
+    width: min(100%, 1920px);
+    min-height: 619px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    .title {
+      @include font();
+      width: min(1187px, 100%);
+      font-size: 55px;
+      font-weight: 600;
+    }
+    .flexContainer {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      width: min(100%, 1187px);
+      .card {
+        width: 580px;
+        height: 180px;
+        padding: 20px;
+        border: 2px solid #9c3131;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 25px;
+        .textBlock {
+          width: 404px;
+          .title {
+            @include font();
+            font-size: 17px;
+            font-weight: 400;
+          }
+          .text {
+            @include font();
+            margin: 15px 0 0 0;
+            color: #b0b0b0;
+            font-size: 15px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}

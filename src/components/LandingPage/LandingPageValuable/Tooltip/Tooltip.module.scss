@@ -1,0 +1,29 @@
+@mixin font(){
+    color: #fff;
+    font-family: "Averta CY";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.wrapper {
+  width: 188px;
+  min-height: 100px;
+  background: url(./assets/background.svg) 0% 0% / contain no-repeat;
+  padding: 9px 7px 9px 23px;
+  position:absolute;
+  right:0;
+  top:6px;
+  translate:calc(100% + 18px) 0;
+  z-index:100;
+  .title {
+    @include font();
+  }
+  .text {
+    @include font();
+    margin: 7px 0 0 0;
+    font-size: 8px;
+    font-weight: 400;
+  }
+}

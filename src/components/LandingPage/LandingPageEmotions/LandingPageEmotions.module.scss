@@ -1,0 +1,60 @@
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  .wrapper {
+    width: min(100%, 1920px);
+    min-height: 1080px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 150px 0;
+    position: relative;
+    .adding {
+      color: #b0b0b0;
+      font-family: "Averta Demo PE";
+      font-size: 35px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    .title {
+      margin: 5px 0 0 0;
+      color: #fff;
+      font-family: "Averta CY";
+      font-size: 65px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .bottomImage {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      translate: -50% 0;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 10px;
+      .image {
+        width: 755px;
+        height: auto;
+      }
+      .redText {
+        margin:420px 0 0 0;
+        color: #9c3131;
+        font-family: "Averta Demo PE";
+        font-size: 45px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        min-width: 190px;
+      }
+    }
+  }
+}
