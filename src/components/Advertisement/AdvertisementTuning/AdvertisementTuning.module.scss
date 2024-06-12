@@ -1,0 +1,212 @@
+@mixin font() {
+  color: #fff;
+  font-family: "Averta CY";
+  font-style: normal;
+  line-height: normal;
+}
+
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  .wrapper {
+    width: min(100%, 1400px);
+    min-height: 901px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .title {
+      @include font();
+      margin: 69px 0 0 0;
+      font-size: 60px;
+      font-weight: 700;
+    }
+    .subtitle {
+      @include font();
+      margin: 10px 0 0 0;
+      font-size: 40px;
+      font-weight: 400;
+    }
+    .splitter {
+      margin: 40px 0 0 0;
+      align-self: center;
+      width: 140px;
+      height: 3px;
+      background: #fff;
+    }
+    .optionsTitle {
+      margin: 40px 0 0 0;
+      align-self: center;
+      @include font();
+      font-size: 40px;
+      font-weight: 400;
+    }
+    .optionsFlex {
+      margin: 40px 0 0 0;
+      width: 100%;
+      height: 109px;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      row-gap: 25px;
+      column-gap: 80px;
+      .card {
+        color: #fff;
+        font-family: "Averta Demo PE";
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width: 185px;
+        height: 42px;
+        list-style-type: none;
+        position: relative;
+        padding: 0 0 0 39px;
+        &::before {
+          content: "";
+          width: 15px;
+          aspect-ratio: 1/1;
+          background: #9c3131;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+    .bottomBlockTitle {
+      @include font();
+      margin: 44px 0 0 0;
+      align-self: center;
+      font-size: 40px;
+      font-weight: 400;
+    }
+    .bottomFlex {
+      margin: 44px 0 0 0;
+      width: 100%;
+      height: 215px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 25px;
+      .buttonBlock {
+        height:100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        .button {
+          width: 285px;
+          height: 65px;
+          color: #fff;
+          text-align: center;
+          font-family: "Averta CY";
+          font-size: 22px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 6px solid #9c3131;
+          background: transparent;
+          &:hover {
+            cursor: pointer;
+          }
+          &Selected{
+            background-color: #9c3131;
+          }
+        }
+      }
+      .bottomSplitter {
+        height: 100%;
+        width: 1.5px;
+        background: #fff;
+      }
+      .bottomRightBlock {
+        height: 100%;
+        flex: 1 0 auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: stretch;
+        align-content: flex-start;
+        .bottomRightTopBlock {
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 20px;
+          .contextType {
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+
+            .contextTitle {
+              @include font();
+              width: 250px;
+              display: flex;
+              flex-flow: row nowrap;
+              justify-content: flex-start;
+              align-items: center;
+              gap: 25px;
+              font-size: 25px;
+              font-weight: 300;
+            }
+            .input {
+              @include font();
+              font-size: 23px;
+              font-weight: 300;
+              width: 200px;
+              height: 35px;
+              text-align: center;
+              border: none;
+              border-bottom: 1px solid #fff;
+              background: transparent;
+              &::placeholder {
+                color: #3f3f3f;
+              }
+              &:focus {
+                outline: none;
+              }
+            }
+            .timeOfRealization {
+              @include font();
+              font-size: 25px;
+              font-weight: 300;
+            }
+            .timeOfRealizationValue {
+              @include font();
+              font-size: 25px;
+              font-weight: 300;
+              & span{
+                font-weight: 600;
+              }
+            }
+          }
+        }
+        .bottomRightBottomBlock {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+          align-items: center;
+          .totalValue {
+            @include font();
+            font-size: 30px;
+            font-weight: 300;
+            & span {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+}

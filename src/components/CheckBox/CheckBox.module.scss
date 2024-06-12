@@ -5,4 +5,7 @@
   .checkIcon {
     object-fit: contain;
   }
+  &:hover{
+    cursor: pointer;
+  }
 }

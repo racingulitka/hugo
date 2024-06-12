@@ -56,7 +56,7 @@
           }
         }
         .videoControls {
-          display: none;
+          display: flex;
           position: absolute;
           bottom: 0;
           left: 0;
@@ -113,6 +113,7 @@
               }
 
               &::-webkit-slider-runnable-track {
+                -webkit-appearance: none;
                 width: 100%;
                 height: 5px;
                 border-radius: 3px;
@@ -147,7 +148,98 @@
               flex-flow: row nowrap;
               justify-content: flex-start;
               align-items: center;
+              .volumeControl{
+                height:14px;
+                display:flex;
+                align-items: center;
+                &:hover .volume{
+                  width:65px;
+                  margin:0 0 0 12px;
+                  transition:0.3s;
+                  &::-webkit-slider-thumb{
+                    width:8px;
+                    height:8px;
+                  }
+                  &::-moz-range-thumb{
+                    width:8px;
+                    height:8px;
+                  }
+                }
+                .volumeIcon{
+                  height:14px;
+                }
+                .volume {
+                  -webkit-appearance: none;
+                  appearance: none;
+                  width: 0px;
+                  height: 4px;
+                  background: #949494;
+                  outline: none;
+                  opacity: 0.7;
+                  transition: opacity 0.2s;
+                  cursor: pointer;
+                  border-radius: 2px;
+                  transition:0.3s;
+                  &:hover{
+                    width:65px;
+                    margin:0 0 0 12px;
+                    transition:0.3s;
+                    &::-webkit-slider-thumb {
+                      width:9px;
+                      height:9px;
+                    }
+                  }
+    
+                  &:hover {
+                    opacity: 1;
+                  }
+    
+                  &::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: 0px;
+                    height: 0px;
+                    background: #fff;
+                    cursor: pointer;
+                    border-radius: 50%;
+                    translate: 0px -2px;
+                  }
+    
+                  &::-moz-range-thumb {
+                    width: 0px;
+                    height: 0px;
+                    background: #fff;
+                    cursor: pointer;
+                    border-radius: 50%;
+                  }
+    
+                  &::-webkit-slider-runnable-track {
+                    -webkit-appearance: none;
+                    width: 100%;
+                    height: 5px;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    background: #fff;
+                  }
+    
+                  &::-moz-range-track {
+                    width: 100%;
+                    height: 5px;
+                    cursor: pointer;
+                    background: #949494;
+                    border-radius: 3px;
+                  }
+    
+                  &::-moz-range-progress {
+                    background: #fff;
+                    height: 5px;
+                    border-radius: 3px;
+                  }
+                }
+              }
               .videoControlsBottomBlockLeftItem {
+                width:14px;
+                height:14px;
                 &:hover {
                   cursor: pointer;
                 }
@@ -177,6 +269,13 @@
               }
             }
           }
+        }
+        .videoSettings{
+          width:292px;
+          height:100px;
+          position:absolute;
+          right:5px;
+          bottom:37px;
         }
       }
     }

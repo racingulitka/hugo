@@ -1,0 +1,87 @@
+@mixin font() {
+    color: #fff;
+    font-family: "Averta CY";
+    font-style: normal;
+    line-height: normal;
+  }
+  
+  .mainWrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    .wrapper {
+      width: min(100%, 1920px);
+      min-height: 680px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap:204px;
+      .image{
+          margin:171px 0 0 0;
+      }
+      .leftSide {
+          height: 100%;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          .stepNumber {
+            width: 130px;
+            height: 130px;
+            border-right: 8px solid #9c3131;
+            border-bottom: 8px solid #9c3131;
+            border-left: 8px solid #9c3131;
+            padding: 0px 32px;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: flex-start;
+            .number {
+              width: 100%;
+              @include font();
+              font-size: 40px;
+              font-weight: 600;
+              text-align: start;
+            }
+            .step {
+              width: 100%;
+              margin: -4px 0 0 0;
+              @include font();
+              color: #939393;
+              font-size: 15px;
+              font-weight: 400;
+              text-align: end;
+            }
+          }
+          .title {
+            @include font();
+            margin: 25px 0 0 0;
+            font-size: 60px;
+            font-weight: 700;
+          }
+          .text {
+            @include font();
+            width: 658px;
+            margin: 25px 0 0 0;
+            color: #b0b0b0;
+            font-size: 25px;
+            font-weight: 400;
+          }
+          .button {
+            margin: 50px 0 0 0;
+          }
+          .anotherText {
+            @include font();
+            width:197px;
+            margin: 30px 0 0 0;
+            font-size: 22px;
+            font-weight: 600;
+          }
+        }
+    }
+  }
+  

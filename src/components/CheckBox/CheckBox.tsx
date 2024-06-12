@@ -26,6 +26,7 @@ export default function CheckBox({
                     src={checkIcon}
                     alt='check icon'
                     className={styles.checkIcon}
+                    fill
                 />
             }
         </div>

@@ -1,0 +1,55 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: rgba(22, 22, 22, 0.85);
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  &::-webkit-scrollbar{
+    width:3px;
+  };
+  &::-webkit-scrollbar-thumb{
+    background: #fff;
+  }
+  .mainMenuItem {
+    width: 292px;
+    height: 35px;
+    padding: 10px 15px;
+    color: #cdcdcd;
+    font-family: "Averta CY";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap:25px;
+    &:hover{
+        cursor:pointer;
+    }
+  }
+  .back{
+    width: 292px;
+    height: 35px;
+    padding: 10px 15px;
+    color: #cdcdcd;
+    font-family: "Averta CY";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap:15px;
+    &:hover{
+        cursor: pointer;
+    }
+  }
+}

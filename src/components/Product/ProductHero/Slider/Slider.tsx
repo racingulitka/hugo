@@ -11,6 +11,9 @@ import pauseButton from './assets/pauseButton.svg'
 import mutedButton from './assets/mutedButton.svg'
 import settingsButton from './assets/settingsButton.svg'
 import fullScreenButton from './assets/fullScreenButton.svg'
+import playControlIcon from './assets/playControlIcon.svg'
+import soundIsOnIcon from './assets/soundOnIcon.svg'
+import VideoSettings from './VideoSettings/VideoSettings'
 
 export default function Slider({
     images,
@@ -30,6 +33,9 @@ export default function Slider({
     const [currentTime, setCurrentTime] = useState<number>(0)
     const [duration, setDuration] = useState<number>(0)
     const [isFullscreen, setFullscreen] = useState<boolean>(false)
+    const [volumeValue, setVolumeValue] = useState<number>(0)
+    const [isSettingsOpen, setSettingsOpen] = useState<boolean>(false)
+    const [selectedRate, setSelectedRate] = useState<number>(2)
 
     useEffect(() => {
         const video = videoRef.current
@@ -87,31 +93,69 @@ export default function Slider({
         return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     }
 
-      const handleProgressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const video = videoRef.current;
-    if (video) {
-      const newTime = parseFloat(event.target.value);
-      video.currentTime = newTime;
-      setCurrentTime(newTime);
+    const handleProgressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const video = videoRef.current;
+        if (video) {
+            const newTime = parseFloat(event.target.value);
+            video.currentTime = newTime;
+            setCurrentTime(newTime);
+        }
     }
-  }
 
-  const handleFullscreenClick = () => {
-    const video = videoRef.current;
-    if (!document.fullscreenElement) {
-        video?.requestFullscreen().then(() => {
-            setFullscreen(true);
-        }).catch(err => {
-            console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-        });
-    } else {
-        document.exitFullscreen().then(() => {
-            setFullscreen(false);
-        }).catch(err => {
-            console.error(`Error attempting to disable full-screen mode: ${err.message} (${err.name})`);
-        });
+    const handleVolumeChange = (event:React.ChangeEvent<HTMLInputElement>) => {
+        const video = videoRef.current
+        if(video) {
+            const newVolume = parseFloat(event.target.value)
+            console.log(newVolume)
+            video.volume = newVolume/100
+            setVolumeValue(newVolume)
+            if(newVolume === 0) setIsMuted(true)
+            else setIsMuted(false)
+        }
     }
-};
+
+    const handleFullscreenClick = () => {
+        const video = videoRef.current;
+        if (!document.fullscreenElement) {
+            video?.requestFullscreen().then(() => {
+                setFullscreen(true);
+            }).catch(err => {
+                console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+            });
+        } else {
+            document.exitFullscreen().then(() => {
+                setFullscreen(false);
+            }).catch(err => {
+                console.error(`Error attempting to disable full-screen mode: ${err.message} (${err.name})`);
+            });
+        }
+    };
+
+    const handleChangeRate = (id:number) => {
+        const video = videoRef.current
+        setSelectedRate(id)
+        if(video){
+            switch(id){
+                case 1:{
+                    video.playbackRate = 0.5
+                    break
+                }
+                case 2:{
+                    video.playbackRate = 1
+                    break
+                }
+                case 3:{
+                    video.playbackRate = 1.5
+                    break
+                }
+                case 4:{
+                    video.playbackRate = 2
+                    break
+                }
+                default:break
+            }
+        }
+    }
 
     return (
         <div className={styles.wrapper}>
@@ -153,26 +197,37 @@ export default function Slider({
                                         <div className={styles.videoControlsBottomBlock}>
                                             <div className={styles.videoControlsBottomBlockLeft}>
                                                 <Image
-                                                    src={isPlayVideo ? pauseButton : pauseButton}
+                                                    src={isPlayVideo ? pauseButton : playControlIcon}
                                                     alt='play pause'
                                                     onClick={() => setPlayVideo(prev => !prev)}
                                                     className={styles.videoControlsBottomBlockLeftItem}
                                                     style={{ marginLeft: '15px' }}
+                                                    width={14}
                                                 />
-                                                <Image
-                                                    src={isMuted ? mutedButton : mutedButton}
-                                                    alt='mute unmute'
-                                                    onClick={() => setIsMuted(prev => !prev)}
-                                                    className={styles.videoControlsBottomBlockLeftItem}
-                                                    style={{ marginLeft: '15px' }}
-                                                />
+                                                <div className={styles.volumeControl}>
+                                                    <Image
+                                                        src={isMuted ? mutedButton : soundIsOnIcon}
+                                                        alt='mute unmute'
+                                                        onClick={() => setIsMuted(prev => !prev)}
+                                                        className={cn(styles.videoControlsBottomBlockLeftItem, styles.volumeIcon)}
+                                                        style={{ marginLeft: '15px' }}
+                                                    />
+                                                    <input
+                                                        type="range"
+                                                        className={styles.volume}
+                                                        value={volumeValue}
+                                                        min={0}
+                                                        max={100}
+                                                        onChange={handleVolumeChange}
+                                                    />
+                                                </div>
                                                 <p className={styles.videoControlsBottomBlockLeftTime}>{formatTime(currentTime)}<span> / {formatTime(duration)}</span></p>
                                             </div>
                                             <div className={styles.videoControlsBottomBlockRight}>
-                                            <Image
+                                                <Image
                                                     src={settingsButton}
                                                     alt='settings'
-                                                    onClick={() => console.log('settings')}
+                                                    onClick={() => setSettingsOpen(prev => !prev)}
                                                     className={styles.videoControlsBottomBlockLeftItem}
                                                     style={{ marginLeft: '15px' }}
                                                 />
@@ -199,6 +254,15 @@ export default function Slider({
                                         onClick={() => setPlayVideo(prev => !prev)}
                                     />
                                 </>
+                        }
+                        {
+                            isSettingsOpen &&
+                            <div className={styles.videoSettings}>
+                                <VideoSettings
+                                    onChangeRate={handleChangeRate}
+                                    selectedRate={selectedRate}
+                                />
+                            </div>
                         }
                     </div>
                 </div>
@@ -249,53 +313,3 @@ export default function Slider({
         </div>
     )
 }
-
-
-//   const handleProgressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-//     const video = videoRef.current;
-//     if (video) {
-//       const newTime = parseFloat(event.target.value);
-//       video.currentTime = newTime;
-//       setCurrentTime(newTime);
-//     }
-//   };
-
-//   return (
-//     <div style={{ textAlign: 'center' }}>
-//       <video
-//         ref={videoRef}
-//         src={sampleVideo}
-//         autoPlay
-//         loop
-//         muted={isMuted}
-//         playsInline
-//         width="600"
-//         height="400"
-//         style={{ display: 'block', margin: '0 auto' }}
-//       />
-//       <div>
-//         <button onClick={handlePlayPause}>
-//           {isPlaying ? 'Pause' : 'Play'}
-//         </button>
-//         <button onClick={handleMuteUnmute}>
-//           {isMuted ? 'Unmute' : 'Mute'}
-//         </button>
-//       </div>
-//       <div>
-//         <input
-//           type="range"
-//           min="0"
-//           max={duration}
-//           value={currentTime}
-//           onChange={handleProgressChange}
-//           style={{ width: '100%' }}
-//         />
-//       </div>
-//       <div>
-//         {Math.floor(currentTime)} / {Math.floor(duration)} seconds
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default VideoPlayer;

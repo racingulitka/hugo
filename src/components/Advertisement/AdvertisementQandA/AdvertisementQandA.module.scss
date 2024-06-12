@@ -1,0 +1,66 @@
+@mixin font() {
+  color: #fff;
+  font-family: "Averta CY";
+  font-style: normal;
+  line-height: normal;
+}
+
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  .wrapper {
+    width: min(100%, 1195px);
+    min-height: 619px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 35px;
+    .title {
+      @include font();
+      margin: 79px 0 0 0;
+      font-size: 55px;
+      font-weight: 600;
+    }
+    .flexContainer {
+      margin: 35px 0 0 0;
+      width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 35px;
+      .card {
+        width: 580px;
+        height: 180px;
+        border: 2px solid #9c3131;
+        padding: 20px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 25px;
+        .textBlock {
+          flex: 1 0 auto;
+          .cardTitle {
+            @include font();
+            font-size: 17px;
+            font-weight: 400;
+          }
+          .cardDescription {
+            @include font();
+            margin:15px 0 0 0;
+            width: 374px;
+            color: #b0b0b0;
+            font-size: 15px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
