@@ -1,0 +1,75 @@
+@mixin font() {
+  color: #fff;
+  font-family: "Averta CY";
+  font-style: normal;
+  line-height: normal;
+}
+
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  .wrapper {
+    width: min(100%, 1920px);
+    min-height: 869px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .title {
+      margin: 148px 0 0 260px;
+      @include font();
+      font-size: 60px;
+      font-weight: 700;
+    }
+    .subtitle {
+      margin: 0 0 0 260px;
+      @include font();
+      font-size: 38px;
+      font-weight: 400;
+    }
+    .description {
+      margin: 0 0 0 260px;
+      @include font();
+      color: #b0b0b0;
+      font-size: 18px;
+      font-weight: 400;
+    }
+    .flexContainer {
+      margin: 75px 0 0 260px;
+      width: min(100%, 1061px);
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 25px;
+      .card {
+        height: 61px;
+        padding: 0 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #252525;
+        @include font();
+        color: #b0b0b0;
+        font-size: 18px;
+        font-weight: 700;
+        position: relative;
+        .caption {
+          @include font();
+          padding:0 10px;
+          background: #111;
+          color: #9c3131;
+          font-size: 36px;
+          font-weight: 300;
+          position: absolute;
+          top: -26px;
+          left: 20px;
+        }
+      }
+    }
+  }
+}

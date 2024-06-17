@@ -18,7 +18,21 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
-    align-items: center;
-    gap: 90px;
+    align-items: flex-start;
+    .container {
+      margin: 304px 0 0 260px;
+      .title {
+        @include font();
+        font-size: 65px;
+        font-weight: 700;
+      }
+      .subtitle {
+        @include font();
+        margin: 40px 0 110px 0;
+        color: #b0b0b0;
+        font-size: 42px;
+        font-weight: 400;
+      }
+    }
   }
 }

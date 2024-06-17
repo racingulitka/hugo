@@ -5,6 +5,15 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { Page } from "@/components/Header/Header.config";
 import Contacts from "@/components/Contacts/Contacts";
+import AnalysisHero from "@/components/Analysis/AnalysisHero/AnalysisHero";
+import AnalysisMainQuestions from "@/components/Analysis/AnalysisMainQuestions/AnalysisMainQuestions";
+import AnalysisAnswers from "@/components/Analysis/AnalysisAnswers/AnalysisAnswers";
+import AnalysisTypicalContent from "@/components/Analysis/AnalysisTypicalContent/AnalysisTypicalContent";
+import AnalysisSource from "@/components/Analysis/AnalysisSource/AnalysisSource";
+import AnalysisActuality from "@/components/Analysis/AnalysisActuality/AnalysisActuality";
+import AnalysisFormat from "@/components/Analysis/AnalysisFormat/AnalysisFormat";
+import AnalysisDetails from "@/components/Analysis/AnalysisDetails/AnalysisDetails";
+import AnalysisQandA from "@/components/Analysis/AnalysisQandA/AnalysisQandA";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +28,15 @@ export default function Analysis() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <Header page={Page.home}/>
-
+        <AnalysisHero />
+        <AnalysisMainQuestions />
+        <AnalysisAnswers />
+        <AnalysisTypicalContent />
+        <AnalysisSource />
+        <AnalysisActuality />
+        <AnalysisFormat />
+        <AnalysisDetails />
+        <AnalysisQandA />
         <Contacts />
         <Footer />
       </main>

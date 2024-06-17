@@ -1,0 +1,100 @@
+@mixin font() {
+  color: #fff;
+  font-family: "Averta CY";
+  font-style: normal;
+  line-height: normal;
+}
+
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  .wrapper {
+    width: min(100%, 1400px);
+    min-height: 1080px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .title {
+      @include font();
+      margin: 113px 0 0 0;
+      font-size: 60px;
+      font-weight: 700;
+    }
+    .subtitle {
+      @include font();
+      font-size: 38px;
+      font-weight: 400;
+    }
+    .middleBlock {
+      margin: 45px 0 0 0;
+      width: 100%;
+      height: 387px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 260px;
+      .middleText {
+        @include font();
+        color: #191919;
+        font-size: 554px;
+        font-weight: 700;
+        translate: 0 -30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .middleTextText {
+          @include font();
+          width: 533px;
+          color: #b0b0b0;
+          font-size: 72px;
+          font-weight: 300;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          translate: -50% -45%;
+        }
+      }
+    }
+    .bottomFlex {
+      margin: 75px 0 0 0;
+      width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      .card {
+        width: 189px;
+        height: 265px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+        .cardTitle {
+          width: 100%;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+          align-items: center;
+          .boldText {
+            @include font();
+            font-size: 22px;
+            font-weight: 600;
+          }
+          .thinText {
+            @include font();
+            color: #b0b0b0;
+            font-size: 22px;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+}

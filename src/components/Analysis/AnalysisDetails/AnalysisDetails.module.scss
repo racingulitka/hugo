@@ -1,0 +1,68 @@
+@mixin font() {
+  color: #fff;
+  font-family: "Averta CY";
+  font-style: normal;
+  line-height: normal;
+}
+
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  .wrapper {
+    width: min(100%, 1920px);
+    min-height: 680px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    .title {
+      @include font();
+      margin: 124px 0 0 0;
+      width: 1200px;
+      font-size: 70px;
+      font-weight: 700;
+    }
+    .subtitle {
+      @include font();
+      width: 1200px;
+      font-size: 30px;
+      font-weight: 400;
+    }
+    .flexContainer {
+      margin: 55px 0 0 0;
+      width: 1200px;
+      height: 277px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      row-gap: 45px;
+      .card {
+        width: 525px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 30px;
+        .textBlock {
+          .textBlockTitle {
+            @include font();
+            font-size: 28px;
+            font-weight: 600;
+          }
+          .text {
+            width: 395px;
+            @include font();
+            color: #b0b0b0;
+            font-size: 20px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}

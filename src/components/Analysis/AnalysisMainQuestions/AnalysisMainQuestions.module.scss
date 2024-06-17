@@ -1,0 +1,88 @@
+@mixin font() {
+  color: #fff;
+  font-family: "Averta CY";
+  font-style: normal;
+  line-height: normal;
+}
+
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  .wrapper {
+    width: min(100%, 1130px);
+    min-height: 1080px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .title {
+      @include font();
+      margin: 107px 0 0 0;
+      font-size: 65px;
+      font-weight: 700;
+    }
+    .subtitle {
+      @include font();
+      font-size: 42px;
+      font-weight: 400;
+    }
+    .flexContainer {
+      margin: 33px 0 0 0;
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px 110px;
+      .card {
+        width: 510px;
+        height: 220px;
+        border-bottom: 3px solid #9c3131;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .cardWrapper {
+          width: 342px;
+          height: 133px;
+          .cardTitle {
+            @include font();
+            font-size: 26px;
+            font-weight: 600;
+          }
+          .questions {
+            width: 100%;
+            margin: 5px 0 0 0;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 3px;
+            .question {
+              @include font();
+              color: #b0b0b0;
+              font-size: 24px;
+              font-weight: 300;
+              padding:0 0 0 25px;
+              position: relative;
+              &::before{
+                content: '';
+                width:12px;
+                aspect-ratio: 1/1;
+                background: #9c3131;
+                position: absolute;
+                top:50%;
+                left:0;
+                translate:0 -50%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

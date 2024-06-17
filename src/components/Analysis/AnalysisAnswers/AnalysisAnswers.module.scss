@@ -1,0 +1,91 @@
+@mixin font() {
+  color: #fff;
+  font-family: "Averta CY";
+  font-style: normal;
+  line-height: normal;
+}
+
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  .wrapper {
+    width: min(100%, 1241px);
+    min-height: 1080px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .title {
+      @include font();
+      margin: 113px 0 0 0;
+      font-size: 60px;
+      font-weight: 700;
+    }
+    .subtitle {
+      @include font();
+      font-size: 38px;
+      font-weight: 400;
+    }
+    .description {
+      @include font();
+      margin: 20px 0 0 0;
+      font-size: 22px;
+      font-weight: 300;
+    }
+    .flexTitle {
+      @include font();
+      align-self: center;
+      margin: 40px 0 0 0;
+      font-size: 64px;
+      font-weight: 400;
+    }
+    .flexContainer {
+      margin: 40px 0 0 0;
+      width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 35px;
+      .card {
+        width: 390px;
+        height: 100px;
+        padding: 0 55px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 25px;
+        background: #232323;
+        &Odd {
+          background: #191919;
+        }
+        .text {
+          @include font();
+          max-width: 215px;
+          font-size: 20px;
+          font-weight: 400;
+        }
+      }
+    }
+    .bottomBlock {
+      margin: 40px 0 0 0;
+      align-self: center;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      .bottomText {
+        @include font();
+        width: 214px;
+        font-size: 22px;
+        font-weight: 700;
+      }
+    }
+  }
+}
