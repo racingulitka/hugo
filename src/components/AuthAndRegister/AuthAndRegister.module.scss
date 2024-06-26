@@ -1,0 +1,44 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: #111;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .main {
+    width: 620px;
+    height: 680px;
+    background: #191919;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .logoContainer {
+      position: absolute;
+      top: 23px;
+      left: 24px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 8px;
+      & p {
+        color: #fff;
+        font-family: "Averta Demo PE";
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      .logo {
+        width: 55px;
+        height: auto;
+      }
+    }
+  }
+}

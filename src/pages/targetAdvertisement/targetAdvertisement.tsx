@@ -22,6 +22,7 @@ import TargetReports from "@/components/Target/TargetReports/TargetReports";
 import AdvertisementWarranty from "@/components/Advertisement/AdvertisementWarranty/AdvertisementWarranty";
 import AdvertisementWeAreNotTheBest from "@/components/Advertisement/AdvertisementWeAreNotTheBest/AdvertisementWeAreNotTheBest";
 import AdvertisementQandA from "@/components/Advertisement/AdvertisementQandA/AdvertisementQandA";
+import AuthAndRegister from "@/components/AuthAndRegister/AuthAndRegister";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -43,6 +44,7 @@ export default function Advertisement() {
         <TargetCompetitor />
         <TargetPerson />
         <TargetAudience />
+        <AuthAndRegister />
         <TargetBanners />
         <TargetTools />
         <TargetTest />

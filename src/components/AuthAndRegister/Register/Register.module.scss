@@ -1,0 +1,219 @@
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  .title {
+    color: #fff;
+    font-family: "Averta CY";
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .registerInvitationBlock {
+    margin: 29px 0 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    .question {
+      color: #8d8d8d;
+      font-family: "Averta Demo PE";
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      white-space: nowrap;
+    }
+    .toRegister {
+      color: #9c3131;
+      font-family: "Averta Demo PE";
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-decoration-line: underline;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .socialBlock {
+    margin: 25px 0 0 0;
+    width: 375px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .socialText {
+      width: 150px;
+      color: #949494;
+      text-align: center;
+      font-family: "Averta Demo PE";
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+  .fieldContainer{
+    position:relative;
+      .field {
+        margin: 34px 0 0 0;
+        width: 375px;
+        height: 35px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: red;
+        background: transparent;
+        border: none;
+        color: #fff;
+        font-family: "Averta CY";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        border-bottom: 1px solid #8d8d8d;
+        &:focus {
+          outline: none;
+        }
+        &::placeholder {
+          color: #8d8d8d;
+          font-size: 12px;
+          font-weight: 700;
+        }
+      }
+  }
+  .checkboxLabel {
+    margin: 10px 0 0 0;
+    display: flex;
+    align-items: center;
+    color: #949494;
+    font-family: "Averta Demo PE";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    position:relative;
+
+    .checkbox {
+      display: none;
+    }
+
+    .customCheckbox {
+      width: 10px;
+      height: 10px;
+      border: 1px solid #9c3131;
+      background-color: transparent;
+      position: relative;
+      margin-right: 10px;
+    }
+
+    .customCheckbox::after {
+      content: url(../assets/check.svg);
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: 10px;
+      height: 10px;
+      display: none;
+    }
+
+    .checkbox:checked + .customCheckbox::after {
+      display: block;
+    }
+  }
+  .buttonBlock {
+    margin:25px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    .toServerRules {
+      width: 183px;
+      height: 50px;
+      background: #252525;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #8d8d8d;
+      font-family: "Averta CY";
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      transition:0.3s;
+      &:hover{
+        cursor:pointer;
+        opacity: 0.9;
+        transition:0.3s;
+      }
+    }
+    .button {
+      width: 183px;
+      height: 50px;
+      background-color: #9c3131;
+      transition: 0.3s;
+      border: none;
+      color: #fff;
+      font-family: "Averta CY";
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      &:hover {
+        opacity: 0.9;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+    }
+  }
+  .lostPasswordBlock {
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    .lostText {
+      color: #949494;
+      text-align: center;
+      font-family: "Averta Demo PE";
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    .lostLink {
+      color: #9c3131;
+      text-align: center;
+      font-family: "Averta Demo PE";
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.error{
+    color:#9c3131;
+    font-family: "Averta Demo PE";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position:absolute;
+    bottom:0;
+    left:0;
+    translate:0 100%;
+}
