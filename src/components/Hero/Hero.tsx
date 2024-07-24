@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styles from './Hero.module.scss'
 import rightArrow from './assets/rightArrow.svg'
 import Image from 'next/image'
@@ -9,10 +9,29 @@ import HeroBottomLinks from '../common/HeroBottomLinks/HeroBottomLinks'
 
 export default function Hero() {
 
+    const h1Ref = useRef<HTMLDivElement | null>(null)
+
+    const backgroundMove = (e: MouseEvent) => {
+        const shift = {x:25, y:50}
+        const newCoords = { x: e.clientX, y: e.clientY }
+        const h1 = h1Ref.current
+        if (h1) {
+            h1.style.backgroundPosition = `${newCoords.x - h1.getBoundingClientRect().width - shift.x}px ${newCoords.y - h1.getBoundingClientRect().height - shift.y}px`
+        }
+    }
+
+    useEffect(() => {
+        const h1 = h1Ref.current
+        if (h1) {
+            h1.addEventListener('mousemove', backgroundMove)
+            return () => h1.removeEventListener('mousemove', backgroundMove)
+        }
+    }, [])
+
     return (
         <div className={styles.mainWrapper}>
             <div className={styles.wrapper} id='hero'>
-                <h1 className={styles.h1}>HUGO</h1>
+                <h1 className={styles.h1} ref={h1Ref}>HUGO</h1>
                 <div className={styles.breefBlock}>
                     <div className={styles.description}>Агентство, которое знает, что нужно каждому <span>GTA проекту:</span> продуктовый менеджмент</div>
                     <Link href='#'>

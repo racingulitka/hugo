@@ -63,8 +63,9 @@
       font-weight: 400;
       line-height: normal;
       border-bottom: 1px solid #8d8d8d;
+      outline: none !important;
       &:focus {
-        outline: none;
+        outline: none !important;
       }
       &::placeholder {
         color: #8d8d8d;

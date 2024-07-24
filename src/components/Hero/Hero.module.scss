@@ -1,7 +1,7 @@
 .mainWrapper {
   width: 100%;
   height: auto;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   background: #111;
@@ -12,15 +12,31 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
+    position: relative;
     .h1 {
-      color: #fff;
+      width: fit-content;
+      height: auto;
+      overflow: hidden;
+      position: relative;
+      //margin: 90px 0 0px 48px;
+      margin: 52px 0 0px 0px;
+      box-sizing: content-box;
+      padding:48px 100px 48px 48px;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background: radial-gradient(circle, #777 0%, #666 2%, #555 4%, #444 6%, #333 8%, #222 10%) 0% 0% / 200% 200% no-repeat;
+      background-clip: text;
+      -webkit-background-clip: text;
       font-family: "Tafel Sans Pro";
       font-size: 252px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
-      margin: 90px 0 0px 48px;
+      cursor: none;
     }
+
     .breefBlock {
       margin: 63px 0 0 69px;
       display: flex;
