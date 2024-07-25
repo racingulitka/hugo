@@ -10,10 +10,29 @@ import Reviews from "@/components/Reviews/Reviews";
 import Contacts from "@/components/Contacts/Contacts";
 import Footer from "@/components/Footer/Footer";
 import { Page } from "@/components/Header/Header.config";
+import { getIsSsrMobile } from "@/utils/isSSRMoblile";
+import { GetServerSidePropsContext } from "next";
+import MobileHeader from "@/components/MobileHeader/MobileHeader";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  return {
+    props: {
+      isSSRMobile: getIsSsrMobile(context),
+    },
+  };
+}
+
+export default function Home({
+  isSSRMobile
+}:{
+  isSSRMobile:boolean
+}) {
+
+  const isMobile = isSSRMobile
+  console.log(isMobile)
+
   return (
     <>
       <Head>
@@ -23,7 +42,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <Header page={Page.home}/>
+        {
+          isMobile ?
+          <MobileHeader /> :
+          <Header page={Page.home}/>
+        }
+        <div style={{position:'fixed', top:0, width:100, height:100, background:'red'}}></div>
         <Hero />
         <Shop />
         <WhyAreTheyTrustUs />

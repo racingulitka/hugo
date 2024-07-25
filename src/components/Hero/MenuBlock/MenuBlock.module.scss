@@ -28,4 +28,15 @@
       color: #9c3131;
     }
   }
+  @media(max-width:360px){
+    width:156px;
+    height:99px;
+    padding:10px;
+    .mini{
+      width:15px;
+    }
+    & p{
+      font-size: 14px;
+    }
+  }
 }

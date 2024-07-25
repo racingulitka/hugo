@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import styles from './Hero.module.scss'
 import rightArrow from './assets/rightArrow.svg'
 import Image from 'next/image'
@@ -10,6 +10,7 @@ import HeroBottomLinks from '../common/HeroBottomLinks/HeroBottomLinks'
 export default function Hero() {
 
     const h1Ref = useRef<HTMLDivElement | null>(null)
+    //const pointerRef = useRef<HTMLDivElement | null>(null)
 
     const backgroundMove = (e: MouseEvent) => {
         const shift = {x:25, y:50}
@@ -18,6 +19,11 @@ export default function Hero() {
         if (h1) {
             h1.style.backgroundPosition = `${newCoords.x - h1.getBoundingClientRect().width - shift.x}px ${newCoords.y - h1.getBoundingClientRect().height - shift.y}px`
         }
+        // const pointer = pointerRef.current
+        // if(pointer){
+        //     pointer.style.top = newCoords.y + 'px'
+        //     pointer.style.left = newCoords.x + 'px'
+        // }
     }
 
     useEffect(() => {
@@ -31,6 +37,7 @@ export default function Hero() {
     return (
         <div className={styles.mainWrapper}>
             <div className={styles.wrapper} id='hero'>
+                {/* <div className={styles.pointer} ref={pointerRef}></div> */}
                 <h1 className={styles.h1} ref={h1Ref}>HUGO</h1>
                 <div className={styles.breefBlock}>
                     <div className={styles.description}>Агентство, которое знает, что нужно каждому <span>GTA проекту:</span> продуктовый менеджмент</div>
@@ -53,24 +60,6 @@ export default function Hero() {
                         })
                     }
                 </nav>
-                {/* <div className={styles.bottomLinks}>
-                    <Link href='#'><span>Канал Hugo</span></Link>
-                    <Link href='#'><span>Полезные материалы</span></Link>
-                    <div className={styles.socialMediaLinks}>
-                        {
-                            socialMediaLinksArr.map(link => {
-                                return (
-                                    <Link
-                                        key={link.id}
-                                        href={link.link}
-                                    >
-                                        <link.icon />
-                                    </Link>
-                                )
-                            })
-                        }
-                    </div>
-                </div> */}
                 <HeroBottomLinks />
             </div>
         </div>

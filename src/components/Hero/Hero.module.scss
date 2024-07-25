@@ -13,6 +13,21 @@
     justify-content: flex-start;
     align-items: flex-start;
     position: relative;
+    @media (max-width: 360px) {
+      padding: 0 19px;
+      min-height:0;
+    }
+    // .pointer{
+    //   width:50px;
+    //   height:50px;
+    //   background: url(./assets/circle.svg) center / contain no-repeat;
+    //   position:absolute;
+    //   top:0;
+    //   left:0;
+    //   z-index:1;
+    //   border-radius: 50%;
+    //   filter:blur(10px);
+    // }
     .h1 {
       width: fit-content;
       height: auto;
@@ -21,12 +36,22 @@
       //margin: 90px 0 0px 48px;
       margin: 52px 0 0px 0px;
       box-sizing: content-box;
-      padding:48px 100px 48px 48px;
+      padding: 48px 100px 48px 48px;
       color: transparent;
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background: radial-gradient(circle, #777 0%, #666 2%, #555 4%, #444 6%, #333 8%, #222 10%) 0% 0% / 200% 200% no-repeat;
+      background: radial-gradient(
+          circle,
+          #777 0%,
+          #666 2%,
+          #555 4%,
+          #444 6%,
+          #333 8%,
+          #222 10%
+        )
+        0% 0% / 200% 200% no-repeat;
+      //background: linear-gradient(180deg, #222 50%, #141414 150%) 0% 0% / 200% 200% no-repeat, url(./assets/circle.svg) 30% 30% / auto no-repeat;
       background-clip: text;
       -webkit-background-clip: text;
       font-family: "Tafel Sans Pro";
@@ -35,6 +60,17 @@
       font-weight: 700;
       line-height: normal;
       cursor: none;
+      z-index: 2;
+      @media (max-width: 360px) {
+        margin: 51px 0 0 0;
+        padding: 0;
+        font-size: 80px;
+        color: #fff;
+        background: none;
+        background-clip: none;
+        -webkit-background-clip: none;
+        -webkit-text-fill-color: #fff;
+      }
     }
 
     .breefBlock {
@@ -44,6 +80,12 @@
       justify-content: flex-start;
       align-items: center;
       gap: 94px;
+      @media (max-width: 360px) {
+        margin: 15px 0 0 0;
+        max-width: 100%;
+        flex-flow: row wrap;
+        gap: 15px;
+      }
       .description {
         width: 439px;
         color: #b0b0b0;
@@ -54,6 +96,10 @@
         line-height: normal;
         & span {
           color: #9c3131;
+        }
+        @media (max-width: 360px) {
+          font-size: 12px;
+          width: 263px;
         }
       }
       .breefButton {
@@ -81,6 +127,15 @@
         &:hover {
           cursor: pointer;
         }
+        @media (max-width: 360px) {
+          width: 175px;
+          height: 32px;
+          font-size: 10px;
+          gap: 10px;
+          .rightArrow {
+            width: 13px;
+          }
+        }
       }
     }
     .menuBlock {
@@ -92,38 +147,11 @@
       justify-content: flex-start;
       align-items: center;
       gap: 15px;
+      @media (max-width: 360px) {
+        max-width: 100%;
+        margin: 40px 0 0 0;
+        gap:9px;
+      }
     }
-    // .bottomLinks {
-    //   margin: 31px 88px 0 0;
-    //   align-self: flex-end;
-    //   display: flex;
-    //   flex-flow: row nowrap;
-    //   justify-content: flex-start;
-    //   align-items: center;
-    //   gap: 40px;
-    //   & span {
-    //     color: #8d8d8d;
-    //     font-family: "Averta Demo PE";
-    //     font-size: 20px;
-    //     font-style: normal;
-    //     font-weight: 400;
-    //     line-height: normal;
-    //     &:hover {
-    //       cursor: pointer;
-    //       color: #9c3131;
-    //     }
-    //   }
-    //   .socialMediaLinks {
-    //     display: flex;
-    //     flex-flow: row nowrap;
-    //     justify-content: flex-start;
-    //     align-items: center;
-    //     gap: 28px;
-    //     .smLink {
-    //       width: auto;
-    //       height: 31px;
-    //     }
-    //   }
-    // }
   }
 }
