@@ -47,14 +47,13 @@ export default function Home({
           <MobileHeader /> :
           <Header page={Page.home}/>
         }
-        <div style={{position:'fixed', top:0, width:100, height:100, background:'red'}}></div>
         <Hero />
         <Shop />
         <WhyAreTheyTrustUs />
-        <ContactUs />
+        {/* <ContactUs />
         <Reviews />
         <Contacts />
-        <Footer />
+        <Footer /> */}
       </main>
     </>
   );

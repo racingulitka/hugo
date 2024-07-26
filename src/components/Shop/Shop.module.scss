@@ -1,3 +1,5 @@
+$mobile-width:480px;
+
 .mainWrapper {
   width: 100%;
   height: auto;
@@ -11,6 +13,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 480px) {
+      padding: 0 19px;
+    }
     .main {
       display: flex;
       flex-flow: column nowrap;
@@ -53,6 +58,15 @@
             width: 100%;
             transition: 0.3s;
           }
+          @media (max-width: 480px) {
+            display: none;
+          }
+        }
+        @media (max-width: 480px) {
+          & h2 {
+            font-size: 18px;
+            font-weight: 400;
+          }
         }
       }
       .flexContainer {
@@ -62,6 +76,9 @@
         justify-content: center;
         align-items: center;
         gap: 15px;
+        @media(max-width:480px){
+          margin:15px 0 0 0;
+        }
         .card {
           width: 580px;
           height: 610px;
@@ -71,15 +88,20 @@
           justify-content: flex-end;
           align-items: center;
           gap: 20px;
-          .topBlock{
-            flex:1 0 auto;
+          @media(max-width:480px){
             width:100%;
-            display:flex;
+            height:auto;
+            padding:25px 38px;
+          }
+          .topBlock {
+            flex: 1 0 auto;
+            width: 100%;
+            display: flex;
             justify-content: center;
             align-items: center;
-            .image{
-              width: 290px;
-              height:auto;
+            .image {
+              width: min(290px, 100%);
+              height: auto;
             }
           }
           .bottomBlock {
@@ -92,6 +114,10 @@
             justify-content: flex-start;
             align-items: center;
             gap: 20px;
+            @media(max-width:480px){
+              height:auto;
+              padding:0;
+            }
             .title {
               width: 100%;
               height: 51px;
@@ -105,6 +131,10 @@
               font-style: normal;
               font-weight: 700;
               line-height: normal;
+              @media(max-width:480px){
+                height:auto;
+                font-size: 14px;
+              }
             }
             .links {
               width: 100%;
@@ -115,6 +145,13 @@
               align-items: flex-start;
               row-gap: 16px;
               column-gap: 139px;
+              @media(max-width:$mobile-width){
+                height:60px;
+                row-gap: 10px;
+                column-gap: 0;
+                align-content: space-between;
+                align-items: stretch;
+              }
               .link {
                 color: #8e8e8e;
                 font-family: "Averta Demo PE";
@@ -122,6 +159,10 @@
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
+                @media(max-width:$mobile-width){
+                  //flex:1 1 auto;
+                  font-size: 10px;
+                }
                 &:hover {
                   color: #9c3131;
                 }

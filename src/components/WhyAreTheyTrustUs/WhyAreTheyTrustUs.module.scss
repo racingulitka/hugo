@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 @mixin h2font() {
   color: #fff;
   font-family: "Averta CY";
@@ -5,6 +7,10 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  @media(max-width:$mobile-size){
+    font-size: 18px;
+    font-weight: 600;
+  }
 }
 
 @mixin pfont() {
@@ -14,6 +20,9 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  @media(max-width:$mobile-size){
+    font-size: 12px;
+  }
 }
 
 .mainWrapper {
@@ -30,6 +39,9 @@
     top: 0px;
     right: 0px;
     z-index: 1;
+    @media(max-width: $mobile-size){
+      display:none;
+    }
   }
   .wrapper {
     width: min(100%, 1920px);
@@ -40,6 +52,10 @@
     align-items: flex-start;
     position: relative;
     z-index: 2;
+    @media(max-width:$mobile-size){
+      padding:0 19px;
+      min-height: 100px;
+    }
     .mainInfo {
       max-width: 1127px;
       margin: 80px 0 0 66px;
@@ -48,6 +64,11 @@
       justify-content: flex-start;
       align-items: flex-start;
       gap: 98px;
+      @media(max-width:$mobile-size){
+        margin:45px 0;
+        gap:20px;
+        width:100%;
+      }
       .header {
         width: 100%;
         height: auto;
@@ -62,6 +83,15 @@
         & p {
           @include pfont();
         }
+        @media(max-width:$mobile-size){
+          gap:15px;
+          & h2{
+            width:200px;
+          }
+          & p{
+            font-size: 12px;
+          }
+        }
       }
       .advantages {
         width: 100%;
@@ -71,6 +101,14 @@
         align-items: center;
         row-gap: 65px;
         column-gap: 110px;
+        @media(max-width:$mobile-size){
+          flex-wrap:nowrap;
+          width:100%;
+          overflow-x: scroll;
+          justify-content: flex-start;
+          gap:15px;
+          scrollbar-width: none;
+        }
         .advCard {
           width: 298px;
           height: 100px;
@@ -78,14 +116,26 @@
           flex-flow: row nowrap;
           justify-content: space-between;
           align-items: center;
+          @media(max-width:$mobile-size){
+            width:70px;
+            flex-flow:column nowrap;
+            height:auto;
+            gap:5px;
+          }
           .iconContainer {
             width: 100px;
             aspect-ratio: 1/1;
             background: #252525;
+            @media(max-width:$mobile-size){
+              width:100%;
+            }
           }
           .advTitle {
             @include h2font();
             font-size: 20px;
+            @media(max-width:$mobile-size){
+              font-size: 8px;
+            }
           }
         }
       }
@@ -99,6 +149,11 @@
       justify-content: flex-start;
       align-items: flex-start;
       gap: 30px;
+      @media(max-width:$mobile-size){
+        margin:0;
+        gap:15px;
+        width:100%;
+      }
       & h2 {
         @include h2font();
       }
@@ -109,10 +164,18 @@
         flex-flow: row nowrap;
         justify-content: flex-start;
         align-items: center;
+        @media(max-width:$mobile-size){
+          flex-flow:column nowrap;
+          gap:20px;
+          align-items: flex-start;
+        }
         .description {
           @include pfont();
           width: 594px;
           height: auto;
+          @media(max-width:$mobile-size){
+            width:100%;
+          }
         }
         .goToBlogButton {
           width: 258px;
@@ -133,6 +196,15 @@
           &:hover {
             cursor: pointer;
           }
+          @media(max-width:$mobile-size){
+            width:150px;
+            height:32px;
+            padding:0;
+            gap:10px;
+            .arrowRight{
+              width:13px;
+            }
+          }
         }
       }
     }
@@ -140,6 +212,10 @@
         margin:3px 0 0 69px;
         width:min(1545px, 100% - 69px);
         height:auto;
+        @media(max-width:$mobile-size){
+          margin:45px 0 0 0;
+          width:100%;
+        }
     }
   }
 }
