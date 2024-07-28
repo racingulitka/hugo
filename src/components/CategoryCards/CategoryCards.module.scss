@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 .wrapper {
   width: 100%;
   height: auto;
@@ -7,6 +9,10 @@
   align-items: center;
   gap: 15px;
   background: #111;
+  @media(max-width:$mobile-size){
+    margin:25px 0 0 0;
+    padding:0 19px;
+  }
   .card {
     width: 584px;
     height: 263px;
@@ -17,9 +23,20 @@
     box-sizing: border-box;
     padding: 30px;
     background: #252525;
+    @media(max-width:$mobile-size){
+      width:100%;
+      height:auto;
+      padding:25px 38px;
+      flex-flow:column nowrap;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
     .linksBlock {
       width: auto;
       height: auto;
+      @media(max-width:$mobile-size){
+        width:100%;
+      }
       & h3 {
         color: #fff;
         font-family: "Averta CY";
@@ -27,6 +44,9 @@
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+        @media(max-width:$mobile-size){
+          font-size: 14px;
+        }
       }
       .links {
         margin: 19px 0 0 0;
@@ -38,6 +58,14 @@
         align-items: flex-start;
         column-gap:31px;
         row-gap:20px;
+        @media(max-width:$mobile-size){
+          margin: 20px 0 0 0;
+          height:59px;
+          width:100%;
+          column-gap: 0;
+          row-gap: 10px;
+          align-content: space-between;
+        }
         .link {
           color: #8e8e8e;
           font-family: "Averta Demo PE";
@@ -45,6 +73,9 @@
           font-style: normal;
           font-weight: 400;
           line-height: normal;
+          @media(max-width:$mobile-size){
+            font-size: 10px;
+          }
           &:hover{
             color:#9C3131;
           }
@@ -54,6 +85,9 @@
     .image{
         width:180px;
         height:auto;
+        @media(max-width:$mobile-size){
+          width:max(160px, 70%);
+        }
     }
   }
 }

@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+
+// default deploy
+
 const nextConfig = {
   reactStrictMode: true,
   webpack(config) {
@@ -19,3 +22,12 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
+//deploy to gitHubPages
+
+// const isProd = process.env.NODE_ENV === 'production';
+
+// export default {
+//   basePath: isProd ? '/repository-name' : '',
+//   assetPrefix: isProd ? '/repository-name/' : '',
+// };

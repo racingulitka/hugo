@@ -7,6 +7,9 @@
   align-items: center;
   background: #111;
   background-size: cover;
+  @media(max-width:480px){
+    display:none;
+  }
   .wrapper {
     width: min(1920px, 100%);
     min-height: 369px;

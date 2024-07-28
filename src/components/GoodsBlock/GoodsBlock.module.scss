@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 .wrapper {
   width: 100%;
   height: auto;
@@ -6,6 +8,9 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 70px;
+  @media(max-width:$mobile-size){
+    gap:15px;
+  }
   .header {
     width:100%;
     display: flex;
@@ -31,6 +36,10 @@
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+        @media(max-width:$mobile-size){
+          font-size:18px;
+          font-weight: 600;
+        }
       }
       .arrowRightContainer {
         margin: 0 0 6px 0;
@@ -38,6 +47,15 @@
           width: 16px;
           height: auto;
         }
+        @media(max-width:$mobile-size){
+          margin:0;
+          .arrowRight{
+            width:8px;
+          }
+        }
+      }
+      @media(max-width:$mobile-size){
+        gap:10px;
       }
     }
     .rightSide {
@@ -48,6 +66,9 @@
       font-weight: 400;
       line-height: normal;
       text-decoration-line: underline;
+      @media(max-width:$mobile-size){
+        display:none;
+      }
     }
   }
   .cards {
@@ -58,5 +79,10 @@
     justify-content: flex-start;
     align-items: center;
     gap: 15px;
+    @media(max-width:$mobile-size){
+      display:grid;
+      grid-template-columns: repeat(2, calc(50% - 5px));
+      grid-gap:10px;
+    }
   }
 }

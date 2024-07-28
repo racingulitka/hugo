@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 .mainWrapper {
   width: 100%;
   height: auto;
@@ -8,12 +10,18 @@
   background: #111;
   box-sizing: border-box;
   padding: 90px 0 90px 0;
+  @media(max-width:$mobile-size){
+    padding:25px 0;
+  }
   .wrapper {
     width: min(1782px, 100%);
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: flex-start;
+    @media(max-width:$mobile-size){
+      padding:0 19px;
+    }
 
     .leftColumn {
       width: 415px;
@@ -26,6 +34,9 @@
       gap: 16px;
       box-sizing: border-box;
       padding:130px 0 0 0;
+      @media(max-width:$mobile-size){
+        display:none;
+      }
       .adverticement{
         width:331px;
         height:auto;
@@ -39,7 +50,11 @@
       justify-content: flex-start;
       align-items: flex-start;
       gap: 86px;
-
+      @media(max-width:$mobile-size){
+        flex-grow:unset;
+        width:100%;
+        gap:45px;
+      }
     }
   }
 }

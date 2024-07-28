@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { CarType } from '@/components/CarTypeSelect/CarTypeSelect.config';
 import Head from "next/head";
 import { Inter } from "next/font/google";
@@ -11,11 +11,29 @@ import CategoryCards from "@/components/CategoryCards/CategoryCards";
 import VehiclesHero from "@/components/VehiclesHero/VehiclesHero";
 import CarTypeSelect from "@/components/CarTypeSelect/CarTypeSelect";
 import MainContentVehicles from "@/components/MainContentVehicles/MainContentVehicles";
+import { GetServerSidePropsContext } from 'next';
+import { getIsSsrMobile } from '@/utils/isSSRMoblile';
+import MobileHeader from '@/components/MobileHeader/MobileHeader';
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  return {
+    props: {
+      isSsrMobile: getIsSsrMobile(context)
+    },
+  };
+}
 
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Vehicles() {
+export default function Vehicles({
+  isSsrMobile,
+}: {
+  isSsrMobile: boolean,
+}) {
+
+  const isMobile = isSsrMobile
+
   const [activeCategory, setActiveCategory] = useState<CarType | null>(null)
   return (
     <>
@@ -26,12 +44,16 @@ export default function Vehicles() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <Header page={Page.shop} />
+        {
+          isMobile ?
+            <MobileHeader /> :
+            <Header page={Page.shop} />
+        }
         <VehiclesHero />
         <div className={pageStyles.carTypeSelect}>
-          <CarTypeSelect activeCategory={activeCategory} setActiveCategory={setActiveCategory}/>
+          <CarTypeSelect activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
         </div>
-        <MainContentVehicles activeCategory={activeCategory} setActiveCategory={setActiveCategory}/>
+        <MainContentVehicles activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
         <CategoryCards />
         <Footer />
       </main>

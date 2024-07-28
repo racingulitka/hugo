@@ -1,3 +1,5 @@
+$mobile-size: 480px;
+
 .mainWrapper {
   width: 100%;
   height: auto;
@@ -7,6 +9,9 @@
   align-items: center;
   background: url(./assets/decoration.svg), #111;
   background-size: cover;
+  @media (max-width: $mobile-size) {
+    background: #111;
+  }
   .wrapper {
     width: min(1920px, 100%);
     min-height: 1080px;
@@ -14,34 +19,58 @@
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: $mobile-size) {
+      min-height: 0;
+      padding: 0 19px;
+    }
     & h2 {
-        align-self: flex-start;
-        margin:77px 0 0 70px;
+      align-self: flex-start;
+      margin: 77px 0 0 70px;
       color: #fff;
       font-family: "Averta CY";
       font-size: 45px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+      @media(max-width:$mobile-size){
+        margin:45px 0 0 0;
+        font-size: 18px;
+        font-weight: 600;
+      }
     }
-    .reviewBlock{
-        margin: 0 0 23px 0;
-        max-width:1785px;
-        min-height:923px;
-        display:flex;
-        flex-flow:row wrap;
-        justify-content: center;
-        align-items: flex-end;
-        gap:15px;
-        .column{
-            width:fit-content;
-            height:auto;
-            display:flex;
-            flex-flow:column nowrap;
-            justify-content: flex-end;
-            align-items: center;
-            gap:24px;
+    .reviewBlock {
+      margin: 0 0 23px 0;
+      max-width: 1785px;
+      min-height: 923px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 15px;
+      @media(max-width:$mobile-size){
+        margin:16px 0 0 0;
+        flex-flow:row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 0;
+        width:100%;
+        overflow-x: scroll;
+        scrollbar-width: none;
+      }
+      .column {
+        width: fit-content;
+        height: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 24px;
+        @media(max-width: $mobile-size){
+          gap:15px;
+          flex-flow:row nowrap;
+          justify-content: flex-start;
         }
+      }
     }
   }
 }

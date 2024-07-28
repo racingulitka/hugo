@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 @mixin socialMediaLink() {
   color: #8d8d8d;
   font-family: "Averta Demo PE";
@@ -8,6 +10,9 @@
   &:hover {
     cursor: pointer;
     color: #9c3131;
+  }
+  @media(max-width:$mobile-size){
+    font-size: 12px;
   }
 }
 
@@ -23,16 +28,25 @@
     position: absolute;
     top: 0;
     left: 0;
+    @media(max-width:$mobile-size){
+      display:none;
+    }
   }
   .rightDecoration {
     position: absolute;
     bottom: 0;
     right: 0;
+    @media(max-width: $mobile-size){
+      display:none;
+    }
   }
   .leftDecoration {
     position: absolute;
     bottom: 0;
     left: 0;
+    @media(max-width:$mobile-size){
+      display:none;
+    }
   }
   .wrapper {
     width: min(100%, 1920px);
@@ -42,6 +56,11 @@
     align-items: center;
     position: relative;
     z-index: 2;
+    @media(max-width:$mobile-size){
+      width:100%;
+      min-height: 0;
+      padding:0 19px;
+    }
     .mainContainer {
       display: flex;
       flex-flow: row wrap;
@@ -55,12 +74,23 @@
         justify-content: space-between;
         align-items: flex-start;
         row-gap: 30px;
+        @media(max-width:$mobile-size){
+          width:100%;
+          margin:45px 0 0 0;
+          flex-direction: column-reverse;
+          row-gap: 15px;
+        }
         .leftBlock {
           display: flex;
           flex-flow: column nowrap;
           justify-content: flex-start;
           align-items: flex-start;
           gap: 45px;
+          @media(max-width:$mobile-size){
+            align-items: center;
+            width:100%;
+            gap:10px;
+          }
           & h2 {
             color: #fff;
             font-family: "Averta CY";
@@ -68,6 +98,10 @@
             font-style: normal;
             font-weight: 700;
             line-height: normal;
+            @media(max-width:$mobile-size){
+              font-size: 18px;
+              font-weight: 600;
+            }
           }
           .socialMedia {
             display: flex;
@@ -75,12 +109,24 @@
             justify-content: flex-start;
             align-items: flex-start;
             gap: 17px;
+            @media(max-width:$mobile-size){
+              width:100%;
+              flex-flow:row wrap;
+              justify-content: space-between;
+              align-items: center;
+              gap:0px;
+              margin:25px;
+            }
             .socialMediaLink {
               @include socialMediaLink();
             }
-          }
-          .mail {
-            @include socialMediaLink();
+            .mail {
+              @include socialMediaLink();
+              margin:28px 0 0 0;
+              @media(max-width:$mobile-size){
+                margin:0;
+              }
+            }
           }
         }
       }

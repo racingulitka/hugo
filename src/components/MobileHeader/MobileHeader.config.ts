@@ -25,7 +25,7 @@ export const middleMenu = [
     {
         id:2,
         title:'Магазин',
-        link:'#',
+        link:'/shop',
     },
     {
         id:3,

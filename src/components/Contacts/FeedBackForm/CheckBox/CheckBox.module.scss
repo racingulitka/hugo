@@ -11,6 +11,9 @@
   font-weight: 400;
   line-height: normal;
   user-select: none;
+  @media(max-width:480px){
+    font-size: 10px;
+  }
   .checkBox{
     width:14px;
     aspect-ratio: 1/1;

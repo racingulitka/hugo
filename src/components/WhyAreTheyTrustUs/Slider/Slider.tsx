@@ -53,7 +53,7 @@ export default function Slider({
                                     className={styles.slide}
                                 >
                                     <div className={styles.imageContainer}>
-                                        <Image src={slide.image} alt='slideImage' className={styles.slideImage} layout='fill'/>
+                                        <Image src={slide.image} alt='slideImage' className={styles.slideImage}/>
                                     </div>
                                     <div className={styles.textContainer}>
                                         <div className={styles.slideHeader}>

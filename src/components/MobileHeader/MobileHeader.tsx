@@ -18,10 +18,12 @@ export default function MobileHeader() {
 
     return (
         <div className={styles.wrapper}>
-            <div className={styles.logoBlock}>
-                <Image src={logo} alt='logo' width={44} />
-                <p className={styles.sublogo}>GTA Production Agency</p>
-            </div>
+            <Link href='/'>
+                <div className={styles.logoBlock}>
+                    <Image src={logo} alt='logo' width={44} />
+                    <p className={styles.sublogo}>GTA Production Agency</p>
+                </div>
+            </Link>
             <div className={styles.rightBlock}>
                 <Link href='#' className={styles.leaveOrder}>ОСТАВИТЬ ЗАЯВКУ</Link>
                 <Image src={hamburgerIcon} alt='hamburger icon' width={14} onClick={() => setMenuOpen(true)} />
@@ -44,7 +46,9 @@ export default function MobileHeader() {
                         {
                             middleMenu.map(item => {
                                 return (
-                                    <p className={styles.title} key={item.id}>{item.title}</p>
+                                    <Link href={item.link}>
+                                        <p className={styles.title} key={item.id}>{item.title}</p>
+                                    </Link>
                                 )
                             })
                         }

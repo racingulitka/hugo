@@ -7,10 +7,27 @@ import { Page } from "@/components/Header/Header.config";
 import TopShopBlock from "@/components/TopShopBlock/TopShopBlock";
 import CategoryCards from "@/components/CategoryCards/CategoryCards";
 import MainContentShop from "@/components/MainContentShop/MainContentShop";
+import MobileHeader from "@/components/MobileHeader/MobileHeader";
+import { getIsSsrMobile } from "@/utils/isSSRMoblile";
+import { GetServerSidePropsContext } from 'next';
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Shop() {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  return {
+    props: {
+      isSsrMobile: getIsSsrMobile(context),
+    },
+  };
+}
+
+export default function Shop({
+  isSsrMobile,
+}: {
+  isSsrMobile: boolean
+}) {
+
+  const isMobile = isSsrMobile
 
   return (
     <>
@@ -21,11 +38,18 @@ export default function Shop() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <Header page={Page.shop}/>
+        {
+          isMobile ?
+            <MobileHeader /> :
+            <Header page={Page.shop} />
+        }
         <TopShopBlock />
         <CategoryCards />
         <MainContentShop />
-        <CategoryCards />
+        {
+          !isMobile &&
+          <CategoryCards />
+        }
         <Footer />
       </main>
     </>

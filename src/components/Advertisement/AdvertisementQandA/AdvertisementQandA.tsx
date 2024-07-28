@@ -13,7 +13,7 @@ export default function AdvertisementQandA(){
                     {
                         qAndAArr.map(item =>{
                             return(
-                                <div className={styles.card}>
+                                <div className={styles.card} key={item.id}>
                                     <Image src={questionIcon} alt='question icon' width={70} />
                                     <div className={styles.textBlock}>
                                         <p className={styles.cardTitle}>{item.title}</p>

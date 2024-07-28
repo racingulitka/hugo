@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 @mixin fontCY() {
   color: #fff;
   font-family: "Averta CY";
@@ -27,6 +29,11 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 25px;
+  @media(max-width:$mobile-size){
+    width:220px;
+    padding:10px;
+    gap:10px;
+  }
   .header {
     width: 100%;
     height: auto;
@@ -42,11 +49,18 @@
       & h3 {
         @include fontCY();
         font-size: 15px;
+        @media(max-width:$mobile-size){
+          font-size:8px;
+          font-weight:600;
+        }
       }
       .categoryLink {
         @include fontPE();
         color: #9c3131;
         font-size: 10px;
+        @media(max-width:$mobile-size){
+          font-size: 6px;
+        }
       }
     }
     .gradeBlock {
@@ -59,6 +73,10 @@
         @include fontPE();
         color: #fff;
         font-size: 20px;
+        @media(max-width:$mobile-size){
+          font-size: 8px;
+          font-weight: 600;
+        }
       }
       .stars {
         display: flex;
@@ -66,11 +84,17 @@
         justify-content: flex-start;
         align-items: center;
         gap: 5px;
+        @media(max-width:$mobile-size){
+          gap:1px;
+        }
         .starWrapper {
           position: relative;
           .star {
             width: 12px;
             aspect-ratio: 1/1;
+            @media(max-width:$mobile-size){
+              width:7px;
+            }
           }
         }
       }
@@ -87,6 +111,9 @@
     }
     & p {
       @include fontPE();
+      @media(max-width:$mobile-size){
+        font-size: 6px;
+      }
     }
   }
   .taskBlock {
@@ -136,6 +163,9 @@
     .author {
       @include fontPE();
       color: #fff;
+      @media(max-width:$mobile-size){
+        font-size: 6px;
+      }
     }
     .result {
       @include fontPE();
@@ -148,6 +178,9 @@
       font-size: 10px;
       &Opened {
         color: #8e8e8e;
+      }
+      @media(max-width:$mobile-size){
+        display:none;
       }
       .arrow {
         width: auto;

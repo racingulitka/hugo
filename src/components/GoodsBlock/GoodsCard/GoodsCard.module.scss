@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 @mixin fontAvertaDemoPE() {
   font-family: "Averta Demo PE";
   font-size: 20px;
@@ -18,6 +20,10 @@
   width: 445px;
   height: 460px;
   background: #252525;
+  @media(max-width:$mobile-size){
+    width:100%;
+    height:auto;
+  }
   &:hover .info .title {
     color: #9c3131;
   }
@@ -29,6 +35,10 @@
     height: 296px;
     overflow-y: hidden;
     position: relative;
+    @media(max-width:$mobile-size){
+      height:auto;
+      aspect-ratio: 1/0.6;
+    }
     .goodImage {
       width: 100%;
       height: auto;
@@ -37,9 +47,16 @@
       position: absolute;
       top: 21px;
       right: 23px;
+      @media(max-width:$mobile-size){
+        top:5px;
+        right:5px;
+      }
       .heartIcon {
         width: 31px;
         height: auto;
+        @media(max-width:$mobile-size){
+          width:20px;
+        }
         &:hover {
           cursor: pointer;
         }
@@ -52,6 +69,10 @@
     height: auto;
     box-sizing: border-box;
     padding: 0 30px 16px;
+    @media(max-width:$mobile-size){
+      margin:10px 0 0 0;
+      padding:10px 12px;
+    }
     .priceContainer {
       display: flex;
       flex-flow: row nowrap;
@@ -60,12 +81,20 @@
       .actualPrice {
         @include fontAvertaCY();
         color: #fff;
+        @media(max-width:$mobile-size){
+          font-size:12px;
+          font-weight: 600;
+        }
       }
       .price {
         @include fontAvertaDemoPE();
         margin: 5px 0 0 10px;
         color: #818181;
         text-decoration-line: line-through;
+        @media(max-width:$mobile-size){
+          font-size: 8px;
+          margin:4px 0 0 5px;
+        }
       }
       .discount {
         @include fontAvertaDemoPE();
@@ -78,6 +107,12 @@
         align-items: center;
         color: #fbfbfb;
         font-size: 15px;
+        @media(max-width:$mobile-size){
+          margin:4px 0 0 2px;
+          font-size: 6px;
+          width:20px;
+          height:9px;
+        }
       }
     }
     .title {
@@ -85,6 +120,11 @@
       margin: 5px 0 0 0;
       color: #fff;
       font-size: 20px;
+      @media(max-width:$mobile-size){
+        margin:3px 0 0 0;
+        font-size: 8px;
+        font-weight: 400;
+      }
     }
     .otherContainer {
       margin: 15px 0 0 0;
@@ -93,19 +133,32 @@
       justify-content: flex-start;
       align-items: center;
       gap: 20px;
+      @media(max-width:$mobile-size){
+        margin:10px 0 0 0;
+        gap:10px;
+      }
       .rating {
         display: flex;
         flex-flow: row nowrap;
         justify-content: flex-start;
         align-items: center;
         gap: 6px;
+        @media(max-width:$mobile-size){
+          gap:3px;
+        }
         .star {
           width: 21px;
           height: auto;
+          @media(max-width:$mobile-size){
+            width:10px;
+          }
         }
         .ratingValue {
           @include fontAvertaDemoPE();
           color: #818181;
+          @media(max-width:$mobile-size){
+            font-size: 8px;
+          }
         }
       }
       .reviews {
@@ -122,6 +175,33 @@
           @include fontAvertaDemoPE();
           color: #818181;
         }
+        @media(max-width:$mobile-size){
+          gap:3px;
+          .reviewIcon{
+            width:8.5px;
+          }
+          .text{
+            font-size: 8px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    .button{
+      @include fontAvertaCY();
+      margin:10px 0 0 0;
+      font-size: 8px;
+      font-weight: 600;
+      color:#fff;
+      width:100%;
+      height:25px;
+      background: #9c3131;
+      display:none;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      @media(max-width: $mobile-size){
+        display:flex;
       }
     }
   }

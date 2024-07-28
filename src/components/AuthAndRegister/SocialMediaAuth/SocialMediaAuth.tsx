@@ -8,7 +8,7 @@ export default function SocialMediaAuth(){
             {
                 smArr.map(item => {
                     return(
-                        <item.icon />
+                        <item.icon key={item.id}/>
                     )
                 })
             }

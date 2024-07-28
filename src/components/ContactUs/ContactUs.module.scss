@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 .mainWrapper {
   width: 100%;
   height: auto;
@@ -9,6 +11,10 @@
   .wrapper {
     width: min(1920px, 100%);
     min-height: 304px;
+    @media(max-width:$mobile-size){
+      padding:0 19px;
+      min-height: 0;
+    }
     .content {
       margin: 63px 0 0 65px;
       display: flex;
@@ -16,6 +22,10 @@
       justify-content: center;
       align-items: flex-start;
       gap: 53px;
+      @media(max-width:$mobile-size){
+        margin:45px 0 0 0;
+        gap:15px;
+      }
       & h2 {
         color: #fff;
         font-family: "Averta CY";
@@ -23,6 +33,10 @@
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+        @media(max-width:$mobile-size){
+          font-size: 18px;
+          font-weight: 600;
+        }
       }
       & nav {
         display: flex;
@@ -30,19 +44,36 @@
         justify-content: flex-start;
         align-items: center;
         gap: 45px;
-        .button {
-          box-sizing: border-box;
-          padding: 10px 45px;
-          border: none;
-          background: #9c3131;
-          color: #fff;
-          font-family: "Averta Demo PE";
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-          &:hover{
-            cursor: pointer;
+        .link {
+          @media (max-width: 480px) {
+            &:last-child {
+              display: none;
+            }
+            &:nth-child(2){
+              display:none;
+            }
+            &:nth-child(3){
+              display: none;
+            }
+          }
+          .button {
+            box-sizing: border-box;
+            padding: 10px 45px;
+            border: none;
+            background: #9c3131;
+            color: #fff;
+            font-family: "Averta Demo PE";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            &:hover {
+              cursor: pointer;
+            }
+            @media(max-width:$mobile-size){
+              font-size: 12px;
+              padding:10px 30px;
+            }
           }
         }
       }

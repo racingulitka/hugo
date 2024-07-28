@@ -31,7 +31,6 @@ export default function Home({
 }) {
 
   const isMobile = isSSRMobile
-  console.log(isMobile)
 
   return (
     <>
@@ -50,10 +49,10 @@ export default function Home({
         <Hero />
         <Shop />
         <WhyAreTheyTrustUs />
-        {/* <ContactUs />
+        <ContactUs />
         <Reviews />
         <Contacts />
-        <Footer /> */}
+        <Footer />
       </main>
     </>
   );

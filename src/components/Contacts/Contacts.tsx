@@ -27,8 +27,8 @@ export default function Contacts() {
                                         )
                                     })
                                 }
-                            </div>
                             <Link href='mailto:info@impact.ru' className={styles.mail}>info@impact.ru</Link>
+                            </div>
                         </nav>
                         <div>
                             <FeedBackForm />

@@ -104,4 +104,6 @@ const CodeModal = React.memo(({
     () => true
 );
 
+CodeModal.displayName = 'CodeModal';
+
 export default CodeModal

@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 @mixin fontAvertaPE {
   font-family: "Averta Demo PE";
   font-size: 12px;
@@ -24,9 +26,16 @@
   background: none;
   color: #fff;
   font-size: 16px;
+  @media(max-width:$mobile-size){
+    width:100%;
+    font-size: 12px;
+  }
   &::placeholder {
     font-size: 12px;
     color: #8d8d8d;
+    @media(max-width:$mobile-size){
+      font-size: 10px;
+    }
   }
   &:focus-visible {
     outline: none;
@@ -44,10 +53,19 @@
   justify-content: flex-start;
   align-items: center;
   gap: 48px;
+  @media(max-width:$mobile-size){
+    width:100%;
+    padding:15px;
+    gap:0;
+  }
   .title {
     @include fontAvertaCY();
     color: #fff;
     font-size: 28px;
+    @media(max-width:$mobile-size){
+      font-size: 18px;
+      font-weight: 600;
+    }
   }
   .contactsBlock {
     width: 100%;
@@ -57,9 +75,18 @@
     justify-content: flex-start;
     align-items: center;
     gap: 25px;
+    @media(max-width:$mobile-size){
+      margin:15px 0 0 0;
+      gap:0;
+    }
     .aboutPerson {
       @include fontAvertaCY();
       color: #8d8d8d;
+      @media(max-width:$mobile-size){
+        font-size: 12px;
+        font-weight: 400;
+        margin:0 0 25px 0;
+      }
     }
     .nameAndProject {
       width: 100%;
@@ -68,6 +95,11 @@
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: center;
+      @media(max-width:$mobile-size){
+        flex-flow:column nowrap;
+        justify-content: flex-start;
+        gap:10px;
+      }
       .name {
         @include textInput();
       }
@@ -81,6 +113,10 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 20px;
+    @media(max-width:$mobile-size){
+      margin:25px 0 0 0;
+      gap:15px;
+    }
     & h4 {
       @include fontAvertaCY();
       color: #fff;
@@ -93,6 +129,11 @@
       justify-content: flex-start;
       align-items: flex-start;
       gap: 8px;
+      @media(max-width:$mobile-size){
+        height:101px;
+        row-gap: 15px;
+        align-content: space-between;
+      }
     }
   }
   .footer {
@@ -103,6 +144,10 @@
     justify-content: flex-start;
     align-items: center;
     gap: 18px;
+    @media(max-width:$mobile-size){
+      margin:21px 0 0 0;
+      gap:10px;
+    }
     & button {
       @include fontAvertaCY();
       width: 100%;
@@ -111,6 +156,10 @@
       color: #fff;
       font-size: 12px;
       border: none;
+      @media(max-width:$mobile-size){
+        font-size: 10px;
+        font-weight: 600;
+      }
       &:hover {
         cursor: pointer;
       }
@@ -118,6 +167,9 @@
     & p {
       @include fontAvertaPE();
       color: #4e4e4e;
+      @media(max-width:$mobile-size){
+        font-size:6px;
+      }
       .link {
         color: #9c3131;
       }

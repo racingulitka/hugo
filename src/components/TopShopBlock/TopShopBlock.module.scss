@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 .mainWrapper {
   width: 100%;
   height: auto;
@@ -13,10 +15,26 @@
     justify-content: flex-start;
     align-items: center;
     overflow-x: hidden;
+    @media(max-width:$mobile-size){
+      padding:0 19px;
+      overflow-x:visible;
+      height:120px;
+      justify-content: center;
+      margin:50px 0 0 0;
+      position:relative;
+    }
     .banner{
-        margin:117px 0 15px 0;
-        width:1782px;
-        height:auto;
+      margin:117px 0 15px 0;
+      width:1782px;
+      height:auto;
+      @media(max-width:$mobile-size){
+        margin:0;
+        width:auto;
+        height:100%;
+        position:absolute;
+        top:0;
+        right:0;
+      }
     }
   }
 }
