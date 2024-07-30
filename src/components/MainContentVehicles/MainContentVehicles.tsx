@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styles from './MainContentVehicles.module.scss'
 import GoodsBlock from '../GoodsBlock/GoodsBlock'
 import defaultGoodsImage from './assets/defaultGoodsImage.png'
@@ -7,10 +7,13 @@ import defaultAdverticement from './assets/defaultAdverticement.png'
 import Image from 'next/image'
 import CarBrandSelect from '../CarBrandSelect/CarBrandSelect'
 import { CarType } from '../CarTypeSelect/CarTypeSelect.config'
+import MobileSelectBlock from './MobileSelectBlock/MobileSelectBlock'
+import { BottomSheet, BottomSheetRef } from 'react-spring-bottom-sheet'
+import 'react-spring-bottom-sheet/dist/style.css'
 
 export interface Card {
     id: number,
-    slug:string,
+    slug: string,
     image: StaticImageData,
     isFavourite: boolean,
     price: number,
@@ -31,9 +34,11 @@ export interface GoodsArray {
 }
 
 export default function MainContentVehicles({
+    isMobile,
     activeCategory,
     setActiveCategory,
 }: {
+    isMobile: boolean,
     activeCategory: CarType | null,
     setActiveCategory: React.Dispatch<React.SetStateAction<CarType | null>>
 }) {
@@ -45,7 +50,7 @@ export default function MainContentVehicles({
             cards: [
                 {
                     id: 1,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -57,7 +62,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 2,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: true,
                     price: 44542,
@@ -69,7 +74,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 3,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -81,7 +86,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 4,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -93,7 +98,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 5,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -105,7 +110,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 6,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -117,7 +122,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 7,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -135,7 +140,7 @@ export default function MainContentVehicles({
             cards: [
                 {
                     id: 1,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -147,7 +152,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 2,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -159,7 +164,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 3,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -171,7 +176,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 4,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -183,7 +188,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 5,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -195,7 +200,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 6,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -207,7 +212,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 7,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -225,7 +230,7 @@ export default function MainContentVehicles({
             cards: [
                 {
                     id: 1,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -237,7 +242,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 2,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -249,7 +254,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 3,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -261,7 +266,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 4,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -273,7 +278,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 5,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -285,7 +290,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 6,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -297,7 +302,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 7,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -315,7 +320,7 @@ export default function MainContentVehicles({
             cards: [
                 {
                     id: 1,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -327,7 +332,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 2,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -339,7 +344,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 3,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -351,7 +356,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 4,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -363,7 +368,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 5,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -375,7 +380,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 6,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -387,7 +392,7 @@ export default function MainContentVehicles({
                 },
                 {
                     id: 7,
-                    slug:'shop/product/renault-duster',
+                    slug: 'shop/product/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,
@@ -402,6 +407,8 @@ export default function MainContentVehicles({
     }
 
     const [goodsArray, setGoodsArray] = useState<GoodsArray>({ ...goodsArrayDefault })
+    const [isCarBrandSelectActive, setCarBrandSelectActive] = useState<boolean>(false)
+    const sheetRef = useRef<BottomSheetRef | null>(null)
 
     const setFavourite = (categoryId: keyof GoodsArray, cardId: number) => {
         const category = goodsArray[categoryId]
@@ -410,7 +417,6 @@ export default function MainContentVehicles({
         const prevState = array[categoryId].cards[card].isFavourite
         array[categoryId].cards[card].isFavourite = !prevState
         setGoodsArray({ ...array })
-        console.log(array)
     }
 
     useEffect(() => {
@@ -423,11 +429,43 @@ export default function MainContentVehicles({
         }
     }, [activeCategory])
 
+    useEffect(() => {
+        function handleClickOutside(event:MouseEvent) {
+            if (sheetRef.current && !sheetRef.current.contains(event.target)) {
+                setCarBrandSelectActive(false);
+            }
+        }
+
+        // Добавляем обработчик событий при монтировании
+        document.addEventListener('mousedown', handleClickOutside);
+
+        // Удаляем обработчик событий при размонтировании
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [sheetRef]);
+
     return (
         <div className={styles.mainWrapper}>
             <div className={styles.wrapper}>
                 <div className={styles.leftColumn}>
-                    <CarBrandSelect />
+                    {
+                        isMobile &&
+                        <MobileSelectBlock
+                            isCarBrandSelectActive={isCarBrandSelectActive}
+                            setCarBrandSelectActive={setCarBrandSelectActive}
+                        />
+                    }
+                    {
+                        isMobile &&
+                        <BottomSheet
+                            open={isCarBrandSelectActive}
+                            ref={sheetRef}
+                            defaultSnap={({ maxHeight }) => maxHeight / 2}
+                        >
+                            <CarBrandSelect isActive={isCarBrandSelectActive} onSelect={setCarBrandSelectActive} />
+                        </BottomSheet>
+                    }
                     <Image src={defaultAdverticement} alt='defaultAdverticement' className={styles.adverticement} />
                 </div>
                 <div className={styles.rightColumn}>

@@ -9,7 +9,13 @@ import bmwIcon from './assets/bmwIcon.png' //delete
 import { CarsBrandArr } from './CarBrandSelect.typings'
 import cn from 'classnames'
 
-export default function CarBrandSelect(){
+export default function CarBrandSelect({
+    isActive,
+    onSelect,
+}:{
+    isActive:boolean,
+    onSelect:React.Dispatch<React.SetStateAction<boolean>>,
+}){
 
     const carsBrandArr:CarsBrandArr[] = [ //delete
         {
@@ -111,7 +117,7 @@ export default function CarBrandSelect(){
     }, [inputValue])
 
     return(
-        <div className={styles.wrapper}>
+        <div className={cn(styles.wrapper, isActive && styles.wrapperActive)}>
             <h3 className={styles.title}>Найдите нужный вам автомобиль</h3>
             <input
                 type='text'
@@ -128,6 +134,7 @@ export default function CarBrandSelect(){
                             <div
                                 key={brand.id}
                                 className={styles.card}
+                                onClick={() => onSelect(prev => !prev)}
                             >
                                 <div className={styles.iconContainer}>
                                     <Image src={brand.icon} alt='brandIcon' className={styles.icon} />

@@ -53,7 +53,7 @@ export default function Vehicles({
         <div className={pageStyles.carTypeSelect}>
           <CarTypeSelect activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
         </div>
-        <MainContentVehicles activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+        <MainContentVehicles isMobile={isMobile} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
         <CategoryCards />
         <Footer />
       </main>

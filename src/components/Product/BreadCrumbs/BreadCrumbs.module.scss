@@ -6,6 +6,9 @@
   justify-content: flex-start;
   align-items: center;
   gap: 15px;
+  @media(max-width:480px){
+    display:none;
+  }
   .link {
     color: #9c3131;
     font-family: "Averta Demo PE";

@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 @mixin fontAvertaCY() {
   color: #fff;
   font-family: "Averta CY";
@@ -5,6 +7,9 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  @media(max-width:$mobile-size){
+    font-size: 18px;
+  }
 }
 
 @mixin fontAvertaDemoPE() {
@@ -26,6 +31,21 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 15px;
+  @media(max-width:$mobile-size){
+    // position:fixed;
+    // bottom:0;
+    // left:0;
+    // translate:0 100%;
+    // transition:0.3s;
+    // z-index:10;
+    width:100%;
+    padding:15px 19px;
+    height:calc(100vh - 246px);
+    // &Active{
+    //   translate:0 0;
+    //   transition:0.3s;
+    // }
+  }
   .title {
     @include fontAvertaCY();
   }
@@ -61,6 +81,9 @@
     gap:30px;
     scrollbar-width:thin;
     scrollbar-color:rgba(255, 255, 255, 0.2) transparent;
+    @media(max-width:$mobile-size){
+      gap:20px;
+    }
     &::-webkit-scrollbar{
         width:4px;
       }

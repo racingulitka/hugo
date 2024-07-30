@@ -5,4 +5,7 @@
     flex-flow:column nowrap;
     justify-content: center;
     align-items: center;
+    @media(max-width:480px){
+        padding:0 19px;
+    }
 }

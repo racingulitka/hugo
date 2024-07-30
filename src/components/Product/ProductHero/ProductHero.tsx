@@ -12,9 +12,11 @@ import Link from 'next/link'
 import EngineSound from './EngineSound/EngineSound'
 
 export default function ProductHero({
-    productInfo
+    productInfo,
+    isMobile,
 }: {
-    productInfo: ProductPage
+    productInfo: ProductPage,
+    isMobile:boolean,
 }) {
 
     const [isQuestionsIconActive, setQuestionsIconActive] = useState<boolean>(false)
@@ -35,6 +37,7 @@ export default function ProductHero({
                     images={productInfo.images}
                     videoCover={productInfo.videoCover}
                     video={productInfo.video}
+                    isMobile={isMobile}
                 />
             </div>
             <div className={styles.rightColumn}>

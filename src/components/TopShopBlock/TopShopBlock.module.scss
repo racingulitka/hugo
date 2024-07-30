@@ -16,8 +16,8 @@ $mobile-size:480px;
     align-items: center;
     overflow-x: hidden;
     @media(max-width:$mobile-size){
+      width:calc(100% - 36px);
       padding:0 19px;
-      overflow-x:visible;
       height:120px;
       justify-content: center;
       margin:50px 0 0 0;

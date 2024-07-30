@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 .wrapper {
   width: min(1782px, 100%);
   height: auto;
@@ -6,9 +8,19 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   background: #161616;
   gap: 25px;
+  overflow: hidden;
+  @media(max-width:$mobile-size){
+    overflow-x: auto;
+    padding:0;
+    gap:0;
+    scrollbar-width: none;
+    &::-webkit-scrollbar{
+      width:none;
+    }
+  }
   .header {
     width: 100%;
     display: flex;
@@ -32,19 +44,27 @@
       font-weight: 400;
       line-height: normal;
     }
+    @media(max-width:$mobile-size){
+      display:none;
+    }
   }
   .selectBlock {
-    width:100%;
-    overflow-x: auto;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
     gap: 15px;
     scrollbar-width: thin;
+    @media(max-width:$mobile-size){
+      gap:10px;
+      scrollbar-width: none;
+    }
     .card {
       width: 204px;
       height: auto;
+      @media(max-width:$mobile-size){
+        width:70px;
+      }
       &:hover{
         cursor: pointer;
       }
@@ -59,13 +79,20 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @media(max-width:$mobile-size){
+          height:70px;
+        }
+
         &Selected{
             background: #9C3131;
         }
         .icon {
           width: 200px;
           height: auto;
-          object-fit: contain;
+          @media(max-width:$mobile-size){
+            width:calc(100% - 16px);
+
+          }
         }
       }
       .name {
@@ -77,6 +104,10 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        @media(max-width:$mobile-size){
+          margin:5px 0 0 0;
+          font-size: 10px;
+        }
         &Selected{
             color:#9C3131;
         }
