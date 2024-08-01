@@ -1,22 +1,38 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './MobileSelectBlock.module.scss'
 import arrowDown from './assets/arrowDown.svg'
 import Image from 'next/image'
 import cn from 'classnames'
 import { sortArr } from './MobileSelectBlock.config'
+import { Sheet } from 'react-modal-sheet'
+import MobileModalHeader from './MobileModalHeader/MobileModalHeader'
 
 export default function MobileSelectBlock({
     isCarBrandSelectActive,
     setCarBrandSelectActive,
-}:{
-    isCarBrandSelectActive:boolean,
-    setCarBrandSelectActive:React.Dispatch<React.SetStateAction<boolean>>
-}){
+}: {
+    isCarBrandSelectActive: boolean,
+    setCarBrandSelectActive: React.Dispatch<React.SetStateAction<boolean>>
+}) {
 
     const [isSortOpen, setSortOpen] = useState<boolean>(false)
-    console.log(isCarBrandSelectActive)
 
-    return(
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            const target = event.target as Element;
+            if (!target.closest(`.${styles.list}`)) {
+                setSortOpen(false);
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isSortOpen]);
+
+    return (
         <div className={styles.wrapper}>
             <div
                 className={styles.carBrandOpen}
@@ -31,18 +47,36 @@ export default function MobileSelectBlock({
             >
                 Популярное
                 <Image src={arrowDown} alt='arrow down' className={cn(styles.arrow, isSortOpen && styles.arrowRotate)} />
-                <div className={cn(styles.list, isSortOpen && styles.listActive)}>
-                    {
-                        sortArr.map(item => {
-                            return(
-                                <div className={styles.selectItem} key={item.id}>
-                                    {item.title}
+                <Sheet
+                    isOpen={isSortOpen}
+                    onClose={() => setSortOpen(false)}
+                    detent='content-height'
+                >
+                    <Sheet.Container>
+                        <Sheet.Header>
+                            <MobileModalHeader />
+                        </Sheet.Header>
+                        <Sheet.Content>
+                            {
+                                <div className={cn(styles.list, styles.listActive)}>
+                                    {
+                                        sortArr.map(item => {
+                                            return (
+                                                <div className={styles.selectItem} key={item.id}>
+                                                    {item.title}
+                                                </div>
+                                            )
+                                        })
+                                    }
                                 </div>
-                            )
-                        })
-                    }
-                </div>
+                            }
+                        </Sheet.Content>
+                    </Sheet.Container>
+                </Sheet>
             </div>
+            {
+                isSortOpen && <div className={styles.overlay}></div>
+            }
         </div>
     )
 }

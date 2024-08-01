@@ -55,7 +55,7 @@ export default function EngineSound({
             <p className={styles.wrapperTitle}>Звук двигателя</p>
             <div className={styles.wrapperSoundMain}>
                 <div className={styles.playButton} onClick={() => setPlay(prev => !prev)}>
-                    <Image src={isPlay ? pauseIcon : playIcon} alt='play' />
+                    <Image src={isPlay ? pauseIcon : playIcon} alt='play' className={styles.icon} />
                 </div>
                 <div className={styles.soundVisualization}>
                     <Image src={audioRoad} alt='audioRoad' className={styles.soundVisualizationImage} fill />

@@ -1,4 +1,4 @@
-$mobile-size:480px;
+$mobile-size: 480px;
 
 .main {
   display: flex;
@@ -6,63 +6,91 @@ $mobile-size:480px;
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-  width:100%;
-  @media(max-width:$mobile-size){
-    padding:0 19px;
+  width: 100%;
+  @media (max-width: $mobile-size) {
+    padding: 0 19px;
   }
 }
 
 @font-face {
-  font-family: 'Averta Demo PE';
-  src: url('../../../pages/fonts/AvertaDemoPE-Regular.otf');
-  src: local('AvertaDemoPE'),
-      url('../../../pages/fonts/AvertaDemoPE-Regular.otf') format('opentype');
+  font-family: "Averta Demo PE";
+  src: url("../../../pages/fonts/AvertaDemoPE-Regular.otf");
+  src: local("AvertaDemoPE"),
+    url("../../../pages/fonts/AvertaDemoPE-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Averta CY';
-  src: url('../../../pages/fonts/Averta-Cyrillic-Bold.otf');
-  src: local('AvertaCY'),
-      url('../../../pages/fonts/Averta-Cyrillic-Bold.otf') format('opentype');
+  font-family: "Averta CY";
+  src: url("../../../pages/fonts/Averta-Cyrillic-Bold.otf");
+  src: local("AvertaCY"),
+    url("../../../pages/fonts/Averta-Cyrillic-Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Averta CY';
-  src: url('../../../pages/fonts/Averta-Cyrillic-SemiBold.otf');
-  src: local('AvertaCY'),
-      url('../../../pages/fonts/Averta-Cyrillic-SemiBold.otf') format('opentype');
+  font-family: "Averta CY";
+  src: url("../../../pages/fonts/Averta-Cyrillic-SemiBold.otf");
+  src: local("AvertaCY"),
+    url("../../../pages/fonts/Averta-Cyrillic-SemiBold.otf") format("opentype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Tafel Sans Pro';
-  src: url('../../../pages/fonts/TafelSansPro-Bold.ttf');
-  src: local('TafelSansPro'),
-      url('../../../pages/fonts/TafelSansPro-Bold.ttf') format('opentype');
+  font-family: "Tafel Sans Pro";
+  src: url("../../../pages/fonts/TafelSansPro-Bold.ttf");
+  src: local("TafelSansPro"),
+    url("../../../pages/fonts/TafelSansPro-Bold.ttf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-.content{
-  width:100%;
-  height:auto;
+.content {
+  position:relative;
+  width: 100%;
+  height: auto;
   background: #111;
   box-sizing: border-box;
-  padding:144px 69px 242px;
-  display:flex;
-  flex-flow:column nowrap;
+  padding: 144px 69px 242px;
+  display: flex;
+  flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
-  @media(max-width:$mobile-size){
-    padding:0;
+  @media (max-width: $mobile-size) {
+    padding: 0;
+  }
+  .reviewsModal{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:11;
+    background:red;
+    display:none;
+    &Active{
+      display:block;
+    }
+
+  }
+  .title {
+    color: #fff;
+    font-family: "Averta CY";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin:0 0 15px 0;
+  }
+  .gallerySlider {
+    width: 100%;
+    padding: 45px 0 65px;
   }
 }

@@ -372,13 +372,13 @@ export default function Slider({
                         className={styles.button}
                         onClick={() => onSlideLeft()}
                     >
-                        <Image src={arrowLeftIcon} alt='arrow left' height={45} />
+                        <Image src={arrowLeftIcon} alt='arrow left' height={isMobile ? 30 : 45} />
                     </div>
                     <div
                         className={styles.button}
                         onClick={() => onSlideRight()}
                     >
-                        <Image src={arrowLeftIcon} alt='arrow left' height={45} style={{ rotate: '180deg' }} />
+                        <Image src={arrowLeftIcon} alt='arrow left' height={isMobile ? 30 : 45} style={{ rotate: '180deg' }} />
                     </div>
                 </div>
             </div>

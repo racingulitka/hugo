@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from './ProductHero.module.scss'
+import styles from './MobileProductHero.module.scss'
 import Slider from './Slider/Slider'
 import { ProductPage } from '@/pages/shop/product/Product.typings'
 import QuestionsIcon from './assets/QuestionsIcon'
@@ -11,12 +11,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import EngineSound from './EngineSound/EngineSound'
 
-export default function ProductHero({
+export default function MobileProductHero({
     productInfo,
     isMobile,
+    setReviewsActive,
 }: {
     productInfo: ProductPage,
-    isMobile:boolean,
+    isMobile: boolean,
+    setReviewsActive:React.Dispatch<React.SetStateAction<boolean>>,
 }) {
 
     const [isQuestionsIconActive, setQuestionsIconActive] = useState<boolean>(false)
@@ -67,27 +69,36 @@ export default function ProductHero({
                                             })
                                         }
                                     </div>
-                                    <div className={styles.indicatorsBlock}>
-                                        <div className={styles.reviewsNumber}>{productInfo.reviews} отзывов</div>
-                                        <div
-                                            className={styles.questions}
-                                            onMouseEnter={() => setQuestionsIconActive(true)}
-                                            onMouseLeave={() => setQuestionsIconActive(false)}
-                                        >
-                                            <QuestionsIcon isActive={isQuestionsIconActive} isMobile={false}/>
-                                            <div className={styles.questionsText}>{productInfo.questions} вопроса</div>
-                                        </div>
-                                        <div
-                                            className={styles.share}
-                                            onMouseEnter={() => setShareIconActive(true)}
-                                            onMouseLeave={() => setShareIconActive(false)}
-                                        >
-                                            <ShareIcon isActive={isShareIconActive} isMobile={false}/>
-                                            <div className={styles.shareText}>Поделиться</div>
-                                        </div>
+                                    <div
+                                        className={styles.reviewsNumber}
+                                        onClick={() => setReviewsActive(true)}
+                                    >
+                                        {productInfo.reviews} отзывов
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div className={styles.indicatorsBlock}>
+                            <div
+                                className={styles.questions}
+                                onMouseEnter={() => setQuestionsIconActive(true)}
+                                onMouseLeave={() => setQuestionsIconActive(false)}
+                            >
+                                <QuestionsIcon isActive={isQuestionsIconActive} isMobile={true}/>
+                                <div className={styles.questionsText}>{productInfo.questions} вопроса</div>
+                            </div>
+                            <div
+                                className={styles.share}
+                                onMouseEnter={() => setShareIconActive(true)}
+                                onMouseLeave={() => setShareIconActive(false)}
+                            >
+                                <ShareIcon isActive={isShareIconActive} isMobile={true}/>
+                                <div className={styles.shareText}>Поделиться</div>
+                            </div>
+                        </div>
+                        <div className={styles.priceBlock}>
+                            <p className={styles.actualPrice}>$ {productInfo.actualPrice}</p>
+                            <p className={styles.price}>$ {productInfo.price}</p>
                         </div>
                         <PlatformSelect
                             selectedPlatform={selectedPlatform}
@@ -111,16 +122,6 @@ export default function ProductHero({
                 </div>
                 <div className={styles.description}>
                     <div className={styles.toCart}>
-                        <div
-                            className={styles.isFavourite}
-                            onClick={() => console.log('add to favourite')} 
-                        >
-                            <HeartIcon isActive={productInfo.isFavourite} />
-                        </div>
-                        <div className={styles.priceBlock}>
-                            <p className={styles.actualPrice}>$ {productInfo.actualPrice}</p>
-                            <p className={styles.price}>$ {productInfo.price}</p>
-                        </div>
                         <div className={styles.cartBlock}>
                             <button
                                 className={styles.addToCartButton}
@@ -138,7 +139,7 @@ export default function ProductHero({
                         </div>
                     </div>
                     <div className={styles.engineSound}>
-                        <EngineSound sound={productInfo.engineSound}/>
+                        <EngineSound sound={productInfo.engineSound} />
                     </div>
                     <div className={styles.descriptionBlock}>
                         <h4 className={styles.descriptionBlockTitle}>Описание</h4>

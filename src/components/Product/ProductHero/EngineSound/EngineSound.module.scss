@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 .wrapper {
   width: 390px;
   width: 100%;
@@ -8,6 +10,10 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 15px;
+  @media(max-width:$mobile-size){
+    width:100%;
+    padding:0;
+  }
   &Title {
     color: #fff;
     font-family: "Averta Demo PE";
@@ -15,6 +21,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    @media(max-width:$mobile-size){
+      font-size: 18px;
+      font-weight: 600;
+    }
   }
   &SoundMain {
     box-sizing: border-box;
@@ -26,17 +36,36 @@
     justify-content: flex-start;
     align-items: center;
     gap:20px;
+    @media(max-width:$mobile-size){
+      justify-content: center;
+    }
     .playButton{
       width:50px;
       height:50px;
+      @media(max-width:$mobile-size){
+        width:45px;
+        height:45px;
+      }
       &:hover{
         cursor:pointer;
+      }
+      .icon{
+        width:50px;
+        height:50px;
+        @media(max-width:$mobile-size){
+          width:45px;
+          height:45px;
+        }
       }
     }
     .soundVisualization {
       width: 222px;
       height: 35px;
       position:relative;
+      @media(max-width:$mobile-size){
+        width:190px;
+        height:38px;
+      }
       &Image{
         object-fit: cover;
         position:absolute;
@@ -51,10 +80,17 @@
         left:0;
         overflow: hidden;
         z-index:2;
+        @media(max-width:$mobile-size){
+          height:38px;
+        }
         .audioWrapper{
           width:222px;
           height:35px;
           position:relative;
+          @media(max-width:$mobile-size){
+            width:190px;
+            height:38px;
+          }
           &Image{
             object-fit: cover;
             position:absolute;
@@ -81,5 +117,8 @@
     font-weight: 400;
     line-height: normal;
     text-decoration-line: underline;
+    @media(max-width:$mobile-size){
+      display:none;
+    }
   }
 }

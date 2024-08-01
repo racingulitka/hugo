@@ -31,6 +31,11 @@ import QandA from "@/components/Product/QandA/QandA";
 import { getIsSsrMobile } from "@/utils/isSSRMoblile";
 import { GetServerSidePropsContext } from "next";
 import MobileHeader from "@/components/MobileHeader/MobileHeader";
+import MobileProductHero from "@/components/Product/ProductHero/MobileProductHero";
+import Slider from "@/components/Product/ProductHero/Slider/Slider";
+import { StaticImageData } from "next/image";
+import GallerySlider from "@/components/Product/ProductHero/GallerySlider/GallerySlider";
+import cn from 'classnames'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -49,6 +54,7 @@ export default function PageOfGood({
 }) {
 
   const isMobile = isSsrMobile
+  const [isReviewsActive, setReviewsActive] = useState<boolean>(false)
 
   const [goodsArray, setGoodsArray] = useState<ProductPage[]>([
     {
@@ -254,6 +260,22 @@ export default function PageOfGood({
     },
   ])
 
+  const getMobileGallery = () => {
+    const mobileSliderGallery = goodsArray.find(item => item.slug === router.query.slug)
+    let gallery: { id: number, image: StaticImageData, isMain: boolean }[] = []
+    if (mobileSliderGallery) {
+      gallery = mobileSliderGallery.gallery.map(item => {
+        if (item.id === 1) {
+          return { ...item, isMain: true }
+        } else {
+          return { ...item, isMain: false }
+        }
+      })
+    }
+    return gallery
+  }
+
+
   const findSlugItem = () => {
     const foundItem = goodsArray.find(item => item.slug === router.query.slug)
     if (foundItem) return foundItem
@@ -287,13 +309,34 @@ export default function PageOfGood({
               subcategoryLink={itemSlug.subcategoryLink}
               productName={itemSlug.productName}
             />
-            <ProductHero
-              productInfo={itemSlug}
-              isMobile={isMobile}
-            />
-            {/* <Advantages advArr={itemSlug.advantages} />
-            <Gallery galArr={itemSlug.gallery} />
-            <QandA reviewsArr={itemSlug.reviewsArr} /> */}
+            {
+              isMobile ?
+                <MobileProductHero
+                  productInfo={itemSlug}
+                  isMobile={isMobile}
+                  setReviewsActive={setReviewsActive}
+                /> :
+                <ProductHero
+                  productInfo={itemSlug}
+                  isMobile={isMobile}
+                />
+            }
+            <Advantages advArr={itemSlug.advantages} />
+            {
+              isMobile ?
+                <div className={styles.gallerySlider}>
+                  <h3 className={styles.title}>Галерея фотографий</h3>
+                  <GallerySlider isMobile={true} images={getMobileGallery()} />
+                </div> :
+                <Gallery galArr={itemSlug.gallery} />
+            }
+            {
+              isMobile ?
+                <div className={cn(styles.reviewsModal, isReviewsActive && styles.reviewsModalActive)}>
+
+                </div> :
+                <QandA reviewsArr={itemSlug.reviewsArr} />
+            }
           </div>
         }
         <Footer />

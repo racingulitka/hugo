@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 .wrapper {
   width: 180px;
   height: auto;
@@ -6,6 +8,10 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 20px;
+  @media(max-width:$mobile-size){
+    width:fit-content;
+    gap:15px;
+  }
   .title {
     color: #fff;
     font-family: "Averta Demo PE";
@@ -13,6 +19,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    @media(max-width:$mobile-size){
+      font-size: 18px;
+      font-weight: 600;
+    }
   }
   .iconsBlock{
     display:flex;

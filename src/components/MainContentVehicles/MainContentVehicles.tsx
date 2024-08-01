@@ -8,8 +8,8 @@ import Image from 'next/image'
 import CarBrandSelect from '../CarBrandSelect/CarBrandSelect'
 import { CarType } from '../CarTypeSelect/CarTypeSelect.config'
 import MobileSelectBlock from './MobileSelectBlock/MobileSelectBlock'
-import { BottomSheet, BottomSheetRef } from 'react-spring-bottom-sheet'
-import 'react-spring-bottom-sheet/dist/style.css'
+import { Sheet } from 'react-modal-sheet';
+import MobileModalHeader from './MobileSelectBlock/MobileModalHeader/MobileModalHeader'
 
 export interface Card {
     id: number,
@@ -408,7 +408,6 @@ export default function MainContentVehicles({
 
     const [goodsArray, setGoodsArray] = useState<GoodsArray>({ ...goodsArrayDefault })
     const [isCarBrandSelectActive, setCarBrandSelectActive] = useState<boolean>(false)
-    const sheetRef = useRef<BottomSheetRef | null>(null)
 
     const setFavourite = (categoryId: keyof GoodsArray, cardId: number) => {
         const category = goodsArray[categoryId]
@@ -430,20 +429,19 @@ export default function MainContentVehicles({
     }, [activeCategory])
 
     useEffect(() => {
-        function handleClickOutside(event:MouseEvent) {
-            if (sheetRef.current && !sheetRef.current.contains(event.target)) {
+        function handleClickOutside(event: MouseEvent) {
+            const target = event.target as Element;
+            if (!target.closest(`.${styles.list}`)) {
                 setCarBrandSelectActive(false);
             }
         }
 
-        // Добавляем обработчик событий при монтировании
         document.addEventListener('mousedown', handleClickOutside);
 
-        // Удаляем обработчик событий при размонтировании
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, [sheetRef]);
+    }, [isCarBrandSelectActive]);
 
     return (
         <div className={styles.mainWrapper}>
@@ -458,13 +456,24 @@ export default function MainContentVehicles({
                     }
                     {
                         isMobile &&
-                        <BottomSheet
-                            open={isCarBrandSelectActive}
-                            ref={sheetRef}
-                            defaultSnap={({ maxHeight }) => maxHeight / 2}
+                        <Sheet
+                            isOpen={isCarBrandSelectActive}
+                            onClose={() => setCarBrandSelectActive(false)}
+                            detent='content-height'
                         >
-                            <CarBrandSelect isActive={isCarBrandSelectActive} onSelect={setCarBrandSelectActive} />
-                        </BottomSheet>
+                            <Sheet.Container>
+                                <Sheet.Header>
+                                    <MobileModalHeader />
+                                </Sheet.Header>
+                                <Sheet.Content>
+                                    {
+                                        <CarBrandSelect isActive={isCarBrandSelectActive} onSelect={setCarBrandSelectActive} />
+                                    }
+                                </Sheet.Content>
+                            </Sheet.Container>
+                            <Sheet.Backdrop />
+                            
+                        </Sheet>
                     }
                     <Image src={defaultAdverticement} alt='defaultAdverticement' className={styles.adverticement} />
                 </div>
@@ -479,6 +488,9 @@ export default function MainContentVehicles({
 
                 </div>
             </div>
+            {
+                isCarBrandSelectActive && <div className={styles.overlay}></div>
+            }
         </div>
     )
 }
