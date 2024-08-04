@@ -36,6 +36,8 @@ import Slider from "@/components/Product/ProductHero/Slider/Slider";
 import { StaticImageData } from "next/image";
 import GallerySlider from "@/components/Product/ProductHero/GallerySlider/GallerySlider";
 import cn from 'classnames'
+import MobileReviews from "@/components/Product/MobileReviews/MobileReviews";
+import { Sheet } from "react-modal-sheet";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -255,7 +257,40 @@ export default function PageOfGood({
           flaw: 'Не выявлено',
           yes: 3,
           no: 2,
-        }
+        },
+        {
+          id: 2,
+          date: new Date('2023-02-03'),
+          rate: 4.0,
+          name: 'Александр К.',
+          text: 'Всё круто! Впечатлили',
+          advantage: '4K quality. 483K poly',
+          flaw: 'Не выявлено',
+          yes: 3,
+          no: 2,
+        },
+        {
+          id: 3,
+          date: new Date('2024-05-03'),
+          rate: 3,
+          name: 'Александр К.',
+          text: 'Всё круто! Впечатлили',
+          advantage: '4K quality. 483K poly',
+          flaw: 'Не выявлено',
+          yes: 3,
+          no: 2,
+        },
+        {
+          id: 4,
+          date: new Date('2024-01-03'),
+          rate: 2,
+          name: 'Александр К.',
+          text: 'Всё круто! Впечатлили',
+          advantage: '4K quality. 483K poly',
+          flaw: 'Не выявлено',
+          yes: 3,
+          no: 2,
+        },
       ]
     },
   ])
@@ -331,11 +366,25 @@ export default function PageOfGood({
                 <Gallery galArr={itemSlug.gallery} />
             }
             {
-              isMobile ?
-                <div className={cn(styles.reviewsModal, isReviewsActive && styles.reviewsModalActive)}>
-
-                </div> :
-                <QandA reviewsArr={itemSlug.reviewsArr} />
+              !isMobile &&
+              //   <
+              // <div className={cn(styles.reviewsModal, isReviewsActive && styles.reviewsModalActive)}>
+              // </div> :
+              <QandA reviewsArr={itemSlug.reviewsArr} />
+            }
+            {
+              isMobile &&
+              <Sheet
+                isOpen={isReviewsActive}
+                onClose={() => setReviewsActive(false)}
+                detent="content-height"
+              >
+                <Sheet.Container>
+                  <Sheet.Content>
+                    {<MobileReviews reviewsArr={itemSlug.reviewsArr} setReviewsActive={setReviewsActive} />}
+                  </Sheet.Content>
+                </Sheet.Container>
+              </Sheet>
             }
           </div>
         }

@@ -16,6 +16,7 @@ export default function MobileSelectBlock({
 }) {
 
     const [isSortOpen, setSortOpen] = useState<boolean>(false)
+    const [sortSelect, setSortSelect] = useState<number>(1)
 
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
@@ -45,7 +46,7 @@ export default function MobileSelectBlock({
                 className={styles.carBrandOpen}
                 onClick={() => setSortOpen(prev => !prev)}
             >
-                Популярное
+                {sortArr.find(item => item.id === sortSelect)?.title}
                 <Image src={arrowDown} alt='arrow down' className={cn(styles.arrow, isSortOpen && styles.arrowRotate)} />
                 <Sheet
                     isOpen={isSortOpen}
@@ -54,7 +55,7 @@ export default function MobileSelectBlock({
                 >
                     <Sheet.Container>
                         <Sheet.Header>
-                            <MobileModalHeader />
+                            <MobileModalHeader backgroundColor='#252525' />
                         </Sheet.Header>
                         <Sheet.Content>
                             {
@@ -62,7 +63,7 @@ export default function MobileSelectBlock({
                                     {
                                         sortArr.map(item => {
                                             return (
-                                                <div className={styles.selectItem} key={item.id}>
+                                                <div className={styles.selectItem} key={item.id} onClick={() => setSortSelect(item.id)}>
                                                     {item.title}
                                                 </div>
                                             )

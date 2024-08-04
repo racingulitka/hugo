@@ -463,7 +463,7 @@ export default function MainContentVehicles({
                         >
                             <Sheet.Container>
                                 <Sheet.Header>
-                                    <MobileModalHeader />
+                                    <MobileModalHeader backgroundColor='#161616' />
                                 </Sheet.Header>
                                 <Sheet.Content>
                                     {

@@ -32,19 +32,10 @@ $mobile-size:480px;
   align-items: flex-start;
   gap: 15px;
   @media(max-width:$mobile-size){
-    // position:fixed;
-    // bottom:0;
-    // left:0;
-    // translate:0 100%;
-    // transition:0.3s;
-    // z-index:10;
-    width:100%;
-    padding:15px 19px;
+     width:100%;
+    padding:0px 19px 15px;
     height:calc(100vh - 246px);
-    // &Active{
-    //   translate:0 0;
-    //   transition:0.3s;
-    // }
+
   }
   .title {
     @include fontAvertaCY();
