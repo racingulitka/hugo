@@ -367,9 +367,6 @@ export default function PageOfGood({
             }
             {
               !isMobile &&
-              //   <
-              // <div className={cn(styles.reviewsModal, isReviewsActive && styles.reviewsModalActive)}>
-              // </div> :
               <QandA reviewsArr={itemSlug.reviewsArr} />
             }
             {

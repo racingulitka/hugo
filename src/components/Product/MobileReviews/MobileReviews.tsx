@@ -7,6 +7,8 @@ import star from '../../Reviews/ReviewCard/assets/star.svg'
 import starUnfilled from '../../Account/screens/Reviews/ReviewItem/assets/starUnfilledIcon.svg'
 import arrowDown from './assets/arrowDown.svg'
 import { getFormattedDate } from '@/components/Account/screens/Reviews/ReviewItem/utils/getFormattedDate'
+import { Sheet } from 'react-modal-sheet'
+import MobileModalHeader from '@/components/MainContentVehicles/MobileSelectBlock/MobileModalHeader/MobileModalHeader'
 
 export default function MobileReviews({
     reviewsArr,
@@ -34,9 +36,29 @@ export default function MobileReviews({
     ]
 
     const [sortSelect, setSortSelect] = useState<number>(1)
+    const [isSortOpen, setSortOpen] = useState<boolean>(false)
+    const [sortedArr, setSortedArr] = useState<ReviewsArr[]>(reviewsArr)
 
     const getMainRate = () => {
         return reviewsArr.map(item => item.rate).reduce((acc, item) => acc + item, 0) / reviewsArr.length
+    }
+
+    console.log(reviewsArr)
+
+    const sortFunc = (sortId:number) => {
+        switch(sortId){
+            case 1:{
+                setSortedArr(reviewsArr.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()))
+                break
+            }
+            case 2:{
+                setSortedArr(reviewsArr.sort((a, b) => a.rate - b.rate).reverse())
+                break
+            }
+            case 3:{
+                setSortedArr(reviewsArr.sort((a, b) => a.rate - b.rate))
+            }
+        }
     }
 
     return (
@@ -65,13 +87,43 @@ export default function MobileReviews({
                 </div>
                 <div className={styles.note}>Рейтинг формируется на основе актуальных отзывов</div>
             </div>
-            <div className={styles.sort}>
+            <div className={styles.sort} onClick={() => setSortOpen(true)}>
                 {sortArr.find(item => item.id === sortSelect)?.title}
                 <Image src={arrowDown} alt='arrow down' className={styles.arrowDown} />
             </div>
+            <Sheet
+                isOpen={isSortOpen}
+                onClose={() => setSortOpen(false)}
+                detent='content-height'
+            >
+                <Sheet.Container>
+                    <Sheet.Header>
+                        <MobileModalHeader backgroundColor='#252525' />
+                    </Sheet.Header>
+                    <Sheet.Content>
+                        {
+                            <div className={styles.sortSelect}>
+                                {
+                                    sortArr.map(item => {
+                                        return (
+                                            <div
+                                                className={styles.sortItem}
+                                                key={item.id}
+                                                onClick={() => {setSortSelect(item.id); setSortOpen(false); sortFunc(item.id)}}
+                                            >
+                                                {item.title}
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
+                        }
+                    </Sheet.Content>
+                </Sheet.Container>
+            </Sheet>
             <div className={styles.reviewsBlock}>
                 {
-                    reviewsArr.map(review => {
+                    sortedArr.map(review => {
                         return (
                             <div
                                 key={review.id}
