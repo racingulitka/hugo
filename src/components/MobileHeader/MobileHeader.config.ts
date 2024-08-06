@@ -2,24 +2,24 @@ export const topMenu = [
     {
         id:1,
         title:'Профиль',
-        link:'#',
+        link:'/account',
     },
     {
         id:2,
         title:'Избранное',
-        link:'#',
+        link:'/account',
     },
     {
         id:3,
         title:'Корзина',
-        link:'#',
+        link:'/account',
     },
 ]
 
 export const middleMenu = [
     {
         id:1,
-        title:'Готовые решения',
+        title:'Решения',
         link:'#',
     },
     {

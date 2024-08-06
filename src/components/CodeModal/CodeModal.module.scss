@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 .wrapper {
   width: 620px;
   height: 680px;
@@ -7,6 +9,11 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  @media(max-width:$mobile-size){
+    width:100%;
+    height:auto;
+    background: none;
+  }
   .logoContainer {
     position: absolute;
     top: 23px;
@@ -28,6 +35,9 @@
       font-weight: 400;
       line-height: normal;
     }
+    @media(max-width:$mobile-size){
+      display:none;
+    }
   }
   .container {
     width: 297px;
@@ -36,6 +46,10 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
+    @media(max-width:$mobile-size){
+      width:100%;
+      align-items: center;
+    }
     & h2 {
       color: #fff;
       font-family: "Averta CY";
@@ -43,6 +57,9 @@
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+      @media(max-width:$mobile-size){
+        font-size: 32px;
+      }
     }
     .comment {
       margin: 10px 0 0 0;
@@ -52,6 +69,10 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+      @media(max-width:$mobile-size){
+        text-align: center;
+        max-width: 196px;
+      }
     }
     .inputBlock {
       width: 100%;
@@ -61,6 +82,11 @@
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: center;
+      @media(max-width:$mobile-size){
+        justify-content: center;
+        gap:10px;
+        margin:25px 0 0 0;
+      }
       .char {
         position:relative;
         width: 70px;
@@ -76,6 +102,11 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        @media(max-width:$mobile-size){
+          width:56px;
+          height:56px;
+          font-size: 38px;
+        }
         &Filled {
           border-bottom: 3px solid #9c3131;
         }
@@ -89,6 +120,9 @@
           width:0px;
           height:38px;
           display:none;
+          @media(max-width:$mobile-size){
+            height:30px;
+          }
           &Active{
             display:block;
           }
@@ -103,6 +137,10 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+      @media(max-width:$mobile-size){
+        margin:25px 0 0 0;
+        font-size: 12px;
+      }
     }
     .enterWithAnotherEmail {
       margin: 12px 0 0 0;
@@ -112,6 +150,10 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+      @media(max-width:$mobile-size){
+        font-size:12px;
+        margin:10px 0 0 0;
+      }
     }
     & button {
       margin: 25px 0 0 0;
@@ -127,6 +169,13 @@
       font-weight: 400;
       line-height: normal;
       transition: 0.1s;
+      text-transform: uppercase;
+      @media(max-width:$mobile-size){
+        height:50px;
+        font-size:15px;
+        font-weight: 600;
+        text-transform: capitalize;
+      }
       &:hover {
         cursor: pointer;
         opacity: 0.9;

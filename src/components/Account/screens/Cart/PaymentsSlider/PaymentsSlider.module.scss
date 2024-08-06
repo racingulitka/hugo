@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 .wrapper {
   width: 1125px;
   height: 184px;
@@ -15,6 +17,12 @@
   @media(max-width: 1430px){
     width:757px;
   }
+  @media(max-width:$mobile-size){
+    width:100%;
+    height:73px;
+    gap:10px;
+    padding:8px 15px;
+  }
   .header {
     width:100%;
     height:auto;
@@ -29,6 +37,9 @@
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+      @media(max-width:$mobile-size){
+        font-size: 10px;
+      }
     }
     .buttons{
         display:flex;
@@ -51,6 +62,9 @@
                 rotate:180deg;
             }
         }
+        @media(max-width:$mobile-size){
+          display:none;
+        }
     }
   }
   .sliderBody{
@@ -58,6 +72,11 @@
     height:90px;
     overflow: hidden;
     position:relative;
+    @media(max-width:$mobile-size){
+      height:35px;
+      overflow-x: scroll;
+      scrollbar-width: none;
+    }
     .sliderBodyList{
         width:auto;
         height:90px;
@@ -70,6 +89,11 @@
         align-items: center;
         gap:19px;
         transition: 0.3s ease;
+        @media(max-width:$mobile-size){
+          height:100%;
+          position: static;
+          gap:5px;
+        }
         .sliderBodyListItem{
             width:165px;
             height:90px;
@@ -77,6 +101,10 @@
             justify-content: center;
             align-items: center;
             background: #252525;
+            @media(max-width:$mobile-size){
+              width:60px;
+              height:35px;
+            }
             &:hover{
                 cursor:pointer;
             }

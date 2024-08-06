@@ -11,10 +11,12 @@ export default function CartItem({
     cartInfo,
     onSelect,
     onDelete,
+    isMobile,
 }: {
     cartInfo: CartInfo,
     onSelect: (id: number, value: boolean, key: keyof CartInfo) => void,
-    onDelete:(id:number) => void,
+    onDelete: (id: number) => void,
+    isMobile: boolean,
 }) {
 
     const onChange = (value: boolean, key: keyof CartInfo) => {
@@ -38,7 +40,7 @@ export default function CartItem({
                             src={cartInfo.image}
                             alt='image'
                             fill
-                            style={{objectFit:'cover'}}
+                            style={{ objectFit: 'cover' }}
                         />
                     </div>
                     <div className={styles.itemParams}>
@@ -46,36 +48,67 @@ export default function CartItem({
                             <p className={styles.itemName}>{cartInfo.title}</p>
                             <p className={styles.itemColor}>Цвет {cartInfo.color}</p>
                         </div>
-                        <div className={styles.iconsBlock}>
-                            <div
-                                className={styles.heartIcon}
-                                onClick={() => onChange(!cartInfo.isFavourite, 'isFavourite')}
-                            >
-                                <HeartIcon isActive={cartInfo.isFavourite} width={19} height={17} />
+                        {
+                            isMobile &&
+                            <div className={styles.priceAndIcons}>
+                                <div className={styles.priceBlock}>
+                                    <p className={styles.actualPrice}>$ {priceFormat(cartInfo.actualPrice)}</p>
+                                    <p className={styles.price}>$ {priceFormat(cartInfo.price)}</p>
+                                </div>
+                                <div className={styles.iconsBlock}>
+                                    <div
+                                        className={styles.heartIcon}
+                                        onClick={() => onChange(!cartInfo.isFavourite, 'isFavourite')}
+                                    >
+                                        <HeartIcon isActive={cartInfo.isFavourite} width={isMobile ? 15 : 19} height={isMobile ? 14 : 17} />
+                                    </div>
+                                    <div
+                                        className={styles.trash}
+                                        onClick={() => onDelete(cartInfo.id)}
+                                    >
+                                        <Image
+                                            src={trashIcon}
+                                            alt='trash'
+                                            className={styles.trashIcon}
+                                        />
+                                    </div>
+                                </div>
                             </div>
-                            <div
-                                className={styles.trash}
-                                onClick={() => onDelete(cartInfo.id)}
-                            >
-                                <Image
-                                    src={trashIcon}
-                                    alt='trash'
-                                    className={styles.trashIcon}
-                                />
+
+                        }
+                        {
+                            !isMobile &&
+                            <div className={styles.iconsBlock}>
+                                <div
+                                    className={styles.heartIcon}
+                                    onClick={() => onChange(!cartInfo.isFavourite, 'isFavourite')}
+                                >
+                                    <HeartIcon isActive={cartInfo.isFavourite} /*width={isMobile ? 15 : 19}*/ height={isMobile ? 14 : 17} />
+                                </div>
+                                <div
+                                    className={styles.trash}
+                                    onClick={() => onDelete(cartInfo.id)}
+                                >
+                                    <Image
+                                        src={trashIcon}
+                                        alt='trash'
+                                        className={styles.trashIcon}
+                                    />
+                                </div>
                             </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>
-            <div className={styles.rightSide}>
-                <div className={styles.priceBlock}>
-                    <p className={styles.actualPrice}>$ {priceFormat(cartInfo.actualPrice)}</p>
-                    <p className={styles.price}>$ {priceFormat(cartInfo.price)}</p>
+            {
+                !isMobile &&
+                <div className={styles.rightSide}>
+                    <div className={styles.priceBlock}>
+                        <p className={styles.actualPrice}>$ {priceFormat(cartInfo.actualPrice)}</p>
+                        <p className={styles.price}>$ {priceFormat(cartInfo.price)}</p>
+                    </div>
                 </div>
-                <div className={styles.valueBlock}>
-                    
-                </div>
-            </div>
+            }
         </div>
     )
 }

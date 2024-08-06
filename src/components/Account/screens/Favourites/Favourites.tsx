@@ -18,6 +18,7 @@ export default function Favourites() {
             title: '3D моделинг автомобиля Maerati',
             rate: 5,
             reviews: 0,
+            slug:'renault1',
         },
         {
             id: 2,
@@ -29,6 +30,7 @@ export default function Favourites() {
             title: '3D моделинг автомобиля Maerati',
             rate: 5,
             reviews: 5,
+            slug:'renault2',
         },
         {
             id: 3,
@@ -40,6 +42,7 @@ export default function Favourites() {
             title: '3D моделинг автомобиля Maerati',
             rate: 5,
             reviews: 1,
+            slug:'renault3',
         },
         {
             id: 4,
@@ -51,6 +54,7 @@ export default function Favourites() {
             title: '3D моделинг автомобиля Maerati',
             rate: 5,
             reviews: 31,
+            slug:'renault4',
         },
         {
             id: 5,
@@ -62,6 +66,7 @@ export default function Favourites() {
             title: '3D моделинг автомобиля Maerati',
             rate: 5,
             reviews: 3,
+            slug:'renault5',
         },
         {
             id: 6,
@@ -73,6 +78,7 @@ export default function Favourites() {
             title: '3D моделинг автомобиля Maerati',
             rate: 5,
             reviews: 31,
+            slug:'renault6',
         },
         {
             id: 7,
@@ -84,6 +90,7 @@ export default function Favourites() {
             title: '3D моделинг автомобиля Maerati',
             rate: 5,
             reviews: 3,
+            slug:'renault7',
         },
     ])
 

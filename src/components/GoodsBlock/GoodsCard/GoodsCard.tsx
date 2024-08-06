@@ -21,13 +21,19 @@ export default function GoodsCard(props: Card & { setFavourite: (categoryId: str
 
     const reviewText = getReviewText(props.reviews)
 
+    const setFavouriteFunc = (e:React.MouseEvent) => {
+        e.preventDefault()
+        e.stopPropagation()
+        props.setFavourite(props.categoryId, props.id)
+    }
+
     return (
         <Link href={`/shop/product/${props.slug}`} className={styles.wrapper}>
             <div className={styles.imageContainer}>
                 <Image src={props.image} alt='image' className={styles.goodImage} />
                 <div
                     className={styles.heartIconContainer}
-                    onClick={() => props.setFavourite(props.categoryId, props.id)}
+                    onClick={(e) => setFavouriteFunc(e)/*props.setFavourite(props.categoryId, props.id)*/}
                 >
                     <HeartIcon isActive={props.isFavourite} />
                 </div>

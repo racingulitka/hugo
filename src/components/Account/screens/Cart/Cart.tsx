@@ -12,9 +12,11 @@ import PaymentsSlider from './PaymentsSlider/PaymentsSlider'
 export default function Cart({
     isGoToPlacingAnOrder,
     setGoToPlacingAnOrder,
+    isMobile,
 }: {
     isGoToPlacingAnOrder: boolean,
-    setGoToPlacingAnOrder: React.Dispatch<React.SetStateAction<boolean>>
+    setGoToPlacingAnOrder: React.Dispatch<React.SetStateAction<boolean>>,
+    isMobile:boolean,
 }) {
 
     const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<number | null>(null)
@@ -115,6 +117,7 @@ export default function Cart({
                             <div className={styles.saleInfo}>
                                 <p className={styles.boldText}>Не упустите распродажу</p>
                                 <p className={styles.thinText}>1 товар скоро подоражает</p>
+                                <p className={styles.saleCountMobile}>Осталось 10 дней</p>
                             </div>
                         </div>
                         <p className={styles.saleCount}>Осталось 10 дней</p>
@@ -131,6 +134,7 @@ export default function Cart({
                     <CheckBox
                         isChecked={isSelectAll}
                         setChecked={onSelectAll}
+                        width={isMobile ? 14 : 20}
                     />
                     <div className={styles.chooseAll}>Выбрать все</div>
                     <div
@@ -150,6 +154,7 @@ export default function Cart({
                                     cartInfo={cartItem}
                                     onSelect={onSelect}
                                     onDelete={onDelete}
+                                    isMobile={isMobile}
                                 />
                             )
                         })

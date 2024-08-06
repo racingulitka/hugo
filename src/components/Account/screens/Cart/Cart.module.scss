@@ -1,3 +1,5 @@
+$mobile-size: 480px;
+
 @mixin fontAvertaCY() {
   color: #fff;
   font-family: "Averta CY";
@@ -24,6 +26,10 @@
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
+  @media (max-width: $mobile-size) {
+    flex-flow: column nowrap;
+    margin: 20px 0 0 0;
+  }
   .mainInfo {
     width: 1125px;
     height: auto;
@@ -32,11 +38,15 @@
     justify-content: flex-start;
     align-items: center;
     gap: 15px;
-    @media(max-width:1775px){
-      width:941px;
+    @media (max-width: 1775px) {
+      width: 941px;
+      gap: 0px;
     }
-    @media(max-width: 1430px){
-      width:757px;
+    @media (max-width: 1430px) {
+      width: 757px;
+    }
+    @media (max-width: $mobile-size) {
+      width: 100%;
     }
     .sale {
       width: 100%;
@@ -48,12 +58,18 @@
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: center;
+      @media (max-width: $mobile-size) {
+        justify-content: center;
+      }
       .advertising {
         display: flex;
         flex-flow: row nowrap;
         justify-content: flex-start;
         align-items: center;
         gap: 35px;
+        @media (max-width: $mobile-size) {
+          justify-content: center;
+        }
         .saleIcon {
           width: 39px;
           height: auto;
@@ -65,16 +81,37 @@
           align-items: flex-start;
           .boldText {
             @include fontAvertaCY();
+            @media (max-width: $mobile-size) {
+              font-size: 14px;
+            }
           }
           .thinText {
             @include fontAvertaPE();
             font-size: 20px;
+            @media (max-width: $mobile-size) {
+              font-size: 12px;
+              margin: 5px 0 0 0;
+            }
+          }
+          .saleCountMobile {
+            @include fontAvertaCY();
+            color: #9c3131;
+            display: none;
+            @media (max-width: $mobile-size) {
+              display: inline;
+              font-size: 8px;
+              font-weight: 400;
+              margin: 10px 0 0 0;
+            }
           }
         }
       }
       .saleCount {
         @include fontAvertaCY();
         color: #9c3131;
+        @media (max-width: $mobile-size) {
+          display: none;
+        }
       }
     }
     .selectAll {
@@ -88,13 +125,29 @@
       justify-content: flex-start;
       align-items: center;
       gap: 20px;
+      @media (max-width: $mobile-size) {
+        margin: 15px 0 0 0;
+        //justify-content: space-between;
+        padding: 15px 20px;
+      }
       .chooseAll {
         @include fontAvertaPE();
+        @media (max-width: $mobile-size) {
+          font-size: 10px;
+          font-weight: 600;
+          color: #fff;
+        }
       }
       .deleteSelected {
         @include fontAvertaCY();
         color: #9c3131;
         font-size: 15px;
+        @media (max-width: $mobile-size) {
+          flex: 1 0 auto;
+          font-size: 10px;
+          font-weight: 600;
+          text-align: end;
+        }
         &:hover {
           cursor: pointer;
         }
@@ -111,8 +164,17 @@
       justify-content: flex-start;
       align-items: flex-start;
       gap: 35px;
+      @media (max-width: $mobile-size) {
+        margin: 15px 0 0 0;
+        background: none;
+        padding: 0;
+        gap: 10px;
+      }
       .title {
         @include fontAvertaCY();
+        @media (max-width: $mobile-size) {
+          font-size: 14px;
+        }
       }
     }
   }
@@ -127,8 +189,14 @@
     justify-content: flex-start;
     align-items: center;
     gap: 30px;
-    @media(max-width:1595px){
-      width:300px;
+    @media (max-width: 1595px) {
+      width: 300px;
+    }
+    @media (max-width: $mobile-size) {
+      width: 100%;
+      margin: 15px 0 0 0;
+      padding: 20px;
+      gap: 20px;
     }
     .buttonBlock {
       width: 400px;
@@ -138,8 +206,12 @@
       justify-content: flex-start;
       align-items: center;
       gap: 10px;
-      @media(max-width:1595px){
-        width:240px;
+      @media (max-width: 1595px) {
+        width: 240px;
+      }
+      @media (max-width: $mobile-size) {
+        width: 100%;
+        gap: 5px;
       }
       .button {
         @include fontAvertaCY();
@@ -152,6 +224,10 @@
         border: none;
         background: #9c3131;
         backdrop-filter: blur(6.650000095367432px);
+        @media (max-width: $mobile-size) {
+          height: 50px;
+          font-size: 12px;
+        }
         &:hover {
           cursor: pointer;
           opacity: 0.9;
@@ -159,16 +235,26 @@
       }
       &Info {
         @include fontAvertaPE();
+        @media (max-width: $mobile-size) {
+          @include fontAvertaPE();
+          font-size: 10px;
+        }
       }
     }
     .details {
       width: 400px;
       height: auto;
-      @media(max-width:1595px){
-        width:240px;
+      @media (max-width: 1595px) {
+        width: 240px;
+      }
+      @media (max-width: $mobile-size) {
+        width: 100%;
       }
       & h3 {
         @include fontAvertaCY();
+        @media (max-width: $mobile-size) {
+          font-size: 14px;
+        }
       }
       .goods {
         margin: 20px 0 0 0;
@@ -178,12 +264,24 @@
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
+        @media (max-width: $mobile-size) {
+          margin: 15px 0 0 0;
+        }
         &Number {
           @include fontAvertaPE();
+          @media (max-width: $mobile-size) {
+            @include fontAvertaCY();
+            font-size: 10px;
+            font-weight: 400;
+            color: #6f6f6f;
+          }
         }
         &Price {
           @include fontAvertaCY();
           font-size: 15px;
+          @media (max-width: $mobile-size) {
+            font-size: 10px;
+          }
         }
       }
       .discount {
@@ -194,21 +292,37 @@
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: flex-start;
+        @media (max-width: $mobile-size) {
+          margin: 10px 0 0 0;
+        }
         &Text {
           width: fit-content;
           height: auto;
           &Grey {
             @include fontAvertaPE();
+            @media (max-width: $mobile-size) {
+              @include fontAvertaCY();
+              font-size: 10px;
+              font-weight: 400;
+              color: #6f6f6f;
+            }
           }
-          &Red {
-            @include fontAvertaPE();
-            color: #9c3131;
-          }
+          // &Red {
+          //   @include fontAvertaPE();
+          //   color: #9c3131;
+          //   @media(max-width:$mobile-size){
+          //     @include fontAvertaCY();
+          //     font-size: 10px;
+          //   }
+          // }
         }
         &Value {
           @include fontAvertaCY();
           color: #9c3131;
           font-size: 15px;
+          @media(max-width:$mobile-size){
+            font-size: 10px;
+          }
         }
       }
     }
@@ -219,11 +333,17 @@
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: center;
-      @media(max-width:1595px){
-        width:240px;
+      @media (max-width: 1595px) {
+        width: 240px;
+      }
+      @media(max-width:$mobile-size){
+        width:100%;
       }
       &Text {
         @include fontAvertaCY();
+        @media(max-width:$mobile-size){
+          font-size: 14px;
+        }
       }
     }
     .splitter1 {
@@ -235,8 +355,11 @@
       width: 400px;
       height: 1px;
       background: #6e6e6e;
-      @media(max-width:1595px){
-        width:240px;
+      @media (max-width: 1595px) {
+        width: 240px;
+      }
+      @media(max-width:$mobile-size){
+        width:100%;
       }
     }
   }

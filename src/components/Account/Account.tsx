@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './Account.module.scss'
 import AccountNav from './components/AccountNav/AccountNav'
 import { Screens, screens } from './Account.config'
@@ -8,8 +8,15 @@ import Favourites from './screens/Favourites/Favourites'
 import Reviews from './screens/Reviews/Reviews';
 import QuestionsAndAnswers from './screens/QuestionsAndAnswers/QuestionsAndAnswers';
 import cn from 'classnames'
+import AuthAndRegister from '../AuthAndRegister/AuthAndRegister'
 
-export default function Account() {
+export default function Account({
+    routerScreen,
+    isMobile,
+}:{
+    routerScreen?:number,
+    isMobile:boolean,
+}) {
 
     const navArr = screens.map(screen => {
         const { id, title } = screen
@@ -24,16 +31,20 @@ export default function Account() {
 
     const [user] = useState<string>('GermachMallboro')
     const [isGoToPlacingAnOrder, setGoToPlacingAnOrder] = useState<boolean>(false)
-    const [activeScreen, setActiveScreen] = useState<Screens>(Screens.cart)
+    const [activeScreen, setActiveScreen] = useState<Screens>(routerScreen !== undefined ? routerScreen : Screens.cart)
 
     const accountScreens = {
-        [Screens.ChangeProfile]: <Cart isGoToPlacingAnOrder={isGoToPlacingAnOrder} setGoToPlacingAnOrder={setGoToPlacingAnOrder}/>,
-        [Screens.cart]: <Cart isGoToPlacingAnOrder={isGoToPlacingAnOrder} setGoToPlacingAnOrder={setGoToPlacingAnOrder}/>,
+        [Screens.ChangeProfile]: <AuthAndRegister isMobile={isMobile}/>,
+        [Screens.cart]: <Cart isGoToPlacingAnOrder={isGoToPlacingAnOrder} setGoToPlacingAnOrder={setGoToPlacingAnOrder} isMobile={isMobile}/>,
         [Screens.purchases]: <Purchases/>,
         [Screens.favourites]: <Favourites/>,
         [Screens.myReviews]: <Reviews />,
         [Screens.questionsAndAnswers]: <QuestionsAndAnswers isQuestions={isQuestionsSelected} setQuestionsCount={setQuestionsCount}/>,
     }
+
+    useEffect(() => {
+        if(routerScreen !== undefined) setActiveScreen(routerScreen)
+    }, [routerScreen])
 
     return (
         <div className={styles.mainWrapper}>
@@ -44,7 +55,7 @@ export default function Account() {
                     </div>
                     <div className={styles.title}>
                         {
-                            isGoToPlacingAnOrder &&
+                            isGoToPlacingAnOrder && !isMobile &&
                             <p
                                 className={styles.returnToCart}
                                 onClick={() => setGoToPlacingAnOrder(false)}

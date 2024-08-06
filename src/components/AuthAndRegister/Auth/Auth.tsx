@@ -7,8 +7,10 @@ import { Screens } from '../AuthAndRegister';
 
 export default function Auth({
   setActiveScreen,
+  isMobile,
 }: {
-  setActiveScreen: React.Dispatch<React.SetStateAction<keyof Screens>>;
+  setActiveScreen: React.Dispatch<React.SetStateAction<keyof Screens>>,
+  isMobile: boolean,
 }) {
   useEffect(() => {
     const style = document.createElement('style');
@@ -48,6 +50,13 @@ export default function Auth({
           Зарегистрироваться
         </p>
       </div>
+      {
+        isMobile &&
+        <div className={styles.socialBlock}>
+          <p className={styles.socialText}>Войти с помощью</p>
+          <SocialMediaAuth />
+        </div>
+      }
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -82,10 +91,13 @@ export default function Auth({
           Восстановить
         </p>
       </div>
-      <div className={styles.socialBlock}>
-        <p className={styles.socialText}>Войти с помощью</p>
-        <SocialMediaAuth />
-      </div>
+      {
+        !isMobile &&
+        <div className={styles.socialBlock}>
+          <p className={styles.socialText}>Войти с помощью</p>
+          <SocialMediaAuth />
+        </div>
+      }
     </div>
   );
 }

@@ -70,7 +70,7 @@ $mobile-size:480px;
     box-sizing: border-box;
     padding: 0 30px 16px;
     @media(max-width:$mobile-size){
-      margin:10px 0 0 0;
+      margin:0;
       padding:10px 12px;
     }
     .priceContainer {

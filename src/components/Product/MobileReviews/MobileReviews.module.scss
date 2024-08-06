@@ -1,3 +1,20 @@
+@mixin fontAvertaCY() {
+  color: #fff;
+  font-family: "Averta CY";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+@mixin fontAvertaPE(){
+    color: #fff;
+    font-family: "Averta Demo PE";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
 .wrapper {
   width: 100%;
   height: calc(100vh - 44px);
@@ -17,20 +34,14 @@
       align-items: center;
       gap: 10px;
       .title {
-        color: #fff;
-        font-family: "Averta CY";
+        @include fontAvertaCY();
         font-size: 18px;
-        font-style: normal;
         font-weight: 600;
-        line-height: normal;
       }
       .titleValue {
+        @include fontAvertaCY();
         color: #8d8d8d;
-        font-family: "Averta CY";
         font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
       }
       .exitCrossButton {
         flex: 1 0 auto;
@@ -70,36 +81,26 @@
         overflow: hidden;
       }
       .rateChar {
+        @include fontAvertaCY();
         color: #c9c9c9;
-        font-family: "Averta CY";
         font-size: 16px;
-        font-style: normal;
         font-weight: 600;
-        line-height: normal;
         white-space: nowrap;
       }
     }
     .note {
+      @include fontAvertaCY();
       margin: 10px 0 18px 0;
       color: #8d8d8d;
-      font-family: "Averta CY";
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
     }
   }
   .sort {
+    @include fontAvertaCY();
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 5px;
     color: #c9c9c9;
-    font-family: "Averta CY";
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
     .arrowDown {
       width: 5px;
       height: auto;
@@ -125,12 +126,8 @@
         align-items: flex-start;
         gap: 10px;
         &Name {
-          color: #fff;
-          font-family: "Averta CY";
-          font-size: 12px;
-          font-style: normal;
+          @include fontAvertaCY();
           font-weight: 700;
-          line-height: normal;
         }
         .reviewInfo {
           display: flex;
@@ -139,12 +136,8 @@
           align-items: center;
           gap: 10px;
           .reviewDate {
+            @include fontAvertaPE();
             color: #8d8d8d;
-            font-family: "Averta Demo PE";
-            font-size: 12px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
           }
           .rate {
             display: flex;
@@ -160,63 +153,38 @@
         }
       }
       &Text {
+        @include fontAvertaPE();
         margin: 5px 0 0 0;
         color: #818181;
-        font-family: "Averta Demo PE";
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
       }
       &Advantages {
         margin: 15px 0 0 0;
         & h4 {
-          color: #fff;
-          font-family: "Averta CY";
-          font-size: 12px;
-          font-style: normal;
+          @include fontAvertaCY();
           font-weight: 700;
-          line-height: normal;
         }
         & p {
+            @include fontAvertaPE();
           margin: 10px 0 0 0;
           color: #818181;
-          font-family: "Averta Demo PE";
-          font-size: 12px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
         }
       }
       &Flaw {
         margin: 15px 0 0 0;
         & h4 {
-          color: #fff;
-          font-family: "Averta CY";
-          font-size: 12px;
-          font-style: normal;
+          @include fontAvertaCY();
           font-weight: 700;
-          line-height: normal;
         }
         & p {
+            @include fontAvertaPE();
           margin: 10px 0 0 0;
           color: #818181;
-          font-family: "Averta Demo PE";
-          font-size: 12px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
         }
       }
       &IsHelpful {
         margin: 25px 0 0 0;
         & p {
-          color: #fff;
-          font-family: "Averta Demo PE";
-          font-size: 12px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
+            @include fontAvertaPE();
         }
         &Flex {
           margin: 15px 0 0 0;
@@ -226,22 +194,12 @@
           align-items: center;
           gap: 15px;
           &Yes {
-            color: #fff;
-            font-family: "Averta Demo PE";
-            font-size: 12px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
+            @include fontAvertaPE();
             padding: 10px 15px;
             background: #9c3131;
           }
           &No {
-            color: #fff;
-            font-family: "Averta Demo PE";
-            font-size: 12px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
+            @include fontAvertaPE();
             padding: 10px 15px;
             background: #191919;
           }
@@ -256,18 +214,14 @@
   background: #252525;
   padding: 0 15px;
   .sortItem {
+    @include fontAvertaPE();
     width: 100%;
     height: 49px;
     border-bottom: 1px solid #383838;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    color: #fff;
-    font-family: "Averta Demo PE";
     font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
     &:last-child {
       border: none;
     }

@@ -1,3 +1,5 @@
+$mobile-size: 480px;
+
 .wrapper {
   position: absolute;
   top: 50%;
@@ -7,6 +9,10 @@
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
+  @media (max-width: $mobile-size) {
+    position: static;
+    translate: 0 0;
+  }
   .title {
     color: #fff;
     font-family: "Averta CY";
@@ -14,6 +20,9 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    @media (max-width: $mobile-size) {
+      font-size: 32px;
+    }
   }
   .registerInvitationBlock {
     margin: 29px 0 0 0;
@@ -22,6 +31,11 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    @media (max-width: $mobile-size) {
+      margin: 20px 0 0 0;
+      justify-content: space-between;
+      width: 100%;
+    }
     .question {
       color: #8d8d8d;
       font-family: "Averta Demo PE";
@@ -30,6 +44,9 @@
       font-weight: 400;
       line-height: normal;
       white-space: nowrap;
+      @media (max-width: $mobile-size) {
+        font-size: 14px;
+      }
     }
     .toRegister {
       color: #9c3131;
@@ -39,38 +56,57 @@
       font-weight: 400;
       line-height: normal;
       text-decoration-line: underline;
+      @media (max-width: $mobile-size) {
+        font-size: 14px;
+      }
       &:hover {
         cursor: pointer;
       }
     }
   }
-  .fieldContainer{
-    position:relative;
-    .field {
-      margin: 34px 0 0 0;
-      width: 375px;
-      height: 35px;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      color: red;
-      background: transparent;
-      border: none;
-      color: #fff;
-      font-family: "Averta CY";
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      border-bottom: 1px solid #8d8d8d;
-      outline: none !important;
-      &:focus {
-        outline: none !important;
+  .form {
+    @media (max-width: $mobile-size) {
+      width: 100%;
+    }
+    .fieldContainer {
+      position: relative;
+      @media (max-width: $mobile-size) {
+        width: 100%;
       }
-      &::placeholder {
-        color: #8d8d8d;
-        font-size: 12px;
-        font-weight: 700;
+      .field {
+        margin: 34px 0 0 0;
+        width: 375px;
+        height: 35px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: red;
+        background: transparent;
+        border: none;
+        color: #fff;
+        font-family: "Averta CY";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        border-bottom: 1px solid #8d8d8d;
+        outline: none !important;
+        @media (max-width: $mobile-size) {
+          width: 100%;
+          margin:25px 0 0 0;
+          font-size: 14px;
+        }
+        &:focus {
+          outline: none !important;
+        }
+        &::placeholder {
+          color: #8d8d8d;
+          font-size: 12px;
+          font-weight: 700;
+          @media(max-width:$mobile-size){
+            font-size: 14px;
+          }
+        }
       }
     }
   }
@@ -85,6 +121,9 @@
     font-weight: 400;
     line-height: normal;
     cursor: pointer;
+    @media(max-width:$mobile-size){
+      font-size: 14px;
+    }
 
     .checkbox {
       display: none;
@@ -97,20 +136,16 @@
       background-color: transparent;
       position: relative;
       margin-right: 10px;
+      @media(max-width:$mobile-size){
+        width:19px;
+        height:19px;
+        margin-right: 5px;
+        background: none;
+      }
     }
 
-    .customCheckbox::after {
-      content: url(../assets/check.svg);
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      width: 10px;
-      height: 10px;
-      display: none;
-    }
-
-    .checkbox:checked + .customCheckbox::after {
-      display: block;
+    .checkbox:checked + .customCheckbox {
+      background: url(../assets/check.svg) center / 130% no-repeat;
     }
   }
   .button {
@@ -126,6 +161,9 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    @media (max-width: $mobile-size) {
+      width: 100%;
+    }
     &:hover {
       opacity: 0.9;
       transition: 0.3s;
@@ -166,6 +204,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: $mobile-size) {
+      width: 100%;
+      margin: 20px 0 0 0;
+    }
     .socialText {
       color: #949494;
       text-align: center;
@@ -174,18 +216,21 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+      @media (max-width: $mobile-size) {
+        font-size: 16px;
+      }
     }
   }
 }
-.error{
-  color:#9c3131;
+.error {
+  color: #9c3131;
   font-family: "Averta Demo PE";
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  position:absolute;
-  bottom:0;
-  left:0;
-  translate:0 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  translate: 0 100%;
 }

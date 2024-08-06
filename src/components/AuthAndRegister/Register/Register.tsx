@@ -118,7 +118,7 @@ export default function Register({
                     </div>
                 </Form>
             </Formik>
-            <div className={styles.lostPasswordBlock}>
+            {/* <div className={styles.lostPasswordBlock}>
                 <p className={styles.lostText}>Забыли пароль?</p>
                 <p
                     className={styles.lostLink}
@@ -126,7 +126,7 @@ export default function Register({
                 >
                     Восстановить
                 </p>
-            </div>
+            </div> */}
         </div>
     )
 }

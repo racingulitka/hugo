@@ -8,6 +8,9 @@ import Link from 'next/link'
 import { topMenu, middleMenu } from './MobileHeader.config'
 import cn from 'classnames'
 import MenuSelector from './MenuSelector/MenuSelector'
+import { Screens } from '../Account/Account.config'
+import { AnimatePresence } from 'framer-motion'
+import Solutions from '../Solutions/Solutions'
 
 export default function MobileHeader() {
 
@@ -15,6 +18,30 @@ export default function MobileHeader() {
     const [language, setLanguage] = useState<string>('Русский')
     const [currency, setCurrency] = useState<string>('RUB')
     const [isSelectorOpen, setSelectorOpen] = useState<string | null>(null)
+    const [isSolutionsActive, setSolutionsActive] = useState<boolean>(false)
+
+    const getLoadingScreen = (id: number) => {
+        let loadingScreen: Screens = Screens.ChangeProfile
+        switch (id) {
+            case 1: {
+                loadingScreen = Screens.ChangeProfile
+                break
+            }
+            case 2: {
+                loadingScreen = Screens.favourites
+                break
+            }
+            case 3: {
+                loadingScreen = Screens.cart
+                break
+            }
+        }
+        return loadingScreen
+    }
+
+    const onMiddleMenuClick = (itemId:number) => {
+        if(itemId === 1) setSolutionsActive(true)
+    }
 
     return (
         <div className={styles.wrapper}>
@@ -36,7 +63,9 @@ export default function MobileHeader() {
                         {
                             topMenu.map(item => {
                                 return (
-                                    <p className={styles.title} key={item.id}>{item.title}</p>
+                                    <Link onClick={() => setMenuOpen(false)} href={{ pathname: item.link, query: { loadingScreen: getLoadingScreen(item.id) } }}>
+                                        <p className={styles.title} key={item.id}>{item.title}</p>
+                                    </Link>
                                 )
                             })
                         }
@@ -46,7 +75,7 @@ export default function MobileHeader() {
                         {
                             middleMenu.map(item => {
                                 return (
-                                    <Link href={item.link}>
+                                    <Link href={item.link} onClick={() => onMiddleMenuClick(item.id)}>
                                         <p className={styles.title} key={item.id}>{item.title}</p>
                                     </Link>
                                 )
@@ -68,6 +97,12 @@ export default function MobileHeader() {
                     }
                 </div>
             }
+            <AnimatePresence>
+                {
+                    isSolutionsActive &&
+                    <Solutions onClose={setSolutionsActive} />
+                }
+            </AnimatePresence>
         </div>
     )
 }

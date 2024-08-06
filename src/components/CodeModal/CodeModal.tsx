@@ -31,7 +31,7 @@ const CodeModal = React.memo(({
             timerValue > 0 && setTimerValue(prev => prev - 1)
         }, 1000)
         return () => clearInterval(interval)
-    })
+    }, [timerValue])
 
     useEffect(() => {
         const cursorInterval = setInterval(() => {
@@ -90,12 +90,18 @@ const CodeModal = React.memo(({
                         })
                     }
                 </div>
-                <p className={styles.getNewCode}>Получить новый код можно через 00:{timerValue < 10 ? `0${timerValue}` : timerValue}</p>
+                <p className={styles.getNewCode}>
+                    {
+                        timerValue === 0
+                            ? <span onClick={() => console.log('send code')}>Отправить код повторно</span>
+                            : `Получить новый код можно через 00:${timerValue < 10 ? `0${timerValue}` : timerValue}`
+                    }
+                </p>
                 <p className={styles.enterWithAnotherEmail}>Войти под другим email</p>
                 <button
                     onClick={() => console.log('button pressed')}
                 >
-                    ДАЛЕЕ
+                    далее
                 </button>
             </div>
         </div>

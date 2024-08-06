@@ -11,12 +11,16 @@ export interface Screens {
     [key: string]: React.ReactNode
 }
 
-export default function AuthAndRegister() {
+export default function AuthAndRegister({
+    isMobile,
+}:{
+    isMobile:boolean,
+}) {
 
     const [activeScreen, setActiveScreen] = useState<keyof Screens>('auth')
 
     const screens: Screens = {
-        auth: <Auth setActiveScreen={setActiveScreen} />,
+        auth: <Auth setActiveScreen={setActiveScreen} isMobile={isMobile}/>,
         reg: <Register setActiveScreen={setActiveScreen} />,
         recover: <CodeModal />,
         serverRules: <ServerRules setActiveScreen={setActiveScreen} />

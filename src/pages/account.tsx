@@ -5,10 +5,31 @@ import Header from "@/components/Header/Header";
 import { Page } from "@/components/Header/Header.config";
 import Account from "@/components/Account/Account";
 import Footer from "@/components/Footer/Footer";
+import { useRouter } from "next/router";
+import { GetServerSidePropsContext } from "next";
+import { getIsSsrMobile } from "@/utils/isSSRMoblile";
+import MobileHeader from "@/components/MobileHeader/MobileHeader";
+import {useEffect} from 'react';
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Shop() {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  return {
+    props: {
+      isSsrMobile: getIsSsrMobile(context)
+    }
+  }
+}
+
+export default function Shop({
+  isSsrMobile,
+}: {
+  isSsrMobile: boolean,
+}) {
+
+  const isMobile = isSsrMobile
+  const routerQuery = useRouter().query.loadingScreen ? Number(useRouter().query.loadingScreen) : undefined
+
   return (
     <>
       <Head>
@@ -18,8 +39,12 @@ export default function Shop() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <Header page={Page.shop}/>
-        <Account />
+        {
+          isMobile ?
+            <MobileHeader /> :
+            <Header page={Page.shop} />
+        }
+        <Account routerScreen={routerQuery} isMobile={isMobile}/>
         <Footer />
       </main>
     </>

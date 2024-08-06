@@ -21,7 +21,7 @@ export default function AccountNav({
         <div className={styles.wrapper}>
             <div className={styles.profile}>
                 <div className={styles.name}>{user}</div>
-                <div className={styles.changeProfile}>{navArr[0].title}</div>
+                <div className={styles.changeProfile} onClick={() => setActiveScreen(Screens.ChangeProfile)}>{navArr[0].title}</div>
             </div>
             <div className={styles.menuContainer}>
                 {

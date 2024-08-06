@@ -1,3 +1,5 @@
+$mobile-size: 480px;
+
 .wrapper {
   width: 100%;
   height: 90px;
@@ -5,6 +7,10 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: $mobile-size) {
+    padding: 18px 20px;
+    background: #191919;
+  }
   .leftSide {
     width: auto;
     height: 100%;
@@ -13,6 +19,9 @@
     justify-content: flex-start;
     align-items: center;
     gap: 30px;
+    @media (max-width: $mobile-size) {
+      gap: 10px;
+    }
     .itemIfo {
       width: auto;
       height: 100%;
@@ -22,10 +31,17 @@
       align-items: center;
       gap: 20px;
       position: relative;
+      @media (max-width: $mobile-size) {
+        gap: 17px;
+      }
       .image {
         height: 100%;
         width: 90px;
         position: relative;
+        @media (max-width: $mobile-size) {
+          width: 72px;
+          height: 72px;
+        }
       }
       .itemParams {
         width: auto;
@@ -34,6 +50,11 @@
         flex-flow: column nowrap;
         justify-content: space-between;
         align-items: flex-start;
+        @media (max-width: $mobile-size) {
+          height: auto;
+          width: auto;
+          justify-content: flex-start;
+        }
         .textBlock {
           display: flex;
           flex-flow: column nowrap;
@@ -47,6 +68,10 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+            @media (max-width: $mobile-size) {
+              font-size: 10px;
+              font-weight: 600;
+            }
           }
           .itemColor {
             color: #6e6e6e;
@@ -55,6 +80,83 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+            @media (max-width: $mobile-size) {
+              font-size: 8px;
+            }
+          }
+        }
+        .priceAndIcons {
+          display:flex;
+          flex-flow:row nowrap;
+          justify-content: space-between;
+          align-items: center;
+          width:100%;
+          .priceBlock {
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: flex-end;
+            gap: 5px;
+            .actualPrice {
+              color: #fff;
+              font-family: "Averta CY";
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              @media (max-width: $mobile-size) {
+                font-size: 12px;
+                font-weight: 600;
+              }
+            }
+            .price {
+              color: #6e6e6e;
+              font-family: "Averta Demo PE";
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              text-decoration: line-through;
+              @media (max-width: $mobile-size) {
+                font-size: 8px;
+              }
+            }
+          }
+          .iconsBlock {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 25px;
+            @media(max-width:$mobile-size){
+              gap:10px;
+              flex:1 0 auto;
+              justify-content: flex-end;
+            }
+            .heartIcon {
+              width: 19px;
+              height: auto;
+              @media (max-width: $mobile-size) {
+                width: 15px;
+              }
+              &:hover {
+                cursor: pointer;
+              }
+            }
+            .trash {
+              &:hover {
+                cursor: pointer;
+              }
+              .trashIcon {
+                width: auto;
+                height: 19px;
+                @media (max-width: $mobile-size) {
+                  height: 15px;
+                }
+              }
+            }
           }
         }
         .iconsBlock {
@@ -66,6 +168,9 @@
           .heartIcon {
             width: 19px;
             height: auto;
+            @media (max-width: $mobile-size) {
+              width: 15px;
+            }
             &:hover {
               cursor: pointer;
             }
@@ -77,6 +182,9 @@
             .trashIcon {
               width: auto;
               height: 17px;
+              @media (max-width: $mobile-size) {
+                height: 12px;
+              }
             }
           }
         }
@@ -91,6 +199,11 @@
     justify-content: center;
     align-items: flex-start;
     gap: 15px;
+    @media(max-width:$mobile-size){
+      width:100%;
+      height:auto;
+      margin:15px 0 0 0;
+    }
     .priceBlock {
       width: auto;
       height: auto;
@@ -106,6 +219,10 @@
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+        @media (max-width: $mobile-size) {
+          font-size: 12px;
+          font-weight: 600;
+        }
       }
       .price {
         color: #6e6e6e;
@@ -115,14 +232,10 @@
         font-weight: 400;
         line-height: normal;
         text-decoration: line-through;
+        @media (max-width: $mobile-size) {
+          font-size: 8px;
+        }
       }
-    }
-    .valueBlock{
-        display:flex;
-        flex-flow:column nowrap;
-        justify-content: flex-start;
-        align-items: flex-start;
-        gap:10px;
     }
   }
 }
