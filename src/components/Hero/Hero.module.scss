@@ -49,7 +49,7 @@
             rgba(68, 68, 68, 0.3) 6%,
             rgba(51, 51, 51, 0.2) 8%,
             rgba(34, 34, 34, 0.1) 10%,
-            transparent 12%,
+            transparent 12%
           )
           0% 0% / 200% 200% no-repeat,
         linear-gradient(180deg, #222 0%, #141414 100%) center center / 100% 100%
@@ -91,8 +91,27 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        & span {
-          color: #9c3131;
+        .sliderBlock {
+          display:flex;
+          justify-content: flex-start;
+          align-items: center;
+          .gtaProjectText {
+            height:30px;
+            color: #9c3131;
+            width:fit-content;
+          }
+          .sliderText {
+            flex:1 0 auto;
+            height: 30px;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            .sliderItem{
+              position:absolute;
+              top:0;
+              left:0;
+            }
+          }
         }
         @media (max-width: 480px) {
           font-size: 12px;

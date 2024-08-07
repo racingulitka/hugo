@@ -2,14 +2,16 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from './Hero.module.scss';
 import rightArrow from './assets/rightArrow.svg';
 import Image from 'next/image';
-import { menuBlockArr } from './Hero.config';
+import { menuBlockArr, sliderArr } from './Hero.config';
 import MenuBlock from './MenuBlock/MenuBlock';
 import Link from 'next/link';
 import HeroBottomLinks from '../common/HeroBottomLinks/HeroBottomLinks';
+import { motion, useAnimation } from 'framer-motion';
 
 export default function Hero() {
     const h1Ref = useRef<HTMLDivElement | null>(null);
     const [coords, setCoords] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+    const [activeText, setActiveText] = useState<number>(0)
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
@@ -24,7 +26,7 @@ export default function Hero() {
     }, []);
 
     useEffect(() => {
-        const lag = 0.2; // Задержка для движения фона
+        const lag = 0.2
         let frameId: number;
 
         const updateBackgroundPosition = () => {
@@ -34,7 +36,7 @@ export default function Hero() {
                 const rect = h1.getBoundingClientRect();
                 const targetX = coords.x - rect.width - shift.x;
                 const targetY = coords.y - rect.height - shift.y;
-                
+
                 let currentX = parseFloat(h1.style.backgroundPositionX) || 0;
                 let currentY = parseFloat(h1.style.backgroundPositionY) || 0;
 
@@ -51,12 +53,42 @@ export default function Hero() {
         return () => cancelAnimationFrame(frameId);
     }, [coords]);
 
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setActiveText(prev => (prev + 1) % 10)
+        }, 2000)
+        return () => clearInterval(intervalId)
+    }, [])
+
     return (
         <div className={styles.mainWrapper}>
             <div className={styles.wrapper} id='hero'>
                 <h1 className={styles.h1} ref={h1Ref}>HUGO</h1>
                 <div className={styles.breefBlock}>
-                    <div className={styles.description}>Агентство, которое знает, что нужно каждому <span>GTA проекту:</span> продуктовый менеджмент</div>
+                    <div className={styles.description}>
+                        Агентство, которое знает, что нужно каждому
+                        <div className={styles.sliderBlock}>
+                            <div className={styles.gtaProjectText}>GTA проекту:&nbsp;</div>
+                            <div className={styles.sliderText}>
+                                {
+                                    sliderArr.map((item, index) => {
+                                        return (
+                                            <motion.div
+                                                className={styles.sliderItem}
+                                                key={index}
+                                                
+                                                initial={{ top: activeText === index ? 0 : index===9 ? '-100%' : '100%' }}
+                                                animate={{ top: activeText === index ? 0 : activeText === index+1 ? '-100%' : (activeText===0 && index===activeText+9) ? '-100%' : '100%' }}
+                                                transition={{ duration: index === activeText ? 0.5 : index === activeText-1 ? 0.5 :(activeText===0 && index===activeText+9) ? 0.5 : 0, type: 'spring', bounce: 0.8, mass: 0.7}}
+                                            >
+                                                {item}
+                                            </motion.div>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </div>
+                    </div>
                     <Link href='#'>
                         <button className={styles.breefButton}>
                             <span>Перейти к брифу</span>

@@ -14,7 +14,9 @@ $mobile-size:480px;
   justify-content: flex-start;
   align-items: flex-start;
   @media(max-width:$mobile-size){
-    z-index: 100;
+    position:static;
+    translate:0 0;
+    padding:0 19px;
   }
   .closeButtonContainer {
     margin:0 20px 0 0;
@@ -27,6 +29,9 @@ $mobile-size:480px;
     .image {
       width: 35px;
       height: auto;
+    }
+    @media(max-width:$mobile-size){
+      display:none;
     }
   }
   .linksContainer {
@@ -41,6 +46,12 @@ $mobile-size:480px;
     row-gap: 55px;
     scrollbar-width:thin;
     scrollbar-color:rgba(255, 255, 255, 0.2) transparent;
+    @media(max-width:$mobile-size){
+      flex-flow:column nowrap;
+      margin:44px 0 0 0;
+      row-gap: 45px;
+      scrollbar-width: none;
+    }
     &::-webkit-scrollbar{
         width:4px;
       }
@@ -59,6 +70,10 @@ $mobile-size:480px;
       justify-content: flex-start;
       align-items: flex-start;
       gap: 25px;
+      @media(max-width:$mobile-size){
+        width:100%;
+        gap:15px;
+      }
       .title {
         color: #cacaca;
         font-family: "Averta CY";
@@ -66,6 +81,9 @@ $mobile-size:480px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+        @media(max-width:$mobile-size){
+          font-size: 18px;
+        }
       }
       .links {
         display: flex;
@@ -80,6 +98,9 @@ $mobile-size:480px;
           font-style: normal;
           font-weight: 400;
           line-height: normal;
+          @media(max-width:$mobile-size){
+            font-size: 12px;
+          }
           &:hover{
             cursor: pointer;
             color:#9c3131;
