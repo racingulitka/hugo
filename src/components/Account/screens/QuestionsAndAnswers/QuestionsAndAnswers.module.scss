@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 .emptyList {
   display: flex;
   flex-flow: row nowrap;
@@ -41,4 +43,8 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 15px;
+  @media(max-width:$mobile-size){
+    gap:25px;
+    margin:20px 0 0 0;
+  }
 }

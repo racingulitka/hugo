@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 @mixin font() {
   color: #fff;
   font-family: "Averta CY";
@@ -12,6 +14,9 @@
   justify-content: center;
   align-items: center;
   background: #111;
+  @media(max-width:$mobile-size){
+    margin:45px 0 0 0;
+  }
   .wrapper {
     width: min(100%, 1241px);
     min-height: 1080px;
@@ -19,22 +24,36 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
+    @media(max-width:$mobile-size){
+      min-height: 0;
+      padding:0 19px;
+    }
     .title {
       @include font();
       margin: 113px 0 0 0;
       font-size: 60px;
       font-weight: 700;
+      @media(max-width:$mobile-size){
+        margin:0;
+        font-size: 18px;
+      }
     }
     .subtitle {
       @include font();
       font-size: 38px;
       font-weight: 400;
+      @media(max-width:$mobile-size){
+        font-size: 12px;
+      }
     }
     .description {
       @include font();
       margin: 20px 0 0 0;
       font-size: 22px;
       font-weight: 300;
+      @media(max-width:$mobile-size){
+        font-size: 12px;
+      }
     }
     .flexTitle {
       @include font();
@@ -42,6 +61,10 @@
       margin: 40px 0 0 0;
       font-size: 64px;
       font-weight: 400;
+      @media(max-width:$mobile-size){
+        font-size: 18px;
+        align-self: auto;
+      }
     }
     .flexContainer {
       margin: 40px 0 0 0;
@@ -51,6 +74,11 @@
       justify-content: flex-start;
       align-items: flex-start;
       gap: 35px;
+      @media(max-width:$mobile-size){
+        margin:20px 0 0 0;
+        flex-flow:column nowrap;
+        gap:15px;
+      }
       .card {
         width: 390px;
         height: 100px;
@@ -61,6 +89,12 @@
         align-items: center;
         gap: 25px;
         background: #232323;
+        @media(max-width:$mobile-size){
+          width:228px;
+          height:55px;
+          padding:0 23px;
+          gap:15px;
+        }
         &Odd {
           background: #191919;
         }
@@ -69,6 +103,9 @@
           max-width: 215px;
           font-size: 20px;
           font-weight: 400;
+          @media(max-width:$mobile-size){
+            font-size: 12px;
+          }
         }
       }
     }
@@ -80,11 +117,24 @@
       justify-content: center;
       align-items: center;
       gap: 50px;
+      @media(max-width:$mobile-size){
+        margin:25px 0 0 0;
+        flex-flow:column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap:15px;
+        width:262px;
+        align-self: flex-start;
+      }
       .bottomText {
         @include font();
         width: 214px;
         font-size: 22px;
         font-weight: 700;
+        @media(max-width:$mobile-size){
+          width:175px;
+          font-size: 18px;
+        }
       }
     }
   }

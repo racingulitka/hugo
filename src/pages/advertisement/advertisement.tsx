@@ -21,10 +21,28 @@ import AdvertisementWarranty from "@/components/Advertisement/AdvertisementWarra
 import AdvertisementWeAreNotTheBest from "@/components/Advertisement/AdvertisementWeAreNotTheBest/AdvertisementWeAreNotTheBest";
 import AdvertisementQandA from "@/components/Advertisement/AdvertisementQandA/AdvertisementQandA";
 import AdvertisementTuning from "@/components/Advertisement/AdvertisementTuning/AdvertisementTuning";
+import { GetServerSidePropsContext } from "next";
+import { getIsSsrMobile } from '../../utils/isSSRMoblile';
+import MobileHeader from "@/components/MobileHeader/MobileHeader";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Advertisement() {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  return {
+    props: {
+      isSsrMobile: getIsSsrMobile(context)
+    }
+  }
+}
+
+export default function Advertisement({
+  isSsrMobile,
+}: {
+  isSsrMobile: boolean,
+}) {
+
+  const isMobile = isSsrMobile
+
   return (
     <>
       <Head>
@@ -34,16 +52,20 @@ export default function Advertisement() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <Header page={Page.home}/>
+        {
+          isMobile ?
+            <MobileHeader /> :
+            <Header page={Page.home} />
+        }
         <AdvertisementHero />
         <AdvertisementNotForAll />
-        <AdvertisementAnalize />
-        <AdvertisementStrategy />
-        <AdvertisementAgreement />
-        <AdvertisementSearch />
+        <AdvertisementAnalize isMobile={isMobile} />
+        <AdvertisementStrategy isMobile={isMobile} />
+        <AdvertisementAgreement isMobile={isMobile} />
+        <AdvertisementSearch isMobile={isMobile} />
         <AdvertisementAreYouAgree />
         <AdvertisementCompany />
-        <AdvertisementTest />
+        {/* <AdvertisementTest />
         <AdvertisementFix />
         <AdvertisementFinal />
         <AdvertisementReports />
@@ -51,7 +73,7 @@ export default function Advertisement() {
         <AdvertisementTuning />
         <AdvertisementWeAreNotTheBest />
         <AdvertisementQandA />
-        <Contacts />
+        <Contacts /> */}
         <Footer />
       </main>
     </>

@@ -4,9 +4,14 @@ import { goalsArr } from './AnalysisAnswers.config'
 import cn from 'classnames'
 import Image from 'next/image'
 import RedBorderButton from '@/components/common/RedBorderButton/RedBorderButton'
+import RedBorderButtonMobile from '@/components/common/RedBorderButtonMobile/RedBorderButtonMobile'
 
-export default function AnalysisAnswers(){
-    return(
+export default function AnalysisAnswers({
+    isMobile,
+}: {
+    isMobile: boolean,
+}) {
+    return (
         <div className={styles.mainWrapper}>
             <div className={styles.wrapper}>
                 <h3 className={styles.title}>ОТВЕТЫ НА ВСЕ ВАШИ ВОПРОСЫ</h3>
@@ -16,10 +21,10 @@ export default function AnalysisAnswers(){
                 <div className={styles.flexContainer}>
                     {
                         goalsArr.map(item => {
-                            const isOdd = item.id%2 === 0
-                            return(
+                            const isOdd = item.id % 2 === 0
+                            return (
                                 <div className={cn(styles.card, isOdd && styles.cardOdd)} key={item.id}>
-                                    <Image src={item.icon} alt='icon' width={40} />
+                                    <Image src={item.icon} alt='icon' width={isMobile ? 30 : 40} />
                                     <p className={styles.text}>{item.text}</p>
                                 </div>
                             )
@@ -28,13 +33,23 @@ export default function AnalysisAnswers(){
                 </div>
                 <div className={styles.bottomBlock}>
                     <p className={styles.bottomText}>Нужна другая цель? Расскажите нам</p>
-                    <RedBorderButton
-                        width={435}
-                        height={90}
-                        fontSize={20}
-                    >
-                        СВЯЗАТЬСЯ С МЕНЕДЖЕРОМ
-                    </RedBorderButton>
+                    {
+                        isMobile ?
+                            <RedBorderButtonMobile
+                                height={48}
+                                fontSize={12}
+                            >
+                                СВЯЗАТЬСЯ С МЕНЕДЖЕРОМ
+                            </RedBorderButtonMobile>
+                            :
+                            <RedBorderButton
+                                width={435}
+                                height={90}
+                                fontSize={20}
+                            >
+                                СВЯЗАТЬСЯ С МЕНЕДЖЕРОМ
+                            </RedBorderButton>
+                    }
                 </div>
             </div>
         </div>

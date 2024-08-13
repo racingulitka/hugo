@@ -14,6 +14,21 @@ export const topMenu = [
         title:'Корзина',
         link:'/account',
     },
+    {
+        id:4,
+        title:'Отзывы',
+        link:'/account',
+    },
+    {
+        id:5,
+        title:'Покупки',
+        link:'/account',
+    },
+    {
+        id:6,
+        title:'Мои вопросы и ответы',
+        link:'/account',
+    },
 ]
 
 export const middleMenu = [

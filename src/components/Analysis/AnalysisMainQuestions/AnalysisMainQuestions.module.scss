@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 @mixin font() {
   color: #fff;
   font-family: "Averta CY";
@@ -12,6 +14,9 @@
   justify-content: center;
   align-items: center;
   background: #111;
+  @media(max-width:$mobile-size){
+    margin:45px 0 0 0;
+  }
   .wrapper {
     width: min(100%, 1130px);
     min-height: 1080px;
@@ -19,16 +24,27 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
+    @media(max-width:$mobile-size){
+      min-height: 0;
+      padding:0 19px;
+    }
     .title {
       @include font();
       margin: 107px 0 0 0;
       font-size: 65px;
       font-weight: 700;
+      @media(max-width:$mobile-size){
+        margin:0;
+        font-size: 18px;
+      }
     }
     .subtitle {
       @include font();
       font-size: 42px;
       font-weight: 400;
+      @media(max-width:$mobile-size){
+        font-size: 12px;
+      }
     }
     .flexContainer {
       margin: 33px 0 0 0;
@@ -39,6 +55,12 @@
       justify-content: flex-start;
       align-items: center;
       gap: 20px 110px;
+      @media(max-width:$mobile-size){
+        margin:0;
+        flex-flow:column nowrap;
+        align-items: flex-start;
+        gap:10px;
+      }
       .card {
         width: 510px;
         height: 220px;
@@ -46,13 +68,25 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @media(max-width:$mobile-size){
+          width:245px;
+          height:135px;
+          justify-content: flex-start;
+        }
         .cardWrapper {
           width: 342px;
           height: 133px;
+          @media(max-width:$mobile-size){
+            width:fit-content;
+            height:auto;
+          }
           .cardTitle {
             @include font();
             font-size: 26px;
             font-weight: 600;
+            @media(max-width:$mobile-size){
+              font-size: 18px;
+            }
           }
           .questions {
             width: 100%;
@@ -69,6 +103,10 @@
               font-weight: 300;
               padding:0 0 0 25px;
               position: relative;
+              @media(max-width:$mobile-size){
+                font-size: 12px;
+                padding:0 0 0 17px;
+              }
               &::before{
                 content: '';
                 width:12px;

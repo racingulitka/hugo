@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 @mixin font() {
   color: #fff;
   font-family: "Averta CY";
@@ -20,6 +22,11 @@
     justify-content: center;
     align-items: center;
     gap: 125px;
+    @media(max-width:$mobile-size){
+      min-height: 0;
+      gap:0;
+      padding:45px 19px 0px;
+    }
     .upperBlock {
       width: 671px;
       display: flex;
@@ -27,6 +34,10 @@
       justify-content: flex-start;
       align-items: center;
       gap: 40px;
+      @media(max-width:$mobile-size){
+        width:100%;
+        gap:15px;
+      }
       .titleBlock {
         width: 100%;
         .title {
@@ -34,6 +45,9 @@
           text-align: center;
           font-size: 40px;
           font-weight: 700;
+          @media(max-width:$mobile-size){
+            font-size: 18px;
+          }
         }
         .subtitle {
           @include font();
@@ -41,6 +55,10 @@
           text-align: center;
           font-size: 25px;
           font-weight: 400;
+          @media(max-width:$mobile-size){
+            margin:5px 0 0 0;
+            font-size: 12px;
+          }
         }
       }
       .upperBlockText {
@@ -50,6 +68,9 @@
         font-weight: 400;
         background: #191919;
         padding: 20px;
+        @media(max-width:$mobile-size){
+          font-size: 12px;
+        }
       }
     }
     .redBlock {
@@ -59,19 +80,33 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      @media(max-width:$mobile-size){
+        height:auto;
+        width:calc(100% + 38px);
+        padding:17px 61px;
+      }
       .container {
         width: 827px;
+        @media(max-width:$mobile-size){
+          width:100%;
+        }
 
         .bigText {
           @include font();
           font-size: 40px;
           font-weight: 700;
+          @media(max-width:$mobile-size){
+            font-size: 12px;
+          }
         }
         .smallText {
           @include font();
           margin:10px 0 0 0;
           font-size: 20px;
           font-weight: 400;
+          @media(max-width:$mobile-size){
+            font-size: 12px;
+          }
         }
       }
     }

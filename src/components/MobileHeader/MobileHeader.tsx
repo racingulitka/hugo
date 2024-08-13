@@ -35,16 +35,21 @@ export default function MobileHeader() {
                 loadingScreen = Screens.cart
                 break
             }
+            case 4: {
+                loadingScreen = Screens.myReviews
+                break
+            }
+            case 5: {
+                loadingScreen = Screens.purchases
+                break
+            }
+            case 6: {
+                loadingScreen = Screens.questionsAndAnswers
+                break
+            }
         }
         return loadingScreen
     }
-
-    // const onMiddleMenuClick = (itemId:number) => {
-    //     if(itemId === 1) {
-    //         setSolutionsActive(true)
-    //         setMenuOpen(false)
-    //     }
-    // }
 
     return (
         <div className={styles.wrapper}>
@@ -78,7 +83,7 @@ export default function MobileHeader() {
                         {
                             middleMenu.map(item => {
                                 return (
-                                    <Link href={item.link} /*onClick={() => onMiddleMenuClick(item.id)}*/>
+                                    <Link href={item.link}>
                                         <p className={styles.title} key={item.id}>{item.title}</p>
                                     </Link>
                                 )

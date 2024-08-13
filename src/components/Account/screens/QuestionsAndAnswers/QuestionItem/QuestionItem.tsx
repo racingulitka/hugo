@@ -6,9 +6,23 @@ import likeIcon from '../assets/likeIcon.svg'
 import adminIcon from '../assets/adminIcon.svg'
 import { getFormattedDate } from '../../Reviews/ReviewItem/utils/getFormattedDate'
 
-export default function QuestItem(props: QuestionType) {
+type QuestionProps = QuestionType & {isMobile:boolean}
 
-    const { id, image, question, name, title, likes, answer, yesCount, noCount, date } = props
+export default function QuestItem({
+    id,
+    image,
+    question,
+    name,
+    title,
+    likes,
+    answer,
+    yesCount,
+    noCount,
+    date,
+    isMobile
+}: QuestionProps) {
+
+    //const { id, image, question, name, title, likes, answer, yesCount, noCount, date } = props
 
     return (
         <div className={styles.wrapper}>
@@ -32,24 +46,27 @@ export default function QuestItem(props: QuestionType) {
                             <Image
                                 src={likeIcon}
                                 alt='like icon'
-                                width={17}
+                                width={isMobile ? 11 : 17}
                             />
                             <p>{likes}</p>
                         </div>
                     </div>
                     <div className={styles.infoBlockBottom}>
-                        <div className={styles.adminAnswer}>
-                            <div className={styles.adminAnswerName}>
-                                <p>HUGO</p>
-                                <Image
-                                    src={adminIcon}
-                                    alt='admin icon'
-                                    width={12}
-                                    style={{marginBottom:'2px'}}
-                                />
+                        {
+                            answer !== '' &&
+                            <div className={styles.adminAnswer}>
+                                <div className={styles.adminAnswerName}>
+                                    <p>HUGO</p>
+                                    <Image
+                                        src={adminIcon}
+                                        alt='admin icon'
+                                        width={12}
+                                        style={{ marginBottom: '2px' }}
+                                    />
+                                </div>
+                                <div className={styles.adminAnswerText}>{answer}</div>
                             </div>
-                            <div className={styles.adminAnswerText}>{answer}</div>
-                        </div>
+                        }
                         <div className={styles.isHelpful}>
                             <p>Вам помог этот отзыв?</p>
                             <div className={styles.isHelpfulSelect}>
@@ -61,6 +78,7 @@ export default function QuestItem(props: QuestionType) {
                 </div>
             </div>
             <div className={styles.rightSide}>{getFormattedDate(date)}</div>
+            <div className={styles.splitter}></div>
         </div>
     )
 }

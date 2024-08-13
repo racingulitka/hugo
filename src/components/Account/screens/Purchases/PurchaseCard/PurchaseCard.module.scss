@@ -1,3 +1,5 @@
+$mobile-size: 480px;
+
 @mixin fontAvertaPE() {
   color: #fff;
   font-family: "Averta Demo PE";
@@ -25,6 +27,12 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: $mobile-size) {
+    height: 118px;
+    padding: 18px 20px;
+    gap: 17px;
+    justify-content: flex-start;
+  }
   .leftSide {
     width: auto;
     height: 100%;
@@ -36,6 +44,10 @@
       width: 90px;
       height: 90px;
       position: relative;
+      @media (max-width: $mobile-size) {
+        width: 72px;
+        height: 72px;
+      }
       .image {
         object-fit: cover;
       }
@@ -43,10 +55,20 @@
     .textContainer {
       .name {
         @include fontAvertaPE();
+        @media (max-width: $mobile-size) {
+          @include fontAvertaCY();
+          font-size: 10px;
+          font-weight: 600;
+        }
       }
       .color {
         @include fontAvertaPE();
         color: #6e6e6e;
+        @media (max-width: $mobile-size) {
+          @include fontAvertaCY();
+          font-size: 8px;
+          font-weight: 400;
+        }
       }
     }
   }
@@ -56,26 +78,80 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
-    .downloadIcon{
-      &:hover{
-        cursor: pointer;
+    @media (max-width: $mobile-size) {
+      flex-flow: column nowrap;
+      gap: 10px;
+    }
+    .textContainer {
+      .name {
+        @include fontAvertaPE();
+        @media (max-width: $mobile-size) {
+          @include fontAvertaCY();
+          font-size: 10px;
+          font-weight: 600;
+        }
+      }
+      .color {
+        @include fontAvertaPE();
+        color: #6e6e6e;
+        @media (max-width: $mobile-size) {
+          @include fontAvertaCY();
+          font-size: 8px;
+          font-weight: 400;
+        }
       }
     }
-    .rateGoods {
-        @include fontAvertaCY();
-        color:#6E6E6E;
-        &:hover{
-            color:#9C3131;
+    .bottomElements {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      gap: 30px;
+      .downloadIcon {
+        width: 20px;
+        height: 20px;
+        @media (max-width: $mobile-size) {
+          width: 10px;
+          height: 10px;
+          translate:0 -5px;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .bottomElementsLinks {
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content: center;
+        align-items: center;
+        gap:30px;
+        @media(max-width:$mobile-size){
+          gap:5px;
+        }
+        .rateGoods {
+          @include fontAvertaCY();
+          color: #6e6e6e;
+          &:hover {
+            color: #9c3131;
             cursor: pointer;
+          }
+          @media (max-width: $mobile-size) {
+            font-size: 8px;
+            font-weight: 400;
+          }
         }
-    }
-    .makeReview{
-        @include fontAvertaCY();
-        color:#6E6E6E;
-        &:hover{
-            color:#9C3131;
-            cursor:pointer;
+        .makeReview {
+          @include fontAvertaCY();
+          color: #6e6e6e;
+          &:hover {
+            color: #9c3131;
+            cursor: pointer;
+          }
+          @media (max-width: $mobile-size) {
+            font-size: 8px;
+            font-weight: 400;
+          }
         }
+      }
     }
   }
 }

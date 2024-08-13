@@ -12,7 +12,11 @@ export interface Review{
     rate:number,
 }
 
-export default function Reviews() {
+export default function Reviews({
+    isMobile,
+}:{
+    isMobile:boolean,
+}) {
 
     const [reviewsArr] = useState<Review[]>([
         {
@@ -68,6 +72,8 @@ export default function Reviews() {
                         <ReviewItem
                             key={review.id}
                             params={review}
+                            isMobile={isMobile}
+                            reviewsSumm={reviewsArr.length}
                         />
                     )
                 })

@@ -36,10 +36,10 @@ export default function Account({
     const accountScreens = {
         [Screens.ChangeProfile]: <AuthAndRegister isMobile={isMobile}/>,
         [Screens.cart]: <Cart isGoToPlacingAnOrder={isGoToPlacingAnOrder} setGoToPlacingAnOrder={setGoToPlacingAnOrder} isMobile={isMobile}/>,
-        [Screens.purchases]: <Purchases/>,
+        [Screens.purchases]: <Purchases isMobile={isMobile}/>,
         [Screens.favourites]: <Favourites/>,
-        [Screens.myReviews]: <Reviews />,
-        [Screens.questionsAndAnswers]: <QuestionsAndAnswers isQuestions={isQuestionsSelected} setQuestionsCount={setQuestionsCount}/>,
+        [Screens.myReviews]: <Reviews isMobile={isMobile}/>,
+        [Screens.questionsAndAnswers]: <QuestionsAndAnswers isQuestions={isQuestionsSelected} setQuestionsCount={setQuestionsCount} isMobile={isMobile}/>,
     }
 
     useEffect(() => {
@@ -62,11 +62,11 @@ export default function Account({
                             >Вернуться к магазину</p>
                         }
                         {
-                            activeScreen !== Screens.questionsAndAnswers &&
+                            (isMobile || activeScreen !== Screens.questionsAndAnswers) &&
                             <h1>{isGoToPlacingAnOrder ? 'Оформление заказа' : screens.find(item => item.id === activeScreen)?.title}</h1>
                         }
                         {
-                            activeScreen === Screens.questionsAndAnswers &&
+                            activeScreen === Screens.questionsAndAnswers && !isMobile &&
                             <div className={styles.questionsAndAnswersTitle}>
                                 <div
                                     className={cn(styles.questionsAndAnswersTitleBlock, isQuestionsSelected && styles.questionsAndAnswersTitleBlockActive)}

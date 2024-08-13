@@ -8,8 +8,12 @@ import Image from 'next/image'
 
 export default function ReviewItem({
     params,
+    isMobile,
+    reviewsSumm,
 }:{
-    params:Review
+    params:Review,
+    isMobile:boolean,
+    reviewsSumm:number,
 }){
 
     const rateArr = [1, 2, 3, 4, 5]
@@ -43,6 +47,10 @@ export default function ReviewItem({
                 <p className={styles.advantagesBlockTitle}>Недостатки</p>
                 <p className={styles.advantagesBlockText}>{params.flawsText}</p>
             </div>
+            {
+                isMobile && params.id < reviewsSumm &&
+                <div className={styles.splitter}></div>
+            }
         </div>
     )
 }

@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 @mixin fontAvertaCY() {
   color: #fff;
   font-family: "Averta CY";
@@ -27,6 +29,10 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 15px;
+  @media(max-width:$mobile-size){
+    padding:0;
+    background: none;
+  }
   .mainBlock {
     display: flex;
     flex-flow: column nowrap;
@@ -42,8 +48,16 @@
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: flex-start;
+      @media(max-width:$mobile-size){
+        flex-flow:column nowrap;
+        flex-direction: column-reverse;
+        gap:14px;
+      }
       .name {
         @include fontAvertaCY();
+        @media(max-width:$mobile-size){
+          font-size: 12px;
+        }
       }
       .reviewInfo{
         display:flex;
@@ -51,9 +65,16 @@
         justify-content: flex-start;
         align-items: center;
         gap:20px;
+        @media(max-width:$mobile-size){
+          flex-direction: row-reverse;
+          gap:10px;
+        }
         .reviewDate{
             @include fontAvertaPE();
             font-size: 20px;
+            @media(max-width:$mobile-size){
+              font-size: 12px;
+            }
         }
         .rate{
             display:flex;
@@ -64,12 +85,19 @@
             .star{
                 width:18px;
                 height:auto;
+                @media(max-width:$mobile-size){
+                  width:11px;
+                }
             }
         }
       }
     }
     .mainReviewText{
         @include fontAvertaPE();
+        @media(max-width:$mobile-size){
+          font-size: 12px;
+        }
+
     }
   }
   .advantagesBlock{
@@ -80,11 +108,25 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap:5px;
+    @media(max-width:$mobile-size){
+      gap:10px;
+    }
     &Title{
         @include fontAvertaCY();
+        @media(max-width:$mobile-size){
+          font-size: 12px;
+        }
     }
     &Text{
         @include fontAvertaPE();
+        @media(max-width:$mobile-size){
+          font-size:12px;
+        }
     }
+  }
+  .splitter{
+    width:100%;
+    height:1px;
+    background: #8D8D8D;
   }
 }

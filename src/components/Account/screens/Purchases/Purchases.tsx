@@ -7,7 +7,11 @@ import GoodsBlock from '@/components/GoodsBlock/GoodsBlock'
 import { CategoryName } from '@/components/MainContentShop/MainContentShop'
 import { CarType } from '@/components/CarTypeSelect/CarTypeSelect.config'
 
-export default function Purchases() {
+export default function Purchases({
+    isMobile,
+}:{
+    isMobile:boolean,
+}) {
 
     const [activeCategory, setActiveCategory] = useState<CarType | null>(null)
     console.log(activeCategory)
@@ -50,6 +54,7 @@ export default function Purchases() {
                     title: '3D моделинг автомобиля Maerati',
                     rate: 5,
                     reviews: 0,
+                    slug:'renault-duster1',
                 },
                 {
                     id: 2,
@@ -61,6 +66,7 @@ export default function Purchases() {
                     title: '3D моделинг автомобиля Maerati',
                     rate: 5,
                     reviews: 5,
+                    slug:'renault-duster1',
                 },
                 {
                     id: 3,
@@ -72,6 +78,7 @@ export default function Purchases() {
                     title: '3D моделинг автомобиля Maerati',
                     rate: 5,
                     reviews: 1,
+                    slug:'renault-duster1',
                 },
                 {
                     id: 4,
@@ -83,6 +90,7 @@ export default function Purchases() {
                     title: '3D моделинг автомобиля Maerati',
                     rate: 5,
                     reviews: 31,
+                    slug:'renault-duster1',
                 },
                 {
                     id: 5,
@@ -94,6 +102,7 @@ export default function Purchases() {
                     title: '3D моделинг автомобиля Maerati',
                     rate: 5,
                     reviews: 3,
+                    slug:'renault-duster1',
                 },
                 {
                     id: 6,
@@ -105,6 +114,7 @@ export default function Purchases() {
                     title: '3D моделинг автомобиля Maerati',
                     rate: 5,
                     reviews: 31,
+                    slug:'renault-duster1',
                 },
                 {
                     id: 7,
@@ -116,6 +126,7 @@ export default function Purchases() {
                     title: '3D моделинг автомобиля Maerati',
                     rate: 5,
                     reviews: 3,
+                    slug:'renault-duster1',
                 },
             ]
         },
@@ -138,6 +149,7 @@ export default function Purchases() {
                                 image={purchase.image}
                                 name={purchase.title}
                                 color={purchase.color}
+                                isMobile={isMobile}
                             />
                         )
                     })

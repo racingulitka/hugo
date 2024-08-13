@@ -14,10 +14,28 @@ import AnalysisActuality from "@/components/Analysis/AnalysisActuality/AnalysisA
 import AnalysisFormat from "@/components/Analysis/AnalysisFormat/AnalysisFormat";
 import AnalysisDetails from "@/components/Analysis/AnalysisDetails/AnalysisDetails";
 import AnalysisQandA from "@/components/Analysis/AnalysisQandA/AnalysisQandA";
+import { GetServerSidePropsContext } from "next";
+import { getIsSsrMobile } from '../../utils/isSSRMoblile';
+import MobileHeader from "@/components/MobileHeader/MobileHeader";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Analysis() {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  return {
+    props: {
+      isSsrMobile: getIsSsrMobile(context)
+    }
+  }
+}
+
+export default function Analysis({
+  isSsrMobile,
+}: {
+  isSsrMobile: boolean,
+}) {
+
+  const isMobile = isSsrMobile
+
   return (
     <>
       <Head>
@@ -27,17 +45,21 @@ export default function Analysis() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <Header page={Page.home}/>
-        <AnalysisHero />
+        {
+          isMobile ?
+            <MobileHeader /> :
+            <Header page={Page.home} />
+        }
+        <AnalysisHero isMobile={isMobile} />
         <AnalysisMainQuestions />
-        <AnalysisAnswers />
-        <AnalysisTypicalContent />
+        <AnalysisAnswers isMobile={isMobile} />
+        {/* <AnalysisTypicalContent />
         <AnalysisSource />
         <AnalysisActuality />
         <AnalysisFormat />
         <AnalysisDetails />
         <AnalysisQandA />
-        <Contacts />
+        <Contacts /> */}
         <Footer />
       </main>
     </>

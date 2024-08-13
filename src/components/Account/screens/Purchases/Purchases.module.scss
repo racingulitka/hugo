@@ -19,9 +19,15 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap:10px;
+    @media(max-width:480px){
+      padding:10px 0 0 0;
+    }
   }
   .goodsBlock{
     width:min(1365px, 100%);
     margin: 90px 0 0 0;
+    @media(max-width:480px){
+      margin:25px 0 0 0;
+    }
   }
 }
