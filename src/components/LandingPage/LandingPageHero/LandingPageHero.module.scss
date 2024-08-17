@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 .mainWrapper {
   width: 100%;
   height: auto;
@@ -5,6 +7,9 @@
   justify-content: center;
   align-items: center;
   background: #111;
+  @media(max-width:$mobile-size){
+    margin:50px 0 0 0;
+  }
   .wrapper {
     width: min(100%, 1920px);
     min-height: 1080px;
@@ -13,6 +18,10 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding: 100px;
+    @media(max-width:$mobile-size){
+      min-height: 0;
+      padding:0 19px;
+    }
     .mainFlex {
       margin: 166px 0 87px 0;
       width: 100%;
@@ -26,6 +35,9 @@
         align-items: center;
         gap:50px;
       }
+      @media(max-width:$mobile-size){
+        margin:0;
+      }
       .actionBlock {
         margin: 96px 0 0 0;
         width: auto;
@@ -35,6 +47,11 @@
         justify-content: flex-start;
         align-items: flex-start;
         gap: 155px;
+        @media(max-width:$mobile-size){
+          margin:0;
+          gap:15px;
+          width:100%;
+        }
         .mainInfo {
           .mainTitle {
             color: #fff;
@@ -44,6 +61,9 @@
             font-weight: 700;
             line-height: normal;
             white-space: pre-line;
+            @media(max-width:$mobile-size){
+              font-size: 24px;
+            }
           }
           .slogan {
             margin: 45px 0 0 0;
@@ -53,10 +73,17 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+            @media(max-width:$mobile-size){
+              margin:15px 0 0 0;
+              font-size: 12px;
+            }
             & span {
               color: #9c3131;
             }
           }
+        }
+        .mobileButton{
+          width:251px;
         }
         .button {
           border: none;

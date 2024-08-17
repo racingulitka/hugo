@@ -17,6 +17,7 @@ import AnalysisQandA from "@/components/Analysis/AnalysisQandA/AnalysisQandA";
 import { GetServerSidePropsContext } from "next";
 import { getIsSsrMobile } from '../../utils/isSSRMoblile';
 import MobileHeader from "@/components/MobileHeader/MobileHeader";
+import MobileFooter from "@/components/MobileFooter/MobileFooter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -53,13 +54,14 @@ export default function Analysis({
         <AnalysisHero isMobile={isMobile} />
         <AnalysisMainQuestions />
         <AnalysisAnswers isMobile={isMobile} />
-        {/* <AnalysisTypicalContent />
+        <AnalysisTypicalContent isMobile={isMobile} />
         <AnalysisSource />
-        <AnalysisActuality />
-        <AnalysisFormat />
-        <AnalysisDetails />
-        <AnalysisQandA />
-        <Contacts /> */}
+        <AnalysisActuality isMobile={isMobile} />
+        <AnalysisFormat isMobile={isMobile} />
+        <AnalysisDetails isMobile={isMobile} />
+        <AnalysisQandA isMobile={isMobile} />
+        <Contacts />
+        {isMobile && <MobileFooter />}
         <Footer />
       </main>
     </>

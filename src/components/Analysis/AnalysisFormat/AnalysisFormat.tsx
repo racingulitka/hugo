@@ -7,12 +7,17 @@ import minusIcon from './assets/minus.svg'
 import Image from 'next/image'
 import Tooltip from '@/components/LandingPage/LandingPageValuable/Tooltip/Tooltip'
 import RedButton from '@/components/common/RedButton/RedButton'
+import RedButtonMobile from '@/components/common/RedButtonMobile/RedButtonMobile'
 
 interface Addings {
     [key: string]: boolean
 }
 
-export default function AnalysisFormat() {
+export default function AnalysisFormat({
+    isMobile,
+}: {
+    isMobile: boolean,
+}) {
 
     const [addings, setAddings] = useState<Addings>({
         1: false,
@@ -78,7 +83,7 @@ export default function AnalysisFormat() {
                         }
                     </div>
                 </div>
-                <h3 className={styles.addingsTitle}>Дополнительные опции:</h3>
+                <h3 className={styles.addingsTitle}>{isMobile ? (<>Дополнительные функции<br></br>по вашему желанию:</>) : 'Дополнительные опции:'}</h3>
                 <div className={styles.addingsFlex}>
                     {
                         addingsArr.map(item => {
@@ -95,7 +100,7 @@ export default function AnalysisFormat() {
                                             text={item.tooltipText}
                                         />
                                     }
-                                    <Image src={addings[item.id] === true ? plusIcon : minusIcon} alt='plus or minus' width={16} />
+                                    <Image src={addings[item.id] === true ? plusIcon : minusIcon} alt='plus or minus' width={isMobile ? 7 : 16} />
                                     <p className={styles.addingText}>{item.text}</p>
                                     <div
                                         className={styles.questionBlock}
@@ -114,13 +119,23 @@ export default function AnalysisFormat() {
                         <p className={styles.bottomContainerLeftText}>Итоговая стоимость (базовая + функции):</p>
                         <p className={styles.bottomContainerLeftValue}>{total} руб.</p>
                     </div>
-                    <RedButton
-                        width={193}
-                        height={50}
-                        fontSize={16}
-                    >
-                        ЗАКАЗАТЬ АНАЛИЗ
-                    </RedButton>
+                    {
+                        isMobile ?
+                            <RedButtonMobile
+                                height={35}
+                                fontSize={10}
+                            >
+                                ЗАКАЗАТЬ АНАЛИЗ
+                            </RedButtonMobile>
+                            :
+                            <RedButton
+                                width={193}
+                                height={50}
+                                fontSize={16}
+                            >
+                                ЗАКАЗАТЬ АНАЛИЗ
+                            </RedButton>
+                    }
                 </div>
             </div>
         </div>

@@ -1,3 +1,5 @@
+$mobile-size: 480px;
+
 .mainWrapper {
   width: 100%;
   height: auto;
@@ -6,6 +8,10 @@
   align-items: center;
   background: linear-gradient(rgba(17, 17, 17, 0.935), rgba(17, 17, 17, 0.935)),
     url(./assets/background.jpg) center/cover no-repeat;
+  @media (max-width: $mobile-size) {
+    margin: 45px 0 0 0;
+    background: none;
+  }
   .wrapper {
     width: min(100%, 1920px);
     min-height: 1080px;
@@ -15,6 +21,11 @@
     align-items: flex-start;
     gap: 153px;
     padding: 287px 69px;
+    @media(max-width:$mobile-size){
+      min-height: 0;
+      padding:0 18px;
+      gap:0;
+    }
     .titleBlock {
       color: #fff;
       font-family: "Averta CY";
@@ -32,6 +43,18 @@
         height: 10px;
         background: #b0b0b0;
       }
+      @media(max-width:$mobile-size){
+        font-size: 12px;
+        & span{
+          font-size: 18px;
+          margin:5px 0 0 0;
+        }
+        & div{
+          margin:15px 0 0 0;
+          width:100px;
+          height:2px;
+        }
+      }
     }
     .footer {
       width: 100%;
@@ -40,6 +63,10 @@
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: center;
+      @media(max-width:$mobile-size){
+        flex-flow:column nowrap;
+        justify-content: flex-start;
+      }
       & p {
         color: #b0b0b0;
         font-family: "Averta Demo PE";
@@ -61,12 +88,12 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        transition:0.3s ease-in-out;
-        border:none;
-        &:hover{
-            cursor: pointer;
-            opacity:0.9;
-            transition:0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
+        border: none;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.9;
+          transition: 0.3s ease-in-out;
         }
       }
     }

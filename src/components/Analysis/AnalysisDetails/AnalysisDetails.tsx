@@ -3,7 +3,11 @@ import styles from './AnalysisDetails.module.scss'
 import { theBestArr } from './AnalysisDetails.config'
 import Image from 'next/image'
 
-export default function AnalysisDetails() {
+export default function AnalysisDetails({
+    isMobile,
+}:{
+    isMobile:boolean,
+}) {
     return (
         <div className={styles.mainWrapper}>
             <div className={styles.wrapper}>
@@ -14,7 +18,7 @@ export default function AnalysisDetails() {
                         theBestArr.map(item => {
                             return (
                                 <div className={styles.card} key={item.id}>
-                                    <Image src={item.icon} alt='icon' width={100} />
+                                    <Image src={item.icon} alt='icon' width={isMobile ? 50 : 100} />
                                     <div className={styles.textBlock}>
                                         <p className={styles.textBlockTitle}>{item.title}</p>
                                         <p className={styles.text}>{item.text}</p>

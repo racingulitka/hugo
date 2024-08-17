@@ -3,8 +3,13 @@ import styles from './LandingPageMoreThan.module.scss'
 import { moreThanArr } from './LandingPageMoreThan.config'
 import Image from 'next/image'
 import RedBorderButton from '@/components/common/RedBorderButton/RedBorderButton'
+import RedBorderButtonMobile from '@/components/common/RedBorderButtonMobile/RedBorderButtonMobile'
 
-export default function LandingPageMoreThan() {
+export default function LandingPageMoreThan({
+    isMobile,
+}: {
+    isMobile: boolean,
+}) {
     return (
         <div className={styles.mainWrapper}>
             <div className={styles.wrapper}>
@@ -25,11 +30,23 @@ export default function LandingPageMoreThan() {
                         })
                     }
                 </div>
-                <RedBorderButton
-                    width={435}
-                    height={90}
-                    fontSize={20}
-                >СДЕЛАТЬ ВСЁ ХОРОШО</RedBorderButton>
+                {
+                    isMobile ?
+                        <RedBorderButtonMobile
+                            height={55}
+                            fontSize={12}
+                        >
+                            СДЕЛАТЬ ВСЁ ХОРОШО
+                        </RedBorderButtonMobile>
+                        :
+                        <RedBorderButton
+                            width={435}
+                            height={90}
+                            fontSize={20}
+                        >
+                            СДЕЛАТЬ ВСЁ ХОРОШО
+                        </RedBorderButton>
+                }
             </div>
         </div>
     )

@@ -3,8 +3,13 @@ import styles from './LandingPageHero.module.scss'
 import HeroBottomLinks from '@/components/common/HeroBottomLinks/HeroBottomLinks'
 import Image from 'next/image'
 import heroImage from './assets/heroImage.png'
+import RedButtonMobile from '@/components/common/RedButtonMobile/RedButtonMobile'
 
-export default function LandingPageHero() {
+export default function LandingPageHero({
+    isMobile,
+}: {
+    isMobile: boolean,
+}) {
 
     const mainTitleText = 'РАЗРАБОТКА\nLANDING PAGE'
 
@@ -17,11 +22,23 @@ export default function LandingPageHero() {
                             <h1 className={styles.mainTitle}>{mainTitleText}</h1>
                             <p className={styles.slogan}>Долго, дорого и <span>эффективно</span></p>
                         </div>
-                        <button className={styles.button}>ПОЛУЧИТЬ ПРЕДЛОЖЕНИЕ С ЦЕНАМИ</button>
+                        {
+                            isMobile ?
+                                <div className={styles.mobileButton}>
+                                    <RedButtonMobile
+                                        height={32}
+                                        fontSize={10}
+                                    >
+                                        ПОЛУЧИТЬ ПРЕДЛОЖЕНИЕ С ЦЕНАМИ
+                                    </RedButtonMobile>
+                                </div>
+                                :
+                                <button className={styles.button}>ПОЛУЧИТЬ ПРЕДЛОЖЕНИЕ С ЦЕНАМИ</button>
+                        }
                     </div>
-                    <Image src={heroImage} alt='laptop image' className={styles.heroImage} />
+                    {!isMobile && <Image src={heroImage} alt='laptop image' className={styles.heroImage} />}
                 </div>
-                <HeroBottomLinks />
+                {!isMobile && <HeroBottomLinks />}
             </div>
         </div>
     )

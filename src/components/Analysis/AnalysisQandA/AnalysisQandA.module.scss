@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 @mixin font() {
   color: #fff;
   font-family: "Averta CY";
@@ -12,6 +14,9 @@
   justify-content: center;
   align-items: center;
   background: #111;
+  @media(max-width:$mobile-size){
+    margin:45px 0 0 0;
+  }
   .wrapper {
     width: min(100%, 1195px);
     min-height: 619px;
@@ -20,11 +25,20 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 35px;
+    @media(max-width:$mobile-size){
+      padding:0 19px;
+      gap:0;
+      min-height:0;
+    }
     .title {
       @include font();
       margin: 79px 0 0 0;
       font-size: 55px;
       font-weight: 600;
+      @media(max-width:$mobile-size){
+        font-size: 18px;
+        margin:0;
+      }
     }
     .flexContainer {
       margin: 35px 0 0 0;
@@ -34,6 +48,13 @@
       justify-content: space-between;
       align-items: center;
       gap: 35px;
+      @media(max-width:$mobile-size){
+        overflow-x: scroll;
+        margin:15px 0 0 0;
+        flex-flow:row nowrap;
+        scrollbar-width: none;
+        gap:10px;
+      }
       .card {
         width: 580px;
         height: 180px;
@@ -44,12 +65,25 @@
         justify-content: flex-start;
         align-items: flex-start;
         gap: 25px;
+        @media(max-width:$mobile-size){
+          width:247px;
+          height:132px;
+          padding:10px;
+          gap:10px;
+        }
         .textBlock {
           flex: 1 0 auto;
+          @media(max-width:$mobile-size){
+            flex: 1 1 auto;
+          }
           .cardTitle {
             @include font();
             font-size: 17px;
             font-weight: 400;
+            @media(max-width:$mobile-size){
+              font-size:12px;
+              width:100%;
+            }
           }
           .cardDescription {
             @include font();
@@ -58,6 +92,11 @@
             color: #b0b0b0;
             font-size: 15px;
             font-weight: 400;
+            @media(max-width:$mobile-size){
+              margin:10px 0 0 0;
+              width:187px;
+              font-size:10px;
+            }
           }
         }
       }

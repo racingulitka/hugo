@@ -6,7 +6,7 @@ import Footer from "@/components/Footer/Footer";
 import { Page } from "@/components/Header/Header.config";
 import LandingPageHero from "@/components/LandingPage/LandingPageHero/LandingPageHero";
 import LandingPageLiesAbout from "@/components/LandingPage/LandingPageLiesAbout/LandingPageLiesAbout";
-import LandingPageBestPractices from "@/components/LandingPage/LandingPageBestPractices/LandingPageBestPractices";
+//import LandingPageBestPractices from "@/components/LandingPage/LandingPageBestPractices/LandingPageBestPractices";
 import LandingPageMoreThan from "@/components/LandingPage/LandingPageMoreThan/LandingPageMoreThan";
 import LandingPageEmotions from "@/components/LandingPage/LandingPageEmotions/LandingPageEmotions";
 import LandingPageDoYouHaveSite from "@/components/LandingPage/LandingPageDoYouHaveSite/LandingPageDoYouHaveSite";
@@ -21,10 +21,29 @@ import LandingPageMainIdea from "@/components/LandingPage/LandingPageMainIdea/La
 import LandingPageImportant from "@/components/LandingPage/LandingPageImportant/LandingPageImportant";
 import LandingPageQandA from "@/components/LandingPage/LandingPageQandA/LandingPageQandA";
 import Contacts from "@/components/Contacts/Contacts";
+import { GetServerSidePropsContext } from "next";
+import { getIsSsrMobile } from '../../utils/isSSRMoblile';
+import MobileHeader from "@/components/MobileHeader/MobileHeader";
+import MobileFooter from "@/components/MobileFooter/MobileFooter";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function LandingPage() {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  return {
+    props: {
+      isSsrMobile: getIsSsrMobile(context)
+    }
+  }
+}
+
+export default function LandingPage({
+  isSsrMobile,
+}: {
+  isSsrMobile: boolean,
+}) {
+
+  const isMobile = isSsrMobile
+
   return (
     <>
       <Head>
@@ -34,14 +53,18 @@ export default function LandingPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <Header page={Page.home}/>
-        <LandingPageHero />
+        {
+          isMobile ?
+            <MobileHeader /> :
+            <Header page={Page.home} />
+        }
+        <LandingPageHero isMobile={isMobile} />
         <LandingPageLiesAbout />
         {/* <LandingPageBestPractices /> */}
-        <LandingPageMoreThan />
-        <LandingPageEmotions />
+        <LandingPageMoreThan isMobile={isMobile} />
+        <LandingPageEmotions isMobile={isMobile} />
         <LandingPageDoYouHaveSite />
-        <LandingPageStructure />
+        {/* <LandingPageStructure />
         <LandingPageBrief />
         <LandingPageFeatures />
         <LandingPageTrustUs />
@@ -50,8 +73,9 @@ export default function LandingPage() {
         <LandingPageMercedes />
         <LandingPageMainIdea />
         <LandingPageImportant />
-        <LandingPageQandA />
+        <LandingPageQandA /> */}
         <Contacts />
+        {isMobile && <MobileFooter />}
         <Footer />
       </main>
     </>

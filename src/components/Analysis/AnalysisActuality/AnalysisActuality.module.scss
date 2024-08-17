@@ -1,3 +1,5 @@
+$mobile-size: 480px;
+
 @mixin font() {
   color: #fff;
   font-family: "Averta CY";
@@ -12,6 +14,9 @@
   justify-content: center;
   align-items: center;
   background: #111;
+  @media (max-width: $mobile-size) {
+    margin: 45px 0 0 0;
+  }
   .wrapper {
     width: min(100%, 1920px);
     min-height: 1130px;
@@ -20,6 +25,10 @@
     justify-content: flex-start;
     align-items: center;
     padding: 67px 0 0 0;
+    @media (max-width: $mobile-size) {
+      min-height: 0;
+      padding: 0 19px;
+    }
     .topContainer {
       width: 1165px;
       height: 384px;
@@ -27,17 +36,38 @@
       flex-flow: row wrap;
       justify-content: space-between;
       align-items: center;
+      @media (max-width: $mobile-size) {
+        width: 100%;
+        height: auto;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
       .topLeftBlock {
         width: 596px;
+        @media (max-width: $mobile-size) {
+          width: 100%;
+        }
         .firstText {
           @include font();
           font-size: 38px;
           font-weight: 300;
+          @media (max-width: $mobile-size) {
+            font-size: 12px;
+          }
         }
         .title {
           @include font();
           font-size: 56px;
           font-weight: 700;
+          @media (max-width: $mobile-size) {
+            font-size: 18px;
+          }
+        }
+        .heroImage {
+          margin: 25px 0;
+          width: 41vw;
+          height: auto;
         }
         .secondText {
           @include font();
@@ -46,6 +76,11 @@
           font-size: 22px;
           font-weight: 300;
           margin: 0 0 40px 0;
+          @media (max-width: $mobile-size) {
+            font-size: 12px;
+            margin: 0;
+            width: auto;
+          }
         }
       }
     }
@@ -58,17 +93,33 @@
       flex-flow: column nowrap;
       justify-content: flex-start;
       align-items: center;
+      @media (max-width: $mobile-size) {
+        margin: 45px 0 0 0;
+        background: none;
+        align-items: flex-start;
+        height: auto;
+      }
       .container {
+        @media (max-width: $mobile-size) {
+          width: 100%;
+        }
         .bottomTitle {
           @include font();
           margin: 55px 0 0 0;
           font-size: 48px;
           font-weight: 700;
+          @media (max-width: $mobile-size) {
+            margin: 0;
+            font-size: 18px;
+          }
         }
         .bottomSubtitle {
           @include font();
           font-size: 28px;
           font-weight: 400;
+          @media (max-width: $mobile-size) {
+            font-size: 12px;
+          }
         }
         .schemeFlex {
           margin: 35px 0 0 0;
@@ -79,12 +130,24 @@
           align-items: flex-start;
           gap: 159px 26px;
           position: relative;
+          @media (max-width: $mobile-size) {
+            margin: 10px 0 0 0;
+            width: 100%;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            gap: 0;
+          }
           .card {
             display: flex;
             flex-flow: row nowrap;
             justify-content: flex-start;
             align-items: flex-end;
             gap: 28px;
+            @media (max-width: $mobile-size) {
+              flex-flow: column nowrap;
+              align-items: flex-start;
+              gap: 15px;
+            }
             .numberBlock {
               display: flex;
               flex-flow: column nowrap;
@@ -148,13 +211,80 @@
           }
           .leftBorderBlock {
             position: absolute;
-            left:53px;
-            top:203px;
+            left: 53px;
+            top: 203px;
           }
-          .rightBorderBlock{
-              position: absolute;
-              right:37px;
-              top:107px;
+          .rightBorderBlock {
+            position: absolute;
+            right: 37px;
+            top: 107px;
+          }
+          .mobileCard {
+            width: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            .mobileStep {
+              @include font();
+              font-size: 10px;
+              font-weight: 400;
+              margin: 0 0 3px 0;
+            }
+            .mobileCardMain {
+              @include font();
+              width: 178px;
+              font-size: 12px;
+              font-weight: 400;
+              color: #b0b0b0;
+              height: 55px;
+              padding: 0 0 0 13px;
+            }
+            .doubleArrow {
+              width: 19px;
+              height: auto;
+              rotate: 90deg;
+              margin: 15px 12px 0px;
+            }
+            .mobileMiddleBlock {
+              width: 100%;
+              margin: 26px 0 17px 0;
+              display: flex;
+              flex-flow: row nowrap;
+              justify-content: space-between;
+              align-items: center;
+              .mobileLeftBlock {
+                width: 19px;
+                height: 24px;
+                border-left: 1px solid #fff;
+                border-bottom: 1px solid #fff;
+                align-self: flex-start;
+              }
+              .mobileMiddleCenterBlock {
+                display: flex;
+                flex-flow:column nowrap;
+                justify-content: center;
+                align-items: center;
+                height:48px;
+                .mobileTitle {
+                  @include font();
+                  font-size: 18px;
+                  font-weight: 300;
+                }
+                .mobileSubTitle{
+                  @include font();
+                  font-size: 10px;
+                  font-weight: 600;
+                }
+              }
+              .mobileRightBlock {
+                width: 19px;
+                height: 24px;
+                border-right: 1px solid #fff;
+                border-top: 1px solid #fff;
+                align-self: flex-end;
+              }
+            }
           }
         }
       }

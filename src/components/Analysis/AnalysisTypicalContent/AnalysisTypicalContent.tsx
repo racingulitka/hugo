@@ -5,7 +5,11 @@ import mainBook from './assets/mainBook.png'
 import book from './assets/book.png'
 import { bottomArr } from './AnalysisTypicalContent.config'
 
-export default function AnalysisTypicalContent() {
+export default function AnalysisTypicalContent({
+    isMobile,
+}:{
+    isMobile:boolean,
+}) {
     return (
         <div className={styles.mainWrapper}>
             <div className={styles.wrapper}>
@@ -15,7 +19,7 @@ export default function AnalysisTypicalContent() {
                     <Image src={mainBook} alt='main book' style={{ height: '100%', width: 'auto' }} />
                     <div className={styles.middleText}>
                         73
-                        <p className={styles.middleTextText}>Средний объём анализа: 73 страницы</p>
+                        <p className={styles.middleTextText}>Средний {isMobile && <br></br>}объём анализа: 73 страницы</p>
                     </div>
                 </div>
                 <div className={styles.bottomFlex}>
@@ -27,7 +31,7 @@ export default function AnalysisTypicalContent() {
                                         <p className={styles.boldText}>Сфера:</p>
                                         <p className={styles.thinText}>{item.title}</p>
                                     </div>
-                                    <Image src={book} alt='book icon' width={150} />
+                                    <Image src={book} alt='book icon' width={isMobile ? 72 : 150} />
                                 </div>
                             )
                         })

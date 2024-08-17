@@ -61,7 +61,7 @@ export default function GoodsCard(props: Card & { setFavourite: (categoryId: str
                         <div className={styles.text}>{props.reviews} {reviewText}</div>
                     </div>
                 </div>
-                <div className={styles.button}>Подробнее</div>
+                {/* <div className={styles.button}>Подробнее</div> */}
             </div>
         </Link>
     )
