@@ -6,12 +6,17 @@ import minusIcon from './assets/minus.svg'
 import plusIcon from './assets/plus.svg'
 import Image from 'next/image'
 import Tooltip from './Tooltip/Tooltip'
+import RedBorderButtonMobile from '@/components/common/RedBorderButtonMobile/RedBorderButtonMobile'
 
 interface Addings {
     [key: string]: boolean
 }
 
-export default function LandingPageValuable() {
+export default function LandingPageValuable({
+    isMobile,
+}: {
+    isMobile: boolean,
+}) {
 
     const [addings, setAddings] = useState<Addings>({
         1: false,
@@ -69,15 +74,15 @@ export default function LandingPageValuable() {
                                             className={styles.addingBlock}
                                             key={item.id}
                                             onClick={() => onAddAdding(item.id, addings[item.id])}
-                                            >
+                                        >
                                             {
                                                 hoveredAdding === item.id &&
                                                 <Tooltip
-                                                title={item.tooltipTitle}
-                                                text={item.tooltipText}
+                                                    title={item.tooltipTitle}
+                                                    text={item.tooltipText}
                                                 />
                                             }
-                                            <Image src={addings[item.id] === true ? plusIcon : minusIcon} alt='plus or minus' width={16} />
+                                            <Image src={addings[item.id] === true ? plusIcon : minusIcon} alt='plus or minus' width={isMobile ? 7 : 16} />
                                             <p className={styles.addingText}>{item.text}</p>
                                             <div
                                                 className={styles.questionBlock}
@@ -94,13 +99,23 @@ export default function LandingPageValuable() {
                     </div>
                     <div className={styles.actionBlock}>
                         <p className={styles.totalValue}>Общая стоимость: <span>{total} т.р.</span></p>
-                        <RedBorderButton
-                            width={435}
-                            height={90}
-                            fontSize={20}
-                        >
-                            ЗАКАЗАТЬ ЛЕНДИНГ ПЕЙДЖ
-                        </RedBorderButton>
+                        {
+                            isMobile ?
+                                <RedBorderButtonMobile
+                                    height={55}
+                                    fontSize={12}
+                                >
+                                    ЗАКАЗАТЬ ЛЕНДИНГ ПЕЙДЖ
+                                </RedBorderButtonMobile>
+                                :
+                                <RedBorderButton
+                                    width={435}
+                                    height={90}
+                                    fontSize={20}
+                                >
+                                    ЗАКАЗАТЬ ЛЕНДИНГ ПЕЙДЖ
+                                </RedBorderButton>
+                        }
                     </div>
                 </div>
             </div>

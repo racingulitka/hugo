@@ -64,17 +64,17 @@ export default function LandingPage({
         <LandingPageMoreThan isMobile={isMobile} />
         <LandingPageEmotions isMobile={isMobile} />
         <LandingPageDoYouHaveSite />
-        {/* <LandingPageStructure />
-        <LandingPageBrief />
-        <LandingPageFeatures />
+        <LandingPageStructure />
+        <LandingPageBrief isMobile={isMobile} />
+        <LandingPageFeatures isMobile={isMobile} />
         <LandingPageTrustUs />
         <LandingPageLongDev />
-        <LandingPageValuable />
-        <LandingPageMercedes />
-        <LandingPageMainIdea />
-        <LandingPageImportant />
-        <LandingPageQandA /> */}
-        <Contacts />
+        <LandingPageValuable isMobile={isMobile} />
+        <LandingPageMercedes isMobile={isMobile} />
+        <LandingPageMainIdea isMobile={isMobile} />
+        <LandingPageImportant isMobile={isMobile} />
+        <LandingPageQandA isMobile={isMobile} />
+        <Contacts isMobile={isMobile} />
         {isMobile && <MobileFooter />}
         <Footer />
       </main>

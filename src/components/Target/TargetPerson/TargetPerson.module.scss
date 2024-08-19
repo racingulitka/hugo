@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 @mixin font() {
     color: #fff;
     font-family: "Averta CY";
@@ -12,6 +14,11 @@
     justify-content: center;
     align-items: center;
     background: url(./assets/background.png) center / cover no-repeat;
+    @media (max-width: $mobile-size) {
+      margin: 45px 0 0 0;
+      padding: 15px 11px;
+      background: url(./assets/backgroundMobile.png) center / cover no-repeat;
+    }
     .wrapper {
       width: min(100%, 1920px);
       min-height: 680px;
@@ -20,8 +27,45 @@
       justify-content: flex-start;
       align-items: flex-start;
       gap:92px;
+      @media (max-width: $mobile-size) {
+        min-height: 0;
+        flex-flow: row nowrap;
+        gap: 25px;
+      }
       .heroImage {
         margin: 180px 0 0 129px;
+        @media (max-width: $mobile-size) {
+          display: none;
+        }
+      }
+      .stepNumber {
+        width: 48px;
+        height: 49px;
+        border-right: 2px solid #9c3131;
+        border-bottom: 2px solid #9c3131;
+        border-left: 2px solid #9c3131;
+        padding: 0px 7px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        flex-shrink: 0;
+        .number {
+          width: 100%;
+          @include font();
+          font-size: 22px;
+          font-weight: 600;
+          text-align: start;
+        }
+        .step {
+          width: 100%;
+          margin: -4px 0 0 0;
+          @include font();
+          color: #939393;
+          font-size: 8px;
+          font-weight: 400;
+          text-align: end;
+        }
       }
       .rightSide {
         flex: 1 0 auto;
@@ -30,6 +74,10 @@
         flex-flow: column nowrap;
         justify-content: flex-start;
         align-items: flex-start;
+        @media(max-width:$mobile-size){
+          width:calc(100% - 73px);
+          flex:0 0 auto;
+        }
         .stepNumber {
           width: 130px;
           height: 130px;
@@ -63,6 +111,10 @@
           margin: 25px 0 0 0;
           font-size: 60px;
           font-weight: 700;
+          @media(max-width:$mobile-size){
+            margin:0;
+            font-size: 18px;
+          }
         }
         .text {
           @include font();
@@ -71,9 +123,18 @@
           color: #b0b0b0;
           font-size: 25px;
           font-weight: 400;
+          @media(max-width:$mobile-size){
+            width:100%;
+            margin:5px 0 0 0;
+            font-size: 12px;
+          }
         }
         .button {
           margin: 50px 0 0 0;
+          @media(max-width:$mobile-size){
+            margin:25px 0 5px 0;
+            width:100%;
+          }
         }
         .anotherText {
           @include font();
@@ -81,6 +142,9 @@
           margin: 30px 0 0 0;
           font-size: 22px;
           font-weight: 600;
+          @media(max-width:$mobile-size){
+            display:none;
+          }
         }
       }
     }

@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 @mixin font(){
   color: #fff;
   font-family: "Averta CY";
@@ -12,6 +14,10 @@
   justify-content: center;
   align-items: center;
   background: url(./assets/background.png) center / cover no-repeat;
+  @media(max-width:$mobile-size){
+    margin:50px 0 0 0;
+    background: none;
+  }
   .wrapper {
     width: min(100%, 1920px);
     min-height: 1080px;
@@ -20,14 +26,27 @@
     justify-content: flex-start;
     align-items: center;
     gap: 90px;
+    @media(max-width:$mobile-size){
+      padding:0 19px;
+      min-height: 0;
+      gap:0;
+      align-items: flex-start;
+    }
     .titleBlock {
       margin: 244px 0 0 0;
       width: 1400px;
       height: auto;
+      @media(max-width:$mobile-size){
+        margin:0;
+        width:100%;
+      }
       .title {
         @include font();
         font-size: 65px;
         font-weight: 700;
+        @media(max-width:$mobile-size){
+          font-size: 18px;
+        }
       }
       .subtitle {
         @include font();
@@ -35,6 +54,10 @@
         color: #b0b0b0;
         font-size: 42px;
         font-weight: 300;
+        @media(max-width:$mobile-size){
+          margin:15px 0 0 0;
+          font-size: 12px;
+        }
       }
     }
     .connectionBlock {
@@ -44,6 +67,14 @@
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: center;
+      @media(max-width:$mobile-size){
+        width:100%;
+        flex-flow:column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap:10px;
+        margin:25px 0 0 0;
+      }
       .input {
         @include font();
         width: 435px;
@@ -53,11 +84,21 @@
         border-bottom: 3px solid #8d8d8d;
         font-size: 30px;
         font-weight: 400;
+        @media(max-width:$mobile-size){
+          width:207px;
+          height:35px;
+          font-size: 16px;
+          border-bottom: 1px solid #8d8d8d;
+          padding:10px 5px;
+        }
         &:focus {
           outline: none;
         }
         &::placeholder{
             font-size: 18px;
+            @media(max-width:$mobile-size){
+              font-size: 12px;
+            }
         }
       }
       .callMe {
@@ -70,6 +111,12 @@
         align-items: center;
         font-size: 20px;
         font-weight: 700;
+        @media(max-width:$mobile-size){
+          width:100%;
+          height:48px;
+          margin:15px 0 0 0;
+          font-size: 12px;
+        }
         &:hover {
           opacity: 0.9;
         }

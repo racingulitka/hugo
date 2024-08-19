@@ -13,7 +13,11 @@ export interface Info {
     checkBoxesActive:number[],
 }
 
-export default function FeedBackForm() {
+export default function FeedBackForm({
+    isMobile,
+}:{
+    isMobile:boolean,
+}) {
 
     const [info, setInfo] = useState<Info>({
         name: '',
@@ -99,7 +103,7 @@ export default function FeedBackForm() {
                 >
                     Связаться
                 </button>
-                <p>Нажимая на кнопку, вы соглашаетесь с <Link href='/' className={styles.link}>политикой конфиденциальности</Link></p>
+                <p>Нажимая на кнопку, вы соглашаетесь с {isMobile && <br></br>}<Link href='/' className={styles.link}>политикой конфиденциальности</Link></p>
             </div>
         </div>
     )

@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 @mixin font() {
   font-family: "Averta CY";
   font-style: normal;
@@ -11,6 +13,9 @@
   justify-content: center;
   align-items: center;
   background: #111;
+  @media(max-width:$mobile-size){
+    margin:80px 0 0 0;
+  }
   .wrapper {
     width: min(100%, 1413px);
     min-height: 1080px;
@@ -20,6 +25,11 @@
     align-items: flex-start;
     padding: 107px 0px;
     gap: 55px;
+    @media(max-width:$mobile-size){
+      min-height: 0;
+      padding:0 18px;
+      gap:35px;
+    }
     .upperBlock {
       width: 100%;
       .title {
@@ -27,12 +37,18 @@
         color: #fff;
         font-size: 70px;
         font-weight: 700;
+        @media(max-width:$mobile-size){
+          font-size: 18px;
+        }
       }
       .subtitle {
         @include font();
         color: #fff;
         font-size: 35px;
         font-weight: 400;
+        @media(max-width:$mobile-size){
+          font-size: 12px;
+        }
       }
       .textFlex {
         margin: 55px 0 0 0;
@@ -40,6 +56,13 @@
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: flex-start;
+        @media(max-width:$mobile-size){
+          margin:20px 0 0 0;
+          flex-flow:column nowrap;
+          justify-content: flex-start;
+          width:90%;
+          gap:10px;
+        }
         .text {
           width: 607px;
           height: auto;
@@ -47,6 +70,10 @@
           color: #b0b0b0;
           font-size: 20px;
           font-weight: 400;
+          @media(max-width:$mobile-size){
+            width:100%;
+            font-size: 10px;
+          }
         }
       }
     }
@@ -59,12 +86,22 @@
       align-items: flex-start;
       border-top: 1px solid #b0b0b0;
       border-bottom: 1px solid #b0b0b0;
+      @media(max-width:$mobile-size){
+        padding:10px 0;
+        flex-flow:column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap:15px;
+      }
       .flexBlock {
         display: flex;
         flex-flow: row nowrap;
         justify-content: flex-start;
         align-items: flex-start;
         gap: 35px;
+        @media(max-width:$mobile-size){
+          gap:20px;
+        }
         .textContainer {
           width: 500px;
           display: flex;
@@ -72,28 +109,50 @@
           justify-content: flex-start;
           align-items: flex-start;
           gap: 25px;
+          @media(max-width:$mobile-size){
+            width:auto;
+            gap:15px;
+          }
           .textTitle {
             @include font();
             color: #fff;
             font-size: 30px;
             font-weight: 400;
+            @media(max-width:$mobile-size){
+              font-size: 18px;
+            }
           }
           .textText {
             @include font();
             color: #b0b0b0;
             font-size: 20px;
             font-weight: 400;
+            @media(max-width:$mobile-size){
+              font-size:12px;
+            }
           }
         }
       }
     }
     .bottomBlock {
-        align-self: center;
+      align-self: center;
       display: flex;
       flex-flow: row nowrap;
       justify-content: center;
       align-items: center;
       gap: 25px;
+      @media(max-width:$mobile-size){
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap:20px;
+        overflow: hidden;
+      }
+      .hugoLogo{
+        @media(max-width:$mobile-size){
+          translate: 0 7px;
+          clip-path:inset(0 0 0 8px);
+        }
+      }
       .bottomTextBlock {
         width: 406px;
         display: flex;
@@ -101,17 +160,27 @@
         justify-content: flex-start;
         align-items: flex-start;
         gap: 25px;
+        @media(max-width:$mobile-size){
+          width:100%;
+          gap:10px;
+        }
         .bottomTextBlockTitle {
           @include font();
           color: #fff;
           font-size: 30px;
           font-weight: 400;
+          @media(max-width:$mobile-size){
+            font-size: 18px;
+          }
         }
         .bottomTextBlockText {
           @include font();
           color: #b0b0b0;
           font-size: 20px;
           font-weight: 400;
+          @media(max-width:$mobile-size){
+            font-size: 12px;
+          }
         }
       }
     }

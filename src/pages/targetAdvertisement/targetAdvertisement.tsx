@@ -23,10 +23,30 @@ import AdvertisementWarranty from "@/components/Advertisement/AdvertisementWarra
 import AdvertisementWeAreNotTheBest from "@/components/Advertisement/AdvertisementWeAreNotTheBest/AdvertisementWeAreNotTheBest";
 import AdvertisementQandA from "@/components/Advertisement/AdvertisementQandA/AdvertisementQandA";
 import AuthAndRegister from "@/components/AuthAndRegister/AuthAndRegister";
+import { GetServerSidePropsContext } from "next";
+import { getIsSsrMobile } from '../../utils/isSSRMoblile';
+import MobileHeader from "@/components/MobileHeader/MobileHeader";
+import MobileFooter from "@/components/MobileFooter/MobileFooter";
+import AdvertisementNotForAll from "@/components/Advertisement/AdvertisementNotForAll/AdvertisementNotForAll";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Advertisement() {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  return {
+    props: {
+      isSsrMobile: getIsSsrMobile(context)
+    }
+  }
+}
+
+export default function Advertisement({
+  isSsrMobile,
+}: {
+  isSsrMobile: boolean,
+}) {
+
+  const isMobile = isSsrMobile
+
   return (
     <>
       <Head>
@@ -36,26 +56,32 @@ export default function Advertisement() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <Header page={Page.home}/>
+        {
+          isMobile ?
+            <MobileHeader />
+            :
+            <Header page={Page.home} />
+        }
         <TargetHero />
-        <AdvertisementAnalize />
-        <AdvertisementStrategy />
-        <AdvertisementAgreement />
-        <TargetCompetitor />
-        <TargetPerson />
-        <TargetAudience />
-        <AuthAndRegister />
-        <TargetBanners />
+        <AdvertisementNotForAll />
+        <AdvertisementAnalize isMobile={isMobile} />
+        <AdvertisementStrategy isMobile={isMobile} />
+        <AdvertisementAgreement isMobile={isMobile} />
+        <TargetCompetitor isMobile={isMobile} />
+        <TargetPerson isMobile={isMobile} />
+        <TargetAudience isMobile={isMobile} />
+        <TargetBanners isMobile={isMobile} />
         <TargetTools />
-        <TargetTest />
+        {/* <TargetTest />
         <TargetAnalize />
         <TargetBudget />
         <TargetFinal />
         <TargetReports />
         <AdvertisementWarranty />
         <AdvertisementWeAreNotTheBest />
-        <AdvertisementQandA />
-        <Contacts />
+        <AdvertisementQandA /> */}
+        <Contacts isMobile={isMobile} />
+        {isMobile && <MobileFooter />}
         <Footer />
       </main>
     </>

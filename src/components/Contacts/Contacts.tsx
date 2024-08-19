@@ -8,7 +8,11 @@ import { socialMediaLinksArr } from './Contacts.config'
 import Link from 'next/link'
 import FeedBackForm from './FeedBackForm/FeedBackForm'
 
-export default function Contacts() {
+export default function Contacts({
+    isMobile,
+}:{
+    isMobile:boolean,
+}) {
     return (
         <div className={styles.mainWrapper}>
             <Image src={circle} alt='circleImage' className={styles.circle} />
@@ -31,7 +35,7 @@ export default function Contacts() {
                             </div>
                         </nav>
                         <div>
-                            <FeedBackForm />
+                            <FeedBackForm isMobile={isMobile} />
                         </div>
                     </div>
                 </div>

@@ -5,7 +5,14 @@ import Image from 'next/image'
 import lampImage from './assets/lampImage.png'
 import Card from './Card/Card'
 
-export default function LandingPageFeatures() {
+export default function LandingPageFeatures({
+    isMobile,
+}:{
+    isMobile:boolean,
+}) {
+
+    const mobileArr = [...leftBlocksArr, ...rightBlocksArr].sort((a,b) => a.id - b.id)
+
     return (
         <div className={styles.mainWrapper}>
             <div className={styles.wrapper}>
@@ -14,6 +21,7 @@ export default function LandingPageFeatures() {
                 <div className={styles.flexContainer}>
                     <div className={styles.textBlocks}>
                         {
+                            !isMobile &&
                             leftBlocksArr.map(item => {
                                 return (
                                     <Card
@@ -30,6 +38,7 @@ export default function LandingPageFeatures() {
                     <Image src={lampImage} alt='lamp' className={styles.image} />
                     <div className={styles.textBlocks} style={{alignItems:'flex-start'}}>
                         {
+                            !isMobile &&
                             rightBlocksArr.map(item => {
                                 return (
                                     <Card
@@ -38,6 +47,21 @@ export default function LandingPageFeatures() {
                                         text={item.text}
                                         image={item.icon}
                                         position='right'
+                                    />
+                                )
+                            })
+                        }
+                        {
+                            isMobile &&
+                            mobileArr.map((item, index) => {
+                                return(
+                                    <Card
+                                    key={index}
+                                    title={item.title}
+                                    text={item.text}
+                                    image={item.icon}
+                                    position={index%2 ? 'right' : 'left'}
+                                    classname={styles.card}
                                     />
                                 )
                             })

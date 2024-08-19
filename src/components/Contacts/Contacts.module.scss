@@ -76,7 +76,7 @@ $mobile-size:480px;
         row-gap: 30px;
         @media(max-width:$mobile-size){
           width:100%;
-          margin:45px 0 0 0;
+          margin:80px 0 0 0;
           flex-direction: column-reverse;
           row-gap: 15px;
         }

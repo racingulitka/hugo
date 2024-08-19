@@ -4,7 +4,11 @@ import { qAndAArr } from './LandingPageQandA.config'
 import Image from 'next/image'
 import questionIcon from './assets/question.svg'
 
-export default function LandingPageQandA(){
+export default function LandingPageQandA({
+    isMobile,
+}:{
+    isMobile:boolean,
+}){
     return(
         <div className={styles.mainWrapper}>
             <div className={styles.wrapper}>
@@ -14,7 +18,7 @@ export default function LandingPageQandA(){
                             qAndAArr.map(card =>{
                                 return(
                                     <div className={styles.card} key={card.id}>
-                                        <Image src={questionIcon} alt='icon' width={70} />
+                                        <Image src={questionIcon} alt='icon' width={isMobile ? 30 : 70} />
                                         <div className={styles.textBlock}>
                                             <p className={styles.title}>{card.title}</p>
                                             <p className={styles.text}>{card.text}</p>

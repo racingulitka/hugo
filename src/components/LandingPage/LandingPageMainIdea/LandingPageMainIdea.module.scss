@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 .mainWrapper {
   width: 100%;
   height: auto;
@@ -5,6 +7,9 @@
   justify-content: center;
   align-items: center;
   background: #111;
+  @media(max-width:$mobile-size){
+    margin:80px 0 0 0;
+  }
   .wrapper {
     width: min(100%, 1373px);
     min-height: 640px;
@@ -14,10 +19,19 @@
     align-items: flex-end;
     padding: 90px 0px;
     gap: 20px;
+    @media(max-width:$mobile-size){
+      min-height: 0;
+      padding:0 18px;
+      gap:10px;
+    }
     .container {
       width: 1240px;
       padding: 32px 123px 33px 150px;
       position: relative;
+      @media(max-width:$mobile-size){
+        width:88%;
+        padding:9px 5px 11px 48px;
+      }
       .text {
         color: #b0b0b0;
         font-family: "Averta CY";
@@ -25,6 +39,9 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        @media(max-width:$mobile-size){
+          font-size: 8px;
+        }
       }
       .title {
         color: #fff;
@@ -43,6 +60,13 @@
         top:50%;
         left:0;
         translate:-50% -50%;
+        @media(max-width:$mobile-size){
+          font-size: 8px;
+          width:79px;
+          height:auto;
+          text-align: center;
+          padding:5px 0;
+        }
       }
     }
   }

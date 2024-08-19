@@ -1,15 +1,23 @@
+$mobile-size:480px;
+
 .wrapper {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
   align-items: flex-start;
   gap: 45px;
+  @media(max-width:$mobile-size){
+    gap:25px;
+  }
   .textBlock {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-end;
     gap: 35px;
+    @media(max-width:$mobile-size){
+      gap:10px;
+    }
     & h3 {
       color: #fff;
       font-family: "Averta CY";
@@ -17,6 +25,9 @@
       font-style: normal;
       font-weight: 600;
       line-height: normal;
+      @media(max-width:$mobile-size){
+        font-size: 18px;
+      }
     }
     .text {
       color: #b0b0b0;
@@ -27,10 +38,17 @@
       font-weight: 300;
       line-height: normal;
       width:228px;
+      @media(max-width:$mobile-size){
+        font-size: 12px;
+        max-width: 196px;
+      }
     }
   }
   .image {
     width: 70px;
     height: auto;
+    @media(max-width:$mobile-size){
+      width:50px;
+    }
   }
 }

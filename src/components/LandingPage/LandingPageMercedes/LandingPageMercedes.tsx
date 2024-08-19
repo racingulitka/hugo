@@ -4,7 +4,11 @@ import { mercedesArr } from './LandingPageMercedes.config'
 import Image from 'next/image'
 import hugoLogo from './assets/hugo.svg'
 
-export default function LandingPageMercedes() {
+export default function LandingPageMercedes({
+    isMobile,
+}:{
+    isMobile:boolean,
+}) {
     return (
         <div className={styles.mainWrapper}>
             <div className={styles.wrapper}>
@@ -25,7 +29,7 @@ export default function LandingPageMercedes() {
                         mercedesArr.map(item => {
                             return(
                                 <div className={styles.flexBlock} key={item.id}>
-                                    <Image src={item.icon} alt='icon' width={70} />
+                                    <Image src={item.icon} alt='icon' width={isMobile ? 45 : 70} />
                                     <div className={styles.textContainer}>
                                         <p className={styles.textTitle}>{item.title}</p>
                                         <p className={styles.textText}>{item.text}</p>
@@ -36,7 +40,7 @@ export default function LandingPageMercedes() {
                     }
                 </div>
                 <div className={styles.bottomBlock}>
-                    <Image src={hugoLogo} alt='logo' width={210} />
+                    <Image src={hugoLogo} alt='logo' width={isMobile ? 50 : 210} className={styles.hugoLogo}/>
                     <div className={styles.bottomTextBlock}>
                         <p className={styles.bottomTextBlockTitle}>Наша компания</p>
                         <p className={styles.bottomTextBlockText}>В работе задейтсвовано 5+ разных специалистов с глубоким уровнем знаний своей задачи. Каждый проект разрабатывается индивидуально и без шаблонов.</p>

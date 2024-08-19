@@ -1,3 +1,5 @@
+$mobile-size: 480px;
+
 @mixin font() {
   font-family: "Averta CY";
   font-style: normal;
@@ -11,6 +13,9 @@
   justify-content: center;
   align-items: center;
   background: #111;
+  @media (max-width: $mobile-size) {
+    margin: 80px 0 0 0;
+  }
   .wrapper {
     width: min(100%, 1400px);
     min-height: 1080px;
@@ -19,11 +24,18 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding: 110px 0px;
+    @media (max-width: $mobile-size) {
+      min-height: 0;
+      padding: 0 18px;
+    }
     & h2 {
       @include font();
       color: #fff;
       font-size: 75px;
       font-weight: 700;
+      @media (max-width: $mobile-size) {
+        font-size: 18px;
+      }
     }
     & p {
       margin: 10px 0 0 0;
@@ -31,26 +43,51 @@
       color: #b0b0b0;
       font-size: 35px;
       font-weight: 400;
+      @media (max-width: $mobile-size) {
+        font-size: 12px;
+        margin: 5px 0 0 0;
+      }
     }
-    .flexContainer{
-        margin:83px 0 0 0;
-        display:flex;
-        flex-flow:row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        width:100%;
-        .textBlocks{
-            display:flex;
-            flex-flow:column nowrap;
-            justify-content: center;
-            align-items: flex-end;
-            gap:70px;
+    .flexContainer {
+      margin: 83px 0 0 0;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      @media (max-width: $mobile-size) {
+        margin: 25px 0 0 0;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+      .textBlocks {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 70px;
+        @media (max-width: $mobile-size) {
+          width: 100%;
+          gap: 45px;
+          .card {
+            &:nth-child(odd){
+              align-self: flex-end;
+            }
+            &:nth-child(even){
+              align-self: flex-start;
+            }
+          }
         }
-        .image{
-            width:360px;
-            height:auto;
-            mix-blend-mode: lighten;
+      }
+      .image {
+        width: 360px;
+        height: auto;
+        mix-blend-mode: lighten;
+        @media (max-width: $mobile-size) {
+          display: none;
         }
+      }
     }
   }
 }

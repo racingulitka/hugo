@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 .mainWrapper {
   width: 100%;
   height: auto;
@@ -5,6 +7,9 @@
   justify-content: center;
   align-items: center;
   background: #111;
+  @media(max-width:$mobile-size){
+    margin:80px 0 0 0;
+  }
   .wrapper {
     width: min(100%, 1920px);
     min-height: 560px;
@@ -14,6 +19,12 @@
     align-items: flex-start;
     padding: 60px 175px;
     row-gap: 6px;
+    @media(max-width:$mobile-size){
+      min-height:0;
+      padding:0 18px;
+      flex-flow:column nowrap;
+      justify-content: flex-start;
+    }
     .textFlex {
       width: 671px;
       height: auto;
@@ -22,6 +33,10 @@
       justify-content: flex-start;
       align-items: flex-start;
       gap: 25px;
+      @media(max-width:$mobile-size){
+        width:100%;
+        gap:15px;
+      }
       .titles {
         width: 100%;
         height: auto;
@@ -37,6 +52,9 @@
           font-style: normal;
           font-weight: 700;
           line-height: normal;
+          @media(max-width:$mobile-size){
+            font-size: 18px;
+          }
         }
         & p {
           color: #b0b0b0;
@@ -45,6 +63,9 @@
           font-style: normal;
           font-weight: 400;
           line-height: normal;
+          @media(max-width:$mobile-size){
+            font-size: 12px;
+          }
         }
       }
       .text {
@@ -56,6 +77,10 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        @media(max-width:$mobile-size){
+          font-size: 12px;
+          width:276px;
+        }
       }
     }
     .questions {
@@ -68,6 +93,11 @@
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+      @media(max-width:$mobile-size){
+        margin:45px 0 25px 0;
+        width:100%;
+        font-size: 32px;
+      }
     }
   }
 }

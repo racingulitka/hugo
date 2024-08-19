@@ -60,7 +60,7 @@ export default function Analysis({
         <AnalysisFormat isMobile={isMobile} />
         <AnalysisDetails isMobile={isMobile} />
         <AnalysisQandA isMobile={isMobile} />
-        <Contacts />
+        <Contacts isMobile={isMobile} />
         {isMobile && <MobileFooter />}
         <Footer />
       </main>

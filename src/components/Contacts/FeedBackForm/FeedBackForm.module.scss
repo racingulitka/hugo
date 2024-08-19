@@ -168,7 +168,8 @@ $mobile-size:480px;
       @include fontAvertaPE();
       color: #4e4e4e;
       @media(max-width:$mobile-size){
-        font-size:6px;
+        font-size:10px;
+        text-align: center;
       }
       .link {
         color: #9c3131;
