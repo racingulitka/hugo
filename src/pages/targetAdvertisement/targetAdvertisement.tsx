@@ -28,6 +28,7 @@ import { getIsSsrMobile } from '../../utils/isSSRMoblile';
 import MobileHeader from "@/components/MobileHeader/MobileHeader";
 import MobileFooter from "@/components/MobileFooter/MobileFooter";
 import AdvertisementNotForAll from "@/components/Advertisement/AdvertisementNotForAll/AdvertisementNotForAll";
+import AdvertisementTuning from "@/components/Advertisement/AdvertisementTuning/AdvertisementTuning";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -71,15 +72,16 @@ export default function Advertisement({
         <TargetPerson isMobile={isMobile} />
         <TargetAudience isMobile={isMobile} />
         <TargetBanners isMobile={isMobile} />
-        <TargetTools />
-        {/* <TargetTest />
-        <TargetAnalize />
-        <TargetBudget />
-        <TargetFinal />
-        <TargetReports />
+        <TargetTools isMobile={isMobile} />
+        <TargetTest isMobile={isMobile}/>
+        <TargetAnalize isMobile={isMobile} />
+        <TargetBudget isMobile={isMobile} />
+        <TargetFinal isMobile={isMobile} />
+        <TargetReports isMobile={isMobile} />
         <AdvertisementWarranty />
-        <AdvertisementWeAreNotTheBest />
-        <AdvertisementQandA /> */}
+        <AdvertisementTuning advType='ТАРГЕТИРОВАННОЙ' isMobile={isMobile}/>
+        <AdvertisementWeAreNotTheBest isMobile={isMobile} />
+        <AdvertisementQandA isMobile={isMobile} />
         <Contacts isMobile={isMobile} />
         {isMobile && <MobileFooter />}
         <Footer />

@@ -70,7 +70,7 @@ export default function Advertisement({
         <AdvertisementFinal />
         <AdvertisementReports />
         <AdvertisementWarranty />
-        <AdvertisementTuning />
+        <AdvertisementTuning advType='КОНТЕКСТНОЙ' />
         <AdvertisementWeAreNotTheBest />
         <AdvertisementQandA />
         <Contacts /> */}

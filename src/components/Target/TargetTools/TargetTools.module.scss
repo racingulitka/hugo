@@ -1,3 +1,5 @@
+$mobile-size: 480px;
+
 @mixin font() {
   color: #fff;
   font-family: "Averta CY";
@@ -12,6 +14,9 @@
   justify-content: center;
   align-items: center;
   background: #111;
+  @media (max-width: $mobile-size) {
+    padding: 45px 0 0 0;
+  }
   .wrapper {
     width: min(100%, 1920px);
     min-height: 680px;
@@ -21,8 +26,17 @@
     align-items: flex-start;
     overflow: hidden;
     gap: 162px;
+    @media (max-width: $mobile-size) {
+      padding: 15px 11px;
+      gap: 25px;
+      min-height: 0;
+      flex-flow: row nowrap;
+    }
     .image {
       margin: 8px 0 0 0;
+      @media (max-width: $mobile-size) {
+        display: none;
+      }
     }
     .leftSide {
       margin: 0 0 0 260px;
@@ -31,6 +45,10 @@
       flex-flow: column nowrap;
       justify-content: flex-start;
       align-items: flex-start;
+      @media (max-width: $mobile-size) {
+        width: calc(100% - 73px);
+        margin:0;
+      }
       .stepNumber {
         width: 130px;
         height: 130px;
@@ -64,6 +82,10 @@
         margin: 25px 0 0 0;
         font-size: 60px;
         font-weight: 700;
+        @media (max-width: $mobile-size) {
+          font-size: 18px;
+          margin: 0;
+        }
       }
       .text {
         @include font();
@@ -72,9 +94,18 @@
         color: #b0b0b0;
         font-size: 25px;
         font-weight: 400;
+        @media (max-width: $mobile-size) {
+          font-size: 12px;
+          margin: 5px 0 0 0;
+          width: 100%;
+        }
       }
       .button {
         margin: 50px 0 0 0;
+        @media (max-width: $mobile-size) {
+          margin: 25px 0 0 0;
+          width: 265px;
+        }
       }
       .anotherText {
         @include font();
@@ -82,6 +113,37 @@
         margin: 30px 0 0 0;
         font-size: 22px;
         font-weight: 600;
+        @media (max-width: $mobile-size) {
+          display: none;
+        }
+      }
+    }
+    .stepNumber {
+      width: 48px;
+      height: 49px;
+      border-right: 2px solid #9c3131;
+      border-bottom: 2px solid #9c3131;
+      border-left: 2px solid #9c3131;
+      padding: 0px 7px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      .number {
+        width: 100%;
+        @include font();
+        font-size: 22px;
+        font-weight: 600;
+        text-align: start;
+      }
+      .step {
+        width: 100%;
+        margin: -4px 0 0 0;
+        @include font();
+        color: #939393;
+        font-size: 8px;
+        font-weight: 400;
+        text-align: end;
       }
     }
   }

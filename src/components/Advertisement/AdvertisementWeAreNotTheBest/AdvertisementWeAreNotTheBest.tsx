@@ -3,7 +3,11 @@ import styles from './AdvertisementWeAreNotTheBest.module.scss'
 import { theBestArr } from './AdvertisementWeAreNotTheBest.config'
 import Image from 'next/image'
 
-export default function AdvertisementWeAreNotTheBest() {
+export default function AdvertisementWeAreNotTheBest({
+    isMobile,
+}:{
+    isMobile:boolean,
+}) {
     return (
         <div className={styles.mainWrapper}>
             <div className={styles.wrapper}>
@@ -14,7 +18,7 @@ export default function AdvertisementWeAreNotTheBest() {
                         theBestArr.map(item => {
                             return(
                                 <div className={styles.card} key={item.id}>
-                                    <Image src={item.icon} alt='icon' width={100} />
+                                    <Image src={item.icon} alt='icon' width={isMobile ? 45 : 100} />
                                     <p className={styles.text}>{item.text}</p>
                                 </div>
                             )

@@ -4,7 +4,11 @@ import { qAndAArr } from './AdvertisementQandA.config'
 import questionIcon from './assets/question.svg'
 import Image from 'next/image'
 
-export default function AdvertisementQandA(){
+export default function AdvertisementQandA({
+    isMobile,
+}:{
+    isMobile:boolean,
+}){
     return(
         <div className={styles.mainWrapper}>
             <div className={styles.wrapper}>
@@ -14,7 +18,7 @@ export default function AdvertisementQandA(){
                         qAndAArr.map(item =>{
                             return(
                                 <div className={styles.card} key={item.id}>
-                                    <Image src={questionIcon} alt='question icon' width={70} />
+                                    <Image src={questionIcon} alt='question icon' width={isMobile ? 30 : 70} />
                                     <div className={styles.textBlock}>
                                         <p className={styles.cardTitle}>{item.title}</p>
                                         <p className={styles.cardDescription}>{item.description}</p>

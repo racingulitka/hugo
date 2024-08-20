@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 @mixin font() {
   color: #fff;
   font-family: "Averta CY";
@@ -12,6 +14,9 @@
   justify-content: center;
   align-items: center;
   background: #111;
+  @media(max-width:$mobile-size){
+    margin:80px 0 0 0;
+  }
   .wrapper {
     width: min(100%, 1920px);
     min-height: 680px;
@@ -19,17 +24,30 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
+    @media(max-width:$mobile-size){
+      min-height: 0;
+      padding:0 19px;
+      gap:25px;
+    }
     .title {
       @include font();
       margin: 66px 0 0 0;
       font-size: 60px;
       font-weight: 700;
+      @media(max-width:$mobile-size){
+        margin:0;
+        font-size: 18px;
+      }
     }
     .subtitle {
       @include font();
       margin: 10px 0 0 0;
       font-size: 40px;
       font-weight: 400;
+      @media(max-width:$mobile-size){
+        margin:10px 0 0 0;
+        font-size: 16px;
+      }
     }
     .middleBlock {
       margin: 31px 0 0 0;
@@ -37,6 +55,12 @@
       justify-content: center;
       align-items: flex-start;
       gap: 245px;
+      @media(max-width:$mobile-size){
+        margin:25px 0 0 0;
+        flex-flow:column nowrap;
+        justify-content: flex-start;
+        gap:25px;
+      }
       .leftBlock {
         .leftBlockText {
           @include font();
@@ -44,11 +68,20 @@
           color: #b0b0b0;
           font-size: 25px;
           font-weight: 400;
+          @media(max-width:$mobile-size){
+            width:100%;
+            font-size: 12px;
+          }
         }
         .leftBlockUnderline {
           height: 60px;
           width: 285px;
           border-bottom: 5px solid #9c3131;
+          @media(max-width:$mobile-size){
+            height:15px;
+            width:100%;
+            border-bottom: 2px solid #9c3131;
+          }
         }
       }
       .rightBlock {
@@ -64,6 +97,10 @@
           font-weight: 400;
           list-style-type: none;
           position: relative;
+          @media(max-width:$mobile-size){
+            font-size: 12px;
+            padding:0 0 0 25px;
+          }
           &::before {
             content: "";
             position: absolute;
@@ -73,6 +110,9 @@
             width: 15px;
             aspect-ratio: 1/1;
             background: #9c3131;
+            @media(max-width:$mobile-size){
+              left:0;
+            }
           }
         }
       }
@@ -84,6 +124,12 @@
       color: #b0b0b0;
       font-size: 25px;
       font-weight: 400;
+      @media(max-width:$mobile-size){
+        margin:0;
+        width:86%;
+        font-size: 12px;
+        align-self: flex-start;
+      }
     }
   }
 }

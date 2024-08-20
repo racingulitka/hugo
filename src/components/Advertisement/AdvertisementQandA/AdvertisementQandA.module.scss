@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 @mixin font() {
   color: #fff;
   font-family: "Averta CY";
@@ -12,6 +14,9 @@
   justify-content: center;
   align-items: center;
   background: #111;
+  @media(max-width:$mobile-size){
+    margin:80px 0 0 0;
+  }
   .wrapper {
     width: min(100%, 1195px);
     min-height: 619px;
@@ -20,11 +25,20 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 35px;
+    @media(max-width:$mobile-size){
+      min-height: 0;
+      padding:0 19px;
+      gap:15px;
+    }
     .title {
       @include font();
       margin: 79px 0 0 0;
       font-size: 55px;
       font-weight: 600;
+      @media(max-width:$mobile-size){
+        margin:0;
+        font-size: 18px;
+      }
     }
     .flexContainer {
       margin: 35px 0 0 0;
@@ -34,6 +48,14 @@
       justify-content: space-between;
       align-items: center;
       gap: 35px;
+      @media(max-width:$mobile-size){
+        margin:0;
+        flex-flow:row nowrap;
+        justify-content: flex-start;
+        gap:10px;
+        overflow-x: scroll;
+        scrollbar-width: none;
+      }
       .card {
         width: 580px;
         height: 180px;
@@ -44,12 +66,25 @@
         justify-content: flex-start;
         align-items: flex-start;
         gap: 25px;
+        @media(max-width:$mobile-size){
+          width:247px;
+          height:auto;
+          padding:10px;
+          gap:10px;
+          flex-shrink: 0;
+        }
         .textBlock {
           flex: 1 0 auto;
+          @media(max-width:$mobile-size){
+            flex:0 1 auto;
+          }
           .cardTitle {
             @include font();
             font-size: 17px;
             font-weight: 400;
+            @media(max-width:$mobile-size){
+              font-size: 12px;
+            }
           }
           .cardDescription {
             @include font();
@@ -58,6 +93,11 @@
             color: #b0b0b0;
             font-size: 15px;
             font-weight: 400;
+            @media(max-width:$mobile-size){
+              margin:10px 0 0 0;
+              width:100%;
+              font-size: 10px;
+            }
           }
         }
       }
