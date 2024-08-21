@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styles from './Slider.module.scss'
-import { Image as Images } from '@/pages/shop/models/vehicles/product/Product.typings'
+import { Image as Images } from '@/pages/shop/models/vehicles/Product.typings'
 import Image, { StaticImageData } from 'next/image'
 import arrowLeftIcon from './assets/arrowLeftIcon.svg'
 import playIcon from './assets/playIcon.svg'
