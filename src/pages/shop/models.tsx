@@ -9,7 +9,7 @@ import { GetServerSidePropsContext } from 'next';
 import { getIsSsrMobile } from '@/utils/isSSRMoblile';
 import MobileHeader from '@/components/MobileHeader/MobileHeader';
 import ShopCategoriesHero from '@/components/Shop/ShopCategoriesHero/ShopCategoriesHero';
-import { h1, menuBlockArr } from './models.config';
+import { h1, menuBlockArr } from '../../components/Product/pagesFiles/models.config';
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   return {
