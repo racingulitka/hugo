@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import styles from "./Product.module.scss";
+import styles from "../../../../components/Product/pagesFiles/Product.module.scss";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { Page } from "@/components/Header/Header.config";
