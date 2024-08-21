@@ -28,7 +28,7 @@ export default function GoodsCard(props: Card & { setFavourite: (categoryId: str
     }
 
     return (
-        <Link href={`/shop/product/${props.slug}`} className={styles.wrapper}>
+        <Link href={`/${props.slug}`} className={styles.wrapper}>
             <div className={styles.imageContainer}>
                 <Image src={props.image} alt='image' className={styles.goodImage} />
                 <div

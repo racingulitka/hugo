@@ -1,0 +1,142 @@
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  .wrapper {
+    width: min(100%, 1920px);
+    min-height: 1080px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    @media (max-width: 480px) {
+      padding: 0 19px;
+      min-height: 0;
+    }
+    .h1 {
+      width: 819px;
+      height: 216px;
+      margin: 107px 0 0px 65px;
+      font-family: 'Averta CY';
+      font-size: 100px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      display:flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+      color:#fff;
+      @media (max-width: 480px) {
+        margin: 51px 0 0 0;
+        padding: 0;
+        font-size: 80px;
+      }
+    }
+
+    .breefBlock {
+      margin: 63px 0 0 69px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 94px;
+      @media (max-width: 480px) {
+        margin: 15px 0 0 0;
+        max-width: 100%;
+        flex-flow: row wrap;
+        gap: 15px;
+      }
+      .description {
+        width: 439px;
+        color: #b0b0b0;
+        font-family: "Averta Demo PE";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        .sliderBlock {
+          display:flex;
+          justify-content: flex-start;
+          align-items: center;
+          .gtaProjectText {
+            height:30px;
+            color: #9c3131;
+            width:fit-content;
+          }
+          .sliderText {
+            flex:1 0 auto;
+            height: 30px;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            .sliderItem{
+              position:absolute;
+              top:0;
+              left:0;
+            }
+          }
+        }
+        @media (max-width: 480px) {
+          font-size: 12px;
+          width: 263px;
+        }
+      }
+      .breefButton {
+        width: 318px;
+        height: 58px;
+        background: #9c3131;
+        border: none;
+        backdrop-filter: blur(6px);
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.77);
+        font-family: "Averta Demo PE";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        gap: 20px;
+        text-transform: uppercase;
+        .rightArrow {
+          width: 21px;
+          height: 13px;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+        @media (max-width: 480px) {
+          width: 175px;
+          height: 32px;
+          font-size: 10px;
+          gap: 10px;
+          .rightArrow {
+            width: 13px;
+          }
+        }
+      }
+    }
+    .menuBlock {
+      max-width: 780px;
+      height: auto;
+      margin: 89px 0 0 69px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 15px;
+      @media (max-width: 480px) {
+        width: 100%;
+        margin: 40px 0 45px 0;
+        gap: 9px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+}

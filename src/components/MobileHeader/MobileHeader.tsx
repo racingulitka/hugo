@@ -71,7 +71,7 @@ export default function MobileHeader() {
                         {
                             topMenu.map(item => {
                                 return (
-                                    <Link onClick={() => setMenuOpen(false)} href={{ pathname: item.link, query: { loadingScreen: getLoadingScreen(item.id) } }}>
+                                    <Link key={item.id} onClick={() => setMenuOpen(false)} href={{ pathname: item.link, query: { loadingScreen: getLoadingScreen(item.id) } }}>
                                         <p className={styles.title} key={item.id}>{item.title}</p>
                                     </Link>
                                 )
@@ -83,7 +83,7 @@ export default function MobileHeader() {
                         {
                             middleMenu.map(item => {
                                 return (
-                                    <Link href={item.link}>
+                                    <Link key={item.id} href={item.link}>
                                         <p className={styles.title} key={item.id}>{item.title}</p>
                                     </Link>
                                 )

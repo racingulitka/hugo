@@ -10,23 +10,23 @@ import defaultImage1 from './assets/defaultImage1.png'
 import { ProductPage } from "./Product.typings";
 import BreadCrumbs from "@/components/Product/BreadCrumbs/BreadCrumbs";
 import ProductHero from "@/components/Product/ProductHero/ProductHero";
-import sampleVideo from '../../../components/Product/ProductHero/assets/sampleVideo.mp4'
-import sampleEngineSound from '../../../components/Product/ProductHero/assets/sampleEngineSound.mp3'
+import sampleVideo from '../../../../components/Product/ProductHero/assets/sampleVideo.mp4'
+import sampleEngineSound from '../../../../components/Product/ProductHero/assets/sampleEngineSound.mp3'
 import Advantages from "@/components/Product/Advantages/Advantages";
-import exampleImage1 from '../../../components/Product/Advantages/assets/exampleImage1.png'
-import exampleImage2 from '../../../components/Product/Advantages/assets/exampleImage2.png'
-import exampleImage3 from '../../../components/Product/Advantages/assets/exampleImage3.png'
-import exampleImage4 from '../../../components/Product/Advantages/assets/exampleImage4.png'
-import exampleImage5 from '../../../components/Product/Advantages/assets/exampleImage5.png'
+import exampleImage1 from '../../../../components/Product/Advantages/assets/exampleImage1.png'
+import exampleImage2 from '../../../../components/Product/Advantages/assets/exampleImage2.png'
+import exampleImage3 from '../../../../components/Product/Advantages/assets/exampleImage3.png'
+import exampleImage4 from '../../../../components/Product/Advantages/assets/exampleImage4.png'
+import exampleImage5 from '../../../../components/Product/Advantages/assets/exampleImage5.png'
 import Gallery from "@/components/Product/Gallery/Gallery";
-import galleryImage1 from '../../../components/Product/Gallery/assets/galleryImage1.png'
-import galleryImage2 from '../../../components/Product/Gallery/assets/galleryImage2.png'
-import galleryImage3 from '../../../components/Product/Gallery/assets/galleryImage3.png'
-import galleryImage4 from '../../../components/Product/Gallery/assets/galleryImage4.png'
-import galleryImage5 from '../../../components/Product/Gallery/assets/galleryImage5.png'
-import galleryImage6 from '../../../components/Product/Gallery/assets/galleryImage6.png'
-import galleryImage7 from '../../../components/Product/Gallery/assets/galleryImage7.png'
-import galleryImage8 from '../../../components/Product/Gallery/assets/galleryImage8.png'
+import galleryImage1 from '../../../../components/Product/Gallery/assets/galleryImage1.png'
+import galleryImage2 from '../../../../components/Product/Gallery/assets/galleryImage2.png'
+import galleryImage3 from '../../../../components/Product/Gallery/assets/galleryImage3.png'
+import galleryImage4 from '../../../../components/Product/Gallery/assets/galleryImage4.png'
+import galleryImage5 from '../../../../components/Product/Gallery/assets/galleryImage5.png'
+import galleryImage6 from '../../../../components/Product/Gallery/assets/galleryImage6.png'
+import galleryImage7 from '../../../../components/Product/Gallery/assets/galleryImage7.png'
+import galleryImage8 from '../../../../components/Product/Gallery/assets/galleryImage8.png'
 import QandA from "@/components/Product/QandA/QandA";
 import { getIsSsrMobile } from "@/utils/isSSRMoblile";
 import { GetServerSidePropsContext } from "next";
@@ -63,10 +63,10 @@ export default function PageOfGood({
       productId: 1,
       productName: 'Renault Duster',
       categoryTitle: 'Транспорт',
-      categoryLink: '/shop/vehicles',
+      categoryLink: '/shop/models/vehicles',
       subcategoryTitle: 'Кроссовер',
       subcategoryLink: '/',
-      slug: 'renault-duster1',
+      slug: 'renault-duster',
       images: [
         {
           id: 1,

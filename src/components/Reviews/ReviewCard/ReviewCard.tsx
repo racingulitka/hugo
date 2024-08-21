@@ -121,9 +121,9 @@ export default function ReviewCard({
                         className={styles.points}
                     >
                         {
-                            [1, 2].map(item => {
+                            [1, 2].map((item, index) => {
                                 return (
-                                    <div className={styles.pointWrapper}>
+                                    <div key={index} className={styles.pointWrapper}>
                                         <div>{item === 1 ? 'Точка А' : 'Точка В'}</div>
                                         <div>{item === 1 ? pointA : pointB}</div>
                                     </div>

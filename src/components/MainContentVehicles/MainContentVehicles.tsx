@@ -50,7 +50,7 @@ export default function MainContentVehicles({
             cards: [
                 {
                     id: 1,
-                    slug: 'shop/product/renault-duster',
+                    slug: 'shop/models/vehicles/renault-duster',
                     image: defaultGoodsImage,
                     isFavourite: false,
                     price: 44542,

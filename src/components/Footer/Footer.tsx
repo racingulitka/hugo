@@ -40,7 +40,7 @@ export default function Footer(){
                     </nav>
                     <div className={styles.otherInfo}>
                         <p>2024 © Агенство  Hugo&copy;ИНН 12454355647 | ОГРН 51235546775455</p>
-                        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo</p>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo</p>
                     </div>
                 </div>
                 <div className={styles.bottomBlock}>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from './ProductHero.module.scss'
 import Slider from './Slider/Slider'
-import { ProductPage } from '@/pages/shop/product/Product.typings'
+import { ProductPage } from '@/pages/shop/models/vehicles/product/Product.typings'
 import QuestionsIcon from './assets/QuestionsIcon'
 import ShareIcon from './assets/ShareIcon'
 import PlatformSelect from './PlatformSelect/PlatformSelect'

@@ -51,7 +51,7 @@ export default function Home({
         <WhyAreTheyTrustUs />
         <ContactUs />
         <Reviews />
-        <Contacts />
+        <Contacts isMobile={isMobile} />
         <Footer />
       </main>
     </>

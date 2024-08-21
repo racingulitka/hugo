@@ -14,9 +14,9 @@ $mobile-size: 480px;
 
 @font-face {
   font-family: "Averta Demo PE";
-  src: url("../../../pages/fonts/AvertaDemoPE-Regular.otf");
+  src: url("../../../../pages/fonts/AvertaDemoPE-Regular.otf");
   src: local("AvertaDemoPE"),
-    url("../../../pages/fonts/AvertaDemoPE-Regular.otf") format("opentype");
+    url("../../../../pages/fonts/AvertaDemoPE-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -24,9 +24,9 @@ $mobile-size: 480px;
 
 @font-face {
   font-family: "Averta CY";
-  src: url("../../../pages/fonts/Averta-Cyrillic-Bold.otf");
+  src: url("../../../../pages/fonts/Averta-Cyrillic-Bold.otf");
   src: local("AvertaCY"),
-    url("../../../pages/fonts/Averta-Cyrillic-Bold.otf") format("opentype");
+    url("../../../../pages/fonts/Averta-Cyrillic-Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -34,9 +34,9 @@ $mobile-size: 480px;
 
 @font-face {
   font-family: "Averta CY";
-  src: url("../../../pages/fonts/Averta-Cyrillic-SemiBold.otf");
+  src: url("../../../../pages/fonts/Averta-Cyrillic-SemiBold.otf");
   src: local("AvertaCY"),
-    url("../../../pages/fonts/Averta-Cyrillic-SemiBold.otf") format("opentype");
+    url("../../../../pages/fonts/Averta-Cyrillic-SemiBold.otf") format("opentype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -44,9 +44,9 @@ $mobile-size: 480px;
 
 @font-face {
   font-family: "Tafel Sans Pro";
-  src: url("../../../pages/fonts/TafelSansPro-Bold.ttf");
+  src: url("../../../../pages/fonts/TafelSansPro-Bold.ttf");
   src: local("TafelSansPro"),
-    url("../../../pages/fonts/TafelSansPro-Bold.ttf") format("opentype");
+    url("../../../../pages/fonts/TafelSansPro-Bold.ttf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;

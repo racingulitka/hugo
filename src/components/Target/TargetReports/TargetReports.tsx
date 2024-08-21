@@ -31,7 +31,7 @@ export default function TargetReports({
                     }
                     <h2 className={styles.title}>Ведение и ежемесячная<br></br>отчетность</h2>
                     <p className={styles.text} style={{ margin: 0 }}>(по желанию)</p>
-                    <p className={styles.text}>При условии жёсткой конкуренции необходимо постоянно менять стратегию и оптимизировать кампанию, так как другие бизнесы тоже "не спят".</p>
+                    <p className={styles.text}>При условии жёсткой конкуренции необходимо постоянно менять стратегию и оптимизировать кампанию, так как другие бизнесы тоже &quot;не спят&quot;.</p>
                     <div className={styles.button}>
                         {
                             isMobile ?
