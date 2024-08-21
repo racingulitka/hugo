@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from './MobileReviews.module.scss'
-import { ReviewsArr } from '@/pages/shop/models/vehicles/product/Product.typings'
+import { ReviewsArr } from '@/pages/shop/models/vehicles/Product.typings'
 import exitCross from './assets/exitCross.svg'
 import Image from 'next/image'
 import star from '../../Reviews/ReviewCard/assets/star.svg'
