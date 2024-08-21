@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Advantages.module.scss'
-import { Advantages as AdvantagesType } from '@/pages/shop/models/vehicles/Product.typings'
+import { Advantages as AdvantagesType } from '@/components/Product/pagesFiles/Product.typings'
 import Image from 'next/image'
 
 export default function Advantages({

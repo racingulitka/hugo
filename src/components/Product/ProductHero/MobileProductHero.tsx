@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from './MobileProductHero.module.scss'
 import Slider from './Slider/Slider'
-import { ProductPage } from '@/pages/shop/models/vehicles/Product.typings'
+import { ProductPage } from '@/components/Product/pagesFiles/Product.typings'
 import QuestionsIcon from './assets/QuestionsIcon'
 import ShareIcon from './assets/ShareIcon'
 import PlatformSelect from './PlatformSelect/PlatformSelect'

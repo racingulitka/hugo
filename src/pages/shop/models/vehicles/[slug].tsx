@@ -7,7 +7,7 @@ import Footer from "@/components/Footer/Footer";
 import { Page } from "@/components/Header/Header.config";
 import React, { useState } from 'react'
 import defaultImage1 from './assets/defaultImage1.png'
-import { ProductPage } from "./Product.typings";
+import { ProductPage } from "../../../../components/Product/pagesFiles/Product.typings";
 import BreadCrumbs from "@/components/Product/BreadCrumbs/BreadCrumbs";
 import ProductHero from "@/components/Product/ProductHero/ProductHero";
 import sampleVideo from '../../../../components/Product/ProductHero/assets/sampleVideo.mp4'

@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Gallery.module.scss'
-import {Gallery as GalleryType} from '../../../pages/shop/models/vehicles/Product.typings'
+import {Gallery as GalleryType} from '../pagesFiles/Product.typings'
 import Image from 'next/image'
 
 export default function Gallery({
