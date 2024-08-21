@@ -4,7 +4,6 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  output:'export',
   webpack(config) {
     config.module.rules.push({
       test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)$/i,
