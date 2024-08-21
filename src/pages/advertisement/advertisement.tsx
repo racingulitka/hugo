@@ -24,6 +24,7 @@ import AdvertisementTuning from "@/components/Advertisement/AdvertisementTuning/
 import { GetServerSidePropsContext } from "next";
 import { getIsSsrMobile } from '../../utils/isSSRMoblile';
 import MobileHeader from "@/components/MobileHeader/MobileHeader";
+import MobileFooter from "@/components/MobileFooter/MobileFooter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -64,16 +65,19 @@ export default function Advertisement({
         <AdvertisementAgreement isMobile={isMobile} />
         <AdvertisementSearch isMobile={isMobile} />
         <AdvertisementAreYouAgree />
-        <AdvertisementCompany />
-        {/* <AdvertisementTest />
-        <AdvertisementFix />
-        <AdvertisementFinal />
-        <AdvertisementReports />
+        <AdvertisementCompany isMobile={isMobile} />
+        <AdvertisementTest isMobile={isMobile} />
+        <AdvertisementFix isMobile={isMobile} />
+        <AdvertisementFinal isMobile={isMobile} />
+        <AdvertisementReports isMobile={isMobile} />
         <AdvertisementWarranty />
-        <AdvertisementTuning advType='КОНТЕКСТНОЙ' />
-        <AdvertisementWeAreNotTheBest />
-        <AdvertisementQandA />
-        <Contacts /> */}
+        <AdvertisementTuning advType='КОНТЕКСТНОЙ' isMobile={isMobile} />
+        <AdvertisementWeAreNotTheBest isMobile={isMobile} />
+        <AdvertisementQandA isMobile={isMobile} />
+        <Contacts isMobile={isMobile} />
+        {
+          isMobile && <MobileFooter />
+        }
         <Footer />
       </main>
     </>

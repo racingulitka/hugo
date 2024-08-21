@@ -1,3 +1,5 @@
+$mobile-size:480px;
+
 @mixin font() {
   color: #fff;
   font-family: "Averta CY";
@@ -12,6 +14,9 @@
   justify-content: center;
   align-items: center;
   background: #111;
+  @media(max-width:$mobile-size){
+    margin:45px 0 0 0;
+  }
   .wrapper {
     width: min(100%, 1920px);
     min-height: 376px;
@@ -20,22 +25,36 @@
     justify-content: center;
     align-items: center;
     gap: 60px;
+    @media(max-width:$mobile-size){
+      min-height: 0;
+      padding:0 19px;
+      gap:25px;
+    }
     .titleBlock {
       display: flex;
       flex-flow: column nowrap;
       justify-content: flex-start;
       align-items: center;
       gap: 10px;
+      @media(max-width:$mobile-size){
+        gap:5px;
+      }
       .title {
         @include font();
         font-size: 40px;
         font-weight: 700;
+        @media(max-width:$mobile-size){
+          font-size: 18px;
+        }
       }
       .subtitle {
         @include font();
         color: rgba(176, 176, 176, 0.69);
         font-size: 25px;
         font-weight: 400;
+        @media(max-width:$mobile-size){
+          font-size: 12px;
+        }
       }
     }
   }
