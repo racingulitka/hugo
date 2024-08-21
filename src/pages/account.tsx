@@ -28,7 +28,9 @@ export default function Shop({
 }) {
 
   const isMobile = isSsrMobile
-  const routerQuery = useRouter().query.loadingScreen ? Number(useRouter().query.loadingScreen) : undefined
+  const loadingScreen = useRouter().query.loadingScreen
+  const routerQuery = Number(loadingScreen) || 1
+  //const routerQuery = useRouter().query.loadingScreen ? Number(useRouter().query.loadingScreen) : undefined
 
   return (
     <>
