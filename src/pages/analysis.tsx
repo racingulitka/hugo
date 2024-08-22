@@ -15,7 +15,7 @@ import AnalysisFormat from "@/components/Analysis/AnalysisFormat/AnalysisFormat"
 import AnalysisDetails from "@/components/Analysis/AnalysisDetails/AnalysisDetails";
 import AnalysisQandA from "@/components/Analysis/AnalysisQandA/AnalysisQandA";
 import { GetServerSidePropsContext } from "next";
-import { getIsSsrMobile } from '../../utils/isSSRMoblile';
+import { getIsSsrMobile } from '../utils/isSSRMoblile';
 import MobileHeader from "@/components/MobileHeader/MobileHeader";
 import MobileFooter from "@/components/MobileFooter/MobileFooter";
 
