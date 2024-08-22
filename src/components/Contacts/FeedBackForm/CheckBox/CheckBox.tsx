@@ -9,17 +9,18 @@ export default function CheckBox({
     id,
     isChecked,
     setChecked,
-}:{
-    children:string,
-    id:number,
-    isChecked:boolean,
-    setChecked:(id:number) => void,
-}){
-    return(
-        <div className={styles.wrapper}>
+}: {
+    children: string,
+    id: number,
+    isChecked: boolean,
+    setChecked: (id: number) => void,
+}) {
+    return (
+        <div className={styles.wrapper}
+            onClick={() => setChecked(id)}
+        >
             <div
                 className={cn(styles.checkBox, isChecked && styles.checkBoxChecked)}
-                onClick={() => setChecked(id)}
             >
                 {
                     isChecked &&

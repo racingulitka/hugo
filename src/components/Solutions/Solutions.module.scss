@@ -13,6 +13,7 @@ $mobile-size:480px;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
+  padding:0 24px;
   @media(max-width:$mobile-size){
     position:static;
     translate:0 0;

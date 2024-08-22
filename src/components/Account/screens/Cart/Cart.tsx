@@ -136,7 +136,10 @@ export default function Cart({
                         setChecked={onSelectAll}
                         width={isMobile ? 14 : 20}
                     />
-                    <div className={styles.chooseAll}>Выбрать все</div>
+                    <div
+                        className={styles.chooseAll}
+                        onClick={() => onSelectAll(!isSelectAll)}
+                    >Выбрать все</div>
                     <div
                         className={styles.deleteSelected}
                         onClick={() => onDeleteSelected()}

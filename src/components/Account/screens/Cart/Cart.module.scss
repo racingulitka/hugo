@@ -132,6 +132,9 @@ $mobile-size: 480px;
       }
       .chooseAll {
         @include fontAvertaPE();
+        &:hover{
+          cursor:pointer;
+        }
         @media (max-width: $mobile-size) {
           font-size: 10px;
           font-weight: 600;

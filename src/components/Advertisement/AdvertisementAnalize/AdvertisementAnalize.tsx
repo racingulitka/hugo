@@ -13,7 +13,7 @@ export default function AdvertisementAnalize({
     return (
         <div className={styles.mainWrapper}>
             <div className={styles.wrapper}>
-                <Image src={heroImage} alt='hero image' className={styles.heroImage} />
+                <Image src={heroImage} alt='hero image' className={styles.heroImage}/>
                 {
                     isMobile &&
                     <div className={styles.stepNumber}>

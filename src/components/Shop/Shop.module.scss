@@ -1,4 +1,5 @@
 $mobile-width:480px;
+$laptop-width:1536px;
 
 .mainWrapper {
   width: 100%;
@@ -13,6 +14,7 @@ $mobile-width:480px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding:0 10px;
     @media (max-width: 480px) {
       padding: 0 19px;
     }
@@ -21,6 +23,10 @@ $mobile-width:480px;
       flex-flow: column nowrap;
       justify-content: flex-start;
       align-items: center;
+      @media(max-width:$laptop-width){
+        width:100%;
+        padding:0 66px;
+      }
       .header {
         width: 100%;
         height: 100%;
@@ -76,11 +82,14 @@ $mobile-width:480px;
         justify-content: center;
         align-items: center;
         gap: 15px;
+        @media(max-width:$laptop-width){
+          width: 100%;
+        }
         @media(max-width:480px){
           margin:15px 0 0 0;
         }
         .card {
-          width: 580px;
+          width: min(580px, 30%);
           height: 610px;
           background: #252525;
           display: flex;
@@ -88,6 +97,10 @@ $mobile-width:480px;
           justify-content: flex-end;
           align-items: center;
           gap: 20px;
+          @media(max-width:$laptop-width){
+            height:36vw;
+            gap:10px;
+          }
           @media(max-width:480px){
             width:100%;
             height:auto;
@@ -102,6 +115,9 @@ $mobile-width:480px;
             .image {
               width: min(290px, 100%);
               height: auto;
+              @media(max-width:$laptop-width){
+                width:20vw;
+              }
             }
           }
           .bottomBlock {
@@ -114,6 +130,11 @@ $mobile-width:480px;
             justify-content: flex-start;
             align-items: center;
             gap: 20px;
+            @media(max-width:$laptop-width){
+              height:180px;
+              padding:0px 25px 10px;
+              gap:10px;
+            }
             @media(max-width:480px){
               height:auto;
               padding:0;
@@ -131,6 +152,9 @@ $mobile-width:480px;
               font-style: normal;
               font-weight: 700;
               line-height: normal;
+              @media(max-width:$laptop-width){
+                font-size: 2vw;
+              }
               @media(max-width:480px){
                 height:auto;
                 font-size: 14px;
@@ -145,12 +169,19 @@ $mobile-width:480px;
               align-items: flex-start;
               row-gap: 16px;
               column-gap: 139px;
+              @media(max-width:$laptop-width){
+                justify-content: space-around;
+                column-gap:0;
+              }
               @media(max-width:$mobile-width){
                 height:60px;
                 row-gap: 10px;
                 column-gap: 0;
                 align-content: space-between;
                 align-items: stretch;
+                @media(max-width:$laptop-width){
+                  row-gap:3px;
+                }
               }
               .link {
                 color: #8e8e8e;
@@ -159,8 +190,10 @@ $mobile-width:480px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
+                @media(max-width:$laptop-width){
+                  font-size:1.4vw;
+                }
                 @media(max-width:$mobile-width){
-                  //flex:1 1 auto;
                   font-size: 10px;
                 }
                 &:hover {

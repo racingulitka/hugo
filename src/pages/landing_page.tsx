@@ -22,7 +22,7 @@ import LandingPageImportant from "@/components/LandingPage/LandingPageImportant/
 import LandingPageQandA from "@/components/LandingPage/LandingPageQandA/LandingPageQandA";
 import Contacts from "@/components/Contacts/Contacts";
 import { GetServerSidePropsContext } from "next";
-import { getIsSsrMobile } from '../../utils/isSSRMoblile';
+import { getIsSsrMobile } from '../utils/isSSRMoblile';
 import MobileHeader from "@/components/MobileHeader/MobileHeader";
 import MobileFooter from "@/components/MobileFooter/MobileFooter";
 

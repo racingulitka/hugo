@@ -35,7 +35,7 @@ export const middleMenu = [
     {
         id:1,
         title:'Решения',
-        link:'/mobileSolutions',
+        link:'/mobile_solutions',
     },
     {
         id:2,

@@ -3,7 +3,7 @@
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  gap:10px;
+  gap: 10px;
   color: #8d8d8d;
   font-family: "Averta Demo PE";
   font-size: 12px;
@@ -11,24 +11,24 @@
   font-weight: 400;
   line-height: normal;
   user-select: none;
-  @media(max-width:480px){
+  &:hover {
+    cursor: pointer;
+  }
+  @media (max-width: 480px) {
     font-size: 10px;
   }
-  .checkBox{
-    width:14px;
+  .checkBox {
+    width: 14px;
     aspect-ratio: 1/1;
     box-sizing: border-box;
-    border:1px solid #4E4E4E;
+    border: 1px solid #4e4e4e;
     overflow: hidden;
-    &:hover{
-        cursor:pointer;
+    &Checked {
+      border: none;
     }
-    &Checked{
-        border:none;
-    }
-    .check{
-        width:100%;
-        height:auto;
+    .check {
+      width: 100%;
+      height: auto;
     }
   }
 }

@@ -22,7 +22,7 @@ import AdvertisementWeAreNotTheBest from "@/components/Advertisement/Advertiseme
 import AdvertisementQandA from "@/components/Advertisement/AdvertisementQandA/AdvertisementQandA";
 import AdvertisementTuning from "@/components/Advertisement/AdvertisementTuning/AdvertisementTuning";
 import { GetServerSidePropsContext } from "next";
-import { getIsSsrMobile } from '../../utils/isSSRMoblile';
+import { getIsSsrMobile } from '../utils/isSSRMoblile';
 import MobileHeader from "@/components/MobileHeader/MobileHeader";
 import MobileFooter from "@/components/MobileFooter/MobileFooter";
 

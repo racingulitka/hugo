@@ -411,8 +411,8 @@ export default function MainContentShop() {
         <div className={styles.mainWrapper}>
             <div className={styles.wrapper}>
                 <div className={styles.leftColumn}>
-                    <Image src={defaultAdverticement} alt='defaultAdverticement' className={styles.adverticement} />
-                    <Image src={defaultAdverticement} alt='defaultAdverticement' className={styles.adverticement} />
+                    {/* <Image src={defaultAdverticement} alt='defaultAdverticement' className={styles.adverticement} />
+                    <Image src={defaultAdverticement} alt='defaultAdverticement' className={styles.adverticement} /> */}
                 </div>
                 <div className={styles.rightColumn}>
                     {

@@ -24,7 +24,7 @@ import AdvertisementWeAreNotTheBest from "@/components/Advertisement/Advertiseme
 import AdvertisementQandA from "@/components/Advertisement/AdvertisementQandA/AdvertisementQandA";
 import AuthAndRegister from "@/components/AuthAndRegister/AuthAndRegister";
 import { GetServerSidePropsContext } from "next";
-import { getIsSsrMobile } from '../../utils/isSSRMoblile';
+import { getIsSsrMobile } from '../utils/isSSRMoblile';
 import MobileHeader from "@/components/MobileHeader/MobileHeader";
 import MobileFooter from "@/components/MobileFooter/MobileFooter";
 import AdvertisementNotForAll from "@/components/Advertisement/AdvertisementNotForAll/AdvertisementNotForAll";

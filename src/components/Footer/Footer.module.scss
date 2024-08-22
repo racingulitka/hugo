@@ -1,3 +1,5 @@
+$laptop-width:1536px;
+
 .mainWrapper {
   width: 100%;
   height: auto;
@@ -20,6 +22,9 @@
     gap: 71px;
     box-sizing: border-box;
     padding: 75px 105px 0 88px;
+    @media(max-width:$laptop-width){
+      padding: 75px 24px 0 24px;
+    }
     .upperBlock {
       width: 100%;
       height: auto;
@@ -27,6 +32,7 @@
       flex-flow: row wrap;
       justify-content: space-between;
       align-items: flex-start;
+      gap:10px;
       & nav {
         flex: 1 0 auto;
         max-width: 947px;
@@ -34,6 +40,7 @@
         flex-flow: row wrap;
         justify-content: space-between;
         align-items: flex-start;
+        gap:10px;
         .linksBlock {
           display: flex;
           flex-flow: column nowrap;

@@ -11,7 +11,22 @@ $mobile-size:480px;
   align-items: flex-start;
   background: #161616;
   gap: 25px;
-  overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar{
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #343333;
+    border-radius: 3px;
+}
+&::-webkit-scrollbar-thumb {
+  background-color: #6a6868;
+  border-radius: 3px;
+  border: none;
+}
+&::-webkit-scrollbar-thumb:hover {
+  background-color: #8c8c8c;
+}
   @media(max-width:$mobile-size){
     overflow-x: auto;
     padding:0;
