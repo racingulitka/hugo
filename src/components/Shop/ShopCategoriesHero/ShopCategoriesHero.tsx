@@ -58,7 +58,15 @@ export default function ShopCategoriesHero(props:Props) {
                 </div>
                 <nav className={styles.menuBlock}>
                     {props.menuBlockArr.map(block => (
-                        <Link key={block.id} href={block.link}>
+                        <Link
+                            key={block.id}
+                            href={{
+                                pathname:block.link,
+                                query:{
+                                    filter:2,
+                                }
+                            }}
+                        >
                         <MenuBlock
                             text={block.title}
                         />

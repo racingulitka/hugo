@@ -9,7 +9,7 @@ export default function CarTypeSelect({
     setActiveCategory
 }:{
     activeCategory:CarType | null,
-    setActiveCategory:React.Dispatch<React.SetStateAction<CarType | null>>
+    setActiveCategory:(id: CarType) => void,
 }){
 
     return(

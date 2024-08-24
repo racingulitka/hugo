@@ -17,11 +17,11 @@ export const selectors:Selectors[] = [
     {
         id:2,
         icon:discordIcon,
-        placeholder:'discordId',
+        placeholder:'Имя пользователя Discord',
     },
     {
         id:3,
         icon:telegramIcon,
-        placeholder:'telegramId',
+        placeholder:'Имя пользователя Telegram',
     },
 ]

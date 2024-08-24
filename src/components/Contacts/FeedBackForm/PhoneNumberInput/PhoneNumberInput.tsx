@@ -80,7 +80,7 @@ export default function PhoneNumberInput({
                                     initial={{ left: -300, opacity: 0 }}
                                     animate={{ left: 0, opacity: 1 }}
                                     exit={{ left: 300, opacity: 0 }}
-                                    transition={{ duration: 0.3, delay: selector.id * 0.1 }}
+                                    transition={{ duration: 0.0, delay: selector.id * 0.0 }}
                                     key={selector.id}
                                     className={styles.selector}
                                     onClick={() => onSelectorSelect(selector.id)}

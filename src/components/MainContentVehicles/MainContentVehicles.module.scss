@@ -10,6 +10,9 @@ $mobile-size:480px;
   background: #111;
   box-sizing: border-box;
   padding: 90px 0 90px 0;
+  @media(max-width:1920px){
+    padding:90px 24px;
+  }
   @media(max-width:$mobile-size){
     padding:0;
   }

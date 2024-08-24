@@ -424,6 +424,8 @@ export default function MainContentVehicles({
             if (currentCategory.id === activeCategory) {
                 setGoodsArray({ [key]: currentCategory })
                 return
+            } else {
+                setGoodsArray({...goodsArrayDefault})
             }
         }
     }, [activeCategory])
@@ -455,7 +457,7 @@ export default function MainContentVehicles({
                         />
                     }
                     {
-                        isMobile &&
+                        isMobile ?
                         <Sheet
                             isOpen={isCarBrandSelectActive}
                             onClose={() => setCarBrandSelectActive(false)}
@@ -474,8 +476,10 @@ export default function MainContentVehicles({
                             <Sheet.Backdrop />
                             
                         </Sheet>
+                        :
+                        <CarBrandSelect isActive={isCarBrandSelectActive} onSelect={setCarBrandSelectActive} />
                     }
-                    <Image src={defaultAdverticement} alt='defaultAdverticement' className={styles.adverticement} />
+                    {/* <Image src={defaultAdverticement} alt='defaultAdverticement' className={styles.adverticement} /> */}
                 </div>
                 <div className={styles.rightColumn}>
                     {
