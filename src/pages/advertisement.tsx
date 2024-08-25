@@ -20,6 +20,8 @@ import { getIsSsrMobile } from '../utils/isSSRMoblile';
 import MobileFooter from "@/components/MobileFooter/MobileFooter";
 import PageWrapper from "@/components/Page/Page";
 import { Page } from "@/components/Header/Header.config";
+import OddComponent from "@/components/OddComponent/OddComponent";
+import { stepNumberParams } from "@/components/Advertisement/Advertisement.config";
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   return {
@@ -44,16 +46,52 @@ export default function Advertisement({
     >
       <AdvertisementHero />
       <AdvertisementNotForAll />
-      <AdvertisementAnalize isMobile={isMobile} />
-      <AdvertisementStrategy isMobile={isMobile} />
-      <AdvertisementAgreement isMobile={isMobile} />
-      <AdvertisementSearch isMobile={isMobile} />
+      <OddComponent
+        isMobile={isMobile}
+        params={stepNumberParams.analize}
+      />
+      {/* <AdvertisementAnalize isMobile={isMobile} /> */}
+      <OddComponent
+        isMobile={isMobile}
+        params={stepNumberParams.strategy}
+      />
+      {/* <AdvertisementStrategy isMobile={isMobile} /> */}
+      {/* <AdvertisementAgreement isMobile={isMobile} /> */}
+      <OddComponent
+        isMobile={isMobile}
+        params={stepNumberParams.agreement}
+      />
+      {/* <AdvertisementSearch isMobile={isMobile} /> */}
+      <OddComponent
+        isMobile={isMobile}
+        params={stepNumberParams.search}
+      />
       <AdvertisementAreYouAgree />
-      <AdvertisementCompany isMobile={isMobile} />
-      <AdvertisementTest isMobile={isMobile} />
-      <AdvertisementFix isMobile={isMobile} />
-      <AdvertisementFinal isMobile={isMobile} />
-      <AdvertisementReports isMobile={isMobile} />
+      {/* <AdvertisementCompany isMobile={isMobile} /> */}
+      <OddComponent
+        isMobile={isMobile}
+        params={stepNumberParams.company}
+      />
+      {/* <AdvertisementTest isMobile={isMobile} /> */}
+      <OddComponent
+        isMobile={isMobile}
+        params={stepNumberParams.test}
+      />
+      {/* <AdvertisementFix isMobile={isMobile} /> */}
+      <OddComponent
+        isMobile={isMobile}
+        params={stepNumberParams.fix}
+      />
+      {/* <AdvertisementFinal isMobile={isMobile} /> */}
+      <OddComponent
+        isMobile={isMobile}
+        params={stepNumberParams.final}
+      />
+      {/* <AdvertisementReports isMobile={isMobile} /> */}
+      <OddComponent
+        isMobile={isMobile}
+        params={stepNumberParams.reports}
+      />
       <AdvertisementWarranty />
       <AdvertisementTuning advType='КОНТЕКСТНОЙ' isMobile={isMobile} />
       <AdvertisementWeAreNotTheBest isMobile={isMobile} />
