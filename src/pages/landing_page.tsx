@@ -41,6 +41,8 @@ export default function LandingPage({
     <PageWrapper
     isMobile={isMobile}
     pageType={Page.home}
+    title='Landing Page'
+    description='description'
     >
               <LandingPageHero isMobile={isMobile} />
         <LandingPageLiesAbout />

@@ -316,6 +316,8 @@ export default function PageOfGood({
     <PageWrapper
     isMobile={isMobile}
     pageType={Page.shop}
+    title='item_slug'
+    description='description'
     >
       <>
       {

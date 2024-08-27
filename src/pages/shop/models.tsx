@@ -27,6 +27,8 @@ export default function Models({
     <PageWrapper
     isMobile={isMobile}
     pageType={Page.shop}
+    title='3D моделинг'
+    description='description'
     >
               <ShopCategoriesHero
           h1={h1}

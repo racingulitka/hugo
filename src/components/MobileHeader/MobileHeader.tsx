@@ -11,6 +11,8 @@ import MenuSelector from './MenuSelector/MenuSelector'
 import { Screens } from '../Account/Account.config'
 import { AnimatePresence } from 'framer-motion'
 import Solutions from '../Solutions/Solutions'
+import { Sheet } from 'react-modal-sheet'
+import MobileModalHeader from '../MainContentVehicles/MobileSelectBlock/MobileModalHeader/MobileModalHeader'
 
 export default function MobileHeader() {
 
@@ -55,13 +57,13 @@ export default function MobileHeader() {
         <div className={styles.wrapper}>
             <Link href='/'>
                 <div className={styles.logoBlock}>
-                    <Image src={logo} alt='logo' width={44} />
+                    <Image src={logo} alt='logo' width={80} />
                     <p className={styles.sublogo}>GTA Production Agency</p>
                 </div>
             </Link>
             <div className={styles.rightBlock}>
                 <Link href='#' className={styles.leaveOrder}>ОСТАВИТЬ ЗАЯВКУ</Link>
-                <Image src={hamburgerIcon} alt='hamburger icon' width={14} onClick={() => setMenuOpen(true)} />
+                <Image src={hamburgerIcon} alt='hamburger icon' width={28} onClick={() => setMenuOpen(true)} />
             </div>
             {
                 isMenuOpen &&
@@ -94,7 +96,7 @@ export default function MobileHeader() {
                         <p className={styles.title} onClick={() => setSelectorOpen('language')}>{language}</p>
                         <p className={styles.title} onClick={() => setSelectorOpen('currency')}>{currency}</p>
                     </div>
-                    {
+                    {/* {
                         isSelectorOpen &&
                         <MenuSelector
                             selector={isSelectorOpen}
@@ -102,7 +104,31 @@ export default function MobileHeader() {
                             setLanguage={setLanguage}
                             setCurrency={setCurrency}
                         />
-                    }
+                    } */}
+                    <Sheet
+                            isOpen={!!isSelectorOpen}
+                            onClose={() => setSelectorOpen(null)}
+                            detent='content-height'
+                        >
+                            <Sheet.Container>
+                                <Sheet.Header>
+                                    <MobileModalHeader backgroundColor='#161616' />
+                                </Sheet.Header>
+                                <Sheet.Content>
+                                    {
+                                        isSelectorOpen &&
+                                        <MenuSelector
+                                        selector={isSelectorOpen}
+                                        setSelectorOpen={setSelectorOpen}
+                                        setLanguage={setLanguage}
+                                        setCurrency={setCurrency}
+                                    />
+                                    }
+                                </Sheet.Content>
+                            </Sheet.Container>
+                            <Sheet.Backdrop />
+                            
+                        </Sheet>
                 </div>
             }
             <AnimatePresence>

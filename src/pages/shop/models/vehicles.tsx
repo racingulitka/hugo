@@ -55,6 +55,8 @@ export default function Vehicles({
     <PageWrapper
       isMobile={isMobile}
       pageType={Page.shop}
+      title='Транспорт'
+      description='description'
     >
       <VehiclesHero />
       <div className={pageStyles.carTypeSelect}>

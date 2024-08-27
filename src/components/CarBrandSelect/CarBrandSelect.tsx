@@ -126,7 +126,7 @@ export default function CarBrandSelect({
                 value={inputValue}
                 maxLength={15}
             />
-            <h4 className={styles.description}>Выберите бренд автомобиля</h4>
+            <h4 className={styles.description}>Бренд</h4>
             <div className={cn(styles.brandsWindow, isScrolled && styles.brandsWindowScrolled)}>
                 {
                     brandsArr.map(brand => {

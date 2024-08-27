@@ -44,6 +44,8 @@ export default function Advertisement({
     <PageWrapper
     isMobile={isMobile}
     pageType={Page.home}
+    title='Таргетированная реклама'
+    description='description'
     >
       <TargetHero />
         <AdvertisementNotForAll />

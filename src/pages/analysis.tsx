@@ -34,6 +34,8 @@ export default function Analysis({
     <PageWrapper
       isMobile={isMobile}
       pageType={Page.home}
+      title='Маркетинговый анализ'
+      description='description'
     >
       <AnalysisHero isMobile={isMobile} />
       <AnalysisMainQuestions />

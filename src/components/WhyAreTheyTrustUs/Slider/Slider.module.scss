@@ -56,8 +56,12 @@ $mobile-size:480px;
     overflow-x: hidden;
     @media(max-width:$mobile-size){
       overflow-x: scroll;
-      height:170px;
+      height:255px;
+      // height:170px;
       scrollbar-width: none;
+      &::-webkit-scrollbar{
+        display:none
+      }
     }
     .slidesList {
       position: absolute;
@@ -83,14 +87,17 @@ $mobile-size:480px;
         justify-content: flex-start;
         align-items: flex-start;
         @media(max-width:$mobile-size){
-          width:150px;
-          height:170px;
+          width:240px;
+          // width:150px;
+          height:272px;
+          // height:170px;
         }
         .imageContainer {
           width: 100%;
           height: 160px;
           @media(max-width:$mobile-size){
-            height:65px;
+            height:104px;
+            // height:65px;
             position:relative;
             flex-shrink: 0;
           }
@@ -117,7 +124,9 @@ $mobile-size:480px;
             width:100%;
             margin:0;
             padding:10px;
-            gap:10px;
+            gap:16px;
+            // gap:10px;
+            height:150px;
           }
           .slideHeader {
             display: flex;
@@ -133,20 +142,25 @@ $mobile-size:480px;
               line-height: normal;
               @media(max-width:$mobile-size){
                 width:100%;
-                font-size: 10px;
+                font-size: 16px;
+                // font-size: 10px;
               }
             }
             .articleLink {
               @include baseFont();
               color: #9c3131;
               @media(max-width:$mobile-size){
-                font-size: 6px;
+                font-size: 12px;
+                // font-size: 6px;
               }
             }
           }
           .text {
             @include baseFont();
             color: #bfbfbf;
+            @media(max-width:$mobile-size){
+              font-size: 10px;
+            }
           }
         }
       }
@@ -167,12 +181,18 @@ $mobile-size:480px;
         }
         @media(max-width:$mobile-size){
           margin:0;
-          gap:5px;
+          gap:8px;
+          // gap:5px;
           position:absolute;
-          bottom:10px;
+          bottom:16px;
+          // bottom:10px;
           left:10px;
           .commentIcon{
-            height:8px;
+            height:13px;
+            // height:8px;
+          }
+          & span{
+            font-size: 10px;
           }
         }
       }

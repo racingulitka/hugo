@@ -29,6 +29,8 @@ export default function Home({
     <PageWrapper
       isMobile={isMobile}
       pageType={Page.home}
+      title='Главная'
+      description='description'
     >
       <Hero />
       <Shop />

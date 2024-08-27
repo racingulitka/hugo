@@ -27,6 +27,8 @@ export default function Shop({
     <PageWrapper
       isMobile={isMobile}
       pageType={Page.shop}
+      title='Личный кабинет'
+      description='description'
     >
       <Account routerScreen={routerQuery} isMobile={isMobile} />
     </PageWrapper>

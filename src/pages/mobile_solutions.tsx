@@ -24,6 +24,8 @@ export default function mobileSolutions({
     <PageWrapper
     isMobile={isMobile}
     pageType={Page.home}
+    title='Решения'
+    description='description'
     >
               <Solutions onClose={() => console.log('closeSolutions')}/>
     </PageWrapper>

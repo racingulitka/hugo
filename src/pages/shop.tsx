@@ -26,6 +26,8 @@ export default function Shop({
     <PageWrapper
       isMobile={isMobile}
       pageType={Page.shop}
+      title='Магазин'
+      description='description'
     >
       <TopShopBlock />
       <CategoryCards />
