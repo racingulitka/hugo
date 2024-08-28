@@ -64,6 +64,8 @@ export default function ShopCategoriesHero(props:Props) {
                                 pathname:block.link,
                                 query:{
                                     filter:2,
+                                    sortStatus:null,
+                                    brandFilter:null,
                                 }
                             }}
                         >

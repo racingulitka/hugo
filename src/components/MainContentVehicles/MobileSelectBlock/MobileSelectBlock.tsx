@@ -10,13 +10,21 @@ import MobileModalHeader from './MobileModalHeader/MobileModalHeader'
 export default function MobileSelectBlock({
     isCarBrandSelectActive,
     setCarBrandSelectActive,
+    sortStatus,
+    setSortStatus,
 }: {
     isCarBrandSelectActive: boolean,
-    setCarBrandSelectActive: React.Dispatch<React.SetStateAction<boolean>>
+    setCarBrandSelectActive: React.Dispatch<React.SetStateAction<boolean>>,
+    sortStatus:number,
+    setSortStatus:React.Dispatch<React.SetStateAction<number>>,
 }) {
 
     const [isSortOpen, setSortOpen] = useState<boolean>(false)
     const [sortSelect, setSortSelect] = useState<number>(1)
+
+    useEffect(() => {
+        setSortStatus(sortSelect)
+    }, [sortSelect])
 
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {

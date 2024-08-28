@@ -37,10 +37,18 @@ export default function MainContentVehicles({
     isMobile,
     activeCategory,
     setActiveCategory,
+    sortStatus,
+    setSortStatus,
+    carBrandStatus,
+    setCarBrandStatus,
 }: {
     isMobile: boolean,
     activeCategory: CarType | null,
-    setActiveCategory: React.Dispatch<React.SetStateAction<CarType | null>>
+    setActiveCategory: React.Dispatch<React.SetStateAction<CarType | null>>,
+    sortStatus:number,
+    setSortStatus:React.Dispatch<React.SetStateAction<number>>,
+    carBrandStatus:number | null,
+    setCarBrandStatus: React.Dispatch<React.SetStateAction<number | null>>,
 }) {
 
     const goodsArrayDefault: GoodsArray = {
@@ -454,6 +462,8 @@ export default function MainContentVehicles({
                         <MobileSelectBlock
                             isCarBrandSelectActive={isCarBrandSelectActive}
                             setCarBrandSelectActive={setCarBrandSelectActive}
+                            sortStatus={sortStatus}
+                            setSortStatus={setSortStatus}
                         />
                     }
                     {
@@ -469,7 +479,7 @@ export default function MainContentVehicles({
                                 </Sheet.Header>
                                 <Sheet.Content>
                                     {
-                                        <CarBrandSelect isActive={isCarBrandSelectActive} onSelect={setCarBrandSelectActive} />
+                                        <CarBrandSelect isActive={isCarBrandSelectActive} onSelect={setCarBrandSelectActive} carBrandStatus={carBrandStatus} setCarBrandStatus={setCarBrandStatus} isMobile={isMobile}/>
                                     }
                                 </Sheet.Content>
                             </Sheet.Container>
@@ -477,7 +487,7 @@ export default function MainContentVehicles({
                             
                         </Sheet>
                         :
-                        <CarBrandSelect isActive={isCarBrandSelectActive} onSelect={setCarBrandSelectActive} />
+                        <CarBrandSelect isActive={isCarBrandSelectActive} onSelect={setCarBrandSelectActive} carBrandStatus={carBrandStatus} setCarBrandStatus={setCarBrandStatus} isMobile={isMobile}/>
                     }
                     {/* <Image src={defaultAdverticement} alt='defaultAdverticement' className={styles.adverticement} /> */}
                 </div>
@@ -485,7 +495,17 @@ export default function MainContentVehicles({
                     {
                         Object.keys(goodsArray).map(category => {
                             return (
-                                <GoodsBlock key={goodsArray[category].id} categoryId={category} goodsArray={goodsArray[category]} setFavourite={setFavourite} /*setSelectedCategory={onSelectCategory}*/ setActiveCategory={setActiveCategory} />
+                                <GoodsBlock
+                                    key={goodsArray[category].id}
+                                    categoryId={category}
+                                    goodsArray={goodsArray[category]}
+                                    setFavourite={setFavourite}
+                                    /*setSelectedCategory={onSelectCategory}*/
+                                    setActiveCategory={setActiveCategory}
+                                    sortStatus={sortStatus}
+                                    setSortStatus={setSortStatus}
+                                    activeCategory={activeCategory}
+                                />
                             )
                         })
                     }

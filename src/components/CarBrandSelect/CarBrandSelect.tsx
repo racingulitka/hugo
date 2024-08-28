@@ -12,9 +12,15 @@ import cn from 'classnames'
 export default function CarBrandSelect({
     isActive,
     onSelect,
+    carBrandStatus,
+    setCarBrandStatus,
+    isMobile,
 }:{
     isActive:boolean,
     onSelect:React.Dispatch<React.SetStateAction<boolean>>,
+    carBrandStatus:number | null,
+    setCarBrandStatus: React.Dispatch<React.SetStateAction<number | null>>,
+    isMobile:boolean,
 }){
 
     const carsBrandArr:CarsBrandArr[] = [ //delete
@@ -116,6 +122,11 @@ export default function CarBrandSelect({
         inputValue.length === 0 && setScrolled(false)
     }, [inputValue])
 
+    const onSelectBrand = (id:number) => {
+        setCarBrandStatus(id)
+        if(isMobile) onSelect(prev => !prev)
+    }
+
     return(
         <div className={cn(styles.wrapper, isActive && styles.wrapperActive)}>
             <h3 className={styles.title}>Найдите нужный вам автомобиль</h3>
@@ -134,12 +145,12 @@ export default function CarBrandSelect({
                             <div
                                 key={brand.id}
                                 className={styles.card}
-                                onClick={() => onSelect(prev => !prev)}
+                                onClick={() => onSelectBrand(brand.id)}
                             >
                                 <div className={styles.iconContainer}>
                                     <Image src={brand.icon} alt='brandIcon' className={styles.icon} />
                                 </div>
-                                <p className={styles.name}>{brand.name}</p>
+                                <p className={cn(styles.name, carBrandStatus === brand.id && styles.nameActive)}>{brand.name}</p>
                             </div>
                         )
                     })

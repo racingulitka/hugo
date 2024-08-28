@@ -56,7 +56,7 @@ $mobile-size:480px;
     overflow-x: hidden;
     @media(max-width:$mobile-size){
       overflow-x: scroll;
-      height:255px;
+      height:272px;
       // height:170px;
       scrollbar-width: none;
       &::-webkit-scrollbar{
@@ -88,16 +88,13 @@ $mobile-size:480px;
         align-items: flex-start;
         @media(max-width:$mobile-size){
           width:240px;
-          // width:150px;
           height:272px;
-          // height:170px;
         }
         .imageContainer {
           width: 100%;
           height: 160px;
           @media(max-width:$mobile-size){
             height:104px;
-            // height:65px;
             position:relative;
             flex-shrink: 0;
           }
@@ -120,12 +117,10 @@ $mobile-size:480px;
           align-items: flex-start;
           gap: 15px;
           @media(max-width:$mobile-size){
-            //flex:1 0 auto;
             width:100%;
             margin:0;
             padding:10px;
             gap:16px;
-            // gap:10px;
             height:150px;
           }
           .slideHeader {
@@ -143,7 +138,6 @@ $mobile-size:480px;
               @media(max-width:$mobile-size){
                 width:100%;
                 font-size: 16px;
-                // font-size: 10px;
               }
             }
             .articleLink {
@@ -151,7 +145,6 @@ $mobile-size:480px;
               color: #9c3131;
               @media(max-width:$mobile-size){
                 font-size: 12px;
-                // font-size: 6px;
               }
             }
           }
@@ -182,14 +175,11 @@ $mobile-size:480px;
         @media(max-width:$mobile-size){
           margin:0;
           gap:8px;
-          // gap:5px;
           position:absolute;
           bottom:16px;
-          // bottom:10px;
           left:10px;
           .commentIcon{
             height:13px;
-            // height:8px;
           }
           & span{
             font-size: 10px;

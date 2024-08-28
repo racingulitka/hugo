@@ -118,6 +118,9 @@ $mobile-size:480px;
         @include fontAvertaDemoPE();
         color: #fff;
         font-size: 15px;
+        &Active{
+          color:#9c3131;
+        }
       }
     }
   }
