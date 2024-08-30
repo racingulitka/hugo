@@ -1,12 +1,14 @@
 $mobile-size:480px;
 
 .wrapper {
-  position: absolute;
-  z-index:5;
+  position: static;
+  // position: absolute;
+  z-index:200;
   bottom: 0;
   left: 0;
-  translate: 0 99%;
-  width: 100%;
+  // translate: 0 99%;
+  width: 100vw;
+  // width: 100%;
   height: auto;
   background: #111;
   display: flex;

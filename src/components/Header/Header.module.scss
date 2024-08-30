@@ -22,7 +22,7 @@
     .leftBlock {
       width: min(767px, 100%);
       display: flex;
-      flex-flow: row wrap;
+      flex-flow: row nowrap;
       justify-content: flex-start;
       align-items: center;
       gap: 40px;
@@ -43,6 +43,7 @@
           font-style: normal;
           font-weight: 400;
           line-height: normal;
+          white-space: nowrap;
         }
       }
       .navigation {
