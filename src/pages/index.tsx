@@ -24,6 +24,7 @@ export default function Home({
 }) {
 
   const isMobile = isSSRMobile
+  //kkkkkkk
 
   return (
     <PageWrapper
