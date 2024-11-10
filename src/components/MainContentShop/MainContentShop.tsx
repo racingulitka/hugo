@@ -406,6 +406,8 @@ export default function MainContentShop() {
         setGoodsArray([...array])
     }
 
+    const [sortStatus, setSortStatus] = useState<number>(1)
+
 
     return (
         <div className={styles.mainWrapper}>
@@ -418,7 +420,16 @@ export default function MainContentShop() {
                     {
                         goodsArray.map(category => {
                             return (
-                                <GoodsBlock key={category.id} categoryId={String(category.id)} goodsArray={category} setFavourite={setFavourite} setActiveCategory={setActiveCategory} />
+                                <GoodsBlock
+                                    key={category.id}
+                                    categoryId={String(category.id)}
+                                    goodsArray={category}
+                                    setFavourite={setFavourite}
+                                    setActiveCategory={setActiveCategory}
+                                    sortStatus={sortStatus}
+                                    setSortStatus={setSortStatus}
+                                    activeCategory={null}
+                                />
                             )
                         })
                     }
