@@ -116,6 +116,7 @@ $mobile-size:480px;
           flex-flow: row nowrap;
           justify-content: space-between;
           align-items: center;
+          gap:10px;
           @media(max-width:$mobile-size){
             width:70px;
             flex-flow:column nowrap;
@@ -125,6 +126,7 @@ $mobile-size:480px;
           .iconContainer {
             width: 100px;
             aspect-ratio: 1/1;
+            flex-shrink: 0;
             background: #252525;
             @media(max-width:$mobile-size){
               width:100%;
