@@ -100,7 +100,7 @@ $mobile-size:480px;
         justify-content: center;
         align-items: center;
         row-gap: 65px;
-        column-gap: 110px;
+        column-gap: 30px;
         @media(max-width:$mobile-size){
           flex-wrap:nowrap;
           width:100%;
@@ -110,13 +110,13 @@ $mobile-size:480px;
           scrollbar-width: none;
         }
         .advCard {
-          width: 298px;
+          width: 355px;
           height: 100px;
           display: flex;
           flex-flow: row nowrap;
           justify-content: space-between;
           align-items: center;
-          gap:10px;
+          gap:20px;
           @media(max-width:$mobile-size){
             width:70px;
             flex-flow:column nowrap;
