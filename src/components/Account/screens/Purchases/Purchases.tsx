@@ -14,6 +14,7 @@ export default function Purchases({
 }) {
 
     const [activeCategory, setActiveCategory] = useState<CarType | null>(null)
+    const [sortStatus, setSortStatus] = useState<number>(1)
     console.log(activeCategory)
 
     const [purchasesList] = useState<CartInfo[]>([
@@ -162,6 +163,9 @@ export default function Purchases({
                     categoryId={'top'}
                     setActiveCategory={setActiveCategory}
                     simpleTitle
+                    sortStatus={sortStatus}
+                    setSortStatus={setSortStatus}
+                    activeCategory={null}
                 />
             </div>
         </div>
